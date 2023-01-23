@@ -1,0 +1,72 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>disable</Nullable>
+    <GenerateDocumentationFile>True</GenerateDocumentationFile>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <LangVersion>latest</LangVersion>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="..\Catharsis.Conversions\Conversion.cs" Link="Conversion.cs" />
+    <Compile Include="..\Catharsis.Conversions\Convert.cs" Link="Convert.cs" />
+    <Compile Include="..\Catharsis.Conversions\Converter.cs" Link="Converter.cs" />
+    <Compile Include="..\Catharsis.Conversions\Converters\ActionConverters.cs" Link="Converters\ActionConverters.cs" />
+    <Compile Include="..\Catharsis.Conversions\Converters\ArrayConverters.cs" Link="Converters\ArrayConverters.cs" />
+    <Compile Include="..\Catharsis.Conversions\Converters\AsyncEnumerableConverters.cs" Link="Converters\AsyncEnumerableConverters.cs" />
+    <Compile Include="..\Catharsis.Conversions\Converters\BinaryReaderConverters.cs" Link="Converters\BinaryReaderConverters.cs" />
+    <Compile Include="..\Catharsis.Conversions\Converters\DateOnlyConverters.cs" Link="Converters\DateOnlyConverters.cs" />
+    <Compile Include="..\Catharsis.Conversions\Converters\DateTimeConverters.cs" Link="Converters\DateTimeConverters.cs" />
+    <Compile Include="..\Catharsis.Conversions\Converters\DateTimeOffsetConverters.cs" Link="Converters\DateTimeOffsetConverters.cs" />
+    <Compile Include="..\Catharsis.Conversions\Converters\DictionaryConverters.cs" Link="Converters\DictionaryConverters.cs" />
+    <Compile Include="..\Catharsis.Conversions\Converters\DirectoryInfoConverters.cs" Link="Converters\DirectoryInfoConverters.cs" />
+    <Compile Include="..\Catharsis.Conversions\Converters\EnumerableConverters.cs" Link="Converters\EnumerableConverters.cs" />
+    <Compile Include="..\Catharsis.Conversions\Converters\FileInfoConverters.cs" Link="Converters\FileInfoConverters.cs" />
+    <Compile Include="..\Catharsis.Conversions\Converters\FileSystemInfoConverters.cs" Link="Converters\FileSystemInfoConverters.cs" />
+    <Compile Include="..\Catharsis.Conversions\Converters\FuncConverters.cs" Link="Converters\FuncConverters.cs" />
+    <Compile Include="..\Catharsis.Conversions\Converters\GuidConverters.cs" Link="Converters\GuidConverters.cs" />
+    <Compile Include="..\Catharsis.Conversions\Converters\HttpContentConverters.cs" Link="Converters\HttpContentConverters.cs" />
+    <Compile Include="..\Catharsis.Conversions\Converters\IPAddressConverters.cs" Link="Converters\IPAddressConverters.cs" />
+    <Compile Include="..\Catharsis.Conversions\Converters\IPHostEntryConverters.cs" Link="Converters\IPHostEntryConverters.cs" />
+    <Compile Include="..\Catharsis.Conversions\Converters\MatchConverters.cs" Link="Converters\MatchConverters.cs" />
+    <Compile Include="..\Catharsis.Conversions\Converters\NameValueCollectionConverters.cs" Link="Converters\NameValueCollectionConverters.cs" />
+    <Compile Include="..\Catharsis.Conversions\Converters\PhysicalAddressConverters.cs" Link="Converters\PhysicalAddressConverters.cs" />
+    <Compile Include="..\Catharsis.Conversions\Converters\ProcessConverters.cs" Link="Converters\ProcessConverters.cs" />
+    <Compile Include="..\Catharsis.Conversions\Converters\RangeConverters.cs" Link="Converters\RangeConverters.cs" />
+    <Compile Include="..\Catharsis.Conversions\Converters\SecureStringConverters.cs" Link="Converters\SecureStringConverters.cs" />
+    <Compile Include="..\Catharsis.Conversions\Converters\StreamConverters.cs" Link="Converters\StreamConverters.cs" />
+    <Compile Include="..\Catharsis.Conversions\Converters\StringBuilderConverters.cs" Link="Converters\StringBuilderConverters.cs" />
+    <Compile Include="..\Catharsis.Conversions\Converters\StringConverters.cs" Link="Converters\StringConverters.cs" />
+    <Compile Include="..\Catharsis.Conversions\Converters\TaskConverters.cs" Link="Converters\TaskConverters.cs" />
+    <Compile Include="..\Catharsis.Conversions\Converters\TcpClientConverters.cs" Link="Converters\TcpClientConverters.cs" />
+    <Compile Include="..\Catharsis.Conversions\Converters\TextReaderConverters.cs" Link="Converters\TextReaderConverters.cs" />
+    <Compile Include="..\Catharsis.Conversions\Converters\TimeOnlyConverters.cs" Link="Converters\TimeOnlyConverters.cs" />
+    <Compile Include="..\Catharsis.Conversions\Converters\UdpClientConverters.cs" Link="Converters\UdpClientConverters.cs" />
+    <Compile Include="..\Catharsis.Conversions\Converters\UriConverters.cs" Link="Converters\UriConverters.cs" />
+    <Compile Include="..\Catharsis.Conversions\Converters\XDocumentConverters.cs" Link="Converters\XDocumentConverters.cs" />
+    <Compile Include="..\Catharsis.Conversions\Converters\XmlDocumentConverters.cs" Link="Converters\XmlDocumentConverters.cs" />
+    <Compile Include="..\Catharsis.Conversions\Converters\XmlReaderConverters.cs" Link="Converters\XmlReaderConverters.cs" />
+    <Compile Include="..\Catharsis.Conversions\Extensions\IConversionExtensions.cs" Link="Extensions\IConversionExtensions.cs" />
+    <Compile Include="..\Catharsis.Conversions\Extensions\IConverterExtensions.cs" Link="Extensions\IConverterExtensions.cs" />
+    <Compile Include="..\Catharsis.Conversions\Extensions\ObjectExtensions.cs" Link="Extensions\ObjectExtensions.cs" />
+    <Compile Include="..\Catharsis.Conversions\IConversion.cs" Link="IConversion.cs" />
+    <Compile Include="..\Catharsis.Conversions\IConverter.cs" Link="IConverter.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <InternalsVisibleTo Include="Catharsis.Convert.Tests" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Converters\" />
+    <Folder Include="Extensions\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Catharsis.Extensions">
+      <HintPath>..\..\Catharsis.Extensions\src\Catharsis.Extensions.Standard\bin\Release\netstandard2.1\Catharsis.Extensions.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+</Project>
