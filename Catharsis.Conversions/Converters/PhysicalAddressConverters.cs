@@ -13,5 +13,6 @@ public static class PhysicalAddressConverters
   /// </summary>
   /// <param name="conversion"></param>
   /// <returns></returns>
+  /// <exception cref="ArgumentNullException"></exception>
   public static byte[] Bytes(this IConversion<PhysicalAddress> conversion) => conversion.To(address => address.ToBytes());
 }

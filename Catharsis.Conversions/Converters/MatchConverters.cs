@@ -13,5 +13,6 @@ public static class MatchConverters
   /// </summary>
   /// <param name="conversion"></param>
   /// <returns></returns>
+  /// <exception cref="ArgumentNullException"></exception>
   public static IEnumerable<Capture> Enumerable(this IConversion<Match> conversion) => conversion.To(match => match.ToEnumerable());
 }

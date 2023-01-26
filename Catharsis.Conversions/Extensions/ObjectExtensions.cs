@@ -9,5 +9,6 @@ public static class ObjectExtensions
   ///   <para></para>
   /// </summary>
   /// <returns></returns>
+  /// <exception cref="ArgumentNullException"></exception>
   public static IConversion<T> Convert<T>(this T source) => source is not null ? new Conversion<T>(source) : throw new ArgumentNullException(nameof(source));
 }

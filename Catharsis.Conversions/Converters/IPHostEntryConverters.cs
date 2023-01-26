@@ -13,5 +13,6 @@ public static class IPHostEntryConverters
   /// </summary>
   /// <param name="conversion"></param>
   /// <returns></returns>
+  /// <exception cref="ArgumentNullException"></exception>
   public static IEnumerable<IPAddress> Enumerable(this IConversion<IPHostEntry> conversion) => conversion.To(host => host.ToEnumerable());
 }

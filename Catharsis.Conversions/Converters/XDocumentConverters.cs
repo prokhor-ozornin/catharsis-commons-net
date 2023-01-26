@@ -13,6 +13,8 @@ public static class XDocumentConverters
   /// </summary>
   /// <param name="conversion"></param>
   /// <returns></returns>
+  /// <exception cref="ArgumentNullException"></exception>
+  /// <see cref="BytesAsync(IConversion{XDocument}, CancellationToken)"/>
   public static byte[] Bytes(this IConversion<XDocument> conversion) => conversion.To(document => document.ToBytes());
 
   /// <summary>
@@ -21,6 +23,8 @@ public static class XDocumentConverters
   /// <param name="conversion"></param>
   /// <param name="cancellation"></param>
   /// <returns></returns>
+  /// <exception cref="ArgumentNullException"></exception>
+  /// <seealso cref="Bytes(IConversion{XDocument})"/>
   public static Task<byte[]> BytesAsync(this IConversion<XDocument> conversion, CancellationToken cancellation = default) => conversion.To(document => document.ToBytesAsync(cancellation));
 
   /// <summary>
@@ -28,5 +32,6 @@ public static class XDocumentConverters
   /// </summary>
   /// <param name="conversion"></param>
   /// <returns></returns>
+  /// <exception cref="ArgumentNullException"></exception>
   public static string Text(this IConversion<XDocument> conversion) => conversion.To(document => document.ToText());
 }

@@ -25,6 +25,7 @@ public static class IConverterExtensions
   /// <param name="instance">Target object for conversion.</param>
   /// <param name="encoding"></param>
   /// <returns><paramref name="instance"/> instance that was converted to <see cref="string"/>, or a <c>null</c> reference.</returns>
+  /// <exception cref="ArgumentNullException"></exception>
   public static string String(this IConverter converter, object instance, Encoding encoding = null)
   {
     if (converter is null) throw new ArgumentNullException(nameof(converter));
@@ -54,6 +55,7 @@ public static class IConverterExtensions
   /// <param name="instance"></param>
   /// <param name="encoding"></param>
   /// <returns></returns>
+  /// <exception cref="ArgumentNullException"></exception>
   public static byte[] Binary(this IConverter converter, object instance, Encoding encoding = null)
   {
     if (converter is null) throw new ArgumentNullException(nameof(converter));
@@ -85,6 +87,7 @@ public static class IConverterExtensions
   /// <param name="converter"></param>
   /// <param name="instance"></param>
   /// <returns></returns>
+  /// <exception cref="ArgumentNullException"></exception>
   public static T[] Array<T>(this IConverter converter, object instance)
   {
     if (converter is null)
@@ -107,6 +110,7 @@ public static class IConverterExtensions
   /// <param name="instance"></param>
   /// <param name="format"></param>
   /// <returns></returns>
+  /// <exception cref="ArgumentNullException"></exception>
   public static sbyte? Sbyte(this IConverter converter, object instance, IFormatProvider format = null)
   {
     if (converter is null)
@@ -137,6 +141,7 @@ public static class IConverterExtensions
   /// <param name="instance">Target object for conversion.</param>
   /// <param name="format"></param>
   /// <returns><paramref name="instance"/> instance that was converted to <see cref="byte"/>, or a <c>null</c> reference.</returns>
+  /// <exception cref="ArgumentNullException"></exception>
   public static byte? Byte(this IConverter converter, object instance, IFormatProvider format = null)
   {
     if (converter is null)
@@ -167,6 +172,7 @@ public static class IConverterExtensions
   /// <param name="instance">Target object for conversion.</param>
   /// <param name="format"></param>
   /// <returns><paramref name="instance"/> instance that was converted to <see cref="short"/>, or a <c>null</c> reference.</returns>
+  /// <exception cref="ArgumentNullException"></exception>
   public static short? Short(this IConverter converter, object instance, IFormatProvider format = null)
   {
     if (converter is null)
@@ -197,6 +203,7 @@ public static class IConverterExtensions
   /// <param name="instance"></param>
   /// <param name="format"></param>
   /// <returns></returns>
+  /// <exception cref="ArgumentNullException"></exception>
   public static ushort? Ushort(this IConverter converter, object instance, IFormatProvider format = null)
   {
     if (converter is null)
@@ -227,6 +234,7 @@ public static class IConverterExtensions
   /// <param name="instance">Target object for conversion.</param>
   /// <param name="format"></param>
   /// <returns><paramref name="instance"/> instance that was converted to <see cref="int"/>, or a <c>null</c> reference.</returns>
+  /// <exception cref="ArgumentNullException"></exception>
   public static int? Int(this IConverter converter, object instance, IFormatProvider format = null)
   {
     if (converter is null)
@@ -257,6 +265,7 @@ public static class IConverterExtensions
   /// <param name="instance"></param>
   /// <param name="format"></param>
   /// <returns></returns>
+  /// <exception cref="ArgumentNullException"></exception>
   public static uint? Uint(this IConverter converter, object instance, IFormatProvider format = null)
   {
     if (converter is null)
@@ -287,6 +296,7 @@ public static class IConverterExtensions
   /// <param name="instance">Target object for conversion.</param>
   /// <param name="format"></param>
   /// <returns><paramref name="instance"/> instance that was converted to <see cref="long"/>, or a <c>null</c> reference.</returns>
+  /// <exception cref="ArgumentNullException"></exception>
   public static long? Long(this IConverter converter, object instance, IFormatProvider format = null)
   {
     if (converter is null)
@@ -317,6 +327,7 @@ public static class IConverterExtensions
   /// <param name="instance"></param>
   /// <param name="format"></param>
   /// <returns></returns>
+  /// <exception cref="ArgumentNullException"></exception>
   public static ulong? Ulong(this IConverter converter, object instance, IFormatProvider format = null)
   {
     if (converter is null)
@@ -347,6 +358,7 @@ public static class IConverterExtensions
   /// <param name="instance">Target object for conversion.</param>
   /// <param name="format"></param>
   /// <returns><paramref name="instance"/> instance that was converted to <see cref="Float"/>, or a <c>null</c> reference.</returns>
+  /// <exception cref="ArgumentNullException"></exception>
   public static float? Float(this IConverter converter, object instance, IFormatProvider format = null)
   {
     if (converter is null)
@@ -377,6 +389,7 @@ public static class IConverterExtensions
   /// <param name="instance">Target object for conversion.</param>
   /// <param name="format"></param>
   /// <returns><paramref name="instance"/> instance that was converted to <see cref="double"/>, or a <c>null</c> reference.</returns>
+  /// <exception cref="ArgumentNullException"></exception>
   public static double? Double(this IConverter converter, object instance, IFormatProvider format = null)
   {
     if (converter is null)
@@ -407,6 +420,7 @@ public static class IConverterExtensions
   /// <param name="instance">Target object for conversion.</param>
   /// <param name="format"></param>
   /// <returns><paramref name="instance"/> instance that was converted to <see cref="decimal"/>, or a <c>null</c> reference.</returns>
+  /// <exception cref="ArgumentNullException"></exception>
   public static decimal? Decimal(this IConverter converter, object instance, IFormatProvider format = null)
   {
     if (converter is null)
@@ -437,6 +451,7 @@ public static class IConverterExtensions
   /// <param name="converter"></param>
   /// <param name="instance"></param>
   /// <returns></returns>
+  /// <exception cref="ArgumentNullException"></exception>
   public static T? Enum<T>(this IConverter converter, object instance) where T : struct
   {
     if (converter is null)
@@ -456,6 +471,7 @@ public static class IConverterExtensions
   /// <param name="instance">Target object for conversion.</param>
   /// <param name="format"></param>
   /// <returns><paramref name="instance"/> instance that was converted to <see cref="DateTime"/>, or a <c>null</c> reference.</returns>
+  /// <exception cref="ArgumentNullException"></exception>
   public static DateTime? DateTime(this IConverter converter, object instance, IFormatProvider format = null)
   {
     if (converter is null)
@@ -466,10 +482,12 @@ public static class IConverterExtensions
       null => null,
       DateTime dateTime => dateTime,
       DateTimeOffset dateTimeOffset => dateTimeOffset.ToDateTime(),
-#if NET7_0
+      
+      #if NET7_0_OR_GREATER
       DateOnly dateOnly => dateOnly.ToDateTime(),
       TimeOnly timeOnly => timeOnly.ToDateTime(),
-#endif
+      #endif
+      
       _ => instance.ToFormattedString(format).ToDateTime(out var result, format) ? result : null
     };
   }
@@ -481,6 +499,7 @@ public static class IConverterExtensions
   /// <param name="instance"></param>
   /// <param name="format"></param>
   /// <returns></returns>
+  /// <exception cref="ArgumentNullException"></exception>
   public static DateTimeOffset? DateTimeOffset(this IConverter converter, object instance, IFormatProvider format = null)
   {
     if (converter is null)
@@ -491,59 +510,15 @@ public static class IConverterExtensions
       null => null,
       DateTime dateTime => dateTime.ToDateTimeOffset(),
       DateTimeOffset dateTimeOffset => dateTimeOffset,
-#if NET7_0
+
+      #if NET7_0_OR_GREATER
       DateOnly dateOnly => dateOnly.ToDateTimeOffset(),
       TimeOnly timeOnly => timeOnly.ToDateTimeOffset(),
-#endif
+      #endif
+      
       _ => instance.ToFormattedString(format).ToDateTimeOffset(out var result, format) ? result : null
     };
   }
-
-#if NET7_0
-  /// <summary>
-  ///   <para></para>
-  /// </summary>
-  /// <param name="converter"></param>
-  /// <param name="instance"></param>
-  /// <param name="format"></param>
-  /// <returns></returns>
-  public static DateOnly? DateOnly(this IConverter converter, object instance, IFormatProvider format = null)
-  {
-    if (converter is null)
-      throw new ArgumentNullException(nameof(converter));
-
-    return instance switch
-    {
-      null => null,
-      DateTime dateTime => dateTime.ToDateOnly(),
-      DateTimeOffset dateTimeOffset => dateTimeOffset.ToDateOnly(),
-      DateOnly dateOnly => dateOnly,
-      _ => instance.ToFormattedString(format).ToDateOnly(out var result, format) ? result : null
-    };
-  }
-
-  /// <summary>
-  ///   <para></para>
-  /// </summary>
-  /// <param name="converter"></param>
-  /// <param name="instance"></param>
-  /// <param name="format"></param>
-  /// <returns></returns>
-  public static TimeOnly? TimeOnly(this IConverter converter, object instance, IFormatProvider format = null)
-  {
-    if (converter is null)
-      throw new ArgumentNullException(nameof(converter));
-
-    return instance switch
-    {
-      null => null,
-      DateTime dateTime => dateTime.ToTimeOnly(),
-      DateTimeOffset dateTimeOffset => dateTimeOffset.ToTimeOnly(),
-      TimeOnly timeOnly => timeOnly,
-      _ => instance.ToFormattedString(format).ToTimeOnly(out var result, format) ? result : null
-    };
-  }
-#endif
 
   /// <summary>
   ///   <para>Converts target object to the <see cref="Guid"/> value. Returns <c>null</c> if object is a <c>null</c> reference or conversion is not possible.</para>
@@ -551,6 +526,7 @@ public static class IConverterExtensions
   /// <param name="converter">Extended converter instance.</param>
   /// <param name="instance">Target object for conversion.</param>
   /// <returns><paramref name="instance"/> instance that was converted to <see cref="Guid"/>, or a <c>null</c> reference.</returns>
+  /// <exception cref="ArgumentNullException"></exception>
   public static Guid? Guid(this IConverter converter, object instance)
   {
     if (converter is null)
@@ -572,6 +548,7 @@ public static class IConverterExtensions
   /// <param name="instance">Target object for conversion.</param>
   /// <param name="options"></param>
   /// <returns><paramref name="instance"/> instance that was converted to <see cref="Regex"/>, or a <c>null</c> reference.</returns>
+  /// <exception cref="ArgumentNullException"></exception>
   public static Regex Regex(this IConverter converter, object instance, RegexOptions options = RegexOptions.None)
   {
     if (converter is null)
@@ -591,6 +568,7 @@ public static class IConverterExtensions
   /// <param name="converter">Extended converter instance.</param>
   /// <param name="instance">Target object for conversion.</param>
   /// <returns><paramref name="instance"/> instance that was converted to <see cref="Uri"/>, or a <c>null</c> reference.</returns>
+  /// <exception cref="ArgumentNullException"></exception>
   public static Uri Uri(this IConverter converter, object instance)
   {
     if (converter is null)
@@ -610,6 +588,7 @@ public static class IConverterExtensions
   /// <param name="converter"></param>
   /// <param name="instance"></param>
   /// <returns></returns>
+  /// <exception cref="ArgumentNullException"></exception>
   public static StringBuilder StringBuilder(this IConverter converter, object instance)
   {
     if (converter is null)
@@ -629,6 +608,7 @@ public static class IConverterExtensions
   /// <param name="converter"></param>
   /// <param name="instance"></param>
   /// <returns></returns>
+  /// <exception cref="ArgumentNullException"></exception>
   public static IPAddress IpAddress(this IConverter converter, object instance)
   {
     if (converter is null)
@@ -650,6 +630,7 @@ public static class IConverterExtensions
   /// <param name="converter"></param>
   /// <param name="instance"></param>
   /// <returns></returns>
+  /// <exception cref="ArgumentNullException"></exception>
   public static DirectoryInfo Directory(this IConverter converter, object instance)
   {
     if (converter is null)
@@ -669,6 +650,7 @@ public static class IConverterExtensions
   /// <param name="converter"></param>
   /// <param name="instance"></param>
   /// <returns></returns>
+  /// <exception cref="ArgumentNullException"></exception>
   public static FileInfo File(this IConverter converter, object instance)
   {
     if (converter is null)
@@ -688,6 +670,7 @@ public static class IConverterExtensions
   /// <param name="converter"></param>
   /// <param name="instance"></param>
   /// <returns></returns>
+  /// <exception cref="ArgumentNullException"></exception>
   public static Type Type(this IConverter converter, object instance)
   {
     if (converter is null)
@@ -718,6 +701,7 @@ public static class IConverterExtensions
   /// <param name="converter">Extended converter instance.</param>
   /// <param name="instance">Target object for conversion.</param>
   /// <returns><paramref name="instance"/> instance that was converted to <see cref="bool"/>.</returns>
+  /// <exception cref="ArgumentNullException"></exception>
   public static bool Boolean(this IConverter converter, object instance)
   {
     if (converter is null)
@@ -752,4 +736,51 @@ public static class IConverterExtensions
       _ => true
     };
   }
+
+  #if NET7_0_OR_GREATER
+  /// <summary>
+  ///   <para></para>
+  /// </summary>
+  /// <param name="converter"></param>
+  /// <param name="instance"></param>
+  /// <param name="format"></param>
+  /// <returns></returns>
+  /// <exception cref="ArgumentNullException"></exception>
+  public static DateOnly? DateOnly(this IConverter converter, object instance, IFormatProvider format = null)
+  {
+    if (converter is null)
+      throw new ArgumentNullException(nameof(converter));
+
+    return instance switch
+    {
+      null => null,
+      DateTime dateTime => dateTime.ToDateOnly(),
+      DateTimeOffset dateTimeOffset => dateTimeOffset.ToDateOnly(),
+      DateOnly dateOnly => dateOnly,
+      _ => instance.ToFormattedString(format).ToDateOnly(out var result, format) ? result : null
+    };
+  }
+
+  /// <summary>
+  ///   <para></para>
+  /// </summary>
+  /// <param name="converter"></param>
+  /// <param name="instance"></param>
+  /// <param name="format"></param>
+  /// <returns></returns>
+  /// <exception cref="ArgumentNullException"></exception>
+  public static TimeOnly? TimeOnly(this IConverter converter, object instance, IFormatProvider format = null)
+  {
+    if (converter is null) throw new ArgumentNullException(nameof(converter));
+
+    return instance switch
+    {
+      null => null,
+      DateTime dateTime => dateTime.ToTimeOnly(),
+      DateTimeOffset dateTimeOffset => dateTimeOffset.ToTimeOnly(),
+      TimeOnly timeOnly => timeOnly,
+      _ => instance.ToFormattedString(format).ToTimeOnly(out var result, format) ? result : null
+    };
+  }
+  #endif
 }

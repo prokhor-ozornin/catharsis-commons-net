@@ -13,6 +13,7 @@ public static class XmlDocumentConverters
   /// </summary>
   /// <param name="conversion"></param>
   /// <returns></returns>
+  /// <exception cref="ArgumentNullException"></exception>
   public static byte[] Bytes(this IConversion<XmlDocument> conversion) => conversion.To(document => document.ToBytes());
 
   /// <summary>
@@ -20,5 +21,6 @@ public static class XmlDocumentConverters
   /// </summary>
   /// <param name="conversion"></param>
   /// <returns></returns>
+  /// <exception cref="ArgumentNullException"></exception>
   public static string Text(this IConversion<XmlDocument> conversion) => conversion.To(document => document.ToText());
 }

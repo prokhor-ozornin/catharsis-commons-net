@@ -12,5 +12,6 @@ public static class RangeConverters
   /// </summary>
   /// <param name="conversion"></param>
   /// <returns></returns>
+  /// <exception cref="ArgumentNullException"></exception>
   public static IEnumerable<int> Enumerable(this IConversion<Range> conversion) => conversion.To(range => range.ToEnumerable());
 }

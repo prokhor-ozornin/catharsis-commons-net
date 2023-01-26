@@ -29,6 +29,8 @@ public class Conversion<TSource> : IConversion<TSource>
   /// <param name="name"></param>
   /// <param name="value"></param>
   /// <returns></returns>
+  /// <exception cref="ArgumentNullException"></exception>
+  /// <exception cref="ArgumentException"></exception>
   public IConversion<TSource> Parameter(string name, object value)
   {
     if (name is null) throw new ArgumentNullException(nameof(name));

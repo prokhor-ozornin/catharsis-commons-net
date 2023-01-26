@@ -12,6 +12,8 @@ public static class IConversionExtensions
   /// <typeparam name="TSource"></typeparam>
   /// <returns></returns>
   /// <exception cref="ArgumentNullException"></exception>
+  /// <exception cref="ArgumentNullException"></exception>
+  /// <see cref="To{TSource, TResult}(IConversion{TSource}, Func{TSource, TResult})"/>
   public static IConversion<TSource> To<TSource>(this IConversion<TSource> conversion) => conversion ?? throw new ArgumentNullException(nameof(conversion));
 
   /// <summary>
@@ -23,6 +25,7 @@ public static class IConversionExtensions
   /// <param name="converter"></param>
   /// <returns></returns>
   /// <exception cref="ArgumentNullException"></exception>
+  /// <seealso cref="To{TSource}(IConversion{TSource})"/>
   public static TResult To<TSource, TResult>(this IConversion<TSource> conversion, Func<TSource, TResult> converter)
   {
     if (conversion is null) throw new ArgumentNullException(nameof(conversion));

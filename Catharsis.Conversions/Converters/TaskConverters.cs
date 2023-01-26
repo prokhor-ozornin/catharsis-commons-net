@@ -12,6 +12,8 @@ public static class TaskConverters
   /// </summary>
   /// <param name="conversion"></param>
   /// <returns></returns>
+  /// <exception cref="ArgumentNullException"></exception>
+  /// <seealso cref="ValueTask{T}(IConversion{Task{T}})"/>
   public static ValueTask ValueTask(this IConversion<Task> conversion) => conversion.To(task => task.ToValueTask());
 
   /// <summary>
@@ -20,5 +22,7 @@ public static class TaskConverters
   /// <typeparam name="T"></typeparam>
   /// <param name="conversion"></param>
   /// <returns></returns>
+  /// <exception cref="ArgumentNullException"></exception>
+  /// <seealso cref="ValueTask(IConversion{Task})"/>
   public static ValueTask<T> ValueTask<T>(this IConversion<Task<T>> conversion) => conversion.To(task => task.ToValueTask());
 }
