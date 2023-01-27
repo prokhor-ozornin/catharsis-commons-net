@@ -5,6 +5,7 @@ namespace Catharsis.Conversions;
 /// <summary>
 ///   <para></para>
 /// </summary>
+/// <seealso cref="DateTimeOffset"/>
 public static class DateTimeOffsetConverters
 {
   /// <summary>

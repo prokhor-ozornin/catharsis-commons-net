@@ -15,7 +15,7 @@ namespace Catharsis.Conversions;
 /// <summary>
 ///   <para>Extension methods for types converter.</para>
 /// </summary>
-/// <seealso cref="Convert"/>
+/// <seealso cref="IConverter"/>
 public static class IConverterExtensions
 {
   /// <summary>

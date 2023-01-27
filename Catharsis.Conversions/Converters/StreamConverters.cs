@@ -8,6 +8,7 @@ namespace Catharsis.Conversions;
 /// <summary>
 ///   <para></para>
 /// </summary>
+/// <seealso cref="Stream"/>
 public static class StreamConverters
 {
   /// <summary>

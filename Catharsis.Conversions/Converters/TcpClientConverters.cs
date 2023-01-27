@@ -6,6 +6,7 @@ namespace Catharsis.Conversions;
 /// <summary>
 ///   <para></para>
 /// </summary>
+/// <seealso cref="TcpClient"/>
 public static class TcpClientConverters
 {
   /// <summary>

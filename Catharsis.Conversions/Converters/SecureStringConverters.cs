@@ -7,6 +7,7 @@ namespace Catharsis.Conversions;
 /// <summary>
 ///   <para></para>
 /// </summary>
+/// <seealso cref="SecureString"/>
 public static class SecureStringConverters
 {
   /// <summary>

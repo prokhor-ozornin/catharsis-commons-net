@@ -8,6 +8,7 @@ namespace Catharsis.Conversions;
 /// <summary>
 ///   <para></para>
 /// </summary>
+/// <seealso cref="Uri"/>
 public static class UriConverters
 {
   /// <summary>
@@ -62,7 +63,7 @@ public static class UriConverters
   /// <param name="headers"></param>
   /// <returns></returns>
   /// <exception cref="ArgumentNullException"></exception>
-  /// <see cref="XmlDocument(IConversion{Uri}, TimeSpan?, (string Name, object Value)[])"/>
+  /// <seealso cref="XmlDocument(IConversion{Uri}, TimeSpan?, (string Name, object Value)[])"/>
   public static Task<XmlDocument> XmlDocumentAsync(this IConversion<Uri> conversion, TimeSpan? timeout = null, params (string Name, object Value)[] headers) => conversion.To(uri => uri.ToXmlDocumentAsync(timeout, headers));
 
   /// <summary>

@@ -7,6 +7,7 @@ namespace Catharsis.Conversions;
 /// <summary>
 ///   <para></para>
 /// </summary>
+/// <seealso cref="XmlReader"/>
 public static class XmlReaderConverters
 {
   /// <summary>

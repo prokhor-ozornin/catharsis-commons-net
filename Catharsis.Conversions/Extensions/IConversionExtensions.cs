@@ -3,6 +3,7 @@
 /// <summary>
 ///   <para></para>
 /// </summary>
+/// <seealso cref="IConversion{TSource}"/>
 public static class IConversionExtensions
 {
   /// <summary>
@@ -13,7 +14,7 @@ public static class IConversionExtensions
   /// <returns></returns>
   /// <exception cref="ArgumentNullException"></exception>
   /// <exception cref="ArgumentNullException"></exception>
-  /// <see cref="To{TSource, TResult}(IConversion{TSource}, Func{TSource, TResult})"/>
+  /// <seealso cref="To{TSource, TResult}(IConversion{TSource}, Func{TSource, TResult})"/>
   public static IConversion<TSource> To<TSource>(this IConversion<TSource> conversion) => conversion ?? throw new ArgumentNullException(nameof(conversion));
 
   /// <summary>

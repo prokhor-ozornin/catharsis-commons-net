@@ -9,6 +9,7 @@ using System.Collections.Immutable;
 /// <summary>
 ///   <para></para>
 /// </summary>
+/// <seealso cref="IEnumerable{T}"/>
 public static class EnumerableConverters
 {
   /// <summary>
@@ -190,7 +191,7 @@ public static class EnumerableConverters
   /// <param name="cancellation"></param>
   /// <returns></returns>
   /// <exception cref="ArgumentNullException"></exception>
-  /// <see cref="MemoryStreamAsync(IConversion{IEnumerable{byte}}, CancellationToken)"/>
+  /// <seealso cref="MemoryStreamAsync(IConversion{IEnumerable{byte}}, CancellationToken)"/>
   public static Task<MemoryStream> MemoryStreamAsync(this IConversion<IEnumerable<byte[]>> conversion, CancellationToken cancellation = default) => conversion.To(sequence => sequence.ToMemoryStreamAsync(cancellation));
 
   #if NET7_0_OR_GREATER

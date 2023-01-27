@@ -5,6 +5,7 @@ namespace Catharsis.Conversions;
 /// <summary>
 ///   <para></para>
 /// </summary>
+/// <seealso cref="DirectoryInfo"/>
 public static class DirectoryInfoConverters
 {
   /// <summary>

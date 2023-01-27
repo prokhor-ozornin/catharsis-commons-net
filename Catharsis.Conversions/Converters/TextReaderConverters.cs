@@ -8,6 +8,7 @@ namespace Catharsis.Conversions;
 /// <summary>
 ///   <para></para>
 /// </summary>
+/// <seealso cref="TextReader"/>
 public static class TextReaderConverters
 {
   /// <summary>
@@ -72,7 +73,7 @@ public static class TextReaderConverters
   /// <param name="cancellation"></param>
   /// <returns></returns>
   /// <exception cref="ArgumentNullException"></exception>
-  /// <see cref="XDocument(IConversion{TextReader})"/>
+  /// <seealso cref="XDocument(IConversion{TextReader})"/>
   public static Task<XDocument> XDocumentAsync(this IConversion<TextReader> conversion, CancellationToken cancellation = default) => conversion.To(reader => reader.ToXDocumentAsync(cancellation));
 
   /// <summary>

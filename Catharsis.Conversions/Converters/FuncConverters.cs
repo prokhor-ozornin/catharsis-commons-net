@@ -5,6 +5,7 @@ namespace Catharsis.Conversions;
 /// <summary>
 ///   <para></para>
 /// </summary>
+/// <seealso cref="Func{T, TResult}"/>
 public static class FuncConverters
 {
   /// <summary>

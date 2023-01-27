@@ -6,6 +6,7 @@ namespace Catharsis.Conversions;
 /// <summary>
 ///   <para></para>
 /// </summary>
+/// <seealso cref="IPHostEntry"/>
 public static class IPHostEntryConverters
 {
   /// <summary>

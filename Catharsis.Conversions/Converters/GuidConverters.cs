@@ -3,9 +3,9 @@
 /// <summary>
 ///   <para></para>
 /// </summary>
+/// <seealso cref="Guid"/>
 public static class GuidConverters
 {
-
   /// <summary>
   ///   <para></para>
   /// </summary>

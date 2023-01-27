@@ -5,6 +5,7 @@ namespace Catharsis.Conversions;
 /// <summary>
 ///   <para></para>
 /// </summary>
+/// <seealso cref="BinaryReader"/>
 public static class BinaryReaderConverters
 {
   /// <summary>

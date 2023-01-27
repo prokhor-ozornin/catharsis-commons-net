@@ -6,6 +6,7 @@ namespace Catharsis.Conversions;
 /// <summary>
 ///   <para></para>
 /// </summary>
+/// <seealso cref="XDocument"/>
 public static class XDocumentConverters
 {
   /// <summary>
@@ -14,7 +15,7 @@ public static class XDocumentConverters
   /// <param name="conversion"></param>
   /// <returns></returns>
   /// <exception cref="ArgumentNullException"></exception>
-  /// <see cref="BytesAsync(IConversion{XDocument}, CancellationToken)"/>
+  /// <seealso cref="BytesAsync(IConversion{XDocument}, CancellationToken)"/>
   public static byte[] Bytes(this IConversion<XDocument> conversion) => conversion.To(document => document.ToBytes());
 
   /// <summary>

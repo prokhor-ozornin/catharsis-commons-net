@@ -5,6 +5,7 @@ namespace Catharsis.Conversions;
 /// <summary>
 ///   <para></para>
 /// </summary>
+/// <seealso cref="IDictionary{TKey, TValue}"/>
 public static class DictionaryConverters
 {
   /// <summary>

@@ -11,6 +11,7 @@ namespace Catharsis.Conversions;
 /// <summary>
 ///   <para></para>
 /// </summary>
+/// <seealso cref="string"/>
 public static class StringConverters
 {
   /// <summary>
@@ -236,7 +237,7 @@ public static class StringConverters
   /// <param name="conversion"></param>
   /// <returns></returns>
   /// <exception cref="ArgumentNullException"></exception>
-  /// <see cref="XDocumentAsync(IConversion{string}, CancellationToken)"/>
+  /// <seealso cref="XDocumentAsync(IConversion{string}, CancellationToken)"/>
   public static XDocument XDocument(this IConversion<string> conversion) => conversion.To(text => text.ToXDocument());
 
   /// <summary>
