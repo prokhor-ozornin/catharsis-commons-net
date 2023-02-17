@@ -4,7 +4,7 @@ using Catharsis.Extensions;
 namespace Catharsis.Conversions;
 
 /// <summary>
-///   <para>Set of converters for <see cref="IPAddress"/> type.</para>
+///   <para>Set of converters to/from <see cref="IPAddress"/> type.</para>
 /// </summary>
 /// <seealso cref="IPAddress"/>
 public static class IPAddressConverters
