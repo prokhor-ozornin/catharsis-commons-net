@@ -3,9 +3,10 @@
 namespace Catharsis.Conversions;
 
 /// <summary>
-///   <para></para>
+///   <para>Set of converters for <see cref="Task"/> types.</para>
 /// </summary>
 /// <seealso cref="Task"/>
+/// <seealso cref="Task{TResult}"/>
 public static class TaskConverters
 {
   /// <summary>

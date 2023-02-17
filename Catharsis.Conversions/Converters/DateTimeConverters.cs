@@ -3,7 +3,7 @@
 namespace Catharsis.Conversions;
 
 /// <summary>
-///   <para></para>
+///   <para>Set of converters for <see cref="DateTime"/> type.</para>
 /// </summary>
 /// <seealso cref="DateTime"/>
 public static class DateTimeConverters

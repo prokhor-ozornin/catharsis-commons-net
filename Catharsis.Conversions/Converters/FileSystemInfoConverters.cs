@@ -3,7 +3,7 @@
 namespace Catharsis.Conversions;
 
 /// <summary>
-///   <para></para>
+///   <para>Set of converters for <see cref="FileSystemInfo"/> type.</para>
 /// </summary>
 /// <seealso cref="FileSystemInfo"/>
 public static class FileSystemInfoConverters

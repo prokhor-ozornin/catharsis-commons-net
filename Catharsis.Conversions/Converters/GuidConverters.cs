@@ -1,7 +1,7 @@
 ﻿namespace Catharsis.Conversions;
 
 /// <summary>
-///   <para></para>
+///   <para>Set of converters for <see cref="Guid"/> type.</para>
 /// </summary>
 /// <seealso cref="Guid"/>
 public static class GuidConverters

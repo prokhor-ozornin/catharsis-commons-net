@@ -3,7 +3,7 @@
 namespace Catharsis.Conversions;
 
 /// <summary>
-///   <para></para>
+///   <para>Set of converters for <see cref="DirectoryInfo"/> type.</para>
 /// </summary>
 /// <seealso cref="DirectoryInfo"/>
 public static class DirectoryInfoConverters

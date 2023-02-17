@@ -3,7 +3,7 @@
 namespace Catharsis.Conversions;
 
 /// <summary>
-///   <para></para>
+///   <para>Set of converters for <see cref="DateTimeOffset"/> type.</para>
 /// </summary>
 /// <seealso cref="DateTimeOffset"/>
 public static class DateTimeOffsetConverters

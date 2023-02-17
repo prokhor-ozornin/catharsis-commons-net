@@ -7,10 +7,10 @@ using System.Collections.Immutable;
 namespace Catharsis.Conversions;
 
 /// <summary>
-///   <para></para>
+///   <para>Set of converters for <see cref="IAsyncEnumerable{T}"/> type.</para>
 /// </summary>
 /// <seealso cref="IAsyncEnumerable{T}"/>
-public static class AsyncEnumerableConverters
+public static class IAsyncEnumerableConverters
 {
   /// <summary>
   ///   <para></para>

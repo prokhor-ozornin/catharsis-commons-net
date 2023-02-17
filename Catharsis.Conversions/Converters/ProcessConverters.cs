@@ -4,7 +4,7 @@ using Catharsis.Extensions;
 namespace Catharsis.Conversions;
 
 /// <summary>
-///   <para></para>
+///   <para>Set of converters for <see cref="Process"/> type.</para>
 /// </summary>
 /// <seealso cref="Process"/>
 public static class ProcessConverters

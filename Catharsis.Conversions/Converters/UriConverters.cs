@@ -6,7 +6,7 @@ using Catharsis.Extensions;
 namespace Catharsis.Conversions;
 
 /// <summary>
-///   <para></para>
+///   <para>Set of converters for <see cref="Uri"/> type.</para>
 /// </summary>
 /// <seealso cref="Uri"/>
 public static class UriConverters

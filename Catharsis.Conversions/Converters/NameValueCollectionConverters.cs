@@ -4,7 +4,7 @@ using Catharsis.Extensions;
 namespace Catharsis.Conversions;
 
 /// <summary>
-///   <para></para>
+///   <para>Set of converters for <see cref="NameValueCollection"/> type.</para>
 /// </summary>
 /// <seealso cref="NameValueCollection"/>
 public static class NameValueCollectionConverters

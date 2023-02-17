@@ -5,7 +5,7 @@ using Catharsis.Extensions;
 namespace Catharsis.Conversions;
 
 /// <summary>
-///   <para></para>
+///   <para>Set of converters for <see cref="SecureString"/> type.</para>
 /// </summary>
 /// <seealso cref="SecureString"/>
 public static class SecureStringConverters

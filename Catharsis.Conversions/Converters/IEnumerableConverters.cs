@@ -7,10 +7,10 @@ using System.Collections.Immutable;
 #endif
 
 /// <summary>
-///   <para></para>
+///   <para>Set of converters for <see cref="IEnumerable{T}"/> types.</para>
 /// </summary>
 /// <seealso cref="IEnumerable{T}"/>
-public static class EnumerableConverters
+public static class IEnumerableConverters
 {
   /// <summary>
   ///   <para></para>

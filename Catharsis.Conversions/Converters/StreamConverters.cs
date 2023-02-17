@@ -6,7 +6,7 @@ using Catharsis.Extensions;
 namespace Catharsis.Conversions;
 
 /// <summary>
-///   <para></para>
+///   <para>Set of converters for <see cref="Stream"/> type.</para>
 /// </summary>
 /// <seealso cref="Stream"/>
 public static class StreamConverters

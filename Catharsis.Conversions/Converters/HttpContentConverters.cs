@@ -3,7 +3,7 @@
 namespace Catharsis.Conversions;
 
 /// <summary>
-///   <para></para>
+///   <para>Set of converters for <see cref="HttpContent"/> type.</para>
 /// </summary>
 /// <seealso cref="HttpContent"/>
 public static class HttpContentConverters

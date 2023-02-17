@@ -3,10 +3,10 @@
 namespace Catharsis.Conversions;
 
 /// <summary>
-///   <para></para>
+///   <para>Set of converters for <see cref="IReadOnlyDictionary{TKey, TValue}"/> types.</para>
 /// </summary>
 /// <seealso cref="IDictionary{TKey, TValue}"/>
-public static class DictionaryConverters
+public static class IReadOnlyDictionaryConverters
 {
   /// <summary>
   ///   <para></para>

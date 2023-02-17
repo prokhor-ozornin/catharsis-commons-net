@@ -1,10 +1,11 @@
-﻿using System.Text.RegularExpressions;
+﻿#if NET7_0_OR_GREATER
+using System.Text.RegularExpressions;
 using Catharsis.Extensions;
 
 namespace Catharsis.Conversions;
 
 /// <summary>
-///   <para></para>
+///   <para>Set of converters for <see cref="Match"/> type.</para>
 /// </summary>
 /// <seealso cref="Match"/>
 public static class MatchConverters
@@ -17,3 +18,4 @@ public static class MatchConverters
   /// <exception cref="ArgumentNullException"></exception>
   public static IEnumerable<Capture> Enumerable(this IConversion<Match> conversion) => conversion.To(match => match.ToEnumerable());
 }
+#endif

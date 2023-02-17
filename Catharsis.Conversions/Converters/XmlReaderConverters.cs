@@ -5,7 +5,7 @@ using Catharsis.Extensions;
 namespace Catharsis.Conversions;
 
 /// <summary>
-///   <para></para>
+///   <para>Set of converters for <see cref="XmlReader"/> type.</para>
 /// </summary>
 /// <seealso cref="XmlReader"/>
 public static class XmlReaderConverters

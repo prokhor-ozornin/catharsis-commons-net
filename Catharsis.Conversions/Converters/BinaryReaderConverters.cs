@@ -3,7 +3,7 @@
 namespace Catharsis.Conversions;
 
 /// <summary>
-///   <para></para>
+///   <para>Set of converters for <see cref="BinaryReader"/> type.</para>
 /// </summary>
 /// <seealso cref="BinaryReader"/>
 public static class BinaryReaderConverters

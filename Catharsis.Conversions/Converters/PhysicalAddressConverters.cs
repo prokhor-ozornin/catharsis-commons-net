@@ -4,7 +4,7 @@ using Catharsis.Extensions;
 namespace Catharsis.Conversions;
 
 /// <summary>
-///   <para></para>
+///   <para>Set of converters for <see cref="PhysicalAddress"/> type.</para>
 /// </summary>
 /// <seealso cref="PhysicalAddress"/>
 public static class PhysicalAddressConverters

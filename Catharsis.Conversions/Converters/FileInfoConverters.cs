@@ -6,7 +6,7 @@ using Catharsis.Extensions;
 namespace Catharsis.Conversions;
 
 /// <summary>
-///   <para></para>
+///   <para>Set of converters for <see cref="FileInfo"/> type.</para>
 /// </summary>
 /// <seealso cref="FileInfo"/>
 public static class FileInfoConverters

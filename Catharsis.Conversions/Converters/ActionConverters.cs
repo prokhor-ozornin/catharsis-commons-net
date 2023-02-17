@@ -3,9 +3,10 @@
 namespace Catharsis.Conversions;
 
 /// <summary>
-///   <para></para>
+///   <para>Set of converters for <see cref="Action"/> types.</para>
 /// </summary>
 /// <seealso cref="Action"/>
+/// <seealso cref="Action{T}"/>
 public static class ActionConverters
 {
   /// <summary>

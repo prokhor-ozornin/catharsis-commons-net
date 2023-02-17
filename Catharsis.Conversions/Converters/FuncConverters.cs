@@ -3,8 +3,9 @@
 namespace Catharsis.Conversions;
 
 /// <summary>
-///   <para></para>
+///   <para>Set of converters for <see cref="Func{T}"/> types.</para>
 /// </summary>
+/// <seealso cref="Func{TResult}"/>
 /// <seealso cref="Func{T, TResult}"/>
 public static class FuncConverters
 {

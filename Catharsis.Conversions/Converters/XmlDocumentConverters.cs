@@ -4,7 +4,7 @@ using Catharsis.Extensions;
 namespace Catharsis.Conversions;
 
 /// <summary>
-///   <para></para>
+///   <para>Set of converters for <see cref="XmlDocument"/> type.</para>
 /// </summary>
 /// <seealso cref="XmlDocument"/>
 public static class XmlDocumentConverters

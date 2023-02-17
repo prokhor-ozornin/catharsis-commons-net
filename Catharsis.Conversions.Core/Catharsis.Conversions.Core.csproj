@@ -16,21 +16,22 @@
     <Compile Include="..\Catharsis.Conversions\Converter.cs" Link="Converter.cs" />
     <Compile Include="..\Catharsis.Conversions\Converters\ActionConverters.cs" Link="Converters\ActionConverters.cs" />
     <Compile Include="..\Catharsis.Conversions\Converters\ArrayConverters.cs" Link="Converters\ArrayConverters.cs" />
-    <Compile Include="..\Catharsis.Conversions\Converters\AsyncEnumerableConverters.cs" Link="Converters\AsyncEnumerableConverters.cs" />
     <Compile Include="..\Catharsis.Conversions\Converters\BinaryReaderConverters.cs" Link="Converters\BinaryReaderConverters.cs" />
     <Compile Include="..\Catharsis.Conversions\Converters\DateOnlyConverters.cs" Link="Converters\DateOnlyConverters.cs" />
     <Compile Include="..\Catharsis.Conversions\Converters\DateTimeConverters.cs" Link="Converters\DateTimeConverters.cs" />
     <Compile Include="..\Catharsis.Conversions\Converters\DateTimeOffsetConverters.cs" Link="Converters\DateTimeOffsetConverters.cs" />
-    <Compile Include="..\Catharsis.Conversions\Converters\DictionaryConverters.cs" Link="Converters\DictionaryConverters.cs" />
     <Compile Include="..\Catharsis.Conversions\Converters\DirectoryInfoConverters.cs" Link="Converters\DirectoryInfoConverters.cs" />
-    <Compile Include="..\Catharsis.Conversions\Converters\EnumerableConverters.cs" Link="Converters\EnumerableConverters.cs" />
     <Compile Include="..\Catharsis.Conversions\Converters\FileInfoConverters.cs" Link="Converters\FileInfoConverters.cs" />
     <Compile Include="..\Catharsis.Conversions\Converters\FileSystemInfoConverters.cs" Link="Converters\FileSystemInfoConverters.cs" />
     <Compile Include="..\Catharsis.Conversions\Converters\FuncConverters.cs" Link="Converters\FuncConverters.cs" />
     <Compile Include="..\Catharsis.Conversions\Converters\GuidConverters.cs" Link="Converters\GuidConverters.cs" />
     <Compile Include="..\Catharsis.Conversions\Converters\HttpContentConverters.cs" Link="Converters\HttpContentConverters.cs" />
+    <Compile Include="..\Catharsis.Conversions\Converters\IAsyncEnumerableConverters.cs" Link="Converters\IAsyncEnumerableConverters.cs" />
+    <Compile Include="..\Catharsis.Conversions\Converters\IDictionaryConverters.cs" Link="Converters\IDictionaryConverters.cs" />
+    <Compile Include="..\Catharsis.Conversions\Converters\IEnumerableConverters.cs" Link="Converters\IEnumerableConverters.cs" />
     <Compile Include="..\Catharsis.Conversions\Converters\IPAddressConverters.cs" Link="Converters\IPAddressConverters.cs" />
     <Compile Include="..\Catharsis.Conversions\Converters\IPHostEntryConverters.cs" Link="Converters\IPHostEntryConverters.cs" />
+    <Compile Include="..\Catharsis.Conversions\Converters\IReadOnlyDictionaryConverters.cs" Link="Converters\IReadOnlyDictionaryConverters.cs" />
     <Compile Include="..\Catharsis.Conversions\Converters\MatchConverters.cs" Link="Converters\MatchConverters.cs" />
     <Compile Include="..\Catharsis.Conversions\Converters\NameValueCollectionConverters.cs" Link="Converters\NameValueCollectionConverters.cs" />
     <Compile Include="..\Catharsis.Conversions\Converters\PhysicalAddressConverters.cs" Link="Converters\PhysicalAddressConverters.cs" />

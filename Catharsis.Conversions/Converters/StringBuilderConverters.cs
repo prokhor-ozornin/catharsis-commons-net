@@ -5,7 +5,7 @@ using Catharsis.Extensions;
 namespace Catharsis.Conversions;
 
 /// <summary>
-///   <para></para>
+///   <para>Set of converters for <see cref="StringBuilder"/> type.</para>
 /// </summary>
 /// <seealso cref="StringBuilder"/>
 public static class StringBuilderConverters

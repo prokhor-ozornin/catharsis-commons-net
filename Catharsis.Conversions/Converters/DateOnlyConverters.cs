@@ -4,7 +4,7 @@ using Catharsis.Extensions;
 namespace Catharsis.Conversions;
 
 /// <summary>
-///   <para></para>
+///   <para>Set of converters for <see cref="DateOnly"/> type.</para>
 /// </summary>
 /// <seealso cref="DateOnly"/>
 public static class DateOnlyConverters

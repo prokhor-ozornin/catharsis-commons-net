@@ -5,7 +5,7 @@ using Catharsis.Extensions;
 namespace Catharsis.Conversions;
 
 /// <summary>
-///   <para></para>
+///   <para>Set of converters for <see cref="UdpClient"/> type.</para>
 /// </summary>
 /// <seealso cref="UdpClient"/>
 public static class UdpClientConverters

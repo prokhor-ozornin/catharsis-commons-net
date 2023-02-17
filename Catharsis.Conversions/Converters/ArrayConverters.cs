@@ -4,7 +4,7 @@ using Catharsis.Extensions;
 namespace Catharsis.Conversions;
 
 /// <summary>
-///   <para></para>
+///   <para>Set of converters for arrays.</para>
 /// </summary>
 /// <seealso cref="Array"/>
 public static class ArrayConverters
