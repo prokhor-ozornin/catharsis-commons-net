@@ -10,7 +10,7 @@ namespace Catharsis.Conversions;
 public static class FuncConverters
 {
   /// <summary>
-  ///   <para></para>
+  ///   <para>Converts given <see cref="Func{T}"/> instance to the instance of <see cref="System.Threading.Tasks.Task{T}"/> type.</para>
   /// </summary>
   /// <typeparam name="T"></typeparam>
   /// <param name="conversion">Conversion to perform.</param>
@@ -24,7 +24,7 @@ public static class FuncConverters
   public static Task<T> Task<T>(this IConversion<Func<T>> conversion, TaskCreationOptions options = TaskCreationOptions.None, CancellationToken cancellation = default, string error = null) => conversion.To(function => function.ToTask(options, cancellation), error);
 
   /// <summary>
-  ///   <para></para>
+  ///   <para>Converts given <see cref="Func{object, T}"/> instance to the instance of <see cref="System.Threading.Tasks.Task{T}"/> type.</para>
   /// </summary>
   /// <typeparam name="T"></typeparam>
   /// <param name="conversion">Conversion to perform.</param>

@@ -10,7 +10,7 @@ namespace Catharsis.Conversions;
 public static class IPHostEntryConverters
 {
   /// <summary>
-  ///   <para></para>
+  ///   <para>Converts given <see cref="IPHostEntry"/> instance to the instance of <see cref="IEnumerable{IPAddress}"/> type.</para>
   /// </summary>
   /// <param name="conversion">Conversion to perform.</param>
   /// <param name="error">Error description phrase for a failed <paramref name="conversion"/>.</param>

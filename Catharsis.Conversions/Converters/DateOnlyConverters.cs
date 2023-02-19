@@ -10,7 +10,7 @@ namespace Catharsis.Conversions;
 public static class DateOnlyConverters
 {
   /// <summary>
-  ///   <para></para>
+  ///   <para>Converts given <see cref="DateOnly"/> instance to the instance of <see cref="System.DateTime"/> type.</para>
   /// </summary>
   /// <param name="conversion">Conversion to perform.</param>
   /// <param name="error">Error description phrase for a failed <paramref name="conversion"/>.</param>
@@ -20,7 +20,7 @@ public static class DateOnlyConverters
   public static DateTime DateTime(this IConversion<DateOnly> conversion, string error = null) => conversion.To(date => date.ToDateTime(), error);
 
   /// <summary>
-  ///   <para></para>
+  ///   <para>Converts given <see cref="DateOnly"/> instance to the instance of <see cref="System.DateTimeOffset"/> type.</para>
   /// </summary>
   /// <param name="conversion">Conversion to perform.</param>
   /// <param name="error">Error description phrase for a failed <paramref name="conversion"/>.</param>

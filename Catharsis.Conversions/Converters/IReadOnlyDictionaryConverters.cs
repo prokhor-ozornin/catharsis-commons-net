@@ -1,4 +1,5 @@
-﻿using Catharsis.Extensions;
+﻿using System.Net;
+using Catharsis.Extensions;
 
 namespace Catharsis.Conversions;
 
@@ -9,7 +10,7 @@ namespace Catharsis.Conversions;
 public static class IReadOnlyDictionaryConverters
 {
   /// <summary>
-  ///   <para></para>
+  ///   <para>Converts given <see cref="IReadOnlyDictionary{TKey, TValue}"/> instance to the instance of <see cref="IEnumerable{(TKey, TValue)}"/> type.</para>
   /// </summary>
   /// <typeparam name="TKey"></typeparam>
   /// <typeparam name="TValue"></typeparam>

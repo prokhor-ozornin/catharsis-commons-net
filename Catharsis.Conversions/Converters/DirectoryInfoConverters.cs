@@ -9,7 +9,7 @@ namespace Catharsis.Conversions;
 public static class DirectoryInfoConverters
 {
   /// <summary>
-  ///   <para></para>
+  ///   <para>Converts given <see cref="DirectoryInfo"/> instance to the instance of <see cref="IEnumerable{FileSystemInfo}"/> type.</para>
   /// </summary>
   /// <param name="conversion">Conversion to perform.</param>
   /// <param name="pattern"></param>

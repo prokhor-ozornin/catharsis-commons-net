@@ -10,7 +10,7 @@ namespace Catharsis.Conversions;
 public static class XDocumentConverters
 {
   /// <summary>
-  ///   <para></para>
+  ///   <para>Converts given <see cref="XDocument"/> instance to the <see cref="byte"/> array.</para>
   /// </summary>
   /// <param name="conversion">Conversion to perform.</param>
   /// <param name="error">Error description phrase for a failed <paramref name="conversion"/>.</param>
@@ -20,7 +20,7 @@ public static class XDocumentConverters
   public static byte[] Bytes(this IConversion<XDocument> conversion, string error = null) => conversion.To(document => document.ToBytes(), error);
 
   /// <summary>
-  ///   <para></para>
+  ///   <para>Converts given <see cref="XDocument"/> instance to the instance of <see cref="Task{byte[]}"/> type.</para>
   /// </summary>
   /// <param name="conversion">Conversion to perform.</param>
   /// <param name="cancellation"></param>
@@ -31,7 +31,7 @@ public static class XDocumentConverters
   public static Task<byte[]> BytesAsync(this IConversion<XDocument> conversion, CancellationToken cancellation = default, string error = null) => conversion.To(document => document.ToBytesAsync(cancellation), error);
 
   /// <summary>
-  ///   <para></para>
+  ///   <para>Converts given <see cref="XDocument"/> instance to the instance of <see cref="string"/> type.</para>
   /// </summary>
   /// <param name="conversion">Conversion to perform.</param>
   /// <param name="error">Error description phrase for a failed <paramref name="conversion"/>.</param>

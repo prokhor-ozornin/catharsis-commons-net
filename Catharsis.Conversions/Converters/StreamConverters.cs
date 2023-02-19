@@ -12,7 +12,7 @@ namespace Catharsis.Conversions;
 public static class StreamConverters
 {
   /// <summary>
-  ///   <para></para>
+  ///   <para>Converts given <see cref="Stream"/> instance to the instance of <see cref="IEnumerable{byte}"/> type.</para>
   /// </summary>
   /// <param name="conversion">Conversion to perform.</param>
   /// <param name="close"></param>
@@ -24,7 +24,7 @@ public static class StreamConverters
   public static IEnumerable<byte> Bytes(this IConversion<Stream> conversion, bool close = false, string error = null) => conversion.To(stream => stream.ToBytes(close), error);
 
   /// <summary>
-  ///   <para></para>
+  ///   <para>Converts given <see cref="Stream"/> instance to the instance of <see cref="IAsyncEnumerable{byte}"/> type.</para>
   /// </summary>
   /// <param name="conversion">Conversion to perform.</param>
   /// <param name="close"></param>
@@ -36,7 +36,7 @@ public static class StreamConverters
   public static IAsyncEnumerable<byte> BytesAsync(this IConversion<Stream> conversion, bool close = false, string error = null) => conversion.To(stream => stream.ToBytesAsync(close), error);
 
   /// <summary>
-  ///   <para></para>
+  ///   <para>Converts given <see cref="Stream"/> instance to the instance of <see cref="string"/> type.</para>
   /// </summary>
   /// <param name="conversion">Conversion to perform.</param>
   /// <param name="encoding"></param>
@@ -48,7 +48,7 @@ public static class StreamConverters
   public static string Text(this IConversion<Stream> conversion, Encoding encoding = null, string error = null) => conversion.To(stream => stream.ToText(encoding), error);
 
   /// <summary>
-  ///   <para></para>
+  ///   <para>Converts given <see cref="Stream"/> instance to the instance of <see cref="Task{string}"/> type.</para>
   /// </summary>
   /// <param name="conversion">Conversion to perform.</param>
   /// <param name="encoding"></param>
@@ -60,7 +60,7 @@ public static class StreamConverters
   public static Task<string> TextAsync(this IConversion<Stream> conversion, Encoding encoding = null, string error = null) => conversion.To(stream => stream.ToTextAsync(encoding), error);
 
   /// <summary>
-  ///   <para></para>
+  ///   <para>Converts given <see cref="Stream"/> instance to the instance of <see cref="System.Xml.XmlDocument"/> type.</para>
   /// </summary>
   /// <param name="conversion">Conversion to perform.</param>
   /// <param name="error">Error description phrase for a failed <paramref name="conversion"/>.</param>
@@ -70,7 +70,7 @@ public static class StreamConverters
   public static XmlDocument XmlDocument(this IConversion<Stream> conversion, string error = null) => conversion.To(stream => stream.ToXmlDocument(), error);
 
   /// <summary>
-  ///   <para></para>
+  ///   <para>Converts given <see cref="Stream"/> instance to the instance of <see cref="System.Xml.Linq.XDocument"/> type.</para>
   /// </summary>
   /// <param name="conversion">Conversion to perform.</param>
   /// <param name="error">Error description phrase for a failed <paramref name="conversion"/>.</param>
@@ -81,7 +81,7 @@ public static class StreamConverters
   public static XDocument XDocument(this IConversion<Stream> conversion, string error = null) => conversion.To(stream => stream.ToXDocument(), error);
 
   /// <summary>
-  ///   <para></para>
+  ///   <para>Converts given <see cref="Stream"/> instance to the instance of <see cref="Task{XDocument}"/> type.</para>
   /// </summary>
   /// <param name="conversion">Conversion to perform.</param>
   /// <param name="cancellation"></param>
@@ -93,7 +93,7 @@ public static class StreamConverters
   public static Task<XDocument> XDocumentAsync(this IConversion<Stream> conversion, CancellationToken cancellation = default, string error = null) => conversion.To(stream => stream.ToXDocumentAsync(cancellation), error);
 
   /// <summary>
-  ///   <para></para>
+  ///   <para>Converts given <see cref="Stream"/> instance to the instance of <see cref="IEnumerable{byte}"/> type.</para>
   /// </summary>
   /// <param name="conversion">Conversion to perform.</param>
   /// <param name="close"></param>
@@ -105,7 +105,7 @@ public static class StreamConverters
   public static IEnumerable<byte> Enumerable(this IConversion<Stream> conversion, bool close = false, string error = null) => conversion.To(stream => stream.ToEnumerable(close), error);
 
   /// <summary>
-  ///   <para></para>
+  ///   <para>Converts given <see cref="Stream"/> instance to the instance of <see cref="IEnumerable{byte[]}"/> type.</para>
   /// </summary>
   /// <param name="conversion">Conversion to perform.</param>
   /// <param name="count"></param>
@@ -118,7 +118,7 @@ public static class StreamConverters
   public static IEnumerable<byte[]> Enumerable(this IConversion<Stream> conversion, int count, bool close = false, string error = null) => conversion.To(stream => stream.ToEnumerable(count, close), error);
 
   /// <summary>
-  ///   <para></para>
+  ///   <para>Converts given <see cref="Stream"/> instance to the instance of <see cref="IAsyncEnumerable{byte}"/> type.</para>
   /// </summary>
   /// <param name="conversion">Conversion to perform.</param>
   /// <param name="close"></param>
@@ -130,7 +130,7 @@ public static class StreamConverters
   public static IAsyncEnumerable<byte> AsyncEnumerable(this IConversion<Stream> conversion, bool close = false, string error = null) => conversion.To(stream => stream.ToAsyncEnumerable(close), error);
 
   /// <summary>
-  ///   <para></para>
+  ///   <para>Converts given <see cref="Stream"/> instance to the instance of <see cref="IAsyncEnumerable{byte[]}"/> type.</para>
   /// </summary>
   /// <param name="conversion">Conversion to perform.</param>
   /// <param name="count"></param>
@@ -143,7 +143,7 @@ public static class StreamConverters
   public static IAsyncEnumerable<byte[]> AsyncEnumerable(this IConversion<Stream> conversion, int count, bool close = false, string error = null) => conversion.To(stream => stream.ToAsyncEnumerable(count, close), error);
 
   /// <summary>
-  ///   <para></para>
+  ///   <para>Converts given <see cref="Stream"/> instance to the instance of <see cref="System.IO.BufferedStream"/> type.</para>
   /// </summary>
   /// <param name="conversion">Conversion to perform.</param>
   /// <param name="bufferSize"></param>
@@ -154,7 +154,7 @@ public static class StreamConverters
   public static BufferedStream BufferedStream(this IConversion<Stream> conversion, int? bufferSize = null, string error = null) => conversion.To(stream => stream.ToBufferedStream(bufferSize), error);
 
   /// <summary>
-  ///   <para></para>
+  ///   <para>Converts given <see cref="Stream"/> instance to the instance of <see cref="System.IO.BinaryReader"/> type.</para>
   /// </summary>
   /// <param name="conversion">Conversion to perform.</param>
   /// <param name="encoding"></param>
@@ -166,7 +166,7 @@ public static class StreamConverters
   public static BinaryReader BinaryReader(this IConversion<Stream> conversion, Encoding encoding = null, bool close = true, string error = null) => conversion.To(stream => stream.ToBinaryReader(encoding, close), error);
 
   /// <summary>
-  ///   <para></para>
+  ///   <para>Converts given <see cref="Stream"/> instance to the instance of <see cref="System.IO.BinaryWriter"/> type.</para>
   /// </summary>
   /// <param name="conversion">Conversion to perform.</param>
   /// <param name="encoding"></param>
@@ -178,7 +178,7 @@ public static class StreamConverters
   public static BinaryWriter BinaryWriter(this IConversion<Stream> conversion, Encoding encoding = null, bool close = true, string error = null) => conversion.To(stream => stream.ToBinaryWriter(encoding, close), error);
 
   /// <summary>
-  ///   <para></para>
+  ///   <para>Converts given <see cref="Stream"/> instance to the instance of <see cref="System.IO.StreamReader"/> type.</para>
   /// </summary>
   /// <param name="conversion">Conversion to perform.</param>
   /// <param name="encoding"></param>
@@ -190,7 +190,7 @@ public static class StreamConverters
   public static StreamReader StreamReader(this IConversion<Stream> conversion, Encoding encoding = null, bool close = true, string error = null) => conversion.To(stream => stream.ToStreamReader(encoding, close), error);
 
   /// <summary>
-  ///   <para></para>
+  ///   <para>Converts given <see cref="Stream"/> instance to the instance of <see cref="System.IO.StreamWriter"/> type.</para>
   /// </summary>
   /// <param name="conversion">Conversion to perform.</param>
   /// <param name="encoding"></param>

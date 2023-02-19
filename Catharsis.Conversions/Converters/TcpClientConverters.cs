@@ -10,7 +10,7 @@ namespace Catharsis.Conversions;
 public static class TcpClientConverters
 {
   /// <summary>
-  ///   <para></para>
+  ///   <para>Converts given <see cref="TcpClient"/> instance to the instance of <see cref="IEnumerable{byte}"/> type.</para>
   /// </summary>
   /// <param name="conversion">Conversion to perform.</param>
   /// <param name="error">Error description phrase for a failed <paramref name="conversion"/>.</param>
@@ -21,7 +21,7 @@ public static class TcpClientConverters
   public static IEnumerable<byte> Bytes(this IConversion<TcpClient> conversion, string error = null) => conversion.To(tcp => tcp.ToBytes(), error);
 
   /// <summary>
-  ///   <para></para>
+  ///   <para>Converts given <see cref="TcpClient"/> instance to the instance of <see cref="IAsyncEnumerable{byte}"/> type.</para>
   /// </summary>
   /// <param name="conversion">Conversion to perform.</param>
   /// <param name="error">Error description phrase for a failed <paramref name="conversion"/>.</param>
@@ -32,7 +32,7 @@ public static class TcpClientConverters
   public static IAsyncEnumerable<byte> BytesAsync(this IConversion<TcpClient> conversion, string error = null) => conversion.To(tcp => tcp.ToBytesAsync(), error);
 
   /// <summary>
-  ///   <para></para>
+  ///   <para>Converts given <see cref="TcpClient"/> instance to the instance of <see cref="IEnumerable{byte}"/> type.</para>
   /// </summary>
   /// <param name="conversion">Conversion to perform.</param>
   /// <param name="close"></param>
@@ -44,7 +44,7 @@ public static class TcpClientConverters
   public static IEnumerable<byte> Enumerable(this IConversion<TcpClient> conversion, bool close = false, string error = null) => conversion.To(tcp => tcp.ToEnumerable(close), error);
 
   /// <summary>
-  ///   <para></para>
+  ///   <para>Converts given <see cref="TcpClient"/> instance to the instance of <see cref="IEnumerable{byte[]}"/> type.</para>
   /// </summary>
   /// <param name="conversion">Conversion to perform.</param>
   /// <param name="count"></param>
@@ -57,7 +57,7 @@ public static class TcpClientConverters
   public static IEnumerable<byte[]> Enumerable(this IConversion<TcpClient> conversion, int count, bool close = false, string error = null) => conversion.To(tcp => tcp.ToEnumerable(count, close), error);
 
   /// <summary>
-  ///   <para></para>
+  ///   <para>Converts given <see cref="TcpClient"/> instance to the instance of <see cref="IAsyncEnumerable{byte}"/> type.</para>
   /// </summary>
   /// <param name="conversion">Conversion to perform.</param>
   /// <param name="close"></param>
@@ -69,7 +69,7 @@ public static class TcpClientConverters
   public static IAsyncEnumerable<byte> AsyncEnumerable(this IConversion<TcpClient> conversion, bool close = false, string error = null) => conversion.To(tcp => tcp.ToAsyncEnumerable(close), error);
 
   /// <summary>
-  ///   <para></para>
+  ///   <para>Converts given <see cref="TcpClient"/> instance to the instance of <see cref="IAsyncEnumerable{byte[]}"/> type.</para>
   /// </summary>
   /// <param name="conversion">Conversion to perform.</param>
   /// <param name="count"></param>

@@ -10,7 +10,7 @@ namespace Catharsis.Conversions;
 public static class NameValueCollectionConverters
 {
   /// <summary>
-  ///   <para></para>
+  ///   <para>Converts given <see cref="NameValueCollection"/> instance to the instance of <see cref="Dictionary{string, String}"/> type.</para>
   /// </summary>
   /// <param name="conversion">Conversion to perform.</param>
   /// <param name="error">Error description phrase for a failed <paramref name="conversion"/>.</param>
@@ -20,7 +20,7 @@ public static class NameValueCollectionConverters
   public static Dictionary<string, string> Dictionary(this IConversion<NameValueCollection> conversion, string error = null) => conversion.To(collection => collection.ToDictionary(), error);
 
   /// <summary>
-  ///   <para></para>
+  ///   <para>Converts given <see cref="NameValueCollection"/> instance to the instance of <see cref="IEnumerable{(string, string)}"/> type.</para>
   /// </summary>
   /// <param name="conversion">Conversion to perform.</param>
   /// <param name="error">Error description phrase for a failed <paramref name="conversion"/>.</param>

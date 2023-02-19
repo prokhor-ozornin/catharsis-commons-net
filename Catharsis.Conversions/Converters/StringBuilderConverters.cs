@@ -11,7 +11,7 @@ namespace Catharsis.Conversions;
 public static class StringBuilderConverters
 {
   /// <summary>
-  ///   <para></para>
+  ///   <para>Converts given <see cref="StringBuilder"/> instance to the instance of <see cref="System.IO.StringWriter"/> type.</para>
   /// </summary>
   /// <param name="conversion">Conversion to perform.</param>
   /// <param name="format"></param>
@@ -22,7 +22,7 @@ public static class StringBuilderConverters
   public static StringWriter StringWriter(this IConversion<StringBuilder> conversion, IFormatProvider format = null, string error = null) => conversion.To(builder => builder.ToStringWriter(format), error);
 
   /// <summary>
-  ///   <para></para>
+  ///   <para>Converts given <see cref="StringBuilder"/> instance to the instance of <see cref="System.Xml.XmlWriter"/> type.</para>
   /// </summary>
   /// <param name="conversion">Conversion to perform.</param>
   /// <param name="error">Error description phrase for a failed <paramref name="conversion"/>.</param>

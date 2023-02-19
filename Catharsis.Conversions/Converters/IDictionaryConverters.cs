@@ -9,7 +9,7 @@ namespace Catharsis.Conversions;
 public static class IDictionaryConverters
 {
   /// <summary>
-  ///   <para></para>
+  ///   <para>Converts given <see cref="IDictionary{TKey, TValue}"/> instance to the instance of <see cref="System.Collections.Generic.SortedList{TKey, TValue}"/> type.</para>
   /// </summary>
   /// <typeparam name="TKey"></typeparam>
   /// <typeparam name="TValue"></typeparam>
@@ -22,7 +22,7 @@ public static class IDictionaryConverters
   public static SortedList<TKey, TValue> SortedList<TKey, TValue>(this IConversion<IDictionary<TKey, TValue>> conversion, IComparer<TKey> comparer = null, string error = null) where TKey : notnull => conversion.To(dictionary => dictionary.ToSortedList(comparer), error);
 
   /// <summary>
-  ///   <para></para>
+  ///   <para>Converts given <see cref="IDictionary{TKey, TValue}"/> instance to the instance of <see cref="System.Collections.Generic.SortedDictionary{TKey, TValue}"/> type.</para>
   /// </summary>
   /// <typeparam name="TKey"></typeparam>
   /// <typeparam name="TValue"></typeparam>

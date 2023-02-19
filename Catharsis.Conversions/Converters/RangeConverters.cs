@@ -9,7 +9,7 @@ namespace Catharsis.Conversions;
 public static class RangeConverters
 {
   /// <summary>
-  ///   <para></para>
+  ///   <para>Converts given <see cref="Range"/> instance to the instance of <see cref="IEnumerable{int}"/> type.</para>
   /// </summary>
   /// <param name="conversion">Conversion to perform.</param>
   /// <param name="error">Error description phrase for a failed <paramref name="conversion"/>.</param>

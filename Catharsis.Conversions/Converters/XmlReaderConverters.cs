@@ -11,7 +11,7 @@ namespace Catharsis.Conversions;
 public static class XmlReaderConverters
 {
   /// <summary>
-  ///   <para></para>
+  ///   <para>Converts given <see cref="XmlReader"/> instance to the instance of <see cref="string"/> type.</para>
   /// </summary>
   /// <param name="conversion">Conversion to perform.</param>
   /// <param name="error">Error description phrase for a failed <paramref name="conversion"/>.</param>
@@ -20,7 +20,7 @@ public static class XmlReaderConverters
   public static string Text(this IConversion<XmlReader> conversion, string error = null) => conversion.To(reader => reader.ToText(), error);
 
   /// <summary>
-  ///   <para></para>
+  ///   <para>Converts given <see cref="XmlReader"/> instance to the instance of <see cref="System.Xml.XmlDocument"/> type.</para>
   /// </summary>
   /// <param name="conversion">Conversion to perform.</param>
   /// <param name="error">Error description phrase for a failed <paramref name="conversion"/>.</param>
@@ -29,7 +29,7 @@ public static class XmlReaderConverters
   public static XmlDocument XmlDocument(this IConversion<XmlReader> conversion, string error = null) => conversion.To(reader => reader.ToXmlDocument(), error);
 
   /// <summary>
-  ///   <para></para>
+  ///   <para>Converts given <see cref="XmlReader"/> instance to the instance of <see cref="System.Xml.Linq.XDocument"/> type.</para>
   /// </summary>
   /// <param name="conversion">Conversion to perform.</param>
   /// <param name="error">Error description phrase for a failed <paramref name="conversion"/>.</param>
@@ -39,7 +39,7 @@ public static class XmlReaderConverters
   public static XDocument XDocument(this IConversion<XmlReader> conversion, string error = null) => conversion.To(reader => reader.ToXDocument(), error);
 
   /// <summary>
-  ///   <para></para>
+  ///   <para>Converts given <see cref="XmlReader"/> instance to the instance of <see cref="Task{XDocument}"/> type.</para>
   /// </summary>
   /// <param name="conversion">Conversion to perform.</param>
   /// <param name="cancellation"></param>

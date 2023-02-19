@@ -9,7 +9,7 @@ namespace Catharsis.Conversions;
 public static class DateTimeOffsetConverters
 {
   /// <summary>
-  ///   <para></para>
+  ///   <para>Converts given <see cref="DateTimeOffset"/> instance to the instance of <see cref="System.DateTime"/> type.</para>
   /// </summary>
   /// <param name="conversion">Conversion to perform.</param>
   /// <param name="error">Error description phrase for a failed <paramref name="conversion"/>.</param>
@@ -19,9 +19,9 @@ public static class DateTimeOffsetConverters
   public static DateTime DateTime(this IConversion<DateTimeOffset> conversion, string error = null) => conversion.To(date => date.ToDateTime(), error);
 
 #if NET7_0_OR_GREATER
-  /// <summary>
-  ///   <para></para>
-  /// </summary>
+/// <summary>
+///   <para>Converts given <see cref="DateTimeOffset"/> instance to the instance of <see cref="System.DateOnly"/> type.</para>
+/// </summary>
   /// <param name="conversion">Conversion to perform.</param>
   /// <param name="error">Error description phrase for a failed <paramref name="conversion"/>.</param>
   /// <returns>Conversion result.</returns>
@@ -29,9 +29,9 @@ public static class DateTimeOffsetConverters
   /// <exception cref="InvalidOperationException">In case of a failed conversion.</exception>
   public static DateOnly DateOnly(this IConversion<DateTimeOffset> conversion, string error = null) => conversion.To(date => date.ToDateOnly(), error);
 
-  /// <summary>
-  ///   <para></para>
-  /// </summary>
+/// <summary>
+///   <para>Converts given <see cref="DateTimeOffset"/> instance to the instance of <see cref="System.TimeOnly"/> type.</para>
+/// </summary>
   /// <param name="conversion">Conversion to perform.</param>
   /// <param name="error">Error description phrase for a failed <paramref name="conversion"/>.</param>
   /// <returns>Conversion result.</returns>

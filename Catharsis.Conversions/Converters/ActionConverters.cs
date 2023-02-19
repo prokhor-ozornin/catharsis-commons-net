@@ -23,7 +23,7 @@ public static class ActionConverters
   public static Task Task(this IConversion<Action> conversion, TaskCreationOptions options = TaskCreationOptions.None, CancellationToken cancellation = default, string error = null) => conversion.To(action => action.ToTask(options, cancellation), error);
 
   /// <summary>
-  ///   <para></para>
+  ///   <para>Converts given <see cref="Action{Object}"/> instance to the instance of <see cref="System.Threading.Tasks.Task"/> type.</para>
   /// </summary>
   /// <param name="conversion">Conversion to perform.</param>
   /// <param name="state"></param>

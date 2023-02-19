@@ -10,7 +10,7 @@ namespace Catharsis.Conversions;
 public static class IPAddressConverters
 {
   /// <summary>
-  ///   <para></para>
+  ///   <para>Converts given <see cref="IPAddress"/> instance to the <see cref="byte"/> array.</para>
   /// </summary>
   /// <param name="conversion">Conversion to perform.</param>
   /// <param name="error">Error description phrase for a failed <paramref name="conversion"/>.</param>
@@ -20,7 +20,7 @@ public static class IPAddressConverters
   public static byte[] Bytes(this IConversion<IPAddress> conversion, string error = null) => conversion.To(address => address.ToBytes(), error);
 
   /// <summary>
-  ///   <para></para>
+  ///   <para>Converts given <see cref="long"/> value to the instance of <see cref="IPAddress"/> type.</para>
   /// </summary>
   /// <param name="conversion">Conversion to perform.</param>
   /// <param name="error">Error description phrase for a failed <paramref name="conversion"/>.</param>
@@ -31,7 +31,7 @@ public static class IPAddressConverters
   public static IPAddress IpAddress(this IConversion<long> conversion, string error = null) => conversion.To(value => new IPAddress(value), error);
 
   /// <summary>
-  ///   <para></para>
+  ///   <para>Converts given <see cref="uint"/> value to the instance of <see cref="IPAddress"/> type.</para>
   /// </summary>
   /// <param name="conversion">Conversion to perform.</param>
   /// <param name="error">Error description phrase for a failed <paramref name="conversion"/>.</param>
@@ -42,7 +42,7 @@ public static class IPAddressConverters
   public static IPAddress IpAddress(this IConversion<uint> conversion, string error = null) => conversion.To(value => new IPAddress(value), error);
 
   /// <summary>
-  ///   <para></para>
+  ///   <para>Converts given <see cref="IPAddress"/> instance to the instance of <see cref="IPHostEntry"/> type.</para>
   /// </summary>
   /// <param name="conversion">Conversion to perform.</param>
   /// <param name="error">Error description phrase for a failed <paramref name="conversion"/>.</param>

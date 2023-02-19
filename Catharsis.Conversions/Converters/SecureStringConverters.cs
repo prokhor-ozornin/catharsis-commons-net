@@ -11,7 +11,7 @@ namespace Catharsis.Conversions;
 public static class SecureStringConverters
 {
   /// <summary>
-  ///   <para></para>
+  ///   <para>Converts given <see cref="SecureString"/> instance to the <see cref="byte"/> array.</para>
   /// </summary>
   /// <param name="conversion">Conversion to perform.</param>
   /// <param name="encoding"></param>
@@ -22,7 +22,7 @@ public static class SecureStringConverters
   public static byte[] Bytes(this IConversion<SecureString> conversion, Encoding encoding = null, string error = null) => conversion.To(secure => secure.ToBytes(encoding), error);
 
   /// <summary>
-  ///   <para></para>
+  ///   <para>Converts given <see cref="SecureString"/> instance to the instance of <see cref="string"/> type.</para>
   /// </summary>
   /// <param name="conversion">Conversion to perform.</param>
   /// <param name="error">Error description phrase for a failed <paramref name="conversion"/>.</param>

@@ -9,7 +9,7 @@ namespace Catharsis.Conversions;
 public static class BinaryReaderConverters
 {
   /// <summary>
-  ///   <para></para>
+  ///   <para>Converts given <see cref="BinaryReader"/> instance to the instance of <see cref="IEnumerable{T}"/> type.</para>
   /// </summary>
   /// <param name="conversion">Conversion to perform.</param>
   /// <param name="error">Error description phrase for a failed <paramref name="conversion"/>.</param>
@@ -20,7 +20,7 @@ public static class BinaryReaderConverters
   public static IEnumerable<byte> Bytes(this IConversion<BinaryReader> conversion, string error = null) => conversion.To(reader => reader.ToBytes(), error);
 
   /// <summary>
-  ///   <para></para>
+  ///   <para>Converts given <see cref="BinaryReader"/> instance to the instance of <see cref="IAsyncEnumerable{T}"/> type.</para>
   /// </summary>
   /// <param name="conversion">Conversion to perform.</param>
   /// <param name="error">Error description phrase for a failed <paramref name="conversion"/>.</param>
@@ -31,7 +31,7 @@ public static class BinaryReaderConverters
   public static IAsyncEnumerable<byte> BytesAsync(this IConversion<BinaryReader> conversion, string error = null) => conversion.To(reader => reader.ToBytesAsync(), error);
 
   /// <summary>
-  ///   <para></para>
+  ///   <para>Converts given <see cref="BinaryReader"/> instance to the instance of <see cref="string"/> type.</para>
   /// </summary>
   /// <param name="conversion">Conversion to perform.</param>
   /// <param name="error">Error description phrase for a failed <paramref name="conversion"/>.</param>
@@ -41,7 +41,7 @@ public static class BinaryReaderConverters
   public static string Text(this IConversion<BinaryReader> conversion, string error = null) => conversion.To(reader => reader.ToText(), error);
 
   /// <summary>
-  ///   <para></para>
+  ///   <para>Converts given <see cref="BinaryReader"/> instance to the instance of <see cref="IEnumerable{byte}"/> type.</para>
   /// </summary>
   /// <param name="conversion">Conversion to perform.</param>
   /// <param name="error">Error description phrase for a failed <paramref name="conversion"/>.</param>
@@ -52,7 +52,7 @@ public static class BinaryReaderConverters
   public static IEnumerable<byte> Enumerable(this IConversion<BinaryReader> conversion, string error = null) => conversion.To(reader => reader.ToEnumerable(), error);
 
   /// <summary>
-  ///   <para></para>
+  ///   <para>Converts given <see cref="BinaryReader"/> instance to the instance of <see cref="IEnumerable{byte[]}"/> type.</para>
   /// </summary>
   /// <param name="conversion">Conversion to perform.</param>
   /// <param name="count"></param>
@@ -64,7 +64,7 @@ public static class BinaryReaderConverters
   public static IEnumerable<byte[]> Enumerable(this IConversion<BinaryReader> conversion, int count, string error = null) => conversion.To(reader => reader.ToEnumerable(count), error);
 
   /// <summary>
-  ///   <para></para>
+  ///   <para>Converts given <see cref="BinaryReader"/> instance to the instance of <see cref="IAsyncEnumerable{byte}"/> type.</para>
   /// </summary>
   /// <param name="conversion">Conversion to perform.</param>
   /// <param name="error">Error description phrase for a failed <paramref name="conversion"/>.</param>
@@ -75,7 +75,7 @@ public static class BinaryReaderConverters
   public static IAsyncEnumerable<byte> AsyncEnumerable(this IConversion<BinaryReader> conversion, string error = null) => conversion.To(reader => reader.ToAsyncEnumerable(), error);
 
   /// <summary>
-  ///   <para></para>
+  ///   <para>Converts given <see cref="BinaryReader"/> instance to the instance of <see cref="IAsyncEnumerable{byte[]}"/> type.</para>
   /// </summary>
   /// <param name="conversion">Conversion to perform.</param>
   /// <param name="count"></param>

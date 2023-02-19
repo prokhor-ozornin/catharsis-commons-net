@@ -12,7 +12,7 @@ namespace Catharsis.Conversions;
 public static class FileInfoConverters
 {
   /// <summary>
-  ///   <para></para>
+  ///   <para>Converts given <see cref="FileInfo"/> instance to the instance of <see cref="IEnumerable{byte}"/> type.</para>
   /// </summary>
   /// <param name="conversion">Conversion to perform.</param>
   /// <param name="error">Error description phrase for a failed <paramref name="conversion"/>.</param>
@@ -23,7 +23,7 @@ public static class FileInfoConverters
   public static IEnumerable<byte> Bytes(this IConversion<FileInfo> conversion, string error = null) => conversion.To(file => file.ToBytes(), error);
 
   /// <summary>
-  ///   <para></para>
+  ///   <para>Converts given <see cref="FileInfo"/> instance to the instance of <see cref="IAsyncEnumerable{byte}"/> type.</para>
   /// </summary>
   /// <param name="conversion">Conversion to perform.</param>
   /// <param name="error">Error description phrase for a failed <paramref name="conversion"/>.</param>
@@ -34,7 +34,7 @@ public static class FileInfoConverters
   public static IAsyncEnumerable<byte> BytesAsync(this IConversion<FileInfo> conversion, string error = null) => conversion.To(file => file.ToBytesAsync(), error);
 
   /// <summary>
-  ///   <para></para>
+  ///   <para>Converts given <see cref="FileInfo"/> instance to the instance of <see cref="string"/> type.</para>
   /// </summary>
   /// <param name="conversion">Conversion to perform.</param>
   /// <param name="encoding"></param>
@@ -46,7 +46,7 @@ public static class FileInfoConverters
   public static string Text(this IConversion<FileInfo> conversion, Encoding encoding = null, string error = null) => conversion.To(file => file.ToText(encoding), error);
 
   /// <summary>
-  ///   <para></para>
+  ///   <para>Converts given <see cref="FileInfo"/> instance to the instance of <see cref="Task{string}"/> type.</para>
   /// </summary>
   /// <param name="conversion">Conversion to perform.</param>
   /// <param name="encoding"></param>
@@ -58,7 +58,7 @@ public static class FileInfoConverters
   public static Task<string> TextAsync(this IConversion<FileInfo> conversion, Encoding encoding = null, string error = null) => conversion.To(file => file.ToTextAsync(encoding), error);
 
   /// <summary>
-  ///   <para></para>
+  ///   <para>Converts given <see cref="FileInfo"/> instance to the instance of <see cref="System.IO.Stream"/> type.</para>
   /// </summary>
   /// <param name="conversion">Conversion to perform.</param>
   /// <param name="error">Error description phrase for a failed <paramref name="conversion"/>.</param>
@@ -68,7 +68,7 @@ public static class FileInfoConverters
   public static Stream Stream(this IConversion<FileInfo> conversion, string error = null) => conversion.To(file => file.ToStream(), error);
 
   /// <summary>
-  ///   <para></para>
+  ///   <para>Converts given <see cref="FileInfo"/> instance to the instance of <see cref="System.IO.Stream"/> type.</para>
   /// </summary>
   /// <param name="conversion">Conversion to perform.</param>
   /// <param name="error">Error description phrase for a failed <paramref name="conversion"/>.</param>
@@ -79,7 +79,7 @@ public static class FileInfoConverters
   public static Stream ReadOnlyStream(this IConversion<FileInfo> conversion, string error = null) => conversion.To(file => file.ToReadOnlyStream(), error);
 
   /// <summary>
-  ///   <para></para>
+  ///   <para>Converts given <see cref="FileInfo"/> instance to the instance of <see cref="System.IO.Stream"/> type.</para>
   /// </summary>
   /// <param name="conversion">Conversion to perform.</param>
   /// <param name="error">Error description phrase for a failed <paramref name="conversion"/>.</param>
@@ -90,7 +90,7 @@ public static class FileInfoConverters
   public static Stream WriteOnlyStream(this IConversion<FileInfo> conversion, string error = null) => conversion.To(file => file.ToWriteOnlyStream(), error);
 
   /// <summary>
-  ///   <para></para>
+  ///   <para>Converts given <see cref="FileInfo"/> instance to the instance of <see cref="System.IO.StreamReader"/> type.</para>
   /// </summary>
   /// <param name="conversion">Conversion to perform.</param>
   /// <param name="encoding"></param>
@@ -101,7 +101,7 @@ public static class FileInfoConverters
   public static StreamReader StreamReader(this IConversion<FileInfo> conversion, Encoding encoding = null, string error = null) => conversion.To(file => file.ToStreamReader(encoding), error);
 
   /// <summary>
-  ///   <para></para>
+  ///   <para>Converts given <see cref="FileInfo"/> instance to the instance of <see cref="System.IO.StreamWriter"/> type.</para>
   /// </summary>
   /// <param name="conversion">Conversion to perform.</param>
   /// <param name="encoding"></param>
@@ -112,7 +112,7 @@ public static class FileInfoConverters
   public static StreamWriter StreamWriter(this IConversion<FileInfo> conversion, Encoding encoding = null, string error = null) => conversion.To(file => file.ToStreamWriter(encoding), error);
 
   /// <summary>
-  ///   <para></para>
+  ///   <para>Converts given <see cref="FileInfo"/> instance to the instance of <see cref="System.Xml.XmlDocument"/> type.</para>
   /// </summary>
   /// <param name="conversion">Conversion to perform.</param>
   /// <param name="error">Error description phrase for a failed <paramref name="conversion"/>.</param>
@@ -122,7 +122,7 @@ public static class FileInfoConverters
   public static XmlDocument XmlDocument(this IConversion<FileInfo> conversion, string error = null) => conversion.To(file => file.ToXmlDocument(), error);
 
   /// <summary>
-  ///   <para></para>
+  ///   <para>Converts given <see cref="FileInfo"/> instance to the instance of <see cref="System.Xml.Linq.XDocument"/> type.</para>
   /// </summary>
   /// <param name="conversion">Conversion to perform.</param>
   /// <param name="error">Error description phrase for a failed <paramref name="conversion"/>.</param>
@@ -133,7 +133,7 @@ public static class FileInfoConverters
   public static XDocument XDocument(this IConversion<FileInfo> conversion, string error = null) => conversion.To(file => file.ToXDocument(), error);
 
   /// <summary>
-  ///   <para></para>
+  ///   <para>Converts given <see cref="FileInfo"/> instance to the instance of <see cref="Task{XDocument}"/> type.</para>
   /// </summary>
   /// <param name="conversion">Conversion to perform.</param>
   /// <param name="cancellation"></param>

@@ -10,7 +10,7 @@ namespace Catharsis.Conversions;
 public static class ArrayConverters
 {
   /// <summary>
-  ///   <para></para>
+  ///   <para>Converts given <see cref="char"/> array to the <see cref="byte"/> array.</para>
   /// </summary>
   /// <param name="conversion">Conversion to perform.</param>
   /// <param name="encoding"></param>
@@ -21,7 +21,7 @@ public static class ArrayConverters
   public static byte[] Bytes(this IConversion<char[]> conversion, Encoding encoding = null, string error = null) => conversion.To(chars => chars.ToBytes(encoding), error);
 
   /// <summary>
-  ///   <para></para>
+  ///   <para>Converts given <see cref="char"/> array to the instance of <see cref="string"/> type.</para>
   /// </summary>
   /// <param name="conversion">Conversion to perform.</param>
   /// <param name="error">Error description phrase for a failed <paramref name="conversion"/>.</param>
@@ -32,7 +32,7 @@ public static class ArrayConverters
   public static string Text(this IConversion<char[]> conversion, string error = null) => conversion.To(chars => chars.ToText(), error);
 
   /// <summary>
-  ///   <para></para>
+  ///   <para>Converts given <see cref="byte"/> array to the instance of <see cref="string"/> type.</para>
   /// </summary>
   /// <param name="conversion">Conversion to perform.</param>
   /// <param name="encoding"></param>

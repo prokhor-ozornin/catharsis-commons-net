@@ -13,7 +13,7 @@ namespace Catharsis.Conversions;
 public static class IAsyncEnumerableConverters
 {
   /// <summary>
-  ///   <para></para>
+  ///   <para>Converts given <see cref="IAsyncEnumerable{T}"/> instance to the instance of <see cref="IEnumerable{T}"/> type.</para>
   /// </summary>
   /// <typeparam name="T"></typeparam>
   /// <param name="conversion">Conversion to perform.</param>
@@ -24,7 +24,7 @@ public static class IAsyncEnumerableConverters
   public static IEnumerable<T> Enumerable<T>(this IConversion<IAsyncEnumerable<T>> conversion, string error = null) => conversion.To(sequence => sequence.ToEnumerable(), error);
 
   /// <summary>
-  ///   <para></para>
+  ///   <para>Converts given <see cref="IAsyncEnumerable{T}"/> instance to the <see cref="T"/> array.</para>
   /// </summary>
   /// <typeparam name="T"></typeparam>
   /// <param name="conversion">Conversion to perform.</param>
@@ -36,7 +36,7 @@ public static class IAsyncEnumerableConverters
   public static T[] Array<T>(this IConversion<IAsyncEnumerable<T>> conversion, string error = null) => conversion.To(sequence => sequence.ToArray(), error);
 
   /// <summary>
-  ///   <para></para>
+  ///   <para>Converts given <see cref="IAsyncEnumerable{T}"/> instance to the instance of <see cref="Task{T[]}"/> type.</para>
   /// </summary>
   /// <typeparam name="T"></typeparam>
   /// <param name="conversion">Conversion to perform.</param>
@@ -49,7 +49,7 @@ public static class IAsyncEnumerableConverters
   public static Task<T[]> ArrayAsync<T>(this IConversion<IAsyncEnumerable<T>> conversion, CancellationToken cancellation = default, string error = null) => conversion.To(sequence => sequence.ToArrayAsync(cancellation), error);
 
   /// <summary>
-  ///   <para></para>
+  ///   <para>Converts given <see cref="IAsyncEnumerable{T}"/> instance to the instance of <see cref="List{T}"/> type.</para>
   /// </summary>
   /// <typeparam name="T"></typeparam>
   /// <param name="conversion">Conversion to perform.</param>
@@ -61,7 +61,7 @@ public static class IAsyncEnumerableConverters
   public static List<T> List<T>(this IConversion<IAsyncEnumerable<T>> conversion, string error = null) => conversion.To(sequence => sequence.ToList(), error);
 
   /// <summary>
-  ///   <para></para>
+  ///   <para>Converts given <see cref="IAsyncEnumerable{T}"/> instance to the instance of <see cref="Task{List{T}}"/> type.</para>
   /// </summary>
   /// <typeparam name="T"></typeparam>
   /// <param name="conversion">Conversion to perform.</param>
@@ -74,7 +74,7 @@ public static class IAsyncEnumerableConverters
   public static Task<List<T>> ListAsync<T>(this IConversion<IAsyncEnumerable<T>> conversion, CancellationToken cancellation = default, string error = null) => conversion.To(sequence => sequence.ToListAsync(cancellation), error);
 
   /// <summary>
-  ///   <para></para>
+  ///   <para>Converts given <see cref="IAsyncEnumerable{T}"/> instance to the instance of <see cref="System.Collections.Generic.LinkedList{T}"/> type.</para>
   /// </summary>
   /// <typeparam name="T"></typeparam>
   /// <param name="conversion">Conversion to perform.</param>
@@ -86,7 +86,7 @@ public static class IAsyncEnumerableConverters
   public static LinkedList<T> LinkedList<T>(this IConversion<IAsyncEnumerable<T>> conversion, string error = null) => conversion.To(sequence => sequence.ToLinkedList(), error);
 
   /// <summary>
-  ///   <para></para>
+  ///   <para>Converts given <see cref="IAsyncEnumerable{T}"/> instance to the instance of <see cref="Task{LinkedList{T}}"/> type.</para>
   /// </summary>
   /// <typeparam name="T"></typeparam>
   /// <param name="conversion">Conversion to perform.</param>
@@ -99,7 +99,7 @@ public static class IAsyncEnumerableConverters
   public static Task<LinkedList<T>> LinkedListAsync<T>(this IConversion<IAsyncEnumerable<T>> conversion, CancellationToken cancellation = default, string error = null) => conversion.To(sequence => sequence.ToLinkedListAsync(cancellation), error);
 
   /// <summary>
-  ///   <para></para>
+  ///   <para>Converts given <see cref="IAsyncEnumerable{T}"/> instance to the instance of <see cref="IReadOnlyList{T}"/> type.</para>
   /// </summary>
   /// <typeparam name="T"></typeparam>
   /// <param name="conversion">Conversion to perform.</param>
@@ -111,7 +111,7 @@ public static class IAsyncEnumerableConverters
   public static IReadOnlyList<T> ReadOnlyList<T>(this IConversion<IAsyncEnumerable<T>> conversion, string error = null) => conversion.To(sequence => sequence.ToReadOnlyList(), error);
 
   /// <summary>
-  ///   <para></para>
+  ///   <para>Converts given <see cref="IAsyncEnumerable{T}"/> instance to the instance of <see cref="Task{IReadOnlyList{T}}"/> type.</para>
   /// </summary>
   /// <typeparam name="T"></typeparam>
   /// <param name="conversion">Conversion to perform.</param>
@@ -124,7 +124,7 @@ public static class IAsyncEnumerableConverters
   public static Task<IReadOnlyList<T>> ReadOnlyListAsync<T>(this IConversion<IAsyncEnumerable<T>> conversion, CancellationToken cancellation = default, string error = null) => conversion.To(sequence => sequence.ToReadOnlyListAsync(cancellation), error);
 
   /// <summary>
-  ///   <para></para>
+  ///   <para>Converts given <see cref="IAsyncEnumerable{T}"/> instance to the instance of <see cref="System.Collections.Generic.HashSet{T}"/> type.</para>
   /// </summary>
   /// <typeparam name="T"></typeparam>
   /// <param name="conversion">Conversion to perform.</param>
@@ -137,7 +137,7 @@ public static class IAsyncEnumerableConverters
   public static HashSet<T> HashSet<T>(this IConversion<IAsyncEnumerable<T>> conversion, IEqualityComparer<T> comparer = null, string error = null) => conversion.To(sequence => sequence.ToHashSet(comparer), error);
 
   /// <summary>
-  ///   <para></para>
+  ///   <para>Converts given <see cref="IAsyncEnumerable{T}"/> instance to the instance of <see cref="Task{HashSet{T}}"/> type.</para>
   /// </summary>
   /// <typeparam name="T"></typeparam>
   /// <param name="conversion">Conversion to perform.</param>
@@ -151,7 +151,7 @@ public static class IAsyncEnumerableConverters
   public static Task<HashSet<T>> HashSetAsync<T>(this IConversion<IAsyncEnumerable<T>> conversion, IEqualityComparer<T> comparer = null, CancellationToken cancellation = default, string error = null) => conversion.To(sequence => sequence.ToHashSetAsync(comparer, cancellation), error);
 
   /// <summary>
-  ///   <para></para>
+  ///   <para>Converts given <see cref="IAsyncEnumerable{T}"/> instance to the instance of <see cref="System.Collections.Generic.SortedSet{T}"/> type.</para>
   /// </summary>
   /// <typeparam name="T"></typeparam>
   /// <param name="conversion">Conversion to perform.</param>
@@ -164,7 +164,7 @@ public static class IAsyncEnumerableConverters
   public static SortedSet<T> SortedSet<T>(this IConversion<IAsyncEnumerable<T>> conversion, IComparer<T> comparer = null, string error = null) => conversion.To(sequence => sequence.ToSortedSet(comparer), error);
 
   /// <summary>
-  ///   <para></para>
+  ///   <para>Converts given <see cref="IAsyncEnumerable{T}"/> instance to the instance of <see cref="Task{SortedSet{T}}"/> type.</para>
   /// </summary>
   /// <typeparam name="T"></typeparam>
   /// <param name="conversion">Conversion to perform.</param>
@@ -178,7 +178,7 @@ public static class IAsyncEnumerableConverters
   public static Task<SortedSet<T>> SortedSetAsync<T>(this IConversion<IAsyncEnumerable<T>> conversion, IComparer<T> comparer = null, CancellationToken cancellation = default, string error = null) => conversion.To(sequence => sequence.ToSortedSetAsync(comparer, cancellation), error);
 
   /// <summary>
-  ///   <para></para>
+  ///   <para>Converts given <see cref="IAsyncEnumerable{TValue}"/> instance to the instance of <see cref="System.Collections.Generic.Dictionary{TKey, TValue}"/> type.</para>
   /// </summary>
   /// <typeparam name="TKey"></typeparam>
   /// <typeparam name="TValue"></typeparam>
@@ -193,7 +193,7 @@ public static class IAsyncEnumerableConverters
   public static Dictionary<TKey, TValue> Dictionary<TKey, TValue>(this IConversion<IAsyncEnumerable<TValue>> conversion, Func<TValue, TKey> key, IEqualityComparer<TKey> comparer = null, string error = null) where TKey : notnull => conversion.To(sequence => sequence.ToDictionary(key, comparer), error);
 
   /// <summary>
-  ///   <para></para>
+  ///   <para>Converts given <see cref="IAsyncEnumerable{TValue}"/> instance to the instance of <see cref="Task{Dictionary{TKey, TValue}}"/> type.</para>
   /// </summary>
   /// <typeparam name="TKey"></typeparam>
   /// <typeparam name="TValue"></typeparam>
@@ -209,7 +209,7 @@ public static class IAsyncEnumerableConverters
   public static Task<Dictionary<TKey, TValue>> DictionaryAsync<TKey, TValue>(this IConversion<IAsyncEnumerable<TValue>> conversion, Func<TValue, TKey> key, IEqualityComparer<TKey> comparer = null, CancellationToken cancellation = default, string error = null) where TKey : notnull => conversion.To(sequence => sequence.ToDictionaryAsync(key, comparer, cancellation), error);
 
   /// <summary>
-  ///   <para></para>
+  ///   <para>Converts given <see cref="IAsyncEnumerable{TValue}"/> instance to the instance of <see cref="IReadOnlyDictionary{TKey, TValue}"/> type.</para>
   /// </summary>
   /// <typeparam name="TKey"></typeparam>
   /// <typeparam name="TValue"></typeparam>
@@ -224,7 +224,7 @@ public static class IAsyncEnumerableConverters
   public static IReadOnlyDictionary<TKey, TValue> ReadOnlyDictionary<TKey, TValue>(this IConversion<IAsyncEnumerable<TValue>> conversion, Func<TValue, TKey> key, IEqualityComparer<TKey> comparer = null, string error = null) where TKey : notnull => conversion.To(sequence => sequence.ToReadOnlyDictionary(key, comparer), error);
 
   /// <summary>
-  ///   <para></para>
+  ///   <para>Converts given <see cref="IAsyncEnumerable{TValue}"/> instance to the instance of <see cref="Task{IReadOnlyDictionary{TKey, TValue}}"/> type.</para>
   /// </summary>
   /// <typeparam name="TKey"></typeparam>
   /// <typeparam name="TValue"></typeparam>
@@ -240,7 +240,7 @@ public static class IAsyncEnumerableConverters
   public static Task<IReadOnlyDictionary<TKey, TValue>> ReadOnlyDictionaryAsync<TKey, TValue>(this IConversion<IAsyncEnumerable<TValue>> conversion, Func<TValue, TKey> key, IEqualityComparer<TKey> comparer = null, CancellationToken cancellation = default, string error = null) where TKey : notnull => conversion.To(sequence => sequence.ToReadOnlyDictionaryAsync(key, comparer, cancellation), error);
 
   /// <summary>
-  ///   <para></para>
+  ///   <para>Converts given <see cref="IAsyncEnumerable{T}"/> instance to the instance of <see cref="IEnumerable{(T, int)}"/> type.</para>
   /// </summary>
   /// <typeparam name="T"></typeparam>
   /// <param name="conversion">Conversion to perform.</param>
@@ -252,7 +252,7 @@ public static class IAsyncEnumerableConverters
   public static IEnumerable<(T item, int index)> ValueTuple<T>(this IConversion<IAsyncEnumerable<T>> conversion, string error = null) => conversion.To(sequence => sequence.ToValueTuple(), error);
 
   /// <summary>
-  ///   <para></para>
+  ///   <para>Converts given <see cref="IAsyncEnumerable{TValue}"/> instance to the instance of <see cref="IEnumerable{(TKey, TValue)}"/> type.</para>
   /// </summary>
   /// <typeparam name="TKey"></typeparam>
   /// <typeparam name="TValue"></typeparam>
@@ -267,7 +267,7 @@ public static class IAsyncEnumerableConverters
   public static IEnumerable<(TKey Key, TValue Value)> ValueTuple<TKey, TValue>(this IConversion<IAsyncEnumerable<TValue>> conversion, Func<TValue, TKey> key, IComparer<TKey> comparer = null, string error = null) where TKey : notnull => conversion.To(sequence => sequence.ToValueTuple(key, comparer), error);
 
   /// <summary>
-  ///   <para></para>
+  ///   <para>Converts given <see cref="IAsyncEnumerable{T}"/> instance to the instance of <see cref="Task{IEnumerable{(T, int)}}"/> type.</para>
   /// </summary>
   /// <typeparam name="T"></typeparam>
   /// <param name="conversion">Conversion to perform.</param>
@@ -280,7 +280,7 @@ public static class IAsyncEnumerableConverters
   public static Task<IEnumerable<(T item, int index)>> ValueTupleAsync<T>(this IConversion<IAsyncEnumerable<T>> conversion, CancellationToken cancellation = default, string error = null) => conversion.To(sequence => sequence.ToValueTupleAsync(cancellation), error);
 
   /// <summary>
-  ///   <para></para>
+  ///   <para>Converts given <see cref="IAsyncEnumerable{TValue}"/> instance to the instance of <see cref="Task{IEnumerable{(TKey, TValue)}}"/> type.</para>
   /// </summary>
   /// <typeparam name="TKey"></typeparam>
   /// <typeparam name="TValue"></typeparam>
@@ -296,7 +296,7 @@ public static class IAsyncEnumerableConverters
   public static Task<IEnumerable<(TKey Key, TValue Value)>> ValueTupleAsync<TKey, TValue>(this IConversion<IAsyncEnumerable<TValue>> conversion, Func<TValue, TKey> key, IComparer<TKey> comparer = null, CancellationToken cancellation = default, string error = null) where TKey : notnull => conversion.To(sequence => sequence.ToValueTupleAsync(key, comparer, cancellation), error);
 
   /// <summary>
-  ///   <para></para>
+  ///   <para>Converts given <see cref="IAsyncEnumerable{T}"/> instance to the instance of <see cref="System.Collections.Generic.Stack{T}"/> type.</para>
   /// </summary>
   /// <typeparam name="T"></typeparam>
   /// <param name="conversion">Conversion to perform.</param>
@@ -308,7 +308,7 @@ public static class IAsyncEnumerableConverters
   public static Stack<T> Stack<T>(this IConversion<IAsyncEnumerable<T>> conversion, string error = null) => conversion.To(sequence => sequence.ToStack(), error);
 
   /// <summary>
-  ///   <para></para>
+  ///   <para>Converts given <see cref="IAsyncEnumerable{T}"/> instance to the instance of <see cref="Task{Stack{T}}"/> type.</para>
   /// </summary>
   /// <typeparam name="T"></typeparam>
   /// <param name="conversion">Conversion to perform.</param>
@@ -321,7 +321,7 @@ public static class IAsyncEnumerableConverters
   public static Task<Stack<T>> StackAsync<T>(this IConversion<IAsyncEnumerable<T>> conversion, CancellationToken cancellation = default, string error = null) => conversion.To(sequence => sequence.ToStackAsync(cancellation), error);
 
   /// <summary>
-  ///   <para></para>
+  ///   <para>Converts given <see cref="IAsyncEnumerable{T}"/> instance to the instance of <see cref="System.Collections.Generic.Queue{T}"/> type.</para>
   /// </summary>
   /// <typeparam name="T"></typeparam>
   /// <param name="conversion">Conversion to perform.</param>
@@ -333,7 +333,7 @@ public static class IAsyncEnumerableConverters
   public static Queue<T> Queue<T>(this IConversion<IAsyncEnumerable<T>> conversion, string error = null) => conversion.To(sequence => sequence.ToQueue(), error);
 
   /// <summary>
-  ///   <para></para>
+  ///   <para>Converts given <see cref="IAsyncEnumerable{T}"/> instance to the instance of <see cref="Task{Queue{T}}"/> type.</para>
   /// </summary>
   /// <typeparam name="T"></typeparam>
   /// <param name="conversion">Conversion to perform.</param>
@@ -346,7 +346,7 @@ public static class IAsyncEnumerableConverters
   public static Task<Queue<T>> QueueAsync<T>(this IConversion<IAsyncEnumerable<T>> conversion, CancellationToken cancellation = default, string error = null) => conversion.To(sequence => sequence.ToQueueAsync(cancellation), error);
 
   /// <summary>
-  ///   <para></para>
+  ///   <para>Converts given <see cref="IAsyncEnumerable{byte}"/> instance to the instance of <see cref="System.IO.MemoryStream"/> type.</para>
   /// </summary>
   /// <param name="conversion">Conversion to perform.</param>
   /// <param name="error">Error description phrase for a failed <paramref name="conversion"/>.</param>
@@ -357,7 +357,7 @@ public static class IAsyncEnumerableConverters
   public static MemoryStream MemoryStream(this IConversion<IAsyncEnumerable<byte>> conversion, string error = null) => conversion.To(sequence => sequence.ToMemoryStream(), error);
 
   /// <summary>
-  ///   <para></para>
+  ///   <para>Converts given <see cref="IAsyncEnumerable{byte}"/> instance to the instance of <see cref="Task{MemoryStream}"/> type.</para>
   /// </summary>
   /// <param name="conversion">Conversion to perform.</param>
   /// <param name="cancellation"></param>
@@ -369,7 +369,7 @@ public static class IAsyncEnumerableConverters
   public static Task<MemoryStream> MemoryStreamAsync(this IConversion<IAsyncEnumerable<byte>> conversion, CancellationToken cancellation = default, string error = null) => conversion.To(sequence => sequence.ToMemoryStreamAsync(cancellation), error);
 
   /// <summary>
-  ///   <para></para>
+  ///   <para>Converts given <see cref="IAsyncEnumerable{byte[]}"/> instance to the instance of <see cref="System.IO.MemoryStream"/> type.</para>
   /// </summary>
   /// <param name="conversion">Conversion to perform.</param>
   /// <param name="error">Error description phrase for a failed <paramref name="conversion"/>.</param>
@@ -380,7 +380,7 @@ public static class IAsyncEnumerableConverters
   public static MemoryStream MemoryStream(this IConversion<IAsyncEnumerable<byte[]>> conversion, string error = null) => conversion.To(sequence => sequence.ToMemoryStream(), error);
 
   /// <summary>
-  ///   <para></para>
+  ///   <para>Converts given <see cref="IAsyncEnumerable{byte[]}"/> instance to the instance of <see cref="Task{MemoryStream}"/> type.</para>
   /// </summary>
   /// <param name="conversion">Conversion to perform.</param>
   /// <param name="cancellation"></param>
@@ -393,7 +393,7 @@ public static class IAsyncEnumerableConverters
 
 #if NET7_0_OR_GREATER
   /// <summary>
-  ///   <para></para>
+  ///   <para>Converts given <see cref="IAsyncEnumerable{T}"/> instance to the instance of <see cref="IReadOnlySet{T}"/> type.</para>
   /// </summary>
   /// <typeparam name="T"></typeparam>
   /// <param name="conversion">Conversion to perform.</param>
@@ -406,7 +406,7 @@ public static class IAsyncEnumerableConverters
   public static IReadOnlySet<T> ReadOnlySet<T>(this IConversion<IAsyncEnumerable<T>> conversion, IEqualityComparer<T> comparer = null, string error = null) => conversion.To(sequence => sequence.ToReadOnlySet(comparer), error);
 
   /// <summary>
-  ///   <para></para>
+  ///   <para>Converts given <see cref="IAsyncEnumerable{T}"/> instance to the instance of <see cref="Task{IReadOnlySet{T}}"/> type.</para>
   /// </summary>
   /// <typeparam name="T"></typeparam>
   /// <param name="conversion">Conversion to perform.</param>
@@ -420,7 +420,7 @@ public static class IAsyncEnumerableConverters
   public static Task<IReadOnlySet<T>> ReadOnlySetAsync<T>(this IConversion<IAsyncEnumerable<T>> conversion, IEqualityComparer<T> comparer = null, CancellationToken cancellation = default, string error = null) => conversion.To(sequence => sequence.ToReadOnlySetAsync(comparer, cancellation), error);
 
   /// <summary>
-  ///   <para></para>
+  ///   <para>Converts given <see cref="IAsyncEnumerable{(TElement, TPriority)}"/> instance to the instance of <see cref="System.Collections.Generic.PriorityQueue{TElement, TPriority}"/> type.</para>
   /// </summary>
   /// <typeparam name="TElement"></typeparam>
   /// <typeparam name="TPriority"></typeparam>
@@ -434,7 +434,7 @@ public static class IAsyncEnumerableConverters
   public static PriorityQueue<TElement, TPriority> PriorityQueue<TElement, TPriority>(this IConversion<IAsyncEnumerable<(TElement Element, TPriority Priority)>> conversion, IComparer<TPriority> comparer = null, string error = null) => conversion.To(sequence => sequence.ToPriorityQueue(comparer), error);
 
   /// <summary>
-  ///   <para></para>
+  ///   <para>Converts given <see cref="IAsyncEnumerable{(TElement, TPriority)}"/> instance to the instance of <see cref="Task{PriorityQueue{TElement, TPriority}}"/> type.</para>
   /// </summary>
   /// <typeparam name="TElement"></typeparam>
   /// <typeparam name="TPriority"></typeparam>
@@ -449,7 +449,7 @@ public static class IAsyncEnumerableConverters
   public static Task<PriorityQueue<TElement, TPriority>> PriorityQueueAsync<TElement, TPriority>(this IConversion<IAsyncEnumerable<(TElement Element, TPriority Priority)>> conversion, IComparer<TPriority> comparer = null, CancellationToken cancellation = default, string error = null) => conversion.To(sequence => sequence.ToPriorityQueueAsync(comparer, cancellation), error);
 
   /// <summary>
-  ///   <para></para>
+  ///   <para>Converts given <see cref="IAsyncEnumerable{T}"/> instance to the instance of <see cref="System.Collections.Immutable.ImmutableArray{T}"/> type.</para>
   /// </summary>
   /// <typeparam name="T"></typeparam>
   /// <param name="conversion">Conversion to perform.</param>
@@ -461,7 +461,7 @@ public static class IAsyncEnumerableConverters
   public static ImmutableArray<T> ImmutableArray<T>(this IConversion<IAsyncEnumerable<T>> conversion, string error = null) => conversion.To(sequence => sequence.ToImmutableArray(), error);
 
   /// <summary>
-  ///   <para></para>
+  ///   <para>Converts given <see cref="IAsyncEnumerable{T}"/> instance to the instance of <see cref="Task{ImmutableArray{T}}"/> type.</para>
   /// </summary>
   /// <typeparam name="T"></typeparam>
   /// <param name="conversion">Conversion to perform.</param>
@@ -474,7 +474,7 @@ public static class IAsyncEnumerableConverters
   public static Task<ImmutableArray<T>> ImmutableArrayAsync<T>(this IConversion<IAsyncEnumerable<T>> conversion, CancellationToken cancellation = default, string error = null) => conversion.To(sequence => sequence.ToImmutableArrayAsync(cancellation), error);
 
   /// <summary>
-  ///   <para></para>
+  ///   <para>Converts given <see cref="IAsyncEnumerable{T}"/> instance to the instance of <see cref="System.Collections.Immutable.ImmutableList{T}"/> type.</para>
   /// </summary>
   /// <typeparam name="T"></typeparam>
   /// <param name="conversion">Conversion to perform.</param>
@@ -486,7 +486,7 @@ public static class IAsyncEnumerableConverters
   public static ImmutableList<T> ImmutableList<T>(this IConversion<IAsyncEnumerable<T>> conversion, string error = null) => conversion.To(sequence => sequence.ToImmutableList(), error);
 
   /// <summary>
-  ///   <para></para>
+  ///   <para>Converts given <see cref="IAsyncEnumerable{T}"/> instance to the instance of <see cref="Task{ImmutableList{T}}"/> type.</para>
   /// </summary>
   /// <typeparam name="T"></typeparam>
   /// <param name="conversion">Conversion to perform.</param>
@@ -499,7 +499,7 @@ public static class IAsyncEnumerableConverters
   public static Task<ImmutableList<T>> ImmutableListAsync<T>(this IConversion<IAsyncEnumerable<T>> conversion, CancellationToken cancellation = default, string error = null) => conversion.To(sequence => sequence.ToImmutableListAsync(cancellation), error);
 
   /// <summary>
-  ///   <para></para>
+  ///   <para>Converts given <see cref="IAsyncEnumerable{T}"/> instance to the instance of <see cref="System.Collections.Immutable.ImmutableHashSet{T}"/> type.</para>
   /// </summary>
   /// <typeparam name="T"></typeparam>
   /// <param name="conversion">Conversion to perform.</param>
@@ -512,7 +512,7 @@ public static class IAsyncEnumerableConverters
   public static ImmutableHashSet<T> ImmutableHashSet<T>(this IConversion<IAsyncEnumerable<T>> conversion, IEqualityComparer<T> comparer = null, string error = null) => conversion.To(sequence => sequence.ToImmutableHashSet(comparer), error);
 
   /// <summary>
-  ///   <para></para>
+  ///   <para>Converts given <see cref="IAsyncEnumerable{T}"/> instance to the instance of <see cref="Task{ImmutableHashSet{T}}"/> type.</para>
   /// </summary>
   /// <typeparam name="T"></typeparam>
   /// <param name="conversion">Conversion to perform.</param>
@@ -526,7 +526,7 @@ public static class IAsyncEnumerableConverters
   public static Task<ImmutableHashSet<T>> ImmutableHashSetAsync<T>(this IConversion<IAsyncEnumerable<T>> conversion, IEqualityComparer<T> comparer = null, CancellationToken cancellation = default, string error = null) => conversion.To(sequence => sequence.ToImmutableHashSetAsync(comparer, cancellation), error);
 
   /// <summary>
-  ///  
+  ///   <para>Converts given <see cref="IAsyncEnumerable{T}"/> instance to the instance of <see cref="System.Collections.Immutable.ImmutableSortedSet{T}"/> type.</para>
   /// </summary>
   /// <typeparam name="T"></typeparam>
   /// <param name="conversion">Conversion to perform.</param>
@@ -539,7 +539,7 @@ public static class IAsyncEnumerableConverters
   public static ImmutableSortedSet<T> ImmutableSortedSet<T>(this IConversion<IAsyncEnumerable<T>> conversion, IComparer<T> comparer = null, string error = null) => conversion.To(sequence => sequence.ToImmutableSortedSet(comparer), error);
 
   /// <summary>
-  ///   <para></para>
+  ///   <para>Converts given <see cref="IAsyncEnumerable{T}"/> instance to the instance of <see cref="Task{ImmutableSortedSet{T}}"/> type.</para>
   /// </summary>
   /// <typeparam name="T"></typeparam>
   /// <param name="conversion">Conversion to perform.</param>
@@ -553,7 +553,7 @@ public static class IAsyncEnumerableConverters
   public static Task<ImmutableSortedSet<T>> ImmutableSortedSetAsync<T>(this IConversion<IAsyncEnumerable<T>> conversion, IComparer<T> comparer = null, CancellationToken cancellation = default, string error = null) => conversion.To(sequence => sequence.ToImmutableSortedSetAsync(comparer, cancellation), error);
 
   /// <summary>
-  ///   <para></para>
+  ///   <para>Converts given <see cref="IAsyncEnumerable{TValue}"/> instance to the instance of <see cref="System.Collections.Immutable.ImmutableDictionary{TKey, TValue}"/> type.</para>
   /// </summary>
   /// <typeparam name="TKey"></typeparam>
   /// <typeparam name="TValue"></typeparam>
@@ -568,7 +568,7 @@ public static class IAsyncEnumerableConverters
   public static ImmutableDictionary<TKey, TValue> ImmutableDictionary<TKey, TValue>(this IConversion<IAsyncEnumerable<TValue>> conversion, Func<TValue, TKey> key, IEqualityComparer<TKey> comparer = null, string error = null) where TKey : notnull => conversion.To(sequence => sequence.ToImmutableDictionary(key, comparer), error);
 
   /// <summary>
-  ///   <para></para>
+  ///   <para>Converts given <see cref="IAsyncEnumerable{TValue}"/> instance to the instance of <see cref="Task{ImmutableDictionary{TKey, TValue}}"/> type.</para>
   /// </summary>
   /// <typeparam name="TKey"></typeparam>
   /// <typeparam name="TValue"></typeparam>
@@ -584,7 +584,7 @@ public static class IAsyncEnumerableConverters
   public static Task<ImmutableDictionary<TKey, TValue>> ImmutableDictionaryAsync<TKey, TValue>(this IConversion<IAsyncEnumerable<TValue>> conversion, Func<TValue, TKey> key, IEqualityComparer<TKey> comparer = null, CancellationToken cancellation = default, string error = null) where TKey : notnull => conversion.To(sequence => sequence.ToImmutableDictionaryAsync(key, comparer, cancellation), error);
 
   /// <summary>
-  ///   <para></para>
+  ///   <para>Converts given <see cref="IAsyncEnumerable{TValue}"/> instance to the instance of <see cref="System.Collections.Immutable.ImmutableSortedDictionary{TKey, TValue}"/> type.</para>
   /// </summary>
   /// <typeparam name="TKey"></typeparam>
   /// <typeparam name="TValue"></typeparam>
@@ -600,7 +600,7 @@ public static class IAsyncEnumerableConverters
   public static ImmutableSortedDictionary<TKey, TValue> ImmutableSortedDictionary<TKey, TValue>(this IConversion<IAsyncEnumerable<TValue>> conversion, Func<TValue, TKey> key, IComparer<TKey> keyComparer = null, IEqualityComparer<TValue> valueComparer = null, string error = null) where TKey : notnull => conversion.To(sequence => sequence.ToImmutableSortedDictionary(key, keyComparer, valueComparer), error);
 
   /// <summary>
-  ///   <para></para>
+  ///   <para>Converts given <see cref="IAsyncEnumerable{TValue}"/> instance to the instance of <see cref="Task{ImmutableSortedDictionary{TKey, TValue}}"/> type.</para>
   /// </summary>
   /// <typeparam name="TKey"></typeparam>
   /// <typeparam name="TValue"></typeparam>
@@ -617,7 +617,7 @@ public static class IAsyncEnumerableConverters
   public static Task<ImmutableSortedDictionary<TKey, TValue>> ImmutableSortedDictionaryAsync<TKey, TValue>(this IConversion<IAsyncEnumerable<TValue>> conversion, Func<TValue, TKey> key, IComparer<TKey> keyComparer = null, IEqualityComparer<TValue> valueComparer = null, CancellationToken cancellation = default, string error = null) where TKey : notnull => conversion.To(sequence => sequence.ToImmutableSortedDictionaryAsync(key, keyComparer, valueComparer, cancellation), error);
 
   /// <summary>
-  ///   <para></para>
+  ///   <para>Converts given <see cref="IAsyncEnumerable{T}"/> instance to the instance of <see cref="System.Collections.Immutable.ImmutableQueue{T}"/> type.</para>
   /// </summary>
   /// <typeparam name="T"></typeparam>
   /// <param name="conversion">Conversion to perform.</param>
@@ -629,7 +629,7 @@ public static class IAsyncEnumerableConverters
   public static ImmutableQueue<T> ImmutableQueue<T>(this IConversion<IAsyncEnumerable<T>> conversion, string error = null) => conversion.To(sequence => sequence.ToImmutableQueue(), error);
 
   /// <summary>
-  ///   <para></para>
+  ///   <para>Converts given <see cref="IAsyncEnumerable{T}"/> instance to the instance of <see cref="Task{ImmutableQueue{T}}"/> type.</para>
   /// </summary>
   /// <typeparam name="T"></typeparam>
   /// <param name="conversion">Conversion to perform.</param>

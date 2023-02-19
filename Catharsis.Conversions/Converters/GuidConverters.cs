@@ -7,7 +7,7 @@
 public static class GuidConverters
 {
   /// <summary>
-  ///   <para></para>
+  ///   <para>Converts given <see cref="Guid"/> instance to the <see cref="byte"/> array.</para>
   /// </summary>
   /// <param name="conversion">Conversion to perform.</param>
   /// <param name="error">Error description phrase for a failed <paramref name="conversion"/>.</param>

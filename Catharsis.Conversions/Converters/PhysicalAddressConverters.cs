@@ -10,7 +10,7 @@ namespace Catharsis.Conversions;
 public static class PhysicalAddressConverters
 {
   /// <summary>
-  ///   <para></para>
+  ///   <para>Converts given <see cref="PhysicalAddress"/> instance to the <see cref="byte"/> array.</para>
   /// </summary>
   /// <param name="conversion">Conversion to perform.</param>
   /// <param name="error">Error description phrase for a failed <paramref name="conversion"/>.</param>
