@@ -13,16 +13,18 @@ public static class TimeOnlyConverters
   ///   <para></para>
   /// </summary>
   /// <param name="conversion"></param>
+  /// <param name="error"></param>
   /// <returns></returns>
   /// <exception cref="ArgumentNullException"></exception>
-  public static DateTime DateTime(this IConversion<TimeOnly> conversion) => conversion.To(time => time.ToDateTime());
+  public static DateTime DateTime(this IConversion<TimeOnly> conversion, string error = null) => conversion.To(time => time.ToDateTime(), error);
 
   /// <summary>
   ///   <para></para>
   /// </summary>
   /// <param name="conversion"></param>
+  /// <param name="error"></param>
   /// <returns></returns>
   /// <exception cref="ArgumentNullException"></exception>
-  public static DateTimeOffset DateTimeOffset(this IConversion<TimeOnly> conversion) => conversion.To(time => time.ToDateTime());
+  public static DateTimeOffset DateTimeOffset(this IConversion<TimeOnly> conversion, string error = null) => conversion.To(time => time.ToDateTime(), error);
 }
 #endif

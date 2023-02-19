@@ -11,7 +11,7 @@ namespace Catharsis.Conversions.Tests;
 public sealed class XDocumentConvertersTest : UnitTest
 {
   /// <summary>
-  ///   <para>Performs testing of <see cref="XDocumentConverters.Bytes(IConversion{XDocument})"/> method.</para>
+  ///   <para>Performs testing of <see cref="XDocumentConverters.Bytes(IConversion{XDocument}, string)"/> method.</para>
   /// </summary>
   [Fact]
   public void Bytes_Method()
@@ -22,7 +22,7 @@ public sealed class XDocumentConvertersTest : UnitTest
   }
 
   /// <summary>
-  ///   <para>Performs testing of <see cref="XDocumentConverters.BytesAsync(IConversion{XDocument}, CancellationToken)"/> method.</para>
+  ///   <para>Performs testing of <see cref="XDocumentConverters.BytesAsync(IConversion{XDocument}, CancellationToken, string)"/> method.</para>
   /// </summary>
   [Fact]
   public void BytesAsync_Method()
@@ -33,7 +33,7 @@ public sealed class XDocumentConvertersTest : UnitTest
   }
 
   /// <summary>
-  ///   <para>Performs testing of <see cref="XDocumentConverters.Text(IConversion{XDocument})"/> method.</para>
+  ///   <para>Performs testing of <see cref="XDocumentConverters.Text(IConversion{XDocument}, string)"/> method.</para>
   /// </summary>
   [Fact]
   public void Text_Method()

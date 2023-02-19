@@ -13,15 +13,17 @@ public static class XmlDocumentConverters
   ///   <para></para>
   /// </summary>
   /// <param name="conversion"></param>
+  /// <param name="error"></param>
   /// <returns></returns>
   /// <exception cref="ArgumentNullException"></exception>
-  public static byte[] Bytes(this IConversion<XmlDocument> conversion) => conversion.To(document => document.ToBytes());
+  public static byte[] Bytes(this IConversion<XmlDocument> conversion, string error = null) => conversion.To(document => document.ToBytes(), error);
 
   /// <summary>
   ///   <para></para>
   /// </summary>
   /// <param name="conversion"></param>
+  /// <param name="error"></param>
   /// <returns></returns>
   /// <exception cref="ArgumentNullException"></exception>
-  public static string Text(this IConversion<XmlDocument> conversion) => conversion.To(document => document.ToText());
+  public static string Text(this IConversion<XmlDocument> conversion, string error = null) => conversion.To(document => document.ToText(), error);
 }

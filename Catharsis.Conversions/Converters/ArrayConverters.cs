@@ -14,26 +14,29 @@ public static class ArrayConverters
   /// </summary>
   /// <param name="conversion"></param>
   /// <param name="encoding"></param>
+  /// <param name="error"></param>
   /// <returns></returns>
   /// <exception cref="ArgumentNullException"></exception>
-  public static byte[] Bytes(this IConversion<char[]> conversion, Encoding encoding = null) => conversion.To(chars => chars.ToBytes(encoding));
+  public static byte[] Bytes(this IConversion<char[]> conversion, Encoding encoding = null, string error = null) => conversion.To(chars => chars.ToBytes(encoding), error);
 
   /// <summary>
   ///   <para></para>
   /// </summary>
   /// <param name="conversion"></param>
+  /// <param name="error"></param>
   /// <returns></returns>
   /// <exception cref="ArgumentNullException"></exception>
-  /// <seealso cref="Text(IConversion{byte[]}, Encoding)"/>
-  public static string Text(this IConversion<char[]> conversion) => conversion.To(chars => chars.ToText());
+  /// <seealso cref="Text(IConversion{byte[]}, Encoding, string)"/>
+  public static string Text(this IConversion<char[]> conversion, string error = null) => conversion.To(chars => chars.ToText(), error);
 
   /// <summary>
   ///   <para></para>
   /// </summary>
   /// <param name="conversion"></param>
   /// <param name="encoding"></param>
+  /// <param name="error"></param>
   /// <returns></returns>
   /// <exception cref="ArgumentNullException"></exception>
-  /// <seealso cref="Text(IConversion{char[]})"/>
-  public static string Text(this IConversion<byte[]> conversion, Encoding encoding = null) => conversion.To(bytes => bytes.ToText(encoding));
+  /// <seealso cref="Text(IConversion{char[]}, string)"/>
+  public static string Text(this IConversion<byte[]> conversion, Encoding encoding = null, string error = null) => conversion.To(bytes => bytes.ToText(encoding), error);
 }

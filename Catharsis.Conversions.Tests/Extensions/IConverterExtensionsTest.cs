@@ -10,7 +10,6 @@ using System.Xml;
 using System.Xml.Linq;
 using Catharsis.Extensions;
 using FluentAssertions;
-using FluentAssertions.Common;
 using FluentAssertions.Execution;
 using Xunit;
 

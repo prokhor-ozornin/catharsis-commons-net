@@ -10,7 +10,7 @@ namespace Catharsis.Conversions.Tests;
 public sealed class XmlDocumentConvertersTest : UnitTest
 {
   /// <summary>
-  ///   <para>Performs testing of <see cref="XmlDocumentConverters.Bytes(IConversion{XmlDocument})"/> method.</para>
+  ///   <para>Performs testing of <see cref="XmlDocumentConverters.Bytes(IConversion{XmlDocument}, string)"/> method.</para>
   /// </summary>
   [Fact]
   public void Bytes_Method()
@@ -21,7 +21,7 @@ public sealed class XmlDocumentConvertersTest : UnitTest
   }
 
   /// <summary>
-  ///   <para>Performs testing of <see cref="XmlDocumentConverters.Text(IConversion{XmlDocument})"/> method.</para>
+  ///   <para>Performs testing of <see cref="XmlDocumentConverters.Text(IConversion{XmlDocument}, string)"/> method.</para>
   /// </summary>
   [Fact]
   public void Text_Method()

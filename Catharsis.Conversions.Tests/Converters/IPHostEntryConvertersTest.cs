@@ -10,7 +10,7 @@ namespace Catharsis.Conversions.Tests;
 public sealed class IPHostEntryConvertersTest : UnitTest
 {
   /// <summary>
-  ///   <para>Performs testing of <see cref="IPHostEntryConverters.Enumerable(IConversion{IPHostEntry})"/> method.</para>
+  ///   <para>Performs testing of <see cref="IPHostEntryConverters.Enumerable(IConversion{IPHostEntry}, string)"/> method.</para>
   /// </summary>
   [Fact]
   public void Enumerable_Method()

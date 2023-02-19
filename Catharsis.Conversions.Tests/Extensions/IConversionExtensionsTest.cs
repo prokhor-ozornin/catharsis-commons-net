@@ -1,5 +1,4 @@
 ﻿using FluentAssertions;
-using FluentAssertions.Execution;
 using Xunit;
 
 namespace Catharsis.Conversions.Tests;
@@ -12,27 +11,12 @@ public sealed class IConversionExtensionsTest : UnitTest
   private IConversion<object> Conversion { get; } = new object().Convert();
 
   /// <summary>
-  ///   <para>Performs testing of following methods :</para>
-  ///   <list type="bullet">
-  ///     <item><description><see cref="IConversionExtensions.To{TSource}(IConversion{TSource})"/></description></item>
-  ///     <item><description><see cref="IConversionExtensions.To{TSource, TResult}(IConversion{TSource}, Func{TSource, TResult})"/></description></item>
-  ///   </list>
+  ///   <para>Performs testing of <see cref="IConversionExtensions.To{TSource}(IConversion{TSource})"/> method.</para>
   /// </summary>
   [Fact]
-  public void To_Methods()
+  public void To_Method()
   {
-    using (new AssertionScope())
-    {
-      AssertionExtensions.Should(() => IConversionExtensions.To<object>(null)).ThrowExactly<ArgumentNullException>().WithParameterName("conversion");
-
-    }
-
-    using (new AssertionScope())
-    {
-      AssertionExtensions.Should(() => IConversionExtensions.To<object, object>(null, instance => instance)).ThrowExactly<ArgumentNullException>().WithParameterName("conversion");
-      AssertionExtensions.Should(() => Conversion.To<object, object>(null)).ThrowExactly<ArgumentNullException>().WithParameterName("converter");
-
-    }
+    AssertionExtensions.Should(() => IConversionExtensions.To<object>(null)).ThrowExactly<ArgumentNullException>().WithParameterName("conversion");
 
     throw new NotImplementedException();
   }

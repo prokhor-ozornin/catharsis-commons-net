@@ -12,63 +12,70 @@ public static class BinaryReaderConverters
   ///   <para></para>
   /// </summary>
   /// <param name="conversion"></param>
+  /// <param name="error"></param>
   /// <returns></returns>
   /// <exception cref="ArgumentNullException"></exception>
-  /// <seealso cref="BytesAsync(IConversion{BinaryReader})"/>
-  public static IEnumerable<byte> Bytes(this IConversion<BinaryReader> conversion) => conversion.To(reader => reader.ToBytes());
+  /// <seealso cref="BytesAsync(IConversion{BinaryReader}, string)"/>
+  public static IEnumerable<byte> Bytes(this IConversion<BinaryReader> conversion, string error = null) => conversion.To(reader => reader.ToBytes(), error);
 
   /// <summary>
   ///   <para></para>
   /// </summary>
   /// <param name="conversion"></param>
+  /// <param name="error"></param>
   /// <returns></returns>
   /// <exception cref="ArgumentNullException"></exception>
-  /// <seealso cref="Bytes(IConversion{BinaryReader})"/>
-  public static IAsyncEnumerable<byte> BytesAsync(this IConversion<BinaryReader> conversion) => conversion.To(reader => reader.ToBytesAsync());
+  /// <seealso cref="Bytes(IConversion{BinaryReader}, string)"/>
+  public static IAsyncEnumerable<byte> BytesAsync(this IConversion<BinaryReader> conversion, string error = null) => conversion.To(reader => reader.ToBytesAsync(), error);
 
   /// <summary>
   ///   <para></para>
   /// </summary>
   /// <param name="conversion"></param>
+  /// <param name="error"></param>
   /// <returns></returns>
   /// <exception cref="ArgumentNullException"></exception>
-  public static string Text(this IConversion<BinaryReader> conversion) => conversion.To(reader => reader.ToText());
+  public static string Text(this IConversion<BinaryReader> conversion, string error = null) => conversion.To(reader => reader.ToText(), error);
 
   /// <summary>
   ///   <para></para>
   /// </summary>
   /// <param name="conversion"></param>
+  /// <param name="error"></param>
   /// <returns></returns>
   /// <exception cref="ArgumentNullException"></exception>
-  /// <seealso cref="Enumerable(IConversion{BinaryReader}, int)"/>
-  public static IEnumerable<byte> Enumerable(this IConversion<BinaryReader> conversion) => conversion.To(reader => reader.ToEnumerable());
-
-  /// <summary>
-  ///   <para></para>
-  /// </summary>
-  /// <param name="conversion"></param>
-  /// <param name="count"></param>
-  /// <returns></returns>
-  /// <exception cref="ArgumentNullException"></exception>
-  /// <seealso cref="Enumerable(IConversion{BinaryReader})"/>
-  public static IEnumerable<byte[]> Enumerable(this IConversion<BinaryReader> conversion, int count) => conversion.To(reader => reader.ToEnumerable(count));
-
-  /// <summary>
-  ///   <para></para>
-  /// </summary>
-  /// <param name="conversion"></param>
-  /// <returns></returns>
-  /// <exception cref="ArgumentNullException"></exception>
-  /// <seealso cref="AsyncEnumerable(IConversion{BinaryReader}, int)"/>
-  public static IAsyncEnumerable<byte> AsyncEnumerable(this IConversion<BinaryReader> conversion) => conversion.To(reader => reader.ToAsyncEnumerable());
+  /// <seealso cref="Enumerable(IConversion{BinaryReader}, int, string)"/>
+  public static IEnumerable<byte> Enumerable(this IConversion<BinaryReader> conversion, string error = null) => conversion.To(reader => reader.ToEnumerable(), error);
 
   /// <summary>
   ///   <para></para>
   /// </summary>
   /// <param name="conversion"></param>
   /// <param name="count"></param>
+  /// <param name="error"></param>
   /// <returns></returns>
   /// <exception cref="ArgumentNullException"></exception>
-  /// <seealso cref="AsyncEnumerable(IConversion{BinaryReader})"/>
-  public static IAsyncEnumerable<byte[]> AsyncEnumerable(this IConversion<BinaryReader> conversion, int count) => conversion.To(reader => reader.ToAsyncEnumerable(count));
+  /// <seealso cref="Enumerable(IConversion{BinaryReader}, string)"/>
+  public static IEnumerable<byte[]> Enumerable(this IConversion<BinaryReader> conversion, int count, string error = null) => conversion.To(reader => reader.ToEnumerable(count), error);
+
+  /// <summary>
+  ///   <para></para>
+  /// </summary>
+  /// <param name="conversion"></param>
+  /// <param name="error"></param>
+  /// <returns></returns>
+  /// <exception cref="ArgumentNullException"></exception>
+  /// <seealso cref="AsyncEnumerable(IConversion{BinaryReader}, int, string)"/>
+  public static IAsyncEnumerable<byte> AsyncEnumerable(this IConversion<BinaryReader> conversion, string error = null) => conversion.To(reader => reader.ToAsyncEnumerable(), error);
+
+  /// <summary>
+  ///   <para></para>
+  /// </summary>
+  /// <param name="conversion"></param>
+  /// <param name="count"></param>
+  /// <param name="error"></param>
+  /// <returns></returns>
+  /// <exception cref="ArgumentNullException"></exception>
+  /// <seealso cref="AsyncEnumerable(IConversion{BinaryReader}, string)"/>
+  public static IAsyncEnumerable<byte[]> AsyncEnumerable(this IConversion<BinaryReader> conversion, int count, string error = null) => conversion.To(reader => reader.ToAsyncEnumerable(count), error);
 }

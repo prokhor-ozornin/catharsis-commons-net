@@ -11,7 +11,7 @@ namespace Catharsis.Conversions.Tests;
 public sealed class ArrayConvertersTest : UnitTest
 {
   /// <summary>
-  ///   <para>Performs testing of <see cref="ArrayConverters.Bytes(IConversion{char[]}, Encoding)"/> method.</para>
+  ///   <para>Performs testing of <see cref="ArrayConverters.Bytes(IConversion{char[]}, Encoding, string)"/> method.</para>
   /// </summary>
   [Fact]
   public void Bytes_Method()
@@ -24,8 +24,8 @@ public sealed class ArrayConvertersTest : UnitTest
   /// <summary>
   ///   <para>Performs testing of following methods :</para>
   ///   <list type="bullet">
-  ///     <item><description><see cref="ArrayConverters.Text(IConversion{char[]})"/></description></item>
-  ///     <item><description><see cref="ArrayConverters.Text(IConversion{byte[]}, Encoding)"/></description></item>
+  ///     <item><description><see cref="ArrayConverters.Text(IConversion{char[]}, string)"/></description></item>
+  ///     <item><description><see cref="ArrayConverters.Text(IConversion{byte[]}, Encoding, string)"/></description></item>
   ///   </list>
   /// </summary>
   [Fact]
@@ -33,7 +33,7 @@ public sealed class ArrayConvertersTest : UnitTest
   {
     using (new AssertionScope())
     {
-      AssertionExtensions.Should(() => ArrayConverters.Text(null)).ThrowExactly<ArgumentNullException>().WithParameterName("converter");
+      AssertionExtensions.Should(() => ((IConversion<char[]>) null).Text()).ThrowExactly<ArgumentNullException>().WithParameterName("converter");
 
     }
 

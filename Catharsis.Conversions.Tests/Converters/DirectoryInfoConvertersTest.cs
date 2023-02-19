@@ -9,7 +9,7 @@ namespace Catharsis.Conversions.Tests;
 public sealed class DirectoryInfoConvertersTest : UnitTest
 {
   /// <summary>
-  ///   <para>Performs testing of <see cref="DirectoryInfoConverters.Enumerable(IConversion{DirectoryInfo}, string, bool)"/> method.</para>
+  ///   <para>Performs testing of <see cref="DirectoryInfoConverters.Enumerable(IConversion{DirectoryInfo}, string, bool, string)"/> method.</para>
   /// </summary>
   [Fact]
   public void Enumerable_Method()

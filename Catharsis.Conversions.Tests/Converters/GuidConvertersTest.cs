@@ -9,7 +9,7 @@ namespace Catharsis.Conversions.Tests;
 public sealed class GuidConvertersTest : UnitTest
 {
   /// <summary>
-  ///   <para>Performs testing of <see cref="GuidConverters.Bytes(IConversion{Guid})"/> method.</para>
+  ///   <para>Performs testing of <see cref="GuidConverters.Bytes(IConversion{Guid}, string)"/> method.</para>
   /// </summary>
   [Fact]
   public void Bytes_Method()

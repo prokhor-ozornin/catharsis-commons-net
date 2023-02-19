@@ -11,7 +11,7 @@ namespace Catharsis.Conversions.Tests;
 public sealed class TcpClientConvertersTest : UnitTest
 {
   /// <summary>
-  ///   <para>Performs testing of <see cref="TcpClientConverters.Bytes(IConversion{TcpClient})"/> method.</para>
+  ///   <para>Performs testing of <see cref="TcpClientConverters.Bytes(IConversion{TcpClient}, string)"/> method.</para>
   /// </summary>
   [Fact]
   public void Bytes_Method()
@@ -22,7 +22,7 @@ public sealed class TcpClientConvertersTest : UnitTest
   }
 
   /// <summary>
-  ///   <para>Performs testing of <see cref="TcpClientConverters.BytesAsync(IConversion{TcpClient})"/> method.</para>
+  ///   <para>Performs testing of <see cref="TcpClientConverters.BytesAsync(IConversion{TcpClient}, string)"/> method.</para>
   /// </summary>
   [Fact]
   public void BytesAsync_Method()
@@ -35,8 +35,8 @@ public sealed class TcpClientConvertersTest : UnitTest
   /// <summary>
   ///   <para>Performs testing of following methods :</para>
   ///   <list type="bullet">
-  ///     <item><description><see cref="TcpClientConverters.Enumerable(IConversion{TcpClient}, bool)"/></description></item>
-  ///     <item><description><see cref="TcpClientConverters.Enumerable(IConversion{TcpClient}, int, bool)"/></description></item>
+  ///     <item><description><see cref="TcpClientConverters.Enumerable(IConversion{TcpClient}, bool, string)"/></description></item>
+  ///     <item><description><see cref="TcpClientConverters.Enumerable(IConversion{TcpClient}, int, bool, string)"/></description></item>
   ///   </list>
   /// </summary>
   [Fact]
@@ -60,8 +60,8 @@ public sealed class TcpClientConvertersTest : UnitTest
   /// <summary>
   ///   <para>Performs testing of following methods :</para>
   ///   <list type="bullet">
-  ///     <item><description><see cref="TcpClientConverters.AsyncEnumerable(IConversion{TcpClient}, bool)"/></description></item>
-  ///     <item><description><see cref="TcpClientConverters.AsyncEnumerable(IConversion{TcpClient}, int, bool)"/></description></item>
+  ///     <item><description><see cref="TcpClientConverters.AsyncEnumerable(IConversion{TcpClient}, bool, string)"/></description></item>
+  ///     <item><description><see cref="TcpClientConverters.AsyncEnumerable(IConversion{TcpClient}, int, bool, string)"/></description></item>
   ///   </list>
   /// </summary>
   [Fact]

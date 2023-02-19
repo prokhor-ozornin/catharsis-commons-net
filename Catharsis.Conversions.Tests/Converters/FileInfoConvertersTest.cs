@@ -13,7 +13,7 @@ public sealed class FileInfoConvertersTest : UnitTest
   private IConversion<FileInfo> Conversion { get; } = RandomFakeFile.Convert();
 
   /// <summary>
-  ///   <para>Performs testing of <see cref="FileInfoConverters.Bytes(IConversion{FileInfo})"/> method.</para>
+  ///   <para>Performs testing of <see cref="FileInfoConverters.Bytes(IConversion{FileInfo}, string)"/> method.</para>
   /// </summary>
   [Fact]
   public void Bytes_Method()
@@ -24,7 +24,7 @@ public sealed class FileInfoConvertersTest : UnitTest
   }
 
   /// <summary>
-  ///   <para>Performs testing of <see cref="FileInfoConverters.BytesAsync(IConversion{FileInfo})"/> method.</para>
+  ///   <para>Performs testing of <see cref="FileInfoConverters.BytesAsync(IConversion{FileInfo}, string)"/> method.</para>
   /// </summary>
   [Fact]
   public void BytesAsync_Method()
@@ -35,7 +35,7 @@ public sealed class FileInfoConvertersTest : UnitTest
   }
 
   /// <summary>
-  ///   <para>Performs testing of <see cref="FileInfoConverters.Text(IConversion{FileInfo}, Encoding)"/> method.</para>
+  ///   <para>Performs testing of <see cref="FileInfoConverters.Text(IConversion{FileInfo}, Encoding, string)"/> method.</para>
   /// </summary>
   [Fact]
   public void Text_Method()
@@ -46,7 +46,7 @@ public sealed class FileInfoConvertersTest : UnitTest
   }
 
   /// <summary>
-  ///   <para>Performs testing of <see cref="FileInfoConverters.TextAsync(IConversion{FileInfo}, Encoding)"/> method.</para>
+  ///   <para>Performs testing of <see cref="FileInfoConverters.TextAsync(IConversion{FileInfo}, Encoding, string)"/> method.</para>
   /// </summary>
   [Fact]
   public void TextAsync_Method()
@@ -57,7 +57,7 @@ public sealed class FileInfoConvertersTest : UnitTest
   }
 
   /// <summary>
-  ///   <para>Performs testing of <see cref="FileInfoConverters.Stream(IConversion{FileInfo})"/> method.</para>
+  ///   <para>Performs testing of <see cref="FileInfoConverters.Stream(IConversion{FileInfo}, string)"/> method.</para>
   /// </summary>
   [Fact]
   public void Stream_Method()
@@ -68,7 +68,7 @@ public sealed class FileInfoConvertersTest : UnitTest
   }
 
   /// <summary>
-  ///   <para>Performs testing of <see cref="FileInfoConverters.ReadOnlyStream(IConversion{FileInfo})"/> method.</para>
+  ///   <para>Performs testing of <see cref="FileInfoConverters.ReadOnlyStream(IConversion{FileInfo}, string)"/> method.</para>
   /// </summary>
   [Fact]
   public void ReadOnlyStream_Method()
@@ -79,7 +79,7 @@ public sealed class FileInfoConvertersTest : UnitTest
   }
 
   /// <summary>
-  ///   <para>Performs testing of <see cref="FileInfoConverters.WriteOnlyStream(IConversion{FileInfo})"/> method.</para>
+  ///   <para>Performs testing of <see cref="FileInfoConverters.WriteOnlyStream(IConversion{FileInfo}, string)"/> method.</para>
   /// </summary>
   [Fact]
   public void WriteOnlyStream_Method()
@@ -90,7 +90,7 @@ public sealed class FileInfoConvertersTest : UnitTest
   }
 
   /// <summary>
-  ///   <para>Performs testing of <see cref="FileInfoConverters.StreamReader(IConversion{FileInfo}, Encoding)"/> method.</para>
+  ///   <para>Performs testing of <see cref="FileInfoConverters.StreamReader(IConversion{FileInfo}, Encoding, string)"/> method.</para>
   /// </summary>
   [Fact]
   public void StreamReader_Method()
@@ -101,7 +101,7 @@ public sealed class FileInfoConvertersTest : UnitTest
   }
 
   /// <summary>
-  ///   <para>Performs testing of <see cref="FileInfoConverters.StreamWriter(IConversion{FileInfo}, Encoding)"/> method.</para>
+  ///   <para>Performs testing of <see cref="FileInfoConverters.StreamWriter(IConversion{FileInfo}, Encoding, string)"/> method.</para>
   /// </summary>
   [Fact]
   public void StreamWriter_Method()
@@ -112,7 +112,7 @@ public sealed class FileInfoConvertersTest : UnitTest
   }
 
   /// <summary>
-  ///   <para>Performs testing of <see cref="FileInfoConverters.XmlDocument(IConversion{FileInfo})"/> method.</para>
+  ///   <para>Performs testing of <see cref="FileInfoConverters.XmlDocument(IConversion{FileInfo}, string)"/> method.</para>
   /// </summary>
   [Fact]
   public void XmlDocument_Method()
@@ -123,7 +123,7 @@ public sealed class FileInfoConvertersTest : UnitTest
   }
 
   /// <summary>
-  ///   <para>Performs testing of <see cref="FileInfoConverters.XDocument(IConversion{FileInfo})"/> method.</para>
+  ///   <para>Performs testing of <see cref="FileInfoConverters.XDocument(IConversion{FileInfo}, string)"/> method.</para>
   /// </summary>
   [Fact]
   public void XDocument_Method()
@@ -134,7 +134,7 @@ public sealed class FileInfoConvertersTest : UnitTest
   }
 
   /// <summary>
-  ///   <para>Performs testing of <see cref="FileInfoConverters.XDocumentAsync(IConversion{FileInfo}, CancellationToken)"/> method.</para>
+  ///   <para>Performs testing of <see cref="FileInfoConverters.XDocumentAsync(IConversion{FileInfo}, CancellationToken, string)"/> method.</para>
   /// </summary>
   [Fact]
   public void XDocumentAsync_Method()

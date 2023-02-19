@@ -11,7 +11,7 @@ namespace Catharsis.Conversions.Tests;
 public sealed class ProcessConvertersTest : UnitTest
 {
   /// <summary>
-  ///   <para>Performs testing of <see cref="ProcessConverters.Bytes(IConversion{Process})"/> method.</para>
+  ///   <para>Performs testing of <see cref="ProcessConverters.Bytes(IConversion{Process}, string)"/> method.</para>
   /// </summary>
   [Fact]
   public void Bytes_Method()
@@ -22,7 +22,7 @@ public sealed class ProcessConvertersTest : UnitTest
   }
 
   /// <summary>
-  ///   <para>Performs testing of <see cref="ProcessConverters.BytesAsync(IConversion{Process})"/> method.</para>
+  ///   <para>Performs testing of <see cref="ProcessConverters.BytesAsync(IConversion{Process}, string)"/> method.</para>
   /// </summary>
   [Fact]
   public void BytesAsync_Method()
@@ -33,7 +33,7 @@ public sealed class ProcessConvertersTest : UnitTest
   }
 
   /// <summary>
-  ///   <para>Performs testing of <see cref="ProcessConverters.Text(IConversion{Process})"/> method.</para>
+  ///   <para>Performs testing of <see cref="ProcessConverters.Text(IConversion{Process}, string)"/> method.</para>
   /// </summary>
   [Fact]
   public void Text_Method()
@@ -44,7 +44,7 @@ public sealed class ProcessConvertersTest : UnitTest
   }
 
   /// <summary>
-  ///   <para>Performs testing of <see cref="ProcessConverters.TextAsync(IConversion{Process})"/> method.</para>
+  ///   <para>Performs testing of <see cref="ProcessConverters.TextAsync(IConversion{Process}, string)"/> method.</para>
   /// </summary>
   [Fact]
   public void TextAsync_Method()

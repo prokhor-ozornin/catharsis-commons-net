@@ -10,7 +10,7 @@ namespace Catharsis.Conversions.Tests;
 public sealed class PhysicalAddressConvertersTest : UnitTest
 {
   /// <summary>
-  ///   <para>Performs testing of <see cref="PhysicalAddressConverters.Bytes(IConversion{PhysicalAddress})"/> method.</para>
+  ///   <para>Performs testing of <see cref="PhysicalAddressConverters.Bytes(IConversion{PhysicalAddress}, string)"/> method.</para>
   /// </summary>
   [Fact]
   public void Bytes_Method()

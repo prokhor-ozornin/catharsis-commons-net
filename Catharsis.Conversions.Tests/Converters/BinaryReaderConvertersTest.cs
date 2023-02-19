@@ -10,7 +10,7 @@ namespace Catharsis.Conversions.Tests;
 public sealed class BinaryReaderConvertersTest : UnitTest
 {
   /// <summary>
-  ///   <para>Performs testing of <see cref="BinaryReaderConverters.Bytes(IConversion{BinaryReader})"/> method.</para>
+  ///   <para>Performs testing of <see cref="BinaryReaderConverters.Bytes(IConversion{BinaryReader}, string)"/> method.</para>
   /// </summary>
   [Fact]
   public void Bytes_Method()
@@ -21,7 +21,7 @@ public sealed class BinaryReaderConvertersTest : UnitTest
   }
 
   /// <summary>
-  ///   <para>Performs testing of <see cref="BinaryReaderConverters.BytesAsync(IConversion{BinaryReader})"/> method.</para>
+  ///   <para>Performs testing of <see cref="BinaryReaderConverters.BytesAsync(IConversion{BinaryReader}, string)"/> method.</para>
   /// </summary>
   [Fact]
   public void BytesAsync_Method()
@@ -32,7 +32,7 @@ public sealed class BinaryReaderConvertersTest : UnitTest
   }
 
   /// <summary>
-  ///   <para>Performs testing of <see cref="BinaryReaderConverters.Text(IConversion{BinaryReader})"/> method.</para>
+  ///   <para>Performs testing of <see cref="BinaryReaderConverters.Text(IConversion{BinaryReader}, string)"/> method.</para>
   /// </summary>
   [Fact]
   public void Text_Method()
@@ -45,8 +45,8 @@ public sealed class BinaryReaderConvertersTest : UnitTest
   /// <summary>
   ///   <para>Performs testing of following methods :</para>
   ///   <list type="bullet">
-  ///     <item><description><see cref="BinaryReaderConverters.Enumerable(IConversion{BinaryReader})"/></description></item>
-  ///     <item><description><see cref="BinaryReaderConverters.Enumerable(IConversion{BinaryReader}, int)"/></description></item>
+  ///     <item><description><see cref="BinaryReaderConverters.Enumerable(IConversion{BinaryReader}, string)"/></description></item>
+  ///     <item><description><see cref="BinaryReaderConverters.Enumerable(IConversion{BinaryReader}, int, string)"/></description></item>
   ///   </list>
   /// </summary>
   [Fact]
@@ -70,8 +70,8 @@ public sealed class BinaryReaderConvertersTest : UnitTest
   /// <summary>
   ///   <para>Performs testing of following methods :</para>
   ///   <list type="bullet">
-  ///     <item><description><see cref="BinaryReaderConverters.AsyncEnumerable(IConversion{BinaryReader})"/></description></item>
-  ///     <item><description><see cref="BinaryReaderConverters.AsyncEnumerable(IConversion{BinaryReader}, int)"/></description></item>
+  ///     <item><description><see cref="BinaryReaderConverters.AsyncEnumerable(IConversion{BinaryReader}, string)"/></description></item>
+  ///     <item><description><see cref="BinaryReaderConverters.AsyncEnumerable(IConversion{BinaryReader}, int, string)"/></description></item>
   ///   </list>
   /// </summary>
   [Fact]

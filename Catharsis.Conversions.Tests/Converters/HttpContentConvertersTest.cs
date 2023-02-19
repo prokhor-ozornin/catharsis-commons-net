@@ -12,7 +12,7 @@ public sealed class HttpContentConvertersTest : UnitTest
   private IConversion<HttpContent> Conversion { get; } = new StringContent(string.Empty).Convert();
 
   /// <summary>
-  ///   <para>Performs testing of <see cref="HttpContentConverters.Bytes(IConversion{HttpContent})"/> method.</para>
+  ///   <para>Performs testing of <see cref="HttpContentConverters.Bytes(IConversion{HttpContent}, string)"/> method.</para>
   /// </summary>
   [Fact]
   public void Bytes_Method()
@@ -23,7 +23,7 @@ public sealed class HttpContentConvertersTest : UnitTest
   }
 
   /// <summary>
-  ///   <para>Performs testing of <see cref="HttpContentConverters.BytesAsync(IConversion{HttpContent})"/> method.</para>
+  ///   <para>Performs testing of <see cref="HttpContentConverters.BytesAsync(IConversion{HttpContent}, string)"/> method.</para>
   /// </summary>
   [Fact]
   public void BytesAsync_Method()
@@ -34,7 +34,7 @@ public sealed class HttpContentConvertersTest : UnitTest
   }
 
   /// <summary>
-  ///   <para>Performs testing of <see cref="HttpContentConverters.Text(IConversion{HttpContent})"/> method.</para>
+  ///   <para>Performs testing of <see cref="HttpContentConverters.Text(IConversion{HttpContent}, string)"/> method.</para>
   /// </summary>
   [Fact]
   public void Text_Method()
@@ -45,7 +45,7 @@ public sealed class HttpContentConvertersTest : UnitTest
   }
 
   /// <summary>
-  ///   <para>Performs testing of <see cref="HttpContentConverters.TextAsync(IConversion{HttpContent}, CancellationToken)"/> method.</para>
+  ///   <para>Performs testing of <see cref="HttpContentConverters.TextAsync(IConversion{HttpContent}, CancellationToken, string)"/> method.</para>
   /// </summary>
   [Fact]
   public void TextAsync_Method()
@@ -57,7 +57,7 @@ public sealed class HttpContentConvertersTest : UnitTest
   }
 
   /// <summary>
-  ///   <para>Performs testing of <see cref="HttpContentConverters.Stream(IConversion{HttpContent})"/> method.</para>
+  ///   <para>Performs testing of <see cref="HttpContentConverters.Stream(IConversion{HttpContent}, string)"/> method.</para>
   /// </summary>
   [Fact]
   public void Stream_Method()
@@ -68,7 +68,7 @@ public sealed class HttpContentConvertersTest : UnitTest
   }
 
   /// <summary>
-  ///   <para>Performs testing of <see cref="HttpContentConverters.StreamAsync(IConversion{HttpContent}, CancellationToken)"/> method.</para>
+  ///   <para>Performs testing of <see cref="HttpContentConverters.StreamAsync(IConversion{HttpContent}, CancellationToken, string)"/> method.</para>
   /// </summary>
   [Fact]
   public void StreamAsync_Method()

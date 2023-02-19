@@ -9,7 +9,7 @@ namespace Catharsis.Conversions.Tests;
 public sealed class FileSystemInfoConvertersTest : UnitTest
 {
   /// <summary>
-  ///   <para>Performs testing of <see cref="FileSystemInfoConverters.Uri(IConversion{FileSystemInfo})"/> method.</para>
+  ///   <para>Performs testing of <see cref="FileSystemInfoConverters.Uri(IConversion{FileSystemInfo}, string)"/> method.</para>
   /// </summary>
   [Fact]
   public void Uri_Method()

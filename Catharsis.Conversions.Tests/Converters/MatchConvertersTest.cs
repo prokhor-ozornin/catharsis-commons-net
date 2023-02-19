@@ -10,7 +10,7 @@ namespace Catharsis.Conversions.Tests;
 public sealed class MatchConvertersTest : UnitTest
 {
   /// <summary>
-  ///   <para>Performs testing of <see cref="MatchConverters.Enumerable(IConversion{Match})"/> method.</para>
+  ///   <para>Performs testing of <see cref="MatchConverters.Enumerable(IConversion{Match}, string)"/> method.</para>
   /// </summary>
   [Fact]
   public void Enumerable_Method()

@@ -14,7 +14,7 @@ public sealed class StreamConvertersTest : UnitTest
   private IConversion<Stream> Conversion { get; } = Stream.Null.Convert();
 
   /// <summary>
-  ///   <para>Performs testing of <see cref="StreamConverters.Bytes(IConversion{Stream}, bool)"/> method.</para>
+  ///   <para>Performs testing of <see cref="StreamConverters.Bytes(IConversion{Stream}, bool, string)"/> method.</para>
   /// </summary>
   [Fact]
   public void Bytes_Method()
@@ -25,7 +25,7 @@ public sealed class StreamConvertersTest : UnitTest
   }
 
   /// <summary>
-  ///   <para>Performs testing of <see cref="StreamConverters.BytesAsync(IConversion{Stream}, bool)"/> method.</para>
+  ///   <para>Performs testing of <see cref="StreamConverters.BytesAsync(IConversion{Stream}, bool, string)"/> method.</para>
   /// </summary>
   [Fact]
   public void BytesAsync_Method()
@@ -36,7 +36,7 @@ public sealed class StreamConvertersTest : UnitTest
   }
 
   /// <summary>
-  ///   <para>Performs testing of <see cref="StreamConverters.Text(IConversion{Stream}, Encoding)"/> method.</para>
+  ///   <para>Performs testing of <see cref="StreamConverters.Text(IConversion{Stream}, Encoding, string)"/> method.</para>
   /// </summary>
   [Fact]
   public void Text_Method()
@@ -47,7 +47,7 @@ public sealed class StreamConvertersTest : UnitTest
   }
 
   /// <summary>
-  ///   <para>Performs testing of <see cref="StreamConverters.TextAsync(IConversion{Stream}, Encoding)"/> method.</para>
+  ///   <para>Performs testing of <see cref="StreamConverters.TextAsync(IConversion{Stream}, Encoding, string)"/> method.</para>
   /// </summary>
   [Fact]
   public void TextAsync_Method()
@@ -58,7 +58,7 @@ public sealed class StreamConvertersTest : UnitTest
   }
 
   /// <summary>
-  ///   <para>Performs testing of <see cref="StreamConverters.XmlDocument(IConversion{Stream})"/> method.</para>
+  ///   <para>Performs testing of <see cref="StreamConverters.XmlDocument(IConversion{Stream}, string)"/> method.</para>
   /// </summary>
   [Fact]
   public void XmlDocument_Method()
@@ -69,7 +69,7 @@ public sealed class StreamConvertersTest : UnitTest
   }
 
   /// <summary>
-  ///   <para>Performs testing of <see cref="StreamConverters.XDocument(IConversion{Stream})"/> method.</para>
+  ///   <para>Performs testing of <see cref="StreamConverters.XDocument(IConversion{Stream}, string)"/> method.</para>
   /// </summary>
   [Fact]
   public void XDocument_Method()
@@ -80,7 +80,7 @@ public sealed class StreamConvertersTest : UnitTest
   }
 
   /// <summary>
-  ///   <para>Performs testing of <see cref="StreamConverters.XDocumentAsync(IConversion{Stream}, CancellationToken)"/> method.</para>
+  ///   <para>Performs testing of <see cref="StreamConverters.XDocumentAsync(IConversion{Stream}, CancellationToken, string)"/> method.</para>
   /// </summary>
   [Fact]
   public void XDocumentAsync_Method()
@@ -94,8 +94,8 @@ public sealed class StreamConvertersTest : UnitTest
   /// <summary>
   ///   <para>Performs testing of following methods :</para>
   ///   <list type="bullet">
-  ///     <item><description><see cref="StreamConverters.Enumerable(IConversion{Stream}, bool)"/></description></item>
-  ///     <item><description><see cref="StreamConverters.Enumerable(IConversion{Stream}, int, bool)"/></description></item>
+  ///     <item><description><see cref="StreamConverters.Enumerable(IConversion{Stream}, bool, string)"/></description></item>
+  ///     <item><description><see cref="StreamConverters.Enumerable(IConversion{Stream}, int, bool, string)"/></description></item>
   ///   </list>
   /// </summary>
   [Fact]
@@ -119,8 +119,8 @@ public sealed class StreamConvertersTest : UnitTest
   /// <summary>
   ///   <para>Performs testing of following methods :</para>
   ///   <list type="bullet">
-  ///     <item><description><see cref="StreamConverters.AsyncEnumerable(IConversion{Stream}, bool)"/></description></item>
-  ///     <item><description><see cref="StreamConverters.AsyncEnumerable(IConversion{Stream}, int, bool)"/></description></item>
+  ///     <item><description><see cref="StreamConverters.AsyncEnumerable(IConversion{Stream}, bool, string)"/></description></item>
+  ///     <item><description><see cref="StreamConverters.AsyncEnumerable(IConversion{Stream}, int, bool, string)"/></description></item>
   ///   </list>
   /// </summary>
   [Fact]
@@ -142,7 +142,7 @@ public sealed class StreamConvertersTest : UnitTest
   }
 
   /// <summary>
-  ///   <para>Performs testing of <see cref="StreamConverters.BufferedStream(IConversion{Stream}, int?)"/> method.</para>
+  ///   <para>Performs testing of <see cref="StreamConverters.BufferedStream(IConversion{Stream}, int?, string)"/> method.</para>
   /// </summary>
   [Fact]
   public void BufferedStream_Method()
@@ -153,7 +153,7 @@ public sealed class StreamConvertersTest : UnitTest
   }
 
   /// <summary>
-  ///   <para>Performs testing of <see cref="StreamConverters.BinaryReader(IConversion{Stream}, Encoding, bool)"/> method.</para>
+  ///   <para>Performs testing of <see cref="StreamConverters.BinaryReader(IConversion{Stream}, Encoding, bool, string)"/> method.</para>
   /// </summary>
   [Fact]
   public void BinaryReader_Method()
@@ -164,7 +164,7 @@ public sealed class StreamConvertersTest : UnitTest
   }
 
   /// <summary>
-  ///   <para>Performs testing of <see cref="StreamConverters.BinaryWriter(IConversion{Stream}, Encoding, bool)"/> method.</para>
+  ///   <para>Performs testing of <see cref="StreamConverters.BinaryWriter(IConversion{Stream}, Encoding, bool, string)"/> method.</para>
   /// </summary>
   [Fact]
   public void BinaryWriter_Method()
@@ -175,7 +175,7 @@ public sealed class StreamConvertersTest : UnitTest
   }
 
   /// <summary>
-  ///   <para>Performs testing of <see cref="StreamConverters.StreamReader(IConversion{Stream}, Encoding, bool)"/> method.</para>
+  ///   <para>Performs testing of <see cref="StreamConverters.StreamReader(IConversion{Stream}, Encoding, bool, string)"/> method.</para>
   /// </summary>
   [Fact]
   public void StreamReader_Method()
@@ -186,7 +186,7 @@ public sealed class StreamConvertersTest : UnitTest
   }
 
   /// <summary>
-  ///   <para>Performs testing of <see cref="StreamConverters.StreamWriter(IConversion{Stream}, Encoding, bool)"/> method.</para>
+  ///   <para>Performs testing of <see cref="StreamConverters.StreamWriter(IConversion{Stream}, Encoding, bool, string)"/> method.</para>
   /// </summary>
   [Fact]
   public void StreamWriter_Method()

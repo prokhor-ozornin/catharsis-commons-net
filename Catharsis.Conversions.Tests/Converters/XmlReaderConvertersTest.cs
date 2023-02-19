@@ -13,7 +13,7 @@ public sealed class XmlReaderConvertersTest : UnitTest
   private IConversion<XmlReader> Conversion { get; } = Stream.Null.ToXmlReader().Convert();
 
   /// <summary>
-  ///   <para>Performs testing of <see cref="XmlReaderConverters.Text(IConversion{XmlReader})"/> method.</para>
+  ///   <para>Performs testing of <see cref="XmlReaderConverters.Text(IConversion{XmlReader}, string)"/> method.</para>
   /// </summary>
   [Fact]
   public void Text_Method()
@@ -24,7 +24,7 @@ public sealed class XmlReaderConvertersTest : UnitTest
   }
 
   /// <summary>
-  ///   <para>Performs testing of <see cref="XmlReaderConverters.XmlDocument(IConversion{XmlReader})"/> method.</para>
+  ///   <para>Performs testing of <see cref="XmlReaderConverters.XmlDocument(IConversion{XmlReader}, string)"/> method.</para>
   /// </summary>
   [Fact]
   public void XmlDocument_Method()
@@ -35,7 +35,7 @@ public sealed class XmlReaderConvertersTest : UnitTest
   }
 
   /// <summary>
-  ///   <para>Performs testing of <see cref="XmlReaderConverters.XDocument(IConversion{XmlReader})"/> method.</para>
+  ///   <para>Performs testing of <see cref="XmlReaderConverters.XDocument(IConversion{XmlReader}, string)"/> method.</para>
   /// </summary>
   [Fact]
   public void XDocument_Method()
@@ -46,7 +46,7 @@ public sealed class XmlReaderConvertersTest : UnitTest
   }
 
   /// <summary>
-  ///   <para>Performs testing of <see cref="XmlReaderConverters.XDocumentAsync(IConversion{XmlReader}, CancellationToken)"/> method.</para>
+  ///   <para>Performs testing of <see cref="XmlReaderConverters.XDocumentAsync(IConversion{XmlReader}, CancellationToken, string)"/> method.</para>
   /// </summary>
   [Fact]
   public void XDocumentAsync_Method()

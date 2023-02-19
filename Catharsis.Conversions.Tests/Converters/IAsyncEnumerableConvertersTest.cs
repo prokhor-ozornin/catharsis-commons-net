@@ -13,7 +13,7 @@ public sealed class IAsyncEnumerableConvertersTest : UnitTest
   private IConversion<IAsyncEnumerable<object>> Conversion { get; } = Enumerable.Empty<object>().ToAsyncEnumerable().Convert();
 
   /// <summary>
-  ///   <para>Performs testing of <see cref="IAsyncEnumerableConverters.Enumerable{T}(IConversion{IAsyncEnumerable{T}})"/> method.</para>
+  ///   <para>Performs testing of <see cref="IAsyncEnumerableConverters.Enumerable{T}(IConversion{IAsyncEnumerable{T}}, string)"/> method.</para>
   /// </summary>
   [Fact]
   public void Enumerable_Method()
@@ -24,7 +24,7 @@ public sealed class IAsyncEnumerableConvertersTest : UnitTest
   }
 
   /// <summary>
-  ///   <para>Performs testing of <see cref="IAsyncEnumerableConverters.Array{T}(IConversion{IAsyncEnumerable{T}})"/> method.</para>
+  ///   <para>Performs testing of <see cref="IAsyncEnumerableConverters.Array{T}(IConversion{IAsyncEnumerable{T}}, string)"/> method.</para>
   /// </summary>
   [Fact]
   public void Array_Method()
@@ -35,7 +35,7 @@ public sealed class IAsyncEnumerableConvertersTest : UnitTest
   }
 
   /// <summary>
-  ///   <para>Performs testing of <see cref="IAsyncEnumerableConverters.ArrayAsync{T}(IConversion{IAsyncEnumerable{T}}, CancellationToken)"/> method.</para>
+  ///   <para>Performs testing of <see cref="IAsyncEnumerableConverters.ArrayAsync{T}(IConversion{IAsyncEnumerable{T}}, CancellationToken, string)"/> method.</para>
   /// </summary>
   [Fact]
   public void ArrayAsync_Method()
@@ -47,7 +47,7 @@ public sealed class IAsyncEnumerableConvertersTest : UnitTest
   }
 
   /// <summary>
-  ///   <para>Performs testing of <see cref="IAsyncEnumerableConverters.List{T}(IConversion{IAsyncEnumerable{T}})"/> method.</para>
+  ///   <para>Performs testing of <see cref="IAsyncEnumerableConverters.List{T}(IConversion{IAsyncEnumerable{T}}, string)"/> method.</para>
   /// </summary>
   [Fact]
   public void List_Method()
@@ -58,7 +58,7 @@ public sealed class IAsyncEnumerableConvertersTest : UnitTest
   }
 
   /// <summary>
-  ///   <para>Performs testing of <see cref="IAsyncEnumerableConverters.ListAsync{T}(IConversion{IAsyncEnumerable{T}})"/> method.</para>
+  ///   <para>Performs testing of <see cref="IAsyncEnumerableConverters.ListAsync{T}(IConversion{IAsyncEnumerable{T}}, string)"/> method.</para>
   /// </summary>
   [Fact]
   public void ListAsync_Method()
@@ -70,7 +70,7 @@ public sealed class IAsyncEnumerableConvertersTest : UnitTest
   }
 
   /// <summary>
-  ///   <para>Performs testing of <see cref="IAsyncEnumerableConverters.LinkedList{T}(IConversion{IAsyncEnumerable{T}})"/> method.</para>
+  ///   <para>Performs testing of <see cref="IAsyncEnumerableConverters.LinkedList{T}(IConversion{IAsyncEnumerable{T}}, string)"/> method.</para>
   /// </summary>
   [Fact]
   public void LinkedList_Method()
@@ -81,7 +81,7 @@ public sealed class IAsyncEnumerableConvertersTest : UnitTest
   }
 
   /// <summary>
-  ///   <para>Performs testing of <see cref="IAsyncEnumerableConverters.LinkedListAsync{T}(IConversion{IAsyncEnumerable{T}})"/> method.</para>
+  ///   <para>Performs testing of <see cref="IAsyncEnumerableConverters.LinkedListAsync{T}(IConversion{IAsyncEnumerable{T}}, string)"/> method.</para>
   /// </summary>
   [Fact]
   public void LinkedListAsync_Method()
@@ -93,7 +93,7 @@ public sealed class IAsyncEnumerableConvertersTest : UnitTest
   }
 
   /// <summary>
-  ///   <para>Performs testing of <see cref="IAsyncEnumerableConverters.ReadOnlyList{T}(IConversion{IAsyncEnumerable{T}})"/> method.</para>
+  ///   <para>Performs testing of <see cref="IAsyncEnumerableConverters.ReadOnlyList{T}(IConversion{IAsyncEnumerable{T}}, string)"/> method.</para>
   /// </summary>
   [Fact]
   public void ReadOnlyList_Method()
@@ -104,7 +104,7 @@ public sealed class IAsyncEnumerableConvertersTest : UnitTest
   }
 
   /// <summary>
-  ///   <para>Performs testing of <see cref="IAsyncEnumerableConverters.ReadOnlyListAsync{T}(IConversion{IAsyncEnumerable{T}})"/> method.</para>
+  ///   <para>Performs testing of <see cref="IAsyncEnumerableConverters.ReadOnlyListAsync{T}(IConversion{IAsyncEnumerable{T}}, string)"/> method.</para>
   /// </summary>
   [Fact]
   public void ReadOnlyListAsync_Method()
@@ -116,7 +116,7 @@ public sealed class IAsyncEnumerableConvertersTest : UnitTest
   }
 
   /// <summary>
-  ///   <para>Performs testing of <see cref="IAsyncEnumerableConverters.HashSet{T}(IConversion{IAsyncEnumerable{T}}, IEqualityComparer{T})"/> method.</para>
+  ///   <para>Performs testing of <see cref="IAsyncEnumerableConverters.HashSet{T}(IConversion{IAsyncEnumerable{T}}, IEqualityComparer{T}, string)"/> method.</para>
   /// </summary>
   [Fact]
   public void HashSet_Method()
@@ -127,7 +127,7 @@ public sealed class IAsyncEnumerableConvertersTest : UnitTest
   }
 
   /// <summary>
-  ///   <para>Performs testing of <see cref="IAsyncEnumerableConverters.HashSetAsync{T}(IConversion{IAsyncEnumerable{T}}, IEqualityComparer{T}, CancellationToken)"/> method.</para>
+  ///   <para>Performs testing of <see cref="IAsyncEnumerableConverters.HashSetAsync{T}(IConversion{IAsyncEnumerable{T}}, IEqualityComparer{T}, CancellationToken, string)"/> method.</para>
   /// </summary>
   [Fact]
   public void HashSetAsync_Method()
@@ -139,7 +139,7 @@ public sealed class IAsyncEnumerableConvertersTest : UnitTest
   }
 
   /// <summary>
-  ///   <para>Performs testing of <see cref="IAsyncEnumerableConverters.SortedSet{T}(IConversion{IAsyncEnumerable{T}}, IComparer{T})"/> method.</para>
+  ///   <para>Performs testing of <see cref="IAsyncEnumerableConverters.SortedSet{T}(IConversion{IAsyncEnumerable{T}}, IComparer{T}, string)"/> method.</para>
   /// </summary>
   [Fact]
   public void SortedSet_Method()
@@ -150,7 +150,7 @@ public sealed class IAsyncEnumerableConvertersTest : UnitTest
   }
 
   /// <summary>
-  ///   <para>Performs testing of <see cref="IAsyncEnumerableConverters.SortedSetAsync{T}(IConversion{IAsyncEnumerable{T}}, IComparer{T}, CancellationToken)"/> method.</para>
+  ///   <para>Performs testing of <see cref="IAsyncEnumerableConverters.SortedSetAsync{T}(IConversion{IAsyncEnumerable{T}}, IComparer{T}, CancellationToken, string)"/> method.</para>
   /// </summary>
   [Fact]
   public void SortedSetAsync_Method()
@@ -162,7 +162,7 @@ public sealed class IAsyncEnumerableConvertersTest : UnitTest
   }
 
   /// <summary>
-  ///   <para>Performs testing of <see cref="IAsyncEnumerableConverters.ReadOnlySet{T}(IConversion{IAsyncEnumerable{T}}, IEqualityComparer{T})"/> method.</para>
+  ///   <para>Performs testing of <see cref="IAsyncEnumerableConverters.ReadOnlySet{T}(IConversion{IAsyncEnumerable{T}}, IEqualityComparer{T}, string)"/> method.</para>
   /// </summary>
   [Fact]
   public void ReadOnlySet_Method()
@@ -173,7 +173,7 @@ public sealed class IAsyncEnumerableConvertersTest : UnitTest
   }
 
   /// <summary>
-  ///   <para>Performs testing of <see cref="IAsyncEnumerableConverters.ReadOnlySetAsync{T}(IConversion{IAsyncEnumerable{T}}, IEqualityComparer{T}, CancellationToken)"/> method.</para>
+  ///   <para>Performs testing of <see cref="IAsyncEnumerableConverters.ReadOnlySetAsync{T}(IConversion{IAsyncEnumerable{T}}, IEqualityComparer{T}, CancellationToken, string)"/> method.</para>
   /// </summary>
   [Fact]
   public void ReadOnlySetAsync_Method()
@@ -185,7 +185,7 @@ public sealed class IAsyncEnumerableConvertersTest : UnitTest
   }
 
   /// <summary>
-  ///   <para>Performs testing of <see cref="IAsyncEnumerableConverters.Dictionary{TKey, TValue}(IConversion{IAsyncEnumerable{TValue}}, Func{TValue, TKey}, IEqualityComparer{TKey})"/> method.</para>
+  ///   <para>Performs testing of <see cref="IAsyncEnumerableConverters.Dictionary{TKey, TValue}(IConversion{IAsyncEnumerable{TValue}}, Func{TValue, TKey}, IEqualityComparer{TKey}, string)"/> method.</para>
   /// </summary>
   [Fact]
   public void Dictionary_Method()
@@ -197,7 +197,7 @@ public sealed class IAsyncEnumerableConvertersTest : UnitTest
   }
 
   /// <summary>
-  ///   <para>Performs testing of <see cref="IAsyncEnumerableConverters.DictionaryAsync{TKey, TValue}(IConversion{IAsyncEnumerable{TValue}}, Func{TValue, TKey}, IEqualityComparer{TKey}, CancellationToken)"/> method.</para>
+  ///   <para>Performs testing of <see cref="IAsyncEnumerableConverters.DictionaryAsync{TKey, TValue}(IConversion{IAsyncEnumerable{TValue}}, Func{TValue, TKey}, IEqualityComparer{TKey}, CancellationToken, string)"/> method.</para>
   /// </summary>
   [Fact]
   public void DictionaryAsync_Method()
@@ -210,7 +210,7 @@ public sealed class IAsyncEnumerableConvertersTest : UnitTest
   }
 
   /// <summary>
-  ///   <para>Performs testing of <see cref="IAsyncEnumerableConverters.ReadOnlyDictionary{TKey, TValue}(IConversion{IAsyncEnumerable{TValue}}, Func{TValue, TKey}, IEqualityComparer{TKey})"/> method.</para>
+  ///   <para>Performs testing of <see cref="IAsyncEnumerableConverters.ReadOnlyDictionary{TKey, TValue}(IConversion{IAsyncEnumerable{TValue}}, Func{TValue, TKey}, IEqualityComparer{TKey}, string)"/> method.</para>
   /// </summary>
   [Fact]
   public void ReadOnlyDictionary_Method()
@@ -222,7 +222,7 @@ public sealed class IAsyncEnumerableConvertersTest : UnitTest
   }
 
   /// <summary>
-  ///   <para>Performs testing of <see cref="IAsyncEnumerableConverters.ReadOnlyDictionaryAsync{TKey, TValue}(IConversion{IAsyncEnumerable{TValue}}, Func{TValue, TKey}, IEqualityComparer{TKey}, CancellationToken)"/> method.</para>
+  ///   <para>Performs testing of <see cref="IAsyncEnumerableConverters.ReadOnlyDictionaryAsync{TKey, TValue}(IConversion{IAsyncEnumerable{TValue}}, Func{TValue, TKey}, IEqualityComparer{TKey}, CancellationToken, string)"/> method.</para>
   /// </summary>
   [Fact]
   public void ReadOnlyDictionaryAsync_Method()
@@ -238,7 +238,7 @@ public sealed class IAsyncEnumerableConvertersTest : UnitTest
   ///   <para>Performs testing of following methods :</para>
   ///   <list type="bullet">
   ///     <item><description><see cref="IAsyncEnumerableConverters.ValueTuple{T}(IConversion{IAsyncEnumerable{T}})"/></description></item>
-  ///     <item><description><see cref="IAsyncEnumerableConverters.ValueTuple{TKey, TValue}(IConversion{IAsyncEnumerable{TValue}}, Func{TValue, TKey}, IComparer{TKey})"/></description></item>
+  ///     <item><description><see cref="IAsyncEnumerableConverters.ValueTuple{TKey, TValue}(IConversion{IAsyncEnumerable{TValue}}, Func{TValue, TKey}, IComparer{TKey}, string)"/></description></item>
   ///   </list>
   /// </summary>
   [Fact]
@@ -265,7 +265,7 @@ public sealed class IAsyncEnumerableConvertersTest : UnitTest
   ///   <para>Performs testing of following methods :</para>
   ///   <list type="bullet">
   ///     <item><description><see cref="IAsyncEnumerableConverters.ValueTupleAsync{T}(IConversion{IAsyncEnumerable{T}})"/></description></item>
-  ///     <item><description><see cref="IAsyncEnumerableConverters.ValueTupleAsync{TKey, TValue}(IConversion{IAsyncEnumerable{TValue}}, Func{TValue, TKey}, IComparer{TKey}, CancellationToken)"/></description></item>
+  ///     <item><description><see cref="IAsyncEnumerableConverters.ValueTupleAsync{TKey, TValue}(IConversion{IAsyncEnumerable{TValue}}, Func{TValue, TKey}, IComparer{TKey}, CancellationToken, string)"/></description></item>
   ///   </list>
   /// </summary>
   [Fact]
@@ -289,7 +289,7 @@ public sealed class IAsyncEnumerableConvertersTest : UnitTest
   }
 
   /// <summary>
-  ///   <para>Performs testing of <see cref="IAsyncEnumerableConverters.Stack{T}(IConversion{IAsyncEnumerable{T}})"/> method.</para>
+  ///   <para>Performs testing of <see cref="IAsyncEnumerableConverters.Stack{T}(IConversion{IAsyncEnumerable{T}}, string)"/> method.</para>
   /// </summary>
   [Fact]
   public void Stack_Method()
@@ -300,7 +300,7 @@ public sealed class IAsyncEnumerableConvertersTest : UnitTest
   }
 
   /// <summary>
-  ///   <para>Performs testing of <see cref="IAsyncEnumerableConverters.StackAsync{T}(IConversion{IAsyncEnumerable{T}}, CancellationToken)"/> method.</para>
+  ///   <para>Performs testing of <see cref="IAsyncEnumerableConverters.StackAsync{T}(IConversion{IAsyncEnumerable{T}}, CancellationToken, string)"/> method.</para>
   /// </summary>
   [Fact]
   public void StackAsync_Method()
@@ -312,7 +312,7 @@ public sealed class IAsyncEnumerableConvertersTest : UnitTest
   }
 
   /// <summary>
-  ///   <para>Performs testing of <see cref="IAsyncEnumerableConverters.Queue{T}(IConversion{IAsyncEnumerable{T}})"/> method.</para>
+  ///   <para>Performs testing of <see cref="IAsyncEnumerableConverters.Queue{T}(IConversion{IAsyncEnumerable{T}}, string)"/> method.</para>
   /// </summary>
   [Fact]
   public void Queue_Method()
@@ -323,7 +323,7 @@ public sealed class IAsyncEnumerableConvertersTest : UnitTest
   }
 
   /// <summary>
-  ///   <para>Performs testing of <see cref="IAsyncEnumerableConverters.QueueAsync{T}(IConversion{IAsyncEnumerable{T}}, CancellationToken)"/> method.</para>
+  ///   <para>Performs testing of <see cref="IAsyncEnumerableConverters.QueueAsync{T}(IConversion{IAsyncEnumerable{T}}, CancellationToken, string)"/> method.</para>
   /// </summary>
   [Fact]
   public void QueueAsync_Method()
@@ -335,7 +335,7 @@ public sealed class IAsyncEnumerableConvertersTest : UnitTest
   }
 
   /// <summary>
-  ///   <para>Performs testing of <see cref="IAsyncEnumerableConverters.PriorityQueue{TElement, TPriority}(IConversion{IAsyncEnumerable{(TElement Element, TPriority Priority)}}, IComparer{TPriority})"/> method.</para>
+  ///   <para>Performs testing of <see cref="IAsyncEnumerableConverters.PriorityQueue{TElement, TPriority}(IConversion{IAsyncEnumerable{(TElement Element, TPriority Priority)}}, IComparer{TPriority}, string)"/> method.</para>
   /// </summary>
   [Fact]
   public void PriorityQueue_Method()
@@ -346,7 +346,7 @@ public sealed class IAsyncEnumerableConvertersTest : UnitTest
   }
 
   /// <summary>
-  ///   <para>Performs testing of <see cref="IAsyncEnumerableConverters.PriorityQueueAsync{TElement, TPriority}(IConversion{IAsyncEnumerable{(TElement Element, TPriority Priority)}}, IComparer{TPriority}, CancellationToken)"/> method.</para>
+  ///   <para>Performs testing of <see cref="IAsyncEnumerableConverters.PriorityQueueAsync{TElement, TPriority}(IConversion{IAsyncEnumerable{(TElement Element, TPriority Priority)}}, IComparer{TPriority}, CancellationToken, string)"/> method.</para>
   /// </summary>
   [Fact]
   public void PriorityQueueAsync_Method()
@@ -356,12 +356,12 @@ public sealed class IAsyncEnumerableConvertersTest : UnitTest
 
     throw new NotImplementedException();
   }
-  
+
   /// <summary>
   ///   <para>Performs testing of following methods :</para>
   ///   <list type="bullet">
-  ///     <item><description><see cref="IAsyncEnumerableConverters.MemoryStream(IConversion{IAsyncEnumerable{byte}})"/></description></item>
-  ///     <item><description><see cref="IAsyncEnumerableConverters.MemoryStream(IConversion{IAsyncEnumerable{byte[]}})"/></description></item>
+  ///     <item><description><see cref="IAsyncEnumerableConverters.MemoryStream(IConversion{IAsyncEnumerable{byte}}, string)"/></description></item>
+  ///     <item><description><see cref="IAsyncEnumerableConverters.MemoryStream(IConversion{IAsyncEnumerable{byte[]}}, string)"/></description></item>
   ///   </list>
   /// </summary>
   [Fact]
@@ -385,8 +385,8 @@ public sealed class IAsyncEnumerableConvertersTest : UnitTest
   /// <summary>
   ///   <para>Performs testing of following methods :</para>
   ///   <list type="bullet">
-  ///     <item><description><see cref="IAsyncEnumerableConverters.MemoryStreamAsync(IConversion{IAsyncEnumerable{byte}}, CancellationToken)"/></description></item>
-  ///     <item><description><see cref="IAsyncEnumerableConverters.MemoryStreamAsync(IConversion{IAsyncEnumerable{byte[]}}, CancellationToken)"/></description></item>
+  ///     <item><description><see cref="IAsyncEnumerableConverters.MemoryStreamAsync(IConversion{IAsyncEnumerable{byte}}, CancellationToken, string)"/></description></item>
+  ///     <item><description><see cref="IAsyncEnumerableConverters.MemoryStreamAsync(IConversion{IAsyncEnumerable{byte[]}}, CancellationToken, string)"/></description></item>
   ///   </list>
   /// </summary>
   [Fact]
@@ -410,7 +410,7 @@ public sealed class IAsyncEnumerableConvertersTest : UnitTest
   }
 
   /// <summary>
-  ///   <para>Performs testing of <see cref="IAsyncEnumerableConverters.ImmutableArray{T}(IConversion{IAsyncEnumerable{T}})"/> method.</para>
+  ///   <para>Performs testing of <see cref="IAsyncEnumerableConverters.ImmutableArray{T}(IConversion{IAsyncEnumerable{T}}, string)"/> method.</para>
   /// </summary>
   [Fact]
   public void ImmutableArray_Method()
@@ -421,7 +421,7 @@ public sealed class IAsyncEnumerableConvertersTest : UnitTest
   }
 
   /// <summary>
-  ///   <para>Performs testing of <see cref="IAsyncEnumerableConverters.ImmutableArrayAsync{T}(IConversion{IAsyncEnumerable{T}}, CancellationToken)"/> method.</para>
+  ///   <para>Performs testing of <see cref="IAsyncEnumerableConverters.ImmutableArrayAsync{T}(IConversion{IAsyncEnumerable{T}}, CancellationToken, string)"/> method.</para>
   /// </summary>
   [Fact]
   public void ImmutableArrayAsync_Method()
@@ -433,7 +433,7 @@ public sealed class IAsyncEnumerableConvertersTest : UnitTest
   }
 
   /// <summary>
-  ///   <para>Performs testing of <see cref="IAsyncEnumerableConverters.ImmutableList{T}(IConversion{IAsyncEnumerable{T}})"/> method.</para>
+  ///   <para>Performs testing of <see cref="IAsyncEnumerableConverters.ImmutableList{T}(IConversion{IAsyncEnumerable{T}}, string)"/> method.</para>
   /// </summary>
   [Fact]
   public void ImmutableList_Method()
@@ -444,7 +444,7 @@ public sealed class IAsyncEnumerableConvertersTest : UnitTest
   }
 
   /// <summary>
-  ///   <para>Performs testing of <see cref="IAsyncEnumerableConverters.ImmutableListAsync{T}(IConversion{IAsyncEnumerable{T}}, CancellationToken)"/> method.</para>
+  ///   <para>Performs testing of <see cref="IAsyncEnumerableConverters.ImmutableListAsync{T}(IConversion{IAsyncEnumerable{T}}, CancellationToken, string)"/> method.</para>
   /// </summary>
   [Fact]
   public void ImmutableListAsync_Method()
@@ -456,7 +456,7 @@ public sealed class IAsyncEnumerableConvertersTest : UnitTest
   }
 
   /// <summary>
-  ///   <para>Performs testing of <see cref="IAsyncEnumerableConverters.ImmutableHashSet{T}(IConversion{IAsyncEnumerable{T}}, IEqualityComparer{T})"/> method.</para>
+  ///   <para>Performs testing of <see cref="IAsyncEnumerableConverters.ImmutableHashSet{T}(IConversion{IAsyncEnumerable{T}}, IEqualityComparer{T}, string)"/> method.</para>
   /// </summary>
   [Fact]
   public void ImmutableHashSet_Method()
@@ -467,7 +467,7 @@ public sealed class IAsyncEnumerableConvertersTest : UnitTest
   }
 
   /// <summary>
-  ///   <para>Performs testing of <see cref="IAsyncEnumerableConverters.ImmutableHashSetAsync{T}(IConversion{IAsyncEnumerable{T}}, IEqualityComparer{T}, CancellationToken)"/> method.</para>
+  ///   <para>Performs testing of <see cref="IAsyncEnumerableConverters.ImmutableHashSetAsync{T}(IConversion{IAsyncEnumerable{T}}, IEqualityComparer{T}, CancellationToken, string)"/> method.</para>
   /// </summary>
   [Fact]
   public void ImmutableHashSetAsync_Method()
@@ -479,7 +479,7 @@ public sealed class IAsyncEnumerableConvertersTest : UnitTest
   }
 
   /// <summary>
-  ///   <para>Performs testing of <see cref="IAsyncEnumerableConverters.ImmutableSortedSet{T}(IConversion{IAsyncEnumerable{T}}, IComparer{T})"/> method.</para>
+  ///   <para>Performs testing of <see cref="IAsyncEnumerableConverters.ImmutableSortedSet{T}(IConversion{IAsyncEnumerable{T}}, IComparer{T}, string)"/> method.</para>
   /// </summary>
   [Fact]
   public void ImmutableSortedSet_Method()
@@ -490,7 +490,7 @@ public sealed class IAsyncEnumerableConvertersTest : UnitTest
   }
 
   /// <summary>
-  ///   <para>Performs testing of <see cref="IAsyncEnumerableConverters.ImmutableSortedSetAsync{T}(IConversion{IAsyncEnumerable{T}}, IComparer{T}, CancellationToken)"/> method.</para>
+  ///   <para>Performs testing of <see cref="IAsyncEnumerableConverters.ImmutableSortedSetAsync{T}(IConversion{IAsyncEnumerable{T}}, IComparer{T}, CancellationToken, string)"/> method.</para>
   /// </summary>
   [Fact]
   public void ImmutableSortedSetAsync_Method()
@@ -502,7 +502,7 @@ public sealed class IAsyncEnumerableConvertersTest : UnitTest
   }
 
   /// <summary>
-  ///   <para>Performs testing of <see cref="IAsyncEnumerableConverters.ImmutableDictionary{TKey, TValue}(IConversion{IAsyncEnumerable{TValue}}, Func{TValue, TKey}, IEqualityComparer{TKey})"/> method.</para>
+  ///   <para>Performs testing of <see cref="IAsyncEnumerableConverters.ImmutableDictionary{TKey, TValue}(IConversion{IAsyncEnumerable{TValue}}, Func{TValue, TKey}, IEqualityComparer{TKey}, string)"/> method.</para>
   /// </summary>
   [Fact]
   public void ImmutableDictionary_Method()
@@ -514,7 +514,7 @@ public sealed class IAsyncEnumerableConvertersTest : UnitTest
   }
 
   /// <summary>
-  ///   <para>Performs testing of <see cref="IAsyncEnumerableConverters.ImmutableDictionaryAsync{TKey, TValue}(IConversion{IAsyncEnumerable{TValue}}, Func{TValue, TKey}, IEqualityComparer{TKey}, CancellationToken)"/> method.</para>
+  ///   <para>Performs testing of <see cref="IAsyncEnumerableConverters.ImmutableDictionaryAsync{TKey, TValue}(IConversion{IAsyncEnumerable{TValue}}, Func{TValue, TKey}, IEqualityComparer{TKey}, CancellationToken, string)"/> method.</para>
   /// </summary>
   [Fact]
   public void ImmutableDictionaryAsync_Method()
@@ -527,7 +527,7 @@ public sealed class IAsyncEnumerableConvertersTest : UnitTest
   }
 
   /// <summary>
-  ///   <para>Performs testing of <see cref="IAsyncEnumerableConverters.ImmutableSortedDictionary{TKey, TValue}(IConversion{IAsyncEnumerable{TValue}}, Func{TValue, TKey}, IComparer{TKey}, IEqualityComparer{TValue})"/> method.</para>
+  ///   <para>Performs testing of <see cref="IAsyncEnumerableConverters.ImmutableSortedDictionary{TKey, TValue}(IConversion{IAsyncEnumerable{TValue}}, Func{TValue, TKey}, IComparer{TKey}, IEqualityComparer{TValue}, string)"/> method.</para>
   /// </summary>
   [Fact]
   public void ImmutableSortedDictionary_Method()
@@ -539,7 +539,7 @@ public sealed class IAsyncEnumerableConvertersTest : UnitTest
   }
 
   /// <summary>
-  ///   <para>Performs testing of <see cref="IAsyncEnumerableConverters.ImmutableSortedDictionaryAsync{TKey, TValue}(IConversion{IAsyncEnumerable{TValue}}, Func{TValue, TKey}, IComparer{TKey}, IEqualityComparer{TValue}, CancellationToken)"/> method.</para>
+  ///   <para>Performs testing of <see cref="IAsyncEnumerableConverters.ImmutableSortedDictionaryAsync{TKey, TValue}(IConversion{IAsyncEnumerable{TValue}}, Func{TValue, TKey}, IComparer{TKey}, IEqualityComparer{TValue}, CancellationToken, string)"/> method.</para>
   /// </summary>
   [Fact]
   public void ImmutableSortedDictionaryAsync_Method()
@@ -552,7 +552,7 @@ public sealed class IAsyncEnumerableConvertersTest : UnitTest
   }
 
   /// <summary>
-  ///   <para>Performs testing of <see cref="IAsyncEnumerableConverters.ImmutableQueue{T}(IConversion{IAsyncEnumerable{T}})"/> method.</para>
+  ///   <para>Performs testing of <see cref="IAsyncEnumerableConverters.ImmutableQueue{T}(IConversion{IAsyncEnumerable{T}}, string)"/> method.</para>
   /// </summary>
   [Fact]
   public void ImmutableQueue_Method()
@@ -563,7 +563,7 @@ public sealed class IAsyncEnumerableConvertersTest : UnitTest
   }
 
   /// <summary>
-  ///   <para>Performs testing of <see cref="IAsyncEnumerableConverters.ImmutableQueueAsync{T}(IConversion{IAsyncEnumerable{T}}, CancellationToken)"/> method.</para>
+  ///   <para>Performs testing of <see cref="IAsyncEnumerableConverters.ImmutableQueueAsync{T}(IConversion{IAsyncEnumerable{T}}, CancellationToken, string)"/> method.</para>
   /// </summary>
   [Fact]
   public void ImmutableQueueAsync_Method()

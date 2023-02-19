@@ -10,7 +10,7 @@ namespace Catharsis.Conversions.Tests;
 public sealed class StringBuilderConvertersTest : UnitTest
 {
   /// <summary>
-  ///   <para>Performs testing of <see cref="StringBuilderConverters.StringWriter(IConversion{StringBuilder}, IFormatProvider)"/> method.</para>
+  ///   <para>Performs testing of <see cref="StringBuilderConverters.StringWriter(IConversion{StringBuilder}, IFormatProvider, string)"/> method.</para>
   /// </summary>
   [Fact]
   public void StringWriter_Method()
@@ -21,7 +21,7 @@ public sealed class StringBuilderConvertersTest : UnitTest
   }
 
   /// <summary>
-  ///   <para>Performs testing of <see cref="StringBuilderConverters.XmlWriter(IConversion{StringBuilder})"/> method.</para>
+  ///   <para>Performs testing of <see cref="StringBuilderConverters.XmlWriter(IConversion{StringBuilder}, string)"/> method.</para>
   /// </summary>
   [Fact]
   public void XmlWriter_Method()

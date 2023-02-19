@@ -14,7 +14,7 @@ public sealed class TextReaderConvertersTest : UnitTest
   private IConversion<TextReader> Conversion { get; } = Stream.Null.ToStreamReader().Convert();
 
   /// <summary>
-  ///   <para>Performs testing of <see cref="TextReaderConverters.Bytes(TextReader, Encoding)"/> method.</para>
+  ///   <para>Performs testing of <see cref="TextReaderConverters.Bytes(TextReader, Encoding, string)"/> method.</para>
   /// </summary>
   [Fact]
   public void Bytes_Method()
@@ -25,7 +25,7 @@ public sealed class TextReaderConvertersTest : UnitTest
   }
 
   /// <summary>
-  ///   <para>Performs testing of <see cref="TextReaderConverters.BytesAsync(TextReader, Encoding)"/> method.</para>
+  ///   <para>Performs testing of <see cref="TextReaderConverters.BytesAsync(TextReader, Encoding, string)"/> method.</para>
   /// </summary>
   [Fact]
   public void BytesAsync_Method()
@@ -36,7 +36,7 @@ public sealed class TextReaderConvertersTest : UnitTest
   }
 
   /// <summary>
-  ///   <para>Performs testing of <see cref="TextReaderConverters.Text(IConversion{TextReader})"/> method.</para>
+  ///   <para>Performs testing of <see cref="TextReaderConverters.Text(IConversion{TextReader}, string)"/> method.</para>
   /// </summary>
   [Fact]
   public void Text_Method()
@@ -47,7 +47,7 @@ public sealed class TextReaderConvertersTest : UnitTest
   }
 
   /// <summary>
-  ///   <para>Performs testing of <see cref="TextReaderConverters.TextAsync(IConversion{TextReader})"/> method.</para>
+  ///   <para>Performs testing of <see cref="TextReaderConverters.TextAsync(IConversion{TextReader}, string)"/> method.</para>
   /// </summary>
   [Fact]
   public void TextAsync_Method()
@@ -58,7 +58,7 @@ public sealed class TextReaderConvertersTest : UnitTest
   }
 
   /// <summary>
-  ///   <para>Performs testing of <see cref="TextReaderConverters.XmlDocument(IConversion{TextReader})"/> method.</para>
+  ///   <para>Performs testing of <see cref="TextReaderConverters.XmlDocument(IConversion{TextReader}, string)"/> method.</para>
   /// </summary>
   [Fact]
   public void XmlDocument_Method()
@@ -69,7 +69,7 @@ public sealed class TextReaderConvertersTest : UnitTest
   }
 
   /// <summary>
-  ///   <para>Performs testing of <see cref="TextReaderConverters.XDocument(IConversion{TextReader})"/> method.</para>
+  ///   <para>Performs testing of <see cref="TextReaderConverters.XDocument(IConversion{TextReader}, string)"/> method.</para>
   /// </summary>
   [Fact]
   public void XDocument_Method()
@@ -80,7 +80,7 @@ public sealed class TextReaderConvertersTest : UnitTest
   }
 
   /// <summary>
-  ///   <para>Performs testing of <see cref="TextReaderConverters.XDocumentAsync(IConversion{TextReader}, CancellationToken)"/> method.</para>
+  ///   <para>Performs testing of <see cref="TextReaderConverters.XDocumentAsync(IConversion{TextReader}, CancellationToken, string)"/> method.</para>
   /// </summary>
   [Fact]
   public void XDocumentAsync_Method()
@@ -94,8 +94,8 @@ public sealed class TextReaderConvertersTest : UnitTest
   /// <summary>
   ///   <para>Performs testing of following methods :</para>
   ///   <list type="bullet">
-  ///     <item><description><see cref="TextReaderConverters.Enumerable(IConversion{TextReader}, bool)"/></description></item>
-  ///     <item><description><see cref="TextReaderConverters.Enumerable(IConversion{TextReader}, int, bool)"/></description></item>
+  ///     <item><description><see cref="TextReaderConverters.Enumerable(IConversion{TextReader}, bool, string)"/></description></item>
+  ///     <item><description><see cref="TextReaderConverters.Enumerable(IConversion{TextReader}, int, bool, string)"/></description></item>
   ///   </list>
   /// </summary>
   [Fact]
@@ -119,8 +119,8 @@ public sealed class TextReaderConvertersTest : UnitTest
   /// <summary>
   ///   <para>Performs testing of following methods :</para>
   ///   <list type="bullet">
-  ///     <item><description><see cref="TextReaderConverters.AsyncEnumerable(IConversion{TextReader}, bool)"/></description></item>
-  ///     <item><description><see cref="TextReaderConverters.AsyncEnumerable(IConversion{TextReader}, int, bool)"/></description></item>
+  ///     <item><description><see cref="TextReaderConverters.AsyncEnumerable(IConversion{TextReader}, bool, string)"/></description></item>
+  ///     <item><description><see cref="TextReaderConverters.AsyncEnumerable(IConversion{TextReader}, int, bool, string)"/></description></item>
   ///   </list>
   /// </summary>
   [Fact]

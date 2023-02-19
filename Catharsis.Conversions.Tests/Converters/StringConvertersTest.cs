@@ -13,7 +13,7 @@ public sealed class StringConvertersTest : UnitTest
   private IConversion<string> Conversion { get; } = string.Empty.Convert();
 
   /// <summary>
-  ///   <para>Performs testing of <see cref="StringConverters.Bytes(IConversion{string}, Encoding)"/> method.</para>
+  ///   <para>Performs testing of <see cref="StringConverters.Bytes(IConversion{string}, Encoding, string)"/> method.</para>
   /// </summary>
   [Fact]
   public void Bytes_Method()
@@ -24,7 +24,7 @@ public sealed class StringConvertersTest : UnitTest
   }
 
   /// <summary>
-  ///   <para>Performs testing of <see cref="StringConverters.Boolean(IConversion{string})"/> method.</para>
+  ///   <para>Performs testing of <see cref="StringConverters.Boolean(IConversion{string}, string)"/> method.</para>
   /// </summary>
   [Fact]
   public void Boolean_Method()
@@ -35,7 +35,7 @@ public sealed class StringConvertersTest : UnitTest
   }
 
   /// <summary>
-  ///   <para>Performs testing of <see cref="StringConverters.Sbyte(IConversion{string})"/> method.</para>
+  ///   <para>Performs testing of <see cref="StringConverters.Sbyte(IConversion{string}, string)"/> method.</para>
   /// </summary>
   [Fact]
   public void Sbyte_Method()
@@ -46,7 +46,7 @@ public sealed class StringConvertersTest : UnitTest
   }
 
   /// <summary>
-  ///   <para>Performs testing of <see cref="StringConverters.Byte(IConversion{string})"/> method.</para>
+  ///   <para>Performs testing of <see cref="StringConverters.Byte(IConversion{string}, string)"/> method.</para>
   /// </summary>
   [Fact]
   public void Byte_Method()
@@ -57,7 +57,7 @@ public sealed class StringConvertersTest : UnitTest
   }
 
   /// <summary>
-  ///   <para>Performs testing of <see cref="StringConverters.Short(IConversion{string})"/> method.</para>
+  ///   <para>Performs testing of <see cref="StringConverters.Short(IConversion{string}, string)"/> method.</para>
   /// </summary>
   [Fact]
   public void Short_Method()
@@ -68,7 +68,7 @@ public sealed class StringConvertersTest : UnitTest
   }
 
   /// <summary>
-  ///   <para>Performs testing of <see cref="StringConverters.Ushort(IConversion{string})"/> method.</para>
+  ///   <para>Performs testing of <see cref="StringConverters.Ushort(IConversion{string}, string)"/> method.</para>
   /// </summary>
   [Fact]
   public void Ushort_Method()
@@ -79,7 +79,7 @@ public sealed class StringConvertersTest : UnitTest
   }
 
   /// <summary>
-  ///   <para>Performs testing of <see cref="StringConverters.Int(IConversion{string})"/> method.</para>
+  ///   <para>Performs testing of <see cref="StringConverters.Int(IConversion{string}, string)"/> method.</para>
   /// </summary>
   [Fact]
   public void Int_Method()
@@ -90,7 +90,7 @@ public sealed class StringConvertersTest : UnitTest
   }
 
   /// <summary>
-  ///   <para>Performs testing of <see cref="StringConverters.Uint(IConversion{string})"/> method.</para>
+  ///   <para>Performs testing of <see cref="StringConverters.Uint(IConversion{string}, string)"/> method.</para>
   /// </summary>
   [Fact]
   public void Uint_Method()
@@ -101,7 +101,7 @@ public sealed class StringConvertersTest : UnitTest
   }
 
   /// <summary>
-  ///   <para>Performs testing of <see cref="StringConverters.Long(IConversion{string})"/> method.</para>
+  ///   <para>Performs testing of <see cref="StringConverters.Long(IConversion{string}, string)"/> method.</para>
   /// </summary>
   [Fact]
   public void Long_Method()
@@ -112,7 +112,7 @@ public sealed class StringConvertersTest : UnitTest
   }
 
   /// <summary>
-  ///   <para>Performs testing of <see cref="StringConverters.Ulong(IConversion{string})"/> method.</para>
+  ///   <para>Performs testing of <see cref="StringConverters.Ulong(IConversion{string}, string)"/> method.</para>
   /// </summary>
   [Fact]
   public void Ulong_Method()
@@ -123,7 +123,7 @@ public sealed class StringConvertersTest : UnitTest
   }
 
   /// <summary>
-  ///   <para>Performs testing of <see cref="StringConverters.Float(IConversion{string})"/> method.</para>
+  ///   <para>Performs testing of <see cref="StringConverters.Float(IConversion{string}, string)"/> method.</para>
   /// </summary>
   [Fact]
   public void Float_Method()
@@ -134,7 +134,7 @@ public sealed class StringConvertersTest : UnitTest
   }
 
   /// <summary>
-  ///   <para>Performs testing of <see cref="StringConverters.Double(IConversion{string})"/> method.</para>
+  ///   <para>Performs testing of <see cref="StringConverters.Double(IConversion{string}, string)"/> method.</para>
   /// </summary>
   [Fact]
   public void Double_Method()
@@ -145,7 +145,7 @@ public sealed class StringConvertersTest : UnitTest
   }
 
   /// <summary>
-  ///   <para>Performs testing of <see cref="StringConverters.Decimal(IConversion{string})"/> method.</para>
+  ///   <para>Performs testing of <see cref="StringConverters.Decimal(IConversion{string}, string)"/> method.</para>
   /// </summary>
   [Fact]
   public void Decimal_Method()
@@ -156,7 +156,7 @@ public sealed class StringConvertersTest : UnitTest
   }
 
   /// <summary>
-  ///   <para>Performs testing of <see cref="StringConverters.Guid(IConversion{string})"/> method.</para>
+  ///   <para>Performs testing of <see cref="StringConverters.Guid(IConversion{string}, string)"/> method.</para>
   /// </summary>
   [Fact]
   public void Guid_Method()
@@ -167,7 +167,7 @@ public sealed class StringConvertersTest : UnitTest
   }
 
   /// <summary>
-  ///   <para>Performs testing of <see cref="StringConverters.Uri(IConversion{string})"/> method.</para>
+  ///   <para>Performs testing of <see cref="StringConverters.Uri(IConversion{string}, string)"/> method.</para>
   /// </summary>
   [Fact]
   public void Uri_Method()
@@ -178,7 +178,7 @@ public sealed class StringConvertersTest : UnitTest
   }
 
   /// <summary>
-  ///   <para>Performs testing of <see cref="StringConverters.Type(IConversion{string})"/> method.</para>
+  ///   <para>Performs testing of <see cref="StringConverters.Type(IConversion{string}, string)"/> method.</para>
   /// </summary>
   [Fact]
   public void Type_Method()
@@ -189,7 +189,7 @@ public sealed class StringConvertersTest : UnitTest
   }
 
   /// <summary>
-  ///   <para>Performs testing of <see cref="StringConverters.DateTime(IConversion{string})"/> method.</para>
+  ///   <para>Performs testing of <see cref="StringConverters.DateTime(IConversion{string}, string)"/> method.</para>
   /// </summary>
   [Fact]
   public void DateTime_Method()
@@ -200,7 +200,7 @@ public sealed class StringConvertersTest : UnitTest
   }
 
   /// <summary>
-  ///   <para>Performs testing of <see cref="StringConverters.DateTimeOffset(IConversion{string})"/> method.</para>
+  ///   <para>Performs testing of <see cref="StringConverters.DateTimeOffset(IConversion{string}, string)"/> method.</para>
   /// </summary>
   [Fact]
   public void DateTimeOffset_Method()
@@ -211,7 +211,7 @@ public sealed class StringConvertersTest : UnitTest
   }
 
   /// <summary>
-  ///   <para>Performs testing of <see cref="StringConverters.DateOnly(IConversion{string})"/> method.</para>
+  ///   <para>Performs testing of <see cref="StringConverters.DateOnly(IConversion{string}, string)"/> method.</para>
   /// </summary>
   [Fact]
   public void DateOnly_Method()
@@ -222,7 +222,7 @@ public sealed class StringConvertersTest : UnitTest
   }
 
   /// <summary>
-  ///   <para>Performs testing of <see cref="StringConverters.TimeOnly(IConversion{string})"/> method.</para>
+  ///   <para>Performs testing of <see cref="StringConverters.TimeOnly(IConversion{string}, string)"/> method.</para>
   /// </summary>
   [Fact]
   public void TimeOnly_Method()
@@ -233,7 +233,7 @@ public sealed class StringConvertersTest : UnitTest
   }
 
   /// <summary>
-  ///   <para>Performs testing of <see cref="StringConverters.FileInfo(IConversion{string})"/> method.</para>
+  ///   <para>Performs testing of <see cref="StringConverters.FileInfo(IConversion{string}, string)"/> method.</para>
   /// </summary>
   [Fact]
   public void FileInfo_Method()
@@ -244,7 +244,7 @@ public sealed class StringConvertersTest : UnitTest
   }
 
   /// <summary>
-  ///   <para>Performs testing of <see cref="StringConverters.DirectoryInfo(IConversion{string})"/> method.</para>
+  ///   <para>Performs testing of <see cref="StringConverters.DirectoryInfo(IConversion{string}, string)"/> method.</para>
   /// </summary>
   [Fact]
   public void DirectoryInfo_Method()
@@ -255,7 +255,7 @@ public sealed class StringConvertersTest : UnitTest
   }
 
   /// <summary>
-  ///   <para>Performs testing of <see cref="StringConverters.IPAddress(IConversion{string})"/> method.</para>
+  ///   <para>Performs testing of <see cref="StringConverters.IPAddress(IConversion{string}, string)"/> method.</para>
   /// </summary>
   [Fact]
   public void IPAddress_Method()
@@ -266,7 +266,7 @@ public sealed class StringConvertersTest : UnitTest
   }
 
   /// <summary>
-  ///   <para>Performs testing of <see cref="StringConverters.IPHostEntry(IConversion{string})"/> method.</para>
+  ///   <para>Performs testing of <see cref="StringConverters.IPHostEntry(IConversion{string}, string)"/> method.</para>
   /// </summary>
   [Fact]
   public void IPHostEntry_Method()
@@ -277,7 +277,7 @@ public sealed class StringConvertersTest : UnitTest
   }
 
   /// <summary>
-  ///   <para>Performs testing of <see cref="StringConverters.Regex(IConversion{string})"/> method.</para>
+  ///   <para>Performs testing of <see cref="StringConverters.Regex(IConversion{string}, string)"/> method.</para>
   /// </summary>
   [Fact]
   public void Regex_Method()
@@ -288,7 +288,7 @@ public sealed class StringConvertersTest : UnitTest
   }
 
   /// <summary>
-  ///   <para>Performs testing of <see cref="StringConverters.StringBuilder(IConversion{string})"/> method.</para>
+  ///   <para>Performs testing of <see cref="StringConverters.StringBuilder(IConversion{string}, string)"/> method.</para>
   /// </summary>
   [Fact]
   public void StringBuilder_Method()
@@ -299,7 +299,7 @@ public sealed class StringConvertersTest : UnitTest
   }
 
   /// <summary>
-  ///   <para>Performs testing of <see cref="StringConverters.StringReader(IConversion{string})"/> method.</para>
+  ///   <para>Performs testing of <see cref="StringConverters.StringReader(IConversion{string}, string)"/> method.</para>
   /// </summary>
   [Fact]
   public void StringReader_Method()
@@ -310,7 +310,7 @@ public sealed class StringConvertersTest : UnitTest
   }
 
   /// <summary>
-  ///   <para>Performs testing of <see cref="StringConverters.Process(IConversion{string})"/> method.</para>
+  ///   <para>Performs testing of <see cref="StringConverters.Process(IConversion{string}, string)"/> method.</para>
   /// </summary>
   [Fact]
   public void Process_Method()
@@ -321,7 +321,7 @@ public sealed class StringConvertersTest : UnitTest
   }
 
   /// <summary>
-  ///   <para>Performs testing of <see cref="StringConverters.XmlDocument(IConversion{string})"/> method.</para>
+  ///   <para>Performs testing of <see cref="StringConverters.XmlDocument(IConversion{string}, string)"/> method.</para>
   /// </summary>
   [Fact]
   public void XmlDocument_Method()
@@ -332,7 +332,7 @@ public sealed class StringConvertersTest : UnitTest
   }
 
   /// <summary>
-  ///   <para>Performs testing of <see cref="StringConverters.XDocument(IConversion{string})"/> method.</para>
+  ///   <para>Performs testing of <see cref="StringConverters.XDocument(IConversion{string}, string)"/> method.</para>
   /// </summary>
   [Fact]
   public void XDocument_Method()
@@ -343,7 +343,7 @@ public sealed class StringConvertersTest : UnitTest
   }
 
   /// <summary>
-  ///   <para>Performs testing of <see cref="StringConverters.XDocumentAsync(IConversion{string}, CancellationToken)"/> method.</para>
+  ///   <para>Performs testing of <see cref="StringConverters.XDocumentAsync(IConversion{string}, CancellationToken, string)"/> method.</para>
   /// </summary>
   [Fact]
   public void XDocumentAsync_Method()

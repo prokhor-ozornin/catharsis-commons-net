@@ -9,7 +9,7 @@ namespace Catharsis.Conversions.Tests;
 public sealed class IDictionaryConvertersTest : UnitTest
 {
   /// <summary>
-  ///   <para>Performs testing of <see cref="IDictionaryConverters.SortedList{TKey, TValue}(IConversion{IDictionary{TKey, TValue}}, IComparer{TKey})"/> method.</para>
+  ///   <para>Performs testing of <see cref="IDictionaryConverters.SortedList{TKey, TValue}(IConversion{IDictionary{TKey, TValue}}, IComparer{TKey}, string)"/> method.</para>
   /// </summary>
   [Fact]
   public void SortedList_Method()
@@ -20,7 +20,7 @@ public sealed class IDictionaryConvertersTest : UnitTest
   }
 
   /// <summary>
-  ///   <para>Performs testing of <see cref="IDictionaryConverters.SortedDictionary{TKey, TValue}(IConversion{IDictionary{TKey, TValue}}, IComparer{TKey})"/> method.</para>
+  ///   <para>Performs testing of <see cref="IDictionaryConverters.SortedDictionary{TKey, TValue}(IConversion{IDictionary{TKey, TValue}}, IComparer{TKey}, string)"/> method.</para>
   /// </summary>
   [Fact]
   public void SortedDictionary_Method()

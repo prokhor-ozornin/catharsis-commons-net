@@ -13,15 +13,17 @@ public static class NameValueCollectionConverters
   ///   <para></para>
   /// </summary>
   /// <param name="conversion"></param>
+  /// <param name="error"></param>
   /// <returns></returns>
   /// <exception cref="ArgumentNullException"></exception>
-  public static Dictionary<string, string> Dictionary(this IConversion<NameValueCollection> conversion) => conversion.To(collection => collection.ToDictionary());
+  public static Dictionary<string, string> Dictionary(this IConversion<NameValueCollection> conversion, string error = null) => conversion.To(collection => collection.ToDictionary(), error);
 
   /// <summary>
   ///   <para></para>
   /// </summary>
   /// <param name="conversion"></param>
+  /// <param name="error"></param>
   /// <returns></returns>
   /// <exception cref="ArgumentNullException"></exception>
-  public static IEnumerable<(string Name, string Value)> ValueTuple(this IConversion<NameValueCollection> conversion) => conversion.To(collection => collection.ToValueTuple());
+  public static IEnumerable<(string Name, string Value)> ValueTuple(this IConversion<NameValueCollection> conversion, string error = null) => conversion.To(collection => collection.ToValueTuple(), error);
 }

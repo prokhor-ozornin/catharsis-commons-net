@@ -12,25 +12,28 @@ public static class DateTimeOffsetConverters
   ///   <para></para>
   /// </summary>
   /// <param name="conversion"></param>
+  /// <param name="error"></param>
   /// <returns></returns>
   /// <exception cref="ArgumentNullException"></exception>
-  public static DateTime DateTime(this IConversion<DateTimeOffset> conversion) => conversion.To(date => date.ToDateTime());
+  public static DateTime DateTime(this IConversion<DateTimeOffset> conversion, string error = null) => conversion.To(date => date.ToDateTime(), error);
 
 #if NET7_0_OR_GREATER
-  /// <summary>
-  ///   <para></para>
-  /// </summary>
-  /// <param name="conversion"></param>
-  /// <returns></returns>
-  /// <exception cref="ArgumentNullException"></exception>
-  public static DateOnly DateOnly(this IConversion<DateTimeOffset> conversion) => conversion.To(date => date.ToDateOnly());
+/// <summary>
+///   <para></para>
+/// </summary>
+/// <param name="conversion"></param>
+/// <param name="error"></param>
+/// <returns></returns>
+/// <exception cref="ArgumentNullException"></exception>
+public static DateOnly DateOnly(this IConversion<DateTimeOffset> conversion, string error = null) => conversion.To(date => date.ToDateOnly(), error);
 
-  /// <summary>
-  ///   <para></para>
-  /// </summary>
-  /// <param name="conversion"></param>
-  /// <returns></returns>
-  /// <exception cref="ArgumentNullException"></exception>
-  public static TimeOnly TimeOnly(this IConversion<DateTimeOffset> conversion) => conversion.To(date => date.ToTimeOnly());
+/// <summary>
+///   <para></para>
+/// </summary>
+/// <param name="conversion"></param>
+/// <param name="error"></param>
+/// <returns></returns>
+/// <exception cref="ArgumentNullException"></exception>
+public static TimeOnly TimeOnly(this IConversion<DateTimeOffset> conversion, string error = null) => conversion.To(date => date.ToTimeOnly(), error);
 #endif
 }

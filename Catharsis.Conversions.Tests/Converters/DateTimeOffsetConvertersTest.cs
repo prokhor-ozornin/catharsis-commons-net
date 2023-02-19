@@ -9,7 +9,7 @@ namespace Catharsis.Conversions.Tests;
 public sealed class DateTimeOffsetConvertersTest : UnitTest
 {
   /// <summary>
-  ///   <para>Performs testing of <see cref="DateTimeOffsetConverters.DateTime(IConversion{DateTimeOffset})"/> method.</para>
+  ///   <para>Performs testing of <see cref="DateTimeOffsetConverters.DateTime(IConversion{DateTimeOffset}, string)"/> method.</para>
   /// </summary>
   [Fact]
   public void DateTime_Method()
@@ -20,7 +20,7 @@ public sealed class DateTimeOffsetConvertersTest : UnitTest
   }
 
   /// <summary>
-  ///   <para>Performs testing of <see cref="DateTimeOffsetConverters.DateOnly(IConversion{DateTimeOffset})"/> method.</para>
+  ///   <para>Performs testing of <see cref="DateTimeOffsetConverters.DateOnly(IConversion{DateTimeOffset}, string)"/> method.</para>
   /// </summary>
   [Fact]
   public void DateOnly_Method()
@@ -31,7 +31,7 @@ public sealed class DateTimeOffsetConvertersTest : UnitTest
   }
 
   /// <summary>
-  ///   <para>Performs testing of <see cref="DateTimeOffsetConverters.TimeOnly(IConversion{DateTimeOffset})"/> method.</para>
+  ///   <para>Performs testing of <see cref="DateTimeOffsetConverters.TimeOnly(IConversion{DateTimeOffset}, string)"/> method.</para>
   /// </summary>
   [Fact]
   public void TimeOnly_Method()

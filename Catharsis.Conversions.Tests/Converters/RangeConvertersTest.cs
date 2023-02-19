@@ -9,7 +9,7 @@ namespace Catharsis.Conversions.Tests;
 public sealed class RangeConvertersTest : UnitTest
 {
   /// <summary>
-  ///   <para>Performs testing of <see cref="RangeConverters.Enumerable(IConversion{Range})"/> method.</para>
+  ///   <para>Performs testing of <see cref="RangeConverters.Enumerable(IConversion{Range}, string)"/> method.</para>
   /// </summary>
   [Fact]
   public void Enumerable_Method()

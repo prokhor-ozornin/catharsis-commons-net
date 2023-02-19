@@ -10,7 +10,8 @@ public static class GuidConverters
   ///   <para></para>
   /// </summary>
   /// <param name="conversion"></param>
+  /// <param name="error"></param>
   /// <returns></returns>
   /// <exception cref="ArgumentNullException"></exception>
-  public static byte[] Bytes(this IConversion<Guid> conversion) => conversion.To(guid => guid.ToByteArray());
+  public static byte[] Bytes(this IConversion<Guid> conversion, string error = null) => conversion.To(guid => guid.ToByteArray(), error);
 }

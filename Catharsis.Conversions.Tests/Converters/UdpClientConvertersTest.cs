@@ -11,7 +11,7 @@ namespace Catharsis.Conversions.Tests;
 public sealed class UdpClientConvertersTest : UnitTest
 {
   /// <summary>
-  ///   <para>Performs testing of <see cref="UdpClientConverters.Bytes(IConversion{UdpClient})"/> method.</para>
+  ///   <para>Performs testing of <see cref="UdpClientConverters.Bytes(IConversion{UdpClient}, string)"/> method.</para>
   /// </summary>
   [Fact]
   public void Bytes_Method()
@@ -22,7 +22,7 @@ public sealed class UdpClientConvertersTest : UnitTest
   }
 
   /// <summary>
-  ///   <para>Performs testing of <see cref="UdpClientConverters.BytesAsync(IConversion{UdpClient})"/> method.</para>
+  ///   <para>Performs testing of <see cref="UdpClientConverters.BytesAsync(IConversion{UdpClient}, string)"/> method.</para>
   /// </summary>
   [Fact]
   public void BytesAsync_Method()
@@ -33,7 +33,7 @@ public sealed class UdpClientConvertersTest : UnitTest
   }
 
   /// <summary>
-  ///   <para>Performs testing of <see cref="UdpClientConverters.Enumerable(IConversion{UdpClient}, IPEndPoint, bool)"/> method.</para>
+  ///   <para>Performs testing of <see cref="UdpClientConverters.Enumerable(IConversion{UdpClient}, IPEndPoint, bool, string)"/> method.</para>
   /// </summary>
   [Fact]
   public void Enumerable_Method()
@@ -44,7 +44,7 @@ public sealed class UdpClientConvertersTest : UnitTest
   }
 
   /// <summary>
-  ///   <para>Performs testing of <see cref="UdpClientConverters.AsyncEnumerable(IConversion{UdpClient}, bool)"/> method.</para>
+  ///   <para>Performs testing of <see cref="UdpClientConverters.AsyncEnumerable(IConversion{UdpClient}, bool, string)"/> method.</para>
   /// </summary>
   [Fact]
   public void AsyncEnumerable_Method()

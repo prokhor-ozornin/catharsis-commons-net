@@ -14,34 +14,38 @@ public static class XmlReaderConverters
   ///   <para></para>
   /// </summary>
   /// <param name="conversion"></param>
+  /// <param name="error"></param>
   /// <returns></returns>
   /// <exception cref="ArgumentNullException"></exception>
-  public static string Text(this IConversion<XmlReader> conversion) => conversion.To(reader => reader.ToText());
+  public static string Text(this IConversion<XmlReader> conversion, string error = null) => conversion.To(reader => reader.ToText(), error);
 
   /// <summary>
   ///   <para></para>
   /// </summary>
   /// <param name="conversion"></param>
+  /// <param name="error"></param>
   /// <returns></returns>
   /// <exception cref="ArgumentNullException"></exception>
-  public static XmlDocument XmlDocument(this IConversion<XmlReader> conversion) => conversion.To(reader => reader.ToXmlDocument());
+  public static XmlDocument XmlDocument(this IConversion<XmlReader> conversion, string error = null) => conversion.To(reader => reader.ToXmlDocument(), error);
 
   /// <summary>
   ///   <para></para>
   /// </summary>
   /// <param name="conversion"></param>
+  /// <param name="error"></param>
   /// <returns></returns>
   /// <exception cref="ArgumentNullException"></exception>
-  /// <seealso cref="XDocumentAsync(IConversion{XmlReader}, CancellationToken)"/>
-  public static XDocument XDocument(this IConversion<XmlReader> conversion) => conversion.To(reader => reader.ToXDocument());
+  /// <seealso cref="XDocumentAsync(IConversion{XmlReader}, CancellationToken, string)"/>
+  public static XDocument XDocument(this IConversion<XmlReader> conversion, string error = null) => conversion.To(reader => reader.ToXDocument(), error);
 
   /// <summary>
   ///   <para></para>
   /// </summary>
   /// <param name="conversion"></param>
   /// <param name="cancellation"></param>
+  /// <param name="error"></param>
   /// <returns></returns>
   /// <exception cref="ArgumentNullException"></exception>
-  /// <seealso cref="XDocument(IConversion{XmlReader})"/>
-  public static Task<XDocument> XDocumentAsync(this IConversion<XmlReader> conversion, CancellationToken cancellation = default) => conversion.To(reader => reader.ToXDocumentAsync(cancellation));
+  /// <seealso cref="XDocument(IConversion{XmlReader}, string)"/>
+  public static Task<XDocument> XDocumentAsync(this IConversion<XmlReader> conversion, CancellationToken cancellation = default, string error = null) => conversion.To(reader => reader.ToXDocumentAsync(cancellation), error);
 }

@@ -10,7 +10,7 @@ namespace Catharsis.Conversions.Tests;
 public sealed class NameValueCollectionConvertersTest : UnitTest
 {
   /// <summary>
-  ///   <para>Performs testing of <see cref="NameValueCollectionConverters.Dictionary(IConversion{NameValueCollection})"/> method.</para>
+  ///   <para>Performs testing of <see cref="NameValueCollectionConverters.Dictionary(IConversion{NameValueCollection}, string)"/> method.</para>
   /// </summary>
   [Fact]
   public void Dictionary_Method()
@@ -21,7 +21,7 @@ public sealed class NameValueCollectionConvertersTest : UnitTest
   }
 
   /// <summary>
-  ///   <para>Performs testing of <see cref="NameValueCollectionConverters.ValueTuple(IConversion{NameValueCollection})"/> method.</para>
+  ///   <para>Performs testing of <see cref="NameValueCollectionConverters.ValueTuple(IConversion{NameValueCollection}, string)"/> method.</para>
   /// </summary>
   [Fact]
   public void ValueTuple_Method()

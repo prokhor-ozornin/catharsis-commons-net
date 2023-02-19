@@ -13,26 +13,29 @@ public static class XDocumentConverters
   ///   <para></para>
   /// </summary>
   /// <param name="conversion"></param>
+  /// <param name="error"></param>
   /// <returns></returns>
   /// <exception cref="ArgumentNullException"></exception>
-  /// <seealso cref="BytesAsync(IConversion{XDocument}, CancellationToken)"/>
-  public static byte[] Bytes(this IConversion<XDocument> conversion) => conversion.To(document => document.ToBytes());
+  /// <seealso cref="BytesAsync(IConversion{XDocument}, CancellationToken, string)"/>
+  public static byte[] Bytes(this IConversion<XDocument> conversion, string error = null) => conversion.To(document => document.ToBytes(), error);
 
   /// <summary>
   ///   <para></para>
   /// </summary>
   /// <param name="conversion"></param>
   /// <param name="cancellation"></param>
+  /// <param name="error"></param>
   /// <returns></returns>
   /// <exception cref="ArgumentNullException"></exception>
-  /// <seealso cref="Bytes(IConversion{XDocument})"/>
-  public static Task<byte[]> BytesAsync(this IConversion<XDocument> conversion, CancellationToken cancellation = default) => conversion.To(document => document.ToBytesAsync(cancellation));
+  /// <seealso cref="Bytes(IConversion{XDocument}, string)"/>
+  public static Task<byte[]> BytesAsync(this IConversion<XDocument> conversion, CancellationToken cancellation = default, string error = null) => conversion.To(document => document.ToBytesAsync(cancellation), error);
 
   /// <summary>
   ///   <para></para>
   /// </summary>
   /// <param name="conversion"></param>
+  /// <param name="error"></param>
   /// <returns></returns>
   /// <exception cref="ArgumentNullException"></exception>
-  public static string Text(this IConversion<XDocument> conversion) => conversion.To(document => document.ToText());
+  public static string Text(this IConversion<XDocument> conversion, string error = null) => conversion.To(document => document.ToText(), error);
 }

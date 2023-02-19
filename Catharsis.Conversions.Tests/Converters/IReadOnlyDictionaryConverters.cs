@@ -9,7 +9,7 @@ namespace Catharsis.Conversions.Tests;
 public sealed class IReadOnlyDictionaryConvertersTest : UnitTest
 {
   /// <summary>
-  ///   <para>Performs testing of <see cref="IReadOnlyDictionaryConverters.ValueTuple{TKey, TValue}(IConversion{IReadOnlyDictionary{TKey, TValue}}, IComparer{TKey})"/> method.</para>
+  ///   <para>Performs testing of <see cref="IReadOnlyDictionaryConverters.ValueTuple{TKey, TValue}(IConversion{IReadOnlyDictionary{TKey, TValue}}, IComparer{TKey}, string)"/> method.</para>
   /// </summary>
   [Fact]
   public void ValueTuple_Method()

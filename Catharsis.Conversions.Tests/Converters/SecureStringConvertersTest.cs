@@ -11,7 +11,7 @@ namespace Catharsis.Conversions.Tests;
 public sealed class SecureStringConvertersTest : UnitTest
 {
   /// <summary>
-  ///   <para>Performs testing of <see cref="SecureStringConverters.Bytes(IConversion{SecureString}, Encoding)"/> method.</para>
+  ///   <para>Performs testing of <see cref="SecureStringConverters.Bytes(IConversion{SecureString}, Encoding, string)"/> method.</para>
   /// </summary>
   [Fact]
   public void Bytes_Method()
@@ -22,7 +22,7 @@ public sealed class SecureStringConvertersTest : UnitTest
   }
 
   /// <summary>
-  ///   <para>Performs testing of <see cref="SecureStringConverters.Text(IConversion{SecureString})"/> method.</para>
+  ///   <para>Performs testing of <see cref="SecureStringConverters.Text(IConversion{SecureString}, string)"/> method.</para>
   /// </summary>
   [Fact]
   public void Text_Method()

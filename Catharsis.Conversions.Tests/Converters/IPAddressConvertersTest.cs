@@ -11,7 +11,7 @@ namespace Catharsis.Conversions.Tests;
 public sealed class IPAddressConvertersTest : UnitTest
 {
   /// <summary>
-  ///   <para>Performs testing of <see cref="IPAddressConverters.Bytes(IConversion{IPAddress})"/> method.</para>
+  ///   <para>Performs testing of <see cref="IPAddressConverters.Bytes(IConversion{IPAddress}, string)"/> method.</para>
   /// </summary>
   [Fact]
   public void Bytes_Method()
@@ -24,8 +24,8 @@ public sealed class IPAddressConvertersTest : UnitTest
   /// <summary>
   ///   <para>Performs testing of following methods :</para>
   ///   <list type="bullet">
-  ///     <item><description><see cref="IPAddressConverters.IpAddress(IConversion{long})"/></description></item>
-  ///     <item><description><see cref="IPAddressConverters.IpAddress(IConversion{uint})"/></description></item>
+  ///     <item><description><see cref="IPAddressConverters.IpAddress(IConversion{long}, string)"/></description></item>
+  ///     <item><description><see cref="IPAddressConverters.IpAddress(IConversion{uint}, string)"/></description></item>
   ///   </list>
   /// </summary>
   [Fact]
@@ -44,7 +44,7 @@ public sealed class IPAddressConvertersTest : UnitTest
   }
 
   /// <summary>
-  ///   <para>Performs testing of <see cref="IPAddressConverters.IpHost(IConversion{IPAddress})"/> method.</para>
+  ///   <para>Performs testing of <see cref="IPAddressConverters.IpHost(IConversion{IPAddress}, string)"/> method.</para>
   /// </summary>
   [Fact]
   public void IpHost_Method()

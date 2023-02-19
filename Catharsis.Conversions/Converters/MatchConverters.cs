@@ -14,8 +14,9 @@ public static class MatchConverters
   ///   <para></para>
   /// </summary>
   /// <param name="conversion"></param>
+  /// <param name="error"></param>
   /// <returns></returns>
   /// <exception cref="ArgumentNullException"></exception>
-  public static IEnumerable<Capture> Enumerable(this IConversion<Match> conversion) => conversion.To(match => match.ToEnumerable());
+  public static IEnumerable<Capture> Enumerable(this IConversion<Match> conversion, string error = null) => conversion.To(match => match.ToEnumerable(), error);
 }
 #endif

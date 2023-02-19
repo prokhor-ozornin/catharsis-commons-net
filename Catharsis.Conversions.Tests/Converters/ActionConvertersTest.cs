@@ -13,8 +13,8 @@ public sealed class ActionConvertersTest : UnitTest
   /// <summary>
   ///   <para>Performs testing of following methods :</para>
   ///   <list type="bullet">
-  ///     <item><description><see cref="ActionConverters.Task(IConversion{Action}, TaskCreationOptions, CancellationToken)"/></description></item>
-  ///     <item><description><see cref="ActionConverters.Task(IConversion{Action{object}}, object, TaskCreationOptions, CancellationToken)"/></description></item>
+  ///     <item><description><see cref="ActionConverters.Task(IConversion{Action}, TaskCreationOptions, CancellationToken, string)"/></description></item>
+  ///     <item><description><see cref="ActionConverters.Task(IConversion{Action{object}}, object, TaskCreationOptions, CancellationToken, string)"/></description></item>
   ///   </list>
   /// </summary>
   [Fact]

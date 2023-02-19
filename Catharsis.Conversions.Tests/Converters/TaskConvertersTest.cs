@@ -12,8 +12,8 @@ public sealed class TaskConvertersTest : UnitTest
   /// <summary>
   ///   <para>Performs testing of following methods :</para>
   ///   <list type="bullet">
-  ///     <item><description><see cref="TaskConverters.ValueTask(IConversion{Task})"/></description></item>
-  ///     <item><description><see cref="TaskConverters.ValueTask{T}(IConversion{Task{T}})"/></description></item>
+  ///     <item><description><see cref="TaskConverters.ValueTask(IConversion{Task}, string)"/></description></item>
+  ///     <item><description><see cref="TaskConverters.ValueTask{T}(IConversion{Task{T}}, string)"/></description></item>
   ///   </list>
   /// </summary>
   [Fact]

@@ -13,7 +13,8 @@ public static class PhysicalAddressConverters
   ///   <para></para>
   /// </summary>
   /// <param name="conversion"></param>
+  /// <param name="error"></param>
   /// <returns></returns>
   /// <exception cref="ArgumentNullException"></exception>
-  public static byte[] Bytes(this IConversion<PhysicalAddress> conversion) => conversion.To(address => address.ToBytes());
+  public static byte[] Bytes(this IConversion<PhysicalAddress> conversion, string error = null) => conversion.To(address => address.ToBytes(), error);
 }

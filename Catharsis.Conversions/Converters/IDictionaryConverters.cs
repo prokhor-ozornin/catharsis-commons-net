@@ -15,9 +15,10 @@ public static class IDictionaryConverters
   /// <typeparam name="TValue"></typeparam>
   /// <param name="conversion"></param>
   /// <param name="comparer"></param>
+  /// <param name="error"></param>
   /// <returns></returns>
   /// <exception cref="ArgumentNullException"></exception>
-  public static SortedList<TKey, TValue> SortedList<TKey, TValue>(this IConversion<IDictionary<TKey, TValue>> conversion, IComparer<TKey> comparer = null) where TKey : notnull => conversion.To(dictionary => dictionary.ToSortedList(comparer));
+  public static SortedList<TKey, TValue> SortedList<TKey, TValue>(this IConversion<IDictionary<TKey, TValue>> conversion, IComparer<TKey> comparer = null, string error = null) where TKey : notnull => conversion.To(dictionary => dictionary.ToSortedList(comparer), error);
 
   /// <summary>
   ///   <para></para>
@@ -26,7 +27,8 @@ public static class IDictionaryConverters
   /// <typeparam name="TValue"></typeparam>
   /// <param name="conversion"></param>
   /// <param name="comparer"></param>
+  /// <param name="error"></param>
   /// <returns></returns>
   /// <exception cref="ArgumentNullException"></exception>
-  public static SortedDictionary<TKey, TValue> SortedDictionary<TKey, TValue>(this IConversion<IDictionary<TKey, TValue>> conversion, IComparer<TKey> comparer = null) where TKey : notnull => conversion.To(dictionary => dictionary.ToSortedDictionary(comparer));
+  public static SortedDictionary<TKey, TValue> SortedDictionary<TKey, TValue>(this IConversion<IDictionary<TKey, TValue>> conversion, IComparer<TKey> comparer = null, string error = null) where TKey : notnull => conversion.To(dictionary => dictionary.ToSortedDictionary(comparer), error);
 }

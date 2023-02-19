@@ -12,7 +12,8 @@ public static class FileSystemInfoConverters
   ///   <para></para>
   /// </summary>
   /// <param name="conversion"></param>
+  /// <param name="error"></param>
   /// <returns></returns>
   /// <exception cref="ArgumentNullException"></exception>
-  public static Uri Uri(this IConversion<FileSystemInfo> conversion) => conversion.To(info => info.ToUri());
+  public static Uri Uri(this IConversion<FileSystemInfo> conversion, string error = null) => conversion.To(info => info.ToUri(), error);
 }

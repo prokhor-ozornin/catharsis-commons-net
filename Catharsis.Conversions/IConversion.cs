@@ -9,18 +9,9 @@ public interface IConversion<out TSource>
   /// <summary>
   ///   <para></para>
   /// </summary>
-  TSource Source { get; }
-
-  /// <summary>
-  ///   <para></para>
-  /// </summary>
-  /// <param name="name"></param>
-  /// <param name="value"></param>
+  /// <typeparam name="TResult"></typeparam>
+  /// <param name="converter"></param>
+  /// <param name="error"></param>
   /// <returns></returns>
-  IConversion<TSource> Parameter(string name, object value);
-
-  /// <summary>
-  ///   <para></para>
-  /// </summary>
-  IReadOnlyDictionary<string, object> Parameters { get; }
+  TResult To<TResult>(Func<TSource, TResult> converter, string error = null);
 }

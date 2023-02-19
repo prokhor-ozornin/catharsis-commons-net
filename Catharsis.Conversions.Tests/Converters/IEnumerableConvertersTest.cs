@@ -13,7 +13,7 @@ public sealed class IEnumerableConvertersTest : UnitTest
   private IConversion<IEnumerable<object>> Conversion { get; } = Enumerable.Empty<object>().Convert();
 
   /// <summary>
-  ///   <para>Performs testing of <see cref="IEnumerableConverters.Array{T}(IConversion{IEnumerable{T}})"/> method.</para>
+  ///   <para>Performs testing of <see cref="IEnumerableConverters.Array{T}(IConversion{IEnumerable{T}}, string)"/> method.</para>
   /// </summary>
   [Fact]
   public void Array_Method()
@@ -24,7 +24,7 @@ public sealed class IEnumerableConvertersTest : UnitTest
   }
 
   /// <summary>
-  ///   <para>Performs testing of <see cref="IEnumerableConverters.AsyncEnumerable{T}(IConversion{IEnumerable{T}})"/> method.</para>
+  ///   <para>Performs testing of <see cref="IEnumerableConverters.AsyncEnumerable{T}(IConversion{IEnumerable{T}}, string)"/> method.</para>
   /// </summary>
   [Fact]
   public void AsyncEnumerable_Method()
@@ -35,7 +35,7 @@ public sealed class IEnumerableConvertersTest : UnitTest
   }
 
   /// <summary>
-  ///   <para>Performs testing of <see cref="IEnumerableConverters.LinkedList{T}(IConversion{IEnumerable{T}})"/> method.</para>
+  ///   <para>Performs testing of <see cref="IEnumerableConverters.LinkedList{T}(IConversion{IEnumerable{T}}, string)"/> method.</para>
   /// </summary>
   [Fact]
   public void LinkedList_Method()
@@ -46,7 +46,7 @@ public sealed class IEnumerableConvertersTest : UnitTest
   }
 
   /// <summary>
-  ///   <para>Performs testing of <see cref="IEnumerableConverters.ReadOnlyList{T}(IConversion{IEnumerable{T}})"/> method.</para>
+  ///   <para>Performs testing of <see cref="IEnumerableConverters.ReadOnlyList{T}(IConversion{IEnumerable{T}}, string)"/> method.</para>
   /// </summary>
   [Fact]
   public void ReadOnlyList_Method()
@@ -57,7 +57,7 @@ public sealed class IEnumerableConvertersTest : UnitTest
   }
 
   /// <summary>
-  ///   <para>Performs testing of <see cref="IEnumerableConverters.SortedSet{T}(IConversion{IEnumerable{T}}, IComparer{T})"/> method.</para>
+  ///   <para>Performs testing of <see cref="IEnumerableConverters.SortedSet{T}(IConversion{IEnumerable{T}}, IComparer{T}, string)"/> method.</para>
   /// </summary>
   [Fact]
   public void SortedSet_Method()
@@ -68,7 +68,7 @@ public sealed class IEnumerableConvertersTest : UnitTest
   }
 
   /// <summary>
-  ///   <para>Performs testing of <see cref="IEnumerableConverters.ReadOnlySet{T}(IConversion{IEnumerable{T}}, IEqualityComparer{T})"/> method.</para>
+  ///   <para>Performs testing of <see cref="IEnumerableConverters.ReadOnlySet{T}(IConversion{IEnumerable{T}}, IEqualityComparer{T}, string)"/> method.</para>
   /// </summary>
   [Fact]
   public void ReadOnlySet_Method()
@@ -79,7 +79,7 @@ public sealed class IEnumerableConvertersTest : UnitTest
   }
 
   /// <summary>
-  ///   <para>Performs testing of <see cref="IEnumerableConverters.Stack{T}(IConversion{IEnumerable{T}})"/> method.</para>
+  ///   <para>Performs testing of <see cref="IEnumerableConverters.Stack{T}(IConversion{IEnumerable{T}}, string)"/> method.</para>
   /// </summary>
   [Fact]
   public void Stack_Method()
@@ -90,7 +90,7 @@ public sealed class IEnumerableConvertersTest : UnitTest
   }
 
   /// <summary>
-  ///   <para>Performs testing of <see cref="IEnumerableConverters.Queue{T}(IConversion{IEnumerable{T}})"/> method.</para>
+  ///   <para>Performs testing of <see cref="IEnumerableConverters.Queue{T}(IConversion{IEnumerable{T}}, string)"/> method.</para>
   /// </summary>
   [Fact]
   public void Queue_Method()
@@ -101,7 +101,7 @@ public sealed class IEnumerableConvertersTest : UnitTest
   }
 
   /// <summary>
-  ///   <para>Performs testing of <see cref="IEnumerableConverters.PriorityQueue{TElement, TPriority}(IConversion{IEnumerable{(TElement Element, TPriority Priority)}}, IComparer{TPriority})"/> method.</para>
+  ///   <para>Performs testing of <see cref="IEnumerableConverters.PriorityQueue{TElement, TPriority}(IConversion{IEnumerable{(TElement Element, TPriority Priority)}}, IComparer{TPriority}, string)"/> method.</para>
   /// </summary>
   [Fact]
   public void PriorityQueue_Method()
@@ -112,7 +112,7 @@ public sealed class IEnumerableConvertersTest : UnitTest
   }
 
   /// <summary>
-  ///   <para>Performs testing of <see cref="IEnumerableConverters.ImmutableQueue{T}(IConversion{IEnumerable{T}})"/> method.</para>
+  ///   <para>Performs testing of <see cref="IEnumerableConverters.ImmutableQueue{T}(IConversion{IEnumerable{T}}, string)"/> method.</para>
   /// </summary>
   [Fact]
   public void ImmutableQueue_Method()
@@ -123,7 +123,7 @@ public sealed class IEnumerableConvertersTest : UnitTest
   }
 
   /// <summary>
-  ///   <para>Performs testing of <see cref="IEnumerableConverters.ArraySegment{T}(IConversion{IEnumerable{T}})"/> method.</para>
+  ///   <para>Performs testing of <see cref="IEnumerableConverters.ArraySegment{T}(IConversion{IEnumerable{T}}, string)"/> method.</para>
   /// </summary>
   [Fact]
   public void ArraySegment_Method()
@@ -134,7 +134,7 @@ public sealed class IEnumerableConvertersTest : UnitTest
   }
 
   /// <summary>
-  ///   <para>Performs testing of <see cref="IEnumerableConverters.Memory{T}(IConversion{IEnumerable{T}})"/> method.</para>
+  ///   <para>Performs testing of <see cref="IEnumerableConverters.Memory{T}(IConversion{IEnumerable{T}}, string)"/> method.</para>
   /// </summary>
   [Fact]
   public void Memory_Method()
@@ -145,7 +145,7 @@ public sealed class IEnumerableConvertersTest : UnitTest
   }
 
   /// <summary>
-  ///   <para>Performs testing of <see cref="IEnumerableConverters.ReadOnlyMemory{T}(IConversion{IEnumerable{T}})"/> method.</para>
+  ///   <para>Performs testing of <see cref="IEnumerableConverters.ReadOnlyMemory{T}(IConversion{IEnumerable{T}}, string)"/> method.</para>
   /// </summary>
   [Fact]
   public void ReadOnlyMemory_Method()
@@ -156,7 +156,7 @@ public sealed class IEnumerableConvertersTest : UnitTest
   }
 
   /// <summary>
-  ///   <para>Performs testing of <see cref="IEnumerableConverters.Range(IConversion{IEnumerable{Range}})"/> method.</para>
+  ///   <para>Performs testing of <see cref="IEnumerableConverters.Range(IConversion{IEnumerable{Range}}, string)"/> method.</para>
   /// </summary>
   [Fact]
   public void Range_Method()
@@ -170,7 +170,7 @@ public sealed class IEnumerableConvertersTest : UnitTest
   ///   <para>Performs testing of following methods :</para>
   ///   <list type="bullet">
   ///     <item><description><see cref="IEnumerableConverters.ValueTuple{T}(IConversion{IEnumerable{T}})"/></description></item>
-  ///     <item><description><see cref="IEnumerableConverters.ValueTuple{TKey, TValue}(IConversion{IEnumerable{TValue}}, Func{TValue, TKey}, IComparer{TKey})"/></description></item>
+  ///     <item><description><see cref="IEnumerableConverters.ValueTuple{TKey, TValue}(IConversion{IEnumerable{TValue}}, Func{TValue, TKey}, IComparer{TKey}, string)"/></description></item>
   ///   </list>
   /// </summary>
   [Fact]
@@ -193,7 +193,7 @@ public sealed class IEnumerableConvertersTest : UnitTest
   }
 
   /// <summary>
-  ///   <para>Performs testing of <see cref="IEnumerableConverters.Dictionary{TKey, TValue}(IConversion{IEnumerable{(TKey Key, TValue Value)}}, IEqualityComparer{TKey})"/> method.</para>
+  ///   <para>Performs testing of <see cref="IEnumerableConverters.Dictionary{TKey, TValue}(IConversion{IEnumerable{(TKey Key, TValue Value)}}, IEqualityComparer{TKey}, string)"/> method.</para>
   /// </summary>
   [Fact]
   public void Dictionary_Method()
@@ -204,7 +204,7 @@ public sealed class IEnumerableConvertersTest : UnitTest
   }
 
   /// <summary>
-  ///   <para>Performs testing of <see cref="IEnumerableConverters.ReadOnlyDictionary{TKey, TValue}(IConversion{IEnumerable{(TKey Key, TValue Value)}}, IEqualityComparer{TKey})"/> method.</para>
+  ///   <para>Performs testing of <see cref="IEnumerableConverters.ReadOnlyDictionary{TKey, TValue}(IConversion{IEnumerable{(TKey Key, TValue Value)}}, IEqualityComparer{TKey}, string)"/> method.</para>
   /// </summary>
   [Fact]
   public void ReadOnlyDictionary_Method()
@@ -217,8 +217,8 @@ public sealed class IEnumerableConvertersTest : UnitTest
   /// <summary>
   ///   <para>Performs testing of following methods :</para>
   ///   <list type="bullet">
-  ///     <item><description><see cref="IEnumerableConverters.MemoryStream(IConversion{IEnumerable{byte}})"/></description></item>
-  ///     <item><description><see cref="IEnumerableConverters.MemoryStream(IConversion{IEnumerable{byte[]}})"/></description></item>
+  ///     <item><description><see cref="IEnumerableConverters.MemoryStream(IConversion{IEnumerable{byte}}, string)"/></description></item>
+  ///     <item><description><see cref="IEnumerableConverters.MemoryStream(IConversion{IEnumerable{byte[]}}, string)"/></description></item>
   ///   </list>
   /// </summary>
   [Fact]
@@ -242,8 +242,8 @@ public sealed class IEnumerableConvertersTest : UnitTest
   /// <summary>
   ///   <para>Performs testing of following methods :</para>
   ///   <list type="bullet">
-  ///     <item><description><see cref="IEnumerableConverters.MemoryStreamAsync(IConversion{IEnumerable{byte}}, CancellationToken)"/></description></item>
-  ///     <item><description><see cref="IEnumerableConverters.MemoryStreamAsync(IConversion{IEnumerable{byte[]}}, CancellationToken)"/></description></item>
+  ///     <item><description><see cref="IEnumerableConverters.MemoryStreamAsync(IConversion{IEnumerable{byte}}, CancellationToken, string)"/></description></item>
+  ///     <item><description><see cref="IEnumerableConverters.MemoryStreamAsync(IConversion{IEnumerable{byte[]}}, CancellationToken, string)"/></description></item>
   ///   </list>
   /// </summary>
   [Fact]
