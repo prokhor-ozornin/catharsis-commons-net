@@ -20,10 +20,11 @@ public class Conversion<TSource> : IConversion<TSource>
   /// <summary>
   ///   <para></para>
   /// </summary>
+  /// <typeparam name="TResult"></typeparam>
   /// <param name="converter"></param>
   /// <param name="error"></param>
   /// <returns></returns>
-  /// <exception cref="ArgumentNullException"></exception>
+  /// <exception cref="InvalidOperationException"></exception>
   public TResult To<TResult>(Func<TSource, TResult> converter, string error = null)
   {
     try

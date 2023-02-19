@@ -12,31 +12,34 @@ public static class ArrayConverters
   /// <summary>
   ///   <para></para>
   /// </summary>
-  /// <param name="conversion"></param>
+  /// <param name="conversion">Conversion to perform.</param>
   /// <param name="encoding"></param>
-  /// <param name="error"></param>
-  /// <returns></returns>
-  /// <exception cref="ArgumentNullException"></exception>
+  /// <param name="error">Error description phrase for a failed <paramref name="conversion"/>.</param>
+  /// <returns>Conversion result.</returns>
+  /// <exception cref="ArgumentNullException">If <paramref name="conversion"/> is a <see langword="null"/> reference.</exception>
+  /// <exception cref="InvalidOperationException">In case of a failed conversion.</exception>
   public static byte[] Bytes(this IConversion<char[]> conversion, Encoding encoding = null, string error = null) => conversion.To(chars => chars.ToBytes(encoding), error);
 
   /// <summary>
   ///   <para></para>
   /// </summary>
-  /// <param name="conversion"></param>
-  /// <param name="error"></param>
-  /// <returns></returns>
-  /// <exception cref="ArgumentNullException"></exception>
+  /// <param name="conversion">Conversion to perform.</param>
+  /// <param name="error">Error description phrase for a failed <paramref name="conversion"/>.</param>
+  /// <returns>Conversion result.</returns>
+  /// <exception cref="ArgumentNullException">If <paramref name="conversion"/> is a <see langword="null"/> reference.</exception>
+  /// <exception cref="InvalidOperationException">In case of a failed conversion.</exception>
   /// <seealso cref="Text(IConversion{byte[]}, Encoding, string)"/>
   public static string Text(this IConversion<char[]> conversion, string error = null) => conversion.To(chars => chars.ToText(), error);
 
   /// <summary>
   ///   <para></para>
   /// </summary>
-  /// <param name="conversion"></param>
+  /// <param name="conversion">Conversion to perform.</param>
   /// <param name="encoding"></param>
-  /// <param name="error"></param>
-  /// <returns></returns>
-  /// <exception cref="ArgumentNullException"></exception>
+  /// <param name="error">Error description phrase for a failed <paramref name="conversion"/>.</param>
+  /// <returns>Conversion result.</returns>
+  /// <exception cref="ArgumentNullException">If <paramref name="conversion"/> is a <see langword="null"/> reference.</exception>
+  /// <exception cref="InvalidOperationException">In case of a failed conversion.</exception>
   /// <seealso cref="Text(IConversion{char[]}, string)"/>
   public static string Text(this IConversion<byte[]> conversion, Encoding encoding = null, string error = null) => conversion.To(bytes => bytes.ToText(encoding), error);
 }

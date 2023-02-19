@@ -16,18 +16,22 @@ public static class IAsyncEnumerableConverters
   ///   <para></para>
   /// </summary>
   /// <typeparam name="T"></typeparam>
-  /// <param name="conversion"></param>
-  /// <returns></returns>
-  /// <exception cref="ArgumentNullException"></exception>
+  /// <param name="conversion">Conversion to perform.</param>
+  /// <param name="error">Error description phrase for a failed <paramref name="conversion"/>.</param>
+  /// <returns>Conversion result.</returns>
+  /// <exception cref="ArgumentNullException">If <paramref name="conversion"/> is a <see langword="null"/> reference.</exception>
+  /// <exception cref="InvalidOperationException">In case of a failed conversion.</exception>
   public static IEnumerable<T> Enumerable<T>(this IConversion<IAsyncEnumerable<T>> conversion, string error = null) => conversion.To(sequence => sequence.ToEnumerable(), error);
 
   /// <summary>
   ///   <para></para>
   /// </summary>
   /// <typeparam name="T"></typeparam>
-  /// <param name="conversion"></param>
-  /// <returns></returns>
-  /// <exception cref="ArgumentNullException"></exception>
+  /// <param name="conversion">Conversion to perform.</param>
+  /// <param name="error">Error description phrase for a failed <paramref name="conversion"/>.</param>
+  /// <returns>Conversion result.</returns>
+  /// <exception cref="ArgumentNullException">If <paramref name="conversion"/> is a <see langword="null"/> reference.</exception>
+  /// <exception cref="InvalidOperationException">In case of a failed conversion.</exception>
   /// <seealso cref="ArrayAsync{T}(IConversion{IAsyncEnumerable{T}}, CancellationToken, string)"/>
   public static T[] Array<T>(this IConversion<IAsyncEnumerable<T>> conversion, string error = null) => conversion.To(sequence => sequence.ToArray(), error);
 
@@ -35,10 +39,12 @@ public static class IAsyncEnumerableConverters
   ///   <para></para>
   /// </summary>
   /// <typeparam name="T"></typeparam>
-  /// <param name="conversion"></param>
+  /// <param name="conversion">Conversion to perform.</param>
   /// <param name="cancellation"></param>
-  /// <returns></returns>
-  /// <exception cref="ArgumentNullException"></exception>
+  /// <param name="error">Error description phrase for a failed <paramref name="conversion"/>.</param>
+  /// <returns>Conversion result.</returns>
+  /// <exception cref="ArgumentNullException">If <paramref name="conversion"/> is a <see langword="null"/> reference.</exception>
+  /// <exception cref="InvalidOperationException">In case of a failed conversion.</exception>
   /// <seealso cref="Array{T}(IConversion{IAsyncEnumerable{T}}, string)"/>
   public static Task<T[]> ArrayAsync<T>(this IConversion<IAsyncEnumerable<T>> conversion, CancellationToken cancellation = default, string error = null) => conversion.To(sequence => sequence.ToArrayAsync(cancellation), error);
 
@@ -46,9 +52,11 @@ public static class IAsyncEnumerableConverters
   ///   <para></para>
   /// </summary>
   /// <typeparam name="T"></typeparam>
-  /// <param name="conversion"></param>
-  /// <returns></returns>
-  /// <exception cref="ArgumentNullException"></exception>
+  /// <param name="conversion">Conversion to perform.</param>
+  /// <param name="error">Error description phrase for a failed <paramref name="conversion"/>.</param>
+  /// <returns>Conversion result.</returns>
+  /// <exception cref="ArgumentNullException">If <paramref name="conversion"/> is a <see langword="null"/> reference.</exception>
+  /// <exception cref="InvalidOperationException">In case of a failed conversion.</exception>
   /// <seealso cref="ListAsync{T}(IConversion{IAsyncEnumerable{T}}, CancellationToken, string)"/>
   public static List<T> List<T>(this IConversion<IAsyncEnumerable<T>> conversion, string error = null) => conversion.To(sequence => sequence.ToList(), error);
 
@@ -56,10 +64,12 @@ public static class IAsyncEnumerableConverters
   ///   <para></para>
   /// </summary>
   /// <typeparam name="T"></typeparam>
-  /// <param name="conversion"></param>
+  /// <param name="conversion">Conversion to perform.</param>
   /// <param name="cancellation"></param>
-  /// <returns></returns>
-  /// <exception cref="ArgumentNullException"></exception>
+  /// <param name="error">Error description phrase for a failed <paramref name="conversion"/>.</param>
+  /// <returns>Conversion result.</returns>
+  /// <exception cref="ArgumentNullException">If <paramref name="conversion"/> is a <see langword="null"/> reference.</exception>
+  /// <exception cref="InvalidOperationException">In case of a failed conversion.</exception>
   /// <seealso cref="List{T}(IConversion{IAsyncEnumerable{T}}, string)"/>
   public static Task<List<T>> ListAsync<T>(this IConversion<IAsyncEnumerable<T>> conversion, CancellationToken cancellation = default, string error = null) => conversion.To(sequence => sequence.ToListAsync(cancellation), error);
 
@@ -67,9 +77,11 @@ public static class IAsyncEnumerableConverters
   ///   <para></para>
   /// </summary>
   /// <typeparam name="T"></typeparam>
-  /// <param name="conversion"></param>
-  /// <returns></returns>
-  /// <exception cref="ArgumentNullException"></exception>
+  /// <param name="conversion">Conversion to perform.</param>
+  /// <param name="error">Error description phrase for a failed <paramref name="conversion"/>.</param>
+  /// <returns>Conversion result.</returns>
+  /// <exception cref="ArgumentNullException">If <paramref name="conversion"/> is a <see langword="null"/> reference.</exception>
+  /// <exception cref="InvalidOperationException">In case of a failed conversion.</exception>
   /// <seealso cref="LinkedListAsync{T}(IConversion{IAsyncEnumerable{T}}, CancellationToken, string)"/>
   public static LinkedList<T> LinkedList<T>(this IConversion<IAsyncEnumerable<T>> conversion, string error = null) => conversion.To(sequence => sequence.ToLinkedList(), error);
 
@@ -77,10 +89,12 @@ public static class IAsyncEnumerableConverters
   ///   <para></para>
   /// </summary>
   /// <typeparam name="T"></typeparam>
-  /// <param name="conversion"></param>
+  /// <param name="conversion">Conversion to perform.</param>
   /// <param name="cancellation"></param>
-  /// <returns></returns>
-  /// <exception cref="ArgumentNullException"></exception>
+  /// <param name="error">Error description phrase for a failed <paramref name="conversion"/>.</param>
+  /// <returns>Conversion result.</returns>
+  /// <exception cref="ArgumentNullException">If <paramref name="conversion"/> is a <see langword="null"/> reference.</exception>
+  /// <exception cref="InvalidOperationException">In case of a failed conversion.</exception>
   /// <seealso cref="LinkedList{T}(IConversion{IAsyncEnumerable{T}}, string)"/>
   public static Task<LinkedList<T>> LinkedListAsync<T>(this IConversion<IAsyncEnumerable<T>> conversion, CancellationToken cancellation = default, string error = null) => conversion.To(sequence => sequence.ToLinkedListAsync(cancellation), error);
 
@@ -88,9 +102,11 @@ public static class IAsyncEnumerableConverters
   ///   <para></para>
   /// </summary>
   /// <typeparam name="T"></typeparam>
-  /// <param name="conversion"></param>
-  /// <returns></returns>
-  /// <exception cref="ArgumentNullException"></exception>
+  /// <param name="conversion">Conversion to perform.</param>
+  /// <param name="error">Error description phrase for a failed <paramref name="conversion"/>.</param>
+  /// <returns>Conversion result.</returns>
+  /// <exception cref="ArgumentNullException">If <paramref name="conversion"/> is a <see langword="null"/> reference.</exception>
+  /// <exception cref="InvalidOperationException">In case of a failed conversion.</exception>
   /// <seealso cref="ReadOnlyListAsync{T}(IConversion{IAsyncEnumerable{T}}, CancellationToken, string)"/>
   public static IReadOnlyList<T> ReadOnlyList<T>(this IConversion<IAsyncEnumerable<T>> conversion, string error = null) => conversion.To(sequence => sequence.ToReadOnlyList(), error);
 
@@ -98,10 +114,12 @@ public static class IAsyncEnumerableConverters
   ///   <para></para>
   /// </summary>
   /// <typeparam name="T"></typeparam>
-  /// <param name="conversion"></param>
+  /// <param name="conversion">Conversion to perform.</param>
   /// <param name="cancellation"></param>
-  /// <returns></returns>
-  /// <exception cref="ArgumentNullException"></exception>
+  /// <param name="error">Error description phrase for a failed <paramref name="conversion"/>.</param>
+  /// <returns>Conversion result.</returns>
+  /// <exception cref="ArgumentNullException">If <paramref name="conversion"/> is a <see langword="null"/> reference.</exception>
+  /// <exception cref="InvalidOperationException">In case of a failed conversion.</exception>
   /// <seealso cref="ReadOnlyList{T}(IConversion{IAsyncEnumerable{T}}, string)"/>
   public static Task<IReadOnlyList<T>> ReadOnlyListAsync<T>(this IConversion<IAsyncEnumerable<T>> conversion, CancellationToken cancellation = default, string error = null) => conversion.To(sequence => sequence.ToReadOnlyListAsync(cancellation), error);
 
@@ -109,10 +127,12 @@ public static class IAsyncEnumerableConverters
   ///   <para></para>
   /// </summary>
   /// <typeparam name="T"></typeparam>
-  /// <param name="conversion"></param>
+  /// <param name="conversion">Conversion to perform.</param>
   /// <param name="comparer"></param>
-  /// <returns></returns>
-  /// <exception cref="ArgumentNullException"></exception>
+  /// <param name="error">Error description phrase for a failed <paramref name="conversion"/>.</param>
+  /// <returns>Conversion result.</returns>
+  /// <exception cref="ArgumentNullException">If <paramref name="conversion"/> is a <see langword="null"/> reference.</exception>
+  /// <exception cref="InvalidOperationException">In case of a failed conversion.</exception>
   /// <seealso cref="HashSetAsync{T}(IConversion{IAsyncEnumerable{T}}, IEqualityComparer{T}, CancellationToken, string)"/>
   public static HashSet<T> HashSet<T>(this IConversion<IAsyncEnumerable<T>> conversion, IEqualityComparer<T> comparer = null, string error = null) => conversion.To(sequence => sequence.ToHashSet(comparer), error);
 
@@ -120,11 +140,13 @@ public static class IAsyncEnumerableConverters
   ///   <para></para>
   /// </summary>
   /// <typeparam name="T"></typeparam>
-  /// <param name="conversion"></param>
+  /// <param name="conversion">Conversion to perform.</param>
   /// <param name="comparer"></param>
   /// <param name="cancellation"></param>
-  /// <returns></returns>
-  /// <exception cref="ArgumentNullException"></exception>
+  /// <param name="error">Error description phrase for a failed <paramref name="conversion"/>.</param>
+  /// <returns>Conversion result.</returns>
+  /// <exception cref="ArgumentNullException">If <paramref name="conversion"/> is a <see langword="null"/> reference.</exception>
+  /// <exception cref="InvalidOperationException">In case of a failed conversion.</exception>
   /// <seealso cref="HashSet{T}(IConversion{IAsyncEnumerable{T}}, IEqualityComparer{T}, string)"/>
   public static Task<HashSet<T>> HashSetAsync<T>(this IConversion<IAsyncEnumerable<T>> conversion, IEqualityComparer<T> comparer = null, CancellationToken cancellation = default, string error = null) => conversion.To(sequence => sequence.ToHashSetAsync(comparer, cancellation), error);
 
@@ -132,10 +154,12 @@ public static class IAsyncEnumerableConverters
   ///   <para></para>
   /// </summary>
   /// <typeparam name="T"></typeparam>
-  /// <param name="conversion"></param>
+  /// <param name="conversion">Conversion to perform.</param>
   /// <param name="comparer"></param>
-  /// <returns></returns>
-  /// <exception cref="ArgumentNullException"></exception>
+  /// <param name="error">Error description phrase for a failed <paramref name="conversion"/>.</param>
+  /// <returns>Conversion result.</returns>
+  /// <exception cref="ArgumentNullException">If <paramref name="conversion"/> is a <see langword="null"/> reference.</exception>
+  /// <exception cref="InvalidOperationException">In case of a failed conversion.</exception>
   /// <seealso cref="SortedSetAsync{T}(IConversion{IAsyncEnumerable{T}}, IComparer{T}, CancellationToken, string)"/>
   public static SortedSet<T> SortedSet<T>(this IConversion<IAsyncEnumerable<T>> conversion, IComparer<T> comparer = null, string error = null) => conversion.To(sequence => sequence.ToSortedSet(comparer), error);
 
@@ -143,11 +167,13 @@ public static class IAsyncEnumerableConverters
   ///   <para></para>
   /// </summary>
   /// <typeparam name="T"></typeparam>
-  /// <param name="conversion"></param>
+  /// <param name="conversion">Conversion to perform.</param>
   /// <param name="comparer"></param>
   /// <param name="cancellation"></param>
-  /// <returns></returns>
-  /// <exception cref="ArgumentNullException"></exception>
+  /// <param name="error">Error description phrase for a failed <paramref name="conversion"/>.</param>
+  /// <returns>Conversion result.</returns>
+  /// <exception cref="ArgumentNullException">If <paramref name="conversion"/> is a <see langword="null"/> reference.</exception>
+  /// <exception cref="InvalidOperationException">In case of a failed conversion.</exception>
   /// <seealso cref="SortedSet{T}(IConversion{IAsyncEnumerable{T}}, IComparer{T}, string)"/>
   public static Task<SortedSet<T>> SortedSetAsync<T>(this IConversion<IAsyncEnumerable<T>> conversion, IComparer<T> comparer = null, CancellationToken cancellation = default, string error = null) => conversion.To(sequence => sequence.ToSortedSetAsync(comparer, cancellation), error);
 
@@ -156,11 +182,13 @@ public static class IAsyncEnumerableConverters
   /// </summary>
   /// <typeparam name="TKey"></typeparam>
   /// <typeparam name="TValue"></typeparam>
-  /// <param name="conversion"></param>
+  /// <param name="conversion">Conversion to perform.</param>
   /// <param name="key"></param>
   /// <param name="comparer"></param>
-  /// <returns></returns>
-  /// <exception cref="ArgumentNullException"></exception>
+  /// <param name="error">Error description phrase for a failed <paramref name="conversion"/>.</param>
+  /// <returns>Conversion result.</returns>
+  /// <exception cref="ArgumentNullException">If <paramref name="conversion"/> is a <see langword="null"/> reference.</exception>
+  /// <exception cref="InvalidOperationException">In case of a failed conversion.</exception>
   /// <seealso cref="DictionaryAsync{TKey, TValue}(IConversion{IAsyncEnumerable{TValue}}, Func{TValue, TKey}, IEqualityComparer{TKey}, CancellationToken, string)"/>
   public static Dictionary<TKey, TValue> Dictionary<TKey, TValue>(this IConversion<IAsyncEnumerable<TValue>> conversion, Func<TValue, TKey> key, IEqualityComparer<TKey> comparer = null, string error = null) where TKey : notnull => conversion.To(sequence => sequence.ToDictionary(key, comparer), error);
 
@@ -169,12 +197,14 @@ public static class IAsyncEnumerableConverters
   /// </summary>
   /// <typeparam name="TKey"></typeparam>
   /// <typeparam name="TValue"></typeparam>
-  /// <param name="conversion"></param>
+  /// <param name="conversion">Conversion to perform.</param>
   /// <param name="key"></param>
   /// <param name="comparer"></param>
   /// <param name="cancellation"></param>
-  /// <returns></returns>
-  /// <exception cref="ArgumentNullException"></exception>
+  /// <param name="error">Error description phrase for a failed <paramref name="conversion"/>.</param>
+  /// <returns>Conversion result.</returns>
+  /// <exception cref="ArgumentNullException">If <paramref name="conversion"/> is a <see langword="null"/> reference.</exception>
+  /// <exception cref="InvalidOperationException">In case of a failed conversion.</exception>
   /// <seealso cref="Dictionary{TKey, TValue}(IConversion{IAsyncEnumerable{TValue}}, Func{TValue, TKey}, IEqualityComparer{TKey}, string)"/>
   public static Task<Dictionary<TKey, TValue>> DictionaryAsync<TKey, TValue>(this IConversion<IAsyncEnumerable<TValue>> conversion, Func<TValue, TKey> key, IEqualityComparer<TKey> comparer = null, CancellationToken cancellation = default, string error = null) where TKey : notnull => conversion.To(sequence => sequence.ToDictionaryAsync(key, comparer, cancellation), error);
 
@@ -183,11 +213,13 @@ public static class IAsyncEnumerableConverters
   /// </summary>
   /// <typeparam name="TKey"></typeparam>
   /// <typeparam name="TValue"></typeparam>
-  /// <param name="conversion"></param>
+  /// <param name="conversion">Conversion to perform.</param>
   /// <param name="key"></param>
   /// <param name="comparer"></param>
-  /// <returns></returns>
-  /// <exception cref="ArgumentNullException"></exception>
+  /// <param name="error">Error description phrase for a failed <paramref name="conversion"/>.</param>
+  /// <returns>Conversion result.</returns>
+  /// <exception cref="ArgumentNullException">If <paramref name="conversion"/> is a <see langword="null"/> reference.</exception>
+  /// <exception cref="InvalidOperationException">In case of a failed conversion.</exception>
   /// <seealso cref="ReadOnlyDictionaryAsync{TKey, TValue}(IConversion{IAsyncEnumerable{TValue}}, Func{TValue, TKey}, IEqualityComparer{TKey}, CancellationToken, string)"/>
   public static IReadOnlyDictionary<TKey, TValue> ReadOnlyDictionary<TKey, TValue>(this IConversion<IAsyncEnumerable<TValue>> conversion, Func<TValue, TKey> key, IEqualityComparer<TKey> comparer = null, string error = null) where TKey : notnull => conversion.To(sequence => sequence.ToReadOnlyDictionary(key, comparer), error);
 
@@ -196,12 +228,14 @@ public static class IAsyncEnumerableConverters
   /// </summary>
   /// <typeparam name="TKey"></typeparam>
   /// <typeparam name="TValue"></typeparam>
-  /// <param name="conversion"></param>
+  /// <param name="conversion">Conversion to perform.</param>
   /// <param name="key"></param>
   /// <param name="comparer"></param>
   /// <param name="cancellation"></param>
-  /// <returns></returns>
-  /// <exception cref="ArgumentNullException"></exception>
+  /// <param name="error">Error description phrase for a failed <paramref name="conversion"/>.</param>
+  /// <returns>Conversion result.</returns>
+  /// <exception cref="ArgumentNullException">If <paramref name="conversion"/> is a <see langword="null"/> reference.</exception>
+  /// <exception cref="InvalidOperationException">In case of a failed conversion.</exception>
   /// <seealso cref="ReadOnlyDictionary{TKey, TValue}(IConversion{IAsyncEnumerable{TValue}}, Func{TValue, TKey}, IEqualityComparer{TKey}, string)"/>
   public static Task<IReadOnlyDictionary<TKey, TValue>> ReadOnlyDictionaryAsync<TKey, TValue>(this IConversion<IAsyncEnumerable<TValue>> conversion, Func<TValue, TKey> key, IEqualityComparer<TKey> comparer = null, CancellationToken cancellation = default, string error = null) where TKey : notnull => conversion.To(sequence => sequence.ToReadOnlyDictionaryAsync(key, comparer, cancellation), error);
 
@@ -209,9 +243,11 @@ public static class IAsyncEnumerableConverters
   ///   <para></para>
   /// </summary>
   /// <typeparam name="T"></typeparam>
-  /// <param name="conversion"></param>
-  /// <returns></returns>
-  /// <exception cref="ArgumentNullException"></exception>
+  /// <param name="conversion">Conversion to perform.</param>
+  /// <param name="error">Error description phrase for a failed <paramref name="conversion"/>.</param>
+  /// <returns>Conversion result.</returns>
+  /// <exception cref="ArgumentNullException">If <paramref name="conversion"/> is a <see langword="null"/> reference.</exception>
+  /// <exception cref="InvalidOperationException">In case of a failed conversion.</exception>
   /// <seealso cref="ValueTuple{TKey, TValue}(IConversion{IAsyncEnumerable{TValue}}, Func{TValue, TKey}, IComparer{TKey}, string)"/>
   public static IEnumerable<(T item, int index)> ValueTuple<T>(this IConversion<IAsyncEnumerable<T>> conversion, string error = null) => conversion.To(sequence => sequence.ToValueTuple(), error);
 
@@ -220,11 +256,13 @@ public static class IAsyncEnumerableConverters
   /// </summary>
   /// <typeparam name="TKey"></typeparam>
   /// <typeparam name="TValue"></typeparam>
-  /// <param name="conversion"></param>
+  /// <param name="conversion">Conversion to perform.</param>
   /// <param name="key"></param>
   /// <param name="comparer"></param>
-  /// <returns></returns>
-  /// <exception cref="ArgumentNullException"></exception>
+  /// <param name="error">Error description phrase for a failed <paramref name="conversion"/>.</param>
+  /// <returns>Conversion result.</returns>
+  /// <exception cref="ArgumentNullException">If <paramref name="conversion"/> is a <see langword="null"/> reference.</exception>
+  /// <exception cref="InvalidOperationException">In case of a failed conversion.</exception>
   /// <seealso cref="ValueTuple{T}(IConversion{IAsyncEnumerable{T}}, string)"/>
   public static IEnumerable<(TKey Key, TValue Value)> ValueTuple<TKey, TValue>(this IConversion<IAsyncEnumerable<TValue>> conversion, Func<TValue, TKey> key, IComparer<TKey> comparer = null, string error = null) where TKey : notnull => conversion.To(sequence => sequence.ToValueTuple(key, comparer), error);
 
@@ -232,10 +270,12 @@ public static class IAsyncEnumerableConverters
   ///   <para></para>
   /// </summary>
   /// <typeparam name="T"></typeparam>
-  /// <param name="conversion"></param>
+  /// <param name="conversion">Conversion to perform.</param>
   /// <param name="cancellation"></param>
-  /// <returns></returns>
-  /// <exception cref="ArgumentNullException"></exception>
+  /// <param name="error">Error description phrase for a failed <paramref name="conversion"/>.</param>
+  /// <returns>Conversion result.</returns>
+  /// <exception cref="ArgumentNullException">If <paramref name="conversion"/> is a <see langword="null"/> reference.</exception>
+  /// <exception cref="InvalidOperationException">In case of a failed conversion.</exception>
   /// <seealso cref="ValueTupleAsync{TKey, TValue}(IConversion{IAsyncEnumerable{TValue}}, Func{TValue, TKey}, IComparer{TKey}, CancellationToken, string)"/>
   public static Task<IEnumerable<(T item, int index)>> ValueTupleAsync<T>(this IConversion<IAsyncEnumerable<T>> conversion, CancellationToken cancellation = default, string error = null) => conversion.To(sequence => sequence.ToValueTupleAsync(cancellation), error);
 
@@ -244,12 +284,14 @@ public static class IAsyncEnumerableConverters
   /// </summary>
   /// <typeparam name="TKey"></typeparam>
   /// <typeparam name="TValue"></typeparam>
-  /// <param name="conversion"></param>
+  /// <param name="conversion">Conversion to perform.</param>
   /// <param name="key"></param>
   /// <param name="comparer"></param>
   /// <param name="cancellation"></param>
-  /// <returns></returns>
-  /// <exception cref="ArgumentNullException"></exception>
+  /// <param name="error">Error description phrase for a failed <paramref name="conversion"/>.</param>
+  /// <returns>Conversion result.</returns>
+  /// <exception cref="ArgumentNullException">If <paramref name="conversion"/> is a <see langword="null"/> reference.</exception>
+  /// <exception cref="InvalidOperationException">In case of a failed conversion.</exception>
   /// <seealso cref="ValueTupleAsync{T}(IConversion{IAsyncEnumerable{T}}, CancellationToken, string)"/>
   public static Task<IEnumerable<(TKey Key, TValue Value)>> ValueTupleAsync<TKey, TValue>(this IConversion<IAsyncEnumerable<TValue>> conversion, Func<TValue, TKey> key, IComparer<TKey> comparer = null, CancellationToken cancellation = default, string error = null) where TKey : notnull => conversion.To(sequence => sequence.ToValueTupleAsync(key, comparer, cancellation), error);
 
@@ -257,9 +299,11 @@ public static class IAsyncEnumerableConverters
   ///   <para></para>
   /// </summary>
   /// <typeparam name="T"></typeparam>
-  /// <param name="conversion"></param>
-  /// <returns></returns>
-  /// <exception cref="ArgumentNullException"></exception>
+  /// <param name="conversion">Conversion to perform.</param>
+  /// <param name="error">Error description phrase for a failed <paramref name="conversion"/>.</param>
+  /// <returns>Conversion result.</returns>
+  /// <exception cref="ArgumentNullException">If <paramref name="conversion"/> is a <see langword="null"/> reference.</exception>
+  /// <exception cref="InvalidOperationException">In case of a failed conversion.</exception>
   /// <seealso cref="StackAsync{T}(IConversion{IAsyncEnumerable{T}}, CancellationToken, string)"/>
   public static Stack<T> Stack<T>(this IConversion<IAsyncEnumerable<T>> conversion, string error = null) => conversion.To(sequence => sequence.ToStack(), error);
 
@@ -267,10 +311,12 @@ public static class IAsyncEnumerableConverters
   ///   <para></para>
   /// </summary>
   /// <typeparam name="T"></typeparam>
-  /// <param name="conversion"></param>
+  /// <param name="conversion">Conversion to perform.</param>
   /// <param name="cancellation"></param>
-  /// <returns></returns>
-  /// <exception cref="ArgumentNullException"></exception>
+  /// <param name="error">Error description phrase for a failed <paramref name="conversion"/>.</param>
+  /// <returns>Conversion result.</returns>
+  /// <exception cref="ArgumentNullException">If <paramref name="conversion"/> is a <see langword="null"/> reference.</exception>
+  /// <exception cref="InvalidOperationException">In case of a failed conversion.</exception>
   /// <seealso cref="Stack{T}(IConversion{IAsyncEnumerable{T}}, string)"/>
   public static Task<Stack<T>> StackAsync<T>(this IConversion<IAsyncEnumerable<T>> conversion, CancellationToken cancellation = default, string error = null) => conversion.To(sequence => sequence.ToStackAsync(cancellation), error);
 
@@ -278,9 +324,11 @@ public static class IAsyncEnumerableConverters
   ///   <para></para>
   /// </summary>
   /// <typeparam name="T"></typeparam>
-  /// <param name="conversion"></param>
+  /// <param name="conversion">Conversion to perform.</param>
+  /// <param name="error">Error description phrase for a failed <paramref name="conversion"/>.</param>
   /// <returns></returns>
-  /// <exception cref="ArgumentNullException"></exception>
+  /// <exception cref="ArgumentNullException">If <paramref name="conversion"/> is a <see langword="null"/> reference.</exception>
+  /// <exception cref="InvalidOperationException">In case of a failed conversion.</exception>
   /// <seealso cref="QueueAsync{T}(IConversion{IAsyncEnumerable{T}}, CancellationToken, string)"/>
   public static Queue<T> Queue<T>(this IConversion<IAsyncEnumerable<T>> conversion, string error = null) => conversion.To(sequence => sequence.ToQueue(), error);
 
@@ -288,60 +336,72 @@ public static class IAsyncEnumerableConverters
   ///   <para></para>
   /// </summary>
   /// <typeparam name="T"></typeparam>
-  /// <param name="conversion"></param>
+  /// <param name="conversion">Conversion to perform.</param>
   /// <param name="cancellation"></param>
-  /// <returns></returns>
-  /// <exception cref="ArgumentNullException"></exception>
+  /// <param name="error">Error description phrase for a failed <paramref name="conversion"/>.</param>
+  /// <returns>Conversion result.</returns>
+  /// <exception cref="ArgumentNullException">If <paramref name="conversion"/> is a <see langword="null"/> reference.</exception>
+  /// <exception cref="InvalidOperationException">In case of a failed conversion.</exception>
   /// <seealso cref="Queue{T}(IConversion{IAsyncEnumerable{T}}, string)"/>
   public static Task<Queue<T>> QueueAsync<T>(this IConversion<IAsyncEnumerable<T>> conversion, CancellationToken cancellation = default, string error = null) => conversion.To(sequence => sequence.ToQueueAsync(cancellation), error);
 
   /// <summary>
   ///   <para></para>
   /// </summary>
-  /// <param name="conversion"></param>
-  /// <returns></returns>
-  /// <exception cref="ArgumentNullException"></exception>
+  /// <param name="conversion">Conversion to perform.</param>
+  /// <param name="error">Error description phrase for a failed <paramref name="conversion"/>.</param>
+  /// <returns>Conversion result.</returns>
+  /// <exception cref="ArgumentNullException">If <paramref name="conversion"/> is a <see langword="null"/> reference.</exception>
+  /// <exception cref="InvalidOperationException">In case of a failed conversion.</exception>
   /// <seealso cref="MemoryStreamAsync(IConversion{IAsyncEnumerable{byte}}, CancellationToken, string)"/>
   public static MemoryStream MemoryStream(this IConversion<IAsyncEnumerable<byte>> conversion, string error = null) => conversion.To(sequence => sequence.ToMemoryStream(), error);
 
   /// <summary>
   ///   <para></para>
   /// </summary>
-  /// <param name="conversion"></param>
+  /// <param name="conversion">Conversion to perform.</param>
   /// <param name="cancellation"></param>
-  /// <returns></returns>
-  /// <exception cref="ArgumentNullException"></exception>
+  /// <param name="error">Error description phrase for a failed <paramref name="conversion"/>.</param>
+  /// <returns>Conversion result.</returns>
+  /// <exception cref="ArgumentNullException">If <paramref name="conversion"/> is a <see langword="null"/> reference.</exception>
+  /// <exception cref="InvalidOperationException">In case of a failed conversion.</exception>
   /// <seealso cref="MemoryStream(IConversion{IAsyncEnumerable{byte}}, string)"/>
   public static Task<MemoryStream> MemoryStreamAsync(this IConversion<IAsyncEnumerable<byte>> conversion, CancellationToken cancellation = default, string error = null) => conversion.To(sequence => sequence.ToMemoryStreamAsync(cancellation), error);
 
   /// <summary>
   ///   <para></para>
   /// </summary>
-  /// <param name="conversion"></param>
-  /// <returns></returns>
-  /// <exception cref="ArgumentNullException"></exception>
+  /// <param name="conversion">Conversion to perform.</param>
+  /// <param name="error">Error description phrase for a failed <paramref name="conversion"/>.</param>
+  /// <returns>Conversion result.</returns>
+  /// <exception cref="ArgumentNullException">If <paramref name="conversion"/> is a <see langword="null"/> reference.</exception>
+  /// <exception cref="InvalidOperationException">In case of a failed conversion.</exception>
   /// <seealso cref="MemoryStreamAsync(IConversion{IAsyncEnumerable{byte[]}}, CancellationToken, string)"/>
   public static MemoryStream MemoryStream(this IConversion<IAsyncEnumerable<byte[]>> conversion, string error = null) => conversion.To(sequence => sequence.ToMemoryStream(), error);
 
   /// <summary>
   ///   <para></para>
   /// </summary>
-  /// <param name="conversion"></param>
+  /// <param name="conversion">Conversion to perform.</param>
   /// <param name="cancellation"></param>
-  /// <returns></returns>
-  /// <exception cref="ArgumentNullException"></exception>
+  /// <param name="error">Error description phrase for a failed <paramref name="conversion"/>.</param>
+  /// <returns>Conversion result.</returns>
+  /// <exception cref="ArgumentNullException">If <paramref name="conversion"/> is a <see langword="null"/> reference.</exception>
+  /// <exception cref="InvalidOperationException">In case of a failed conversion.</exception>
   /// <seealso cref="MemoryStream(IConversion{IAsyncEnumerable{byte[]}}, string)"/>
   public static Task<MemoryStream> MemoryStreamAsync(this IConversion<IAsyncEnumerable<byte[]>> conversion, CancellationToken cancellation = default, string error = null) => conversion.To(sequence => sequence.ToMemoryStreamAsync(cancellation), error);
 
-  #if NET7_0_OR_GREATER
+#if NET7_0_OR_GREATER
   /// <summary>
   ///   <para></para>
   /// </summary>
   /// <typeparam name="T"></typeparam>
-  /// <param name="conversion"></param>
+  /// <param name="conversion">Conversion to perform.</param>
   /// <param name="comparer"></param>
-  /// <returns></returns>
-  /// <exception cref="ArgumentNullException"></exception>
+  /// <param name="error">Error description phrase for a failed <paramref name="conversion"/>.</param>
+  /// <returns>Conversion result.</returns>
+  /// <exception cref="ArgumentNullException">If <paramref name="conversion"/> is a <see langword="null"/> reference.</exception>
+  /// <exception cref="InvalidOperationException">In case of a failed conversion.</exception>
   /// <seealso cref="ReadOnlySetAsync{T}(IConversion{IAsyncEnumerable{T}}, IEqualityComparer{T}, CancellationToken, string)"/>
   public static IReadOnlySet<T> ReadOnlySet<T>(this IConversion<IAsyncEnumerable<T>> conversion, IEqualityComparer<T> comparer = null, string error = null) => conversion.To(sequence => sequence.ToReadOnlySet(comparer), error);
 
@@ -349,11 +409,13 @@ public static class IAsyncEnumerableConverters
   ///   <para></para>
   /// </summary>
   /// <typeparam name="T"></typeparam>
-  /// <param name="conversion"></param>
+  /// <param name="conversion">Conversion to perform.</param>
   /// <param name="comparer"></param>
   /// <param name="cancellation"></param>
-  /// <returns></returns>
-  /// <exception cref="ArgumentNullException"></exception>
+  /// <param name="error">Error description phrase for a failed <paramref name="conversion"/>.</param>
+  /// <returns>Conversion result.</returns>
+  /// <exception cref="ArgumentNullException">If <paramref name="conversion"/> is a <see langword="null"/> reference.</exception>
+  /// <exception cref="InvalidOperationException">In case of a failed conversion.</exception>
   /// <seealso cref="ReadOnlySet{T}(IConversion{IAsyncEnumerable{T}}, IEqualityComparer{T}, string)"/>
   public static Task<IReadOnlySet<T>> ReadOnlySetAsync<T>(this IConversion<IAsyncEnumerable<T>> conversion, IEqualityComparer<T> comparer = null, CancellationToken cancellation = default, string error = null) => conversion.To(sequence => sequence.ToReadOnlySetAsync(comparer, cancellation), error);
 
@@ -362,10 +424,12 @@ public static class IAsyncEnumerableConverters
   /// </summary>
   /// <typeparam name="TElement"></typeparam>
   /// <typeparam name="TPriority"></typeparam>
-  /// <param name="conversion"></param>
+  /// <param name="conversion">Conversion to perform.</param>
   /// <param name="comparer"></param>
-  /// <returns></returns>
-  /// <exception cref="ArgumentNullException"></exception>
+  /// <param name="error">Error description phrase for a failed <paramref name="conversion"/>.</param>
+  /// <returns>Conversion result.</returns>
+  /// <exception cref="ArgumentNullException">If <paramref name="conversion"/> is a <see langword="null"/> reference.</exception>
+  /// <exception cref="InvalidOperationException">In case of a failed conversion.</exception>
   /// <seealso cref="PriorityQueueAsync{TElement, TPriority}(IConversion{IAsyncEnumerable{(TElement Element, TPriority Priority)}}, IComparer{TPriority}, CancellationToken, string)"/>
   public static PriorityQueue<TElement, TPriority> PriorityQueue<TElement, TPriority>(this IConversion<IAsyncEnumerable<(TElement Element, TPriority Priority)>> conversion, IComparer<TPriority> comparer = null, string error = null) => conversion.To(sequence => sequence.ToPriorityQueue(comparer), error);
 
@@ -374,11 +438,13 @@ public static class IAsyncEnumerableConverters
   /// </summary>
   /// <typeparam name="TElement"></typeparam>
   /// <typeparam name="TPriority"></typeparam>
-  /// <param name="conversion"></param>
+  /// <param name="conversion">Conversion to perform.</param>
   /// <param name="comparer"></param>
   /// <param name="cancellation"></param>
-  /// <returns></returns>
-  /// <exception cref="ArgumentNullException"></exception>
+  /// <param name="error">Error description phrase for a failed <paramref name="conversion"/>.</param>
+  /// <returns>Conversion result.</returns>
+  /// <exception cref="ArgumentNullException">If <paramref name="conversion"/> is a <see langword="null"/> reference.</exception>
+  /// <exception cref="InvalidOperationException">In case of a failed conversion.</exception>
   /// <seealso cref="PriorityQueue{TElement, TPriority}(IConversion{IAsyncEnumerable{(TElement Element, TPriority Priority)}}, IComparer{TPriority}, string)"/>
   public static Task<PriorityQueue<TElement, TPriority>> PriorityQueueAsync<TElement, TPriority>(this IConversion<IAsyncEnumerable<(TElement Element, TPriority Priority)>> conversion, IComparer<TPriority> comparer = null, CancellationToken cancellation = default, string error = null) => conversion.To(sequence => sequence.ToPriorityQueueAsync(comparer, cancellation), error);
 
@@ -386,9 +452,11 @@ public static class IAsyncEnumerableConverters
   ///   <para></para>
   /// </summary>
   /// <typeparam name="T"></typeparam>
-  /// <param name="conversion"></param>
-  /// <returns></returns>
-  /// <exception cref="ArgumentNullException"></exception>
+  /// <param name="conversion">Conversion to perform.</param>
+  /// <param name="error">Error description phrase for a failed <paramref name="conversion"/>.</param>
+  /// <returns>Conversion result.</returns>
+  /// <exception cref="ArgumentNullException">If <paramref name="conversion"/> is a <see langword="null"/> reference.</exception>
+  /// <exception cref="InvalidOperationException">In case of a failed conversion.</exception>
   /// <seealso cref="ImmutableArrayAsync{T}(IConversion{IAsyncEnumerable{T}}, CancellationToken, string)"/>
   public static ImmutableArray<T> ImmutableArray<T>(this IConversion<IAsyncEnumerable<T>> conversion, string error = null) => conversion.To(sequence => sequence.ToImmutableArray(), error);
 
@@ -396,10 +464,12 @@ public static class IAsyncEnumerableConverters
   ///   <para></para>
   /// </summary>
   /// <typeparam name="T"></typeparam>
-  /// <param name="conversion"></param>
+  /// <param name="conversion">Conversion to perform.</param>
   /// <param name="cancellation"></param>
-  /// <returns></returns>
-  /// <exception cref="ArgumentNullException"></exception>
+  /// <param name="error">Error description phrase for a failed <paramref name="conversion"/>.</param>
+  /// <returns>Conversion result.</returns>
+  /// <exception cref="ArgumentNullException">If <paramref name="conversion"/> is a <see langword="null"/> reference.</exception>
+  /// <exception cref="InvalidOperationException">In case of a failed conversion.</exception>
   /// <seealso cref="ImmutableArray{T}(IConversion{IAsyncEnumerable{T}}, string)"/>
   public static Task<ImmutableArray<T>> ImmutableArrayAsync<T>(this IConversion<IAsyncEnumerable<T>> conversion, CancellationToken cancellation = default, string error = null) => conversion.To(sequence => sequence.ToImmutableArrayAsync(cancellation), error);
 
@@ -407,9 +477,11 @@ public static class IAsyncEnumerableConverters
   ///   <para></para>
   /// </summary>
   /// <typeparam name="T"></typeparam>
-  /// <param name="conversion"></param>
-  /// <returns></returns>
-  /// <exception cref="ArgumentNullException"></exception>
+  /// <param name="conversion">Conversion to perform.</param>
+  /// <param name="error">Error description phrase for a failed <paramref name="conversion"/>.</param>
+  /// <returns>Conversion result.</returns>
+  /// <exception cref="ArgumentNullException">If <paramref name="conversion"/> is a <see langword="null"/> reference.</exception>
+  /// <exception cref="InvalidOperationException">In case of a failed conversion.</exception>
   /// <seealso cref="ImmutableListAsync{T}(IConversion{IAsyncEnumerable{T}}, CancellationToken, string)"/>
   public static ImmutableList<T> ImmutableList<T>(this IConversion<IAsyncEnumerable<T>> conversion, string error = null) => conversion.To(sequence => sequence.ToImmutableList(), error);
 
@@ -417,10 +489,12 @@ public static class IAsyncEnumerableConverters
   ///   <para></para>
   /// </summary>
   /// <typeparam name="T"></typeparam>
-  /// <param name="conversion"></param>
+  /// <param name="conversion">Conversion to perform.</param>
   /// <param name="cancellation"></param>
-  /// <returns></returns>
-  /// <exception cref="ArgumentNullException"></exception>
+  /// <param name="error">Error description phrase for a failed <paramref name="conversion"/>.</param>
+  /// <returns>Conversion result.</returns>
+  /// <exception cref="ArgumentNullException">If <paramref name="conversion"/> is a <see langword="null"/> reference.</exception>
+  /// <exception cref="InvalidOperationException">In case of a failed conversion.</exception>
   /// <seealso cref="ImmutableList{T}(IConversion{IAsyncEnumerable{T}}, string)"/>
   public static Task<ImmutableList<T>> ImmutableListAsync<T>(this IConversion<IAsyncEnumerable<T>> conversion, CancellationToken cancellation = default, string error = null) => conversion.To(sequence => sequence.ToImmutableListAsync(cancellation), error);
 
@@ -428,10 +502,12 @@ public static class IAsyncEnumerableConverters
   ///   <para></para>
   /// </summary>
   /// <typeparam name="T"></typeparam>
-  /// <param name="conversion"></param>
+  /// <param name="conversion">Conversion to perform.</param>
   /// <param name="comparer"></param>
-  /// <returns></returns>
-  /// <exception cref="ArgumentNullException"></exception>
+  /// <param name="error">Error description phrase for a failed <paramref name="conversion"/>.</param>
+  /// <returns>Conversion result.</returns>
+  /// <exception cref="ArgumentNullException">If <paramref name="conversion"/> is a <see langword="null"/> reference.</exception>
+  /// <exception cref="InvalidOperationException">In case of a failed conversion.</exception>
   /// <seealso cref="ImmutableHashSetAsync{T}(IConversion{IAsyncEnumerable{T}}, IEqualityComparer{T}, CancellationToken, string)"/>
   public static ImmutableHashSet<T> ImmutableHashSet<T>(this IConversion<IAsyncEnumerable<T>> conversion, IEqualityComparer<T> comparer = null, string error = null) => conversion.To(sequence => sequence.ToImmutableHashSet(comparer), error);
 
@@ -439,11 +515,13 @@ public static class IAsyncEnumerableConverters
   ///   <para></para>
   /// </summary>
   /// <typeparam name="T"></typeparam>
-  /// <param name="conversion"></param>
+  /// <param name="conversion">Conversion to perform.</param>
   /// <param name="comparer"></param>
   /// <param name="cancellation"></param>
-  /// <returns></returns>
-  /// <exception cref="ArgumentNullException"></exception>
+  /// <param name="error">Error description phrase for a failed <paramref name="conversion"/>.</param>
+  /// <returns>Conversion result.</returns>
+  /// <exception cref="ArgumentNullException">If <paramref name="conversion"/> is a <see langword="null"/> reference.</exception>
+  /// <exception cref="InvalidOperationException">In case of a failed conversion.</exception>
   /// <seealso cref="ImmutableHashSet{T}(IConversion{IAsyncEnumerable{T}}, IEqualityComparer{T}, string)"/>
   public static Task<ImmutableHashSet<T>> ImmutableHashSetAsync<T>(this IConversion<IAsyncEnumerable<T>> conversion, IEqualityComparer<T> comparer = null, CancellationToken cancellation = default, string error = null) => conversion.To(sequence => sequence.ToImmutableHashSetAsync(comparer, cancellation), error);
 
@@ -451,10 +529,12 @@ public static class IAsyncEnumerableConverters
   ///  
   /// </summary>
   /// <typeparam name="T"></typeparam>
-  /// <param name="conversion"></param>
+  /// <param name="conversion">Conversion to perform.</param>
   /// <param name="comparer"></param>
-  /// <returns></returns>
-  /// <exception cref="ArgumentNullException"></exception>
+  /// <param name="error">Error description phrase for a failed <paramref name="conversion"/>.</param>
+  /// <returns>Conversion result.</returns>
+  /// <exception cref="ArgumentNullException">If <paramref name="conversion"/> is a <see langword="null"/> reference.</exception>
+  /// <exception cref="InvalidOperationException">In case of a failed conversion.</exception>
   /// <seealso cref="ImmutableSortedSetAsync{T}(IConversion{IAsyncEnumerable{T}}, IComparer{T}, CancellationToken, string)"/>
   public static ImmutableSortedSet<T> ImmutableSortedSet<T>(this IConversion<IAsyncEnumerable<T>> conversion, IComparer<T> comparer = null, string error = null) => conversion.To(sequence => sequence.ToImmutableSortedSet(comparer), error);
 
@@ -462,11 +542,13 @@ public static class IAsyncEnumerableConverters
   ///   <para></para>
   /// </summary>
   /// <typeparam name="T"></typeparam>
-  /// <param name="conversion"></param>
+  /// <param name="conversion">Conversion to perform.</param>
   /// <param name="comparer"></param>
   /// <param name="cancellation"></param>
-  /// <returns></returns>
-  /// <exception cref="ArgumentNullException"></exception>
+  /// <param name="error">Error description phrase for a failed <paramref name="conversion"/>.</param>
+  /// <returns>Conversion result.</returns>
+  /// <exception cref="ArgumentNullException">If <paramref name="conversion"/> is a <see langword="null"/> reference.</exception>
+  /// <exception cref="InvalidOperationException">In case of a failed conversion.</exception>
   /// <seealso cref="ImmutableSortedSet{T}(IConversion{IAsyncEnumerable{T}}, IComparer{T}, string)"/>
   public static Task<ImmutableSortedSet<T>> ImmutableSortedSetAsync<T>(this IConversion<IAsyncEnumerable<T>> conversion, IComparer<T> comparer = null, CancellationToken cancellation = default, string error = null) => conversion.To(sequence => sequence.ToImmutableSortedSetAsync(comparer, cancellation), error);
 
@@ -475,11 +557,13 @@ public static class IAsyncEnumerableConverters
   /// </summary>
   /// <typeparam name="TKey"></typeparam>
   /// <typeparam name="TValue"></typeparam>
-  /// <param name="conversion"></param>
+  /// <param name="conversion">Conversion to perform.</param>
   /// <param name="key"></param>
   /// <param name="comparer"></param>
-  /// <returns></returns>
-  /// <exception cref="ArgumentNullException"></exception>
+  /// <param name="error">Error description phrase for a failed <paramref name="conversion"/>.</param>
+  /// <returns>Conversion result.</returns>
+  /// <exception cref="ArgumentNullException">If <paramref name="conversion"/> is a <see langword="null"/> reference.</exception>
+  /// <exception cref="InvalidOperationException">In case of a failed conversion.</exception>
   /// <seealso cref="ImmutableDictionaryAsync{TKey, TValue}(IConversion{IAsyncEnumerable{TValue}}, Func{TValue, TKey}, IEqualityComparer{TKey}, CancellationToken, string)"/>
   public static ImmutableDictionary<TKey, TValue> ImmutableDictionary<TKey, TValue>(this IConversion<IAsyncEnumerable<TValue>> conversion, Func<TValue, TKey> key, IEqualityComparer<TKey> comparer = null, string error = null) where TKey : notnull => conversion.To(sequence => sequence.ToImmutableDictionary(key, comparer), error);
 
@@ -488,12 +572,14 @@ public static class IAsyncEnumerableConverters
   /// </summary>
   /// <typeparam name="TKey"></typeparam>
   /// <typeparam name="TValue"></typeparam>
-  /// <param name="conversion"></param>
+  /// <param name="conversion">Conversion to perform.</param>
   /// <param name="key"></param>
   /// <param name="comparer"></param>
   /// <param name="cancellation"></param>
-  /// <returns></returns>
-  /// <exception cref="ArgumentNullException"></exception>
+  /// <param name="error">Error description phrase for a failed <paramref name="conversion"/>.</param>
+  /// <returns>Conversion result.</returns>
+  /// <exception cref="ArgumentNullException">If <paramref name="conversion"/> is a <see langword="null"/> reference.</exception>
+  /// <exception cref="InvalidOperationException">In case of a failed conversion.</exception>
   /// <seealso cref="ImmutableDictionary{TKey, TValue}(IConversion{IAsyncEnumerable{TValue}}, Func{TValue, TKey}, IEqualityComparer{TKey}, string)"/>
   public static Task<ImmutableDictionary<TKey, TValue>> ImmutableDictionaryAsync<TKey, TValue>(this IConversion<IAsyncEnumerable<TValue>> conversion, Func<TValue, TKey> key, IEqualityComparer<TKey> comparer = null, CancellationToken cancellation = default, string error = null) where TKey : notnull => conversion.To(sequence => sequence.ToImmutableDictionaryAsync(key, comparer, cancellation), error);
 
@@ -502,12 +588,14 @@ public static class IAsyncEnumerableConverters
   /// </summary>
   /// <typeparam name="TKey"></typeparam>
   /// <typeparam name="TValue"></typeparam>
-  /// <param name="conversion"></param>
+  /// <param name="conversion">Conversion to perform.</param>
   /// <param name="key"></param>
   /// <param name="keyComparer"></param>
   /// <param name="valueComparer"></param>
-  /// <returns></returns>
-  /// <exception cref="ArgumentNullException"></exception>
+  /// <param name="error">Error description phrase for a failed <paramref name="conversion"/>.</param>
+  /// <returns>Conversion result.</returns>
+  /// <exception cref="ArgumentNullException">If <paramref name="conversion"/> is a <see langword="null"/> reference.</exception>
+  /// <exception cref="InvalidOperationException">In case of a failed conversion.</exception>
   /// <seealso cref="ImmutableSortedDictionaryAsync{TKey, TValue}(IConversion{IAsyncEnumerable{TValue}}, Func{TValue, TKey}, IComparer{TKey}, IEqualityComparer{TValue}, CancellationToken, string)"/>
   public static ImmutableSortedDictionary<TKey, TValue> ImmutableSortedDictionary<TKey, TValue>(this IConversion<IAsyncEnumerable<TValue>> conversion, Func<TValue, TKey> key, IComparer<TKey> keyComparer = null, IEqualityComparer<TValue> valueComparer = null, string error = null) where TKey : notnull => conversion.To(sequence => sequence.ToImmutableSortedDictionary(key, keyComparer, valueComparer), error);
 
@@ -516,13 +604,15 @@ public static class IAsyncEnumerableConverters
   /// </summary>
   /// <typeparam name="TKey"></typeparam>
   /// <typeparam name="TValue"></typeparam>
-  /// <param name="conversion"></param>
+  /// <param name="conversion">Conversion to perform.</param>
   /// <param name="key"></param>
   /// <param name="keyComparer"></param>
   /// <param name="valueComparer"></param>
   /// <param name="cancellation"></param>
-  /// <returns></returns>
-  /// <exception cref="ArgumentNullException"></exception>
+  /// <param name="error">Error description phrase for a failed <paramref name="conversion"/>.</param>
+  /// <returns>Conversion result.</returns>
+  /// <exception cref="ArgumentNullException">If <paramref name="conversion"/> is a <see langword="null"/> reference.</exception>
+  /// <exception cref="InvalidOperationException">In case of a failed conversion.</exception>
   /// <seealso cref="ImmutableSortedDictionary{TKey, TValue}(IConversion{IAsyncEnumerable{TValue}}, Func{TValue, TKey}, IComparer{TKey}, IEqualityComparer{TValue}, string)"/>
   public static Task<ImmutableSortedDictionary<TKey, TValue>> ImmutableSortedDictionaryAsync<TKey, TValue>(this IConversion<IAsyncEnumerable<TValue>> conversion, Func<TValue, TKey> key, IComparer<TKey> keyComparer = null, IEqualityComparer<TValue> valueComparer = null, CancellationToken cancellation = default, string error = null) where TKey : notnull => conversion.To(sequence => sequence.ToImmutableSortedDictionaryAsync(key, keyComparer, valueComparer, cancellation), error);
 
@@ -530,9 +620,11 @@ public static class IAsyncEnumerableConverters
   ///   <para></para>
   /// </summary>
   /// <typeparam name="T"></typeparam>
-  /// <param name="conversion"></param>
-  /// <returns></returns>
-  /// <exception cref="ArgumentNullException"></exception>
+  /// <param name="conversion">Conversion to perform.</param>
+  /// <param name="error">Error description phrase for a failed <paramref name="conversion"/>.</param>
+  /// <returns>Conversion result.</returns>
+  /// <exception cref="ArgumentNullException">If <paramref name="conversion"/> is a <see langword="null"/> reference.</exception>
+  /// <exception cref="InvalidOperationException">In case of a failed conversion.</exception>
   /// <seealso cref="ImmutableQueueAsync{T}(IConversion{IAsyncEnumerable{T}}, CancellationToken, string)"/>
   public static ImmutableQueue<T> ImmutableQueue<T>(this IConversion<IAsyncEnumerable<T>> conversion, string error = null) => conversion.To(sequence => sequence.ToImmutableQueue(), error);
 
@@ -540,10 +632,12 @@ public static class IAsyncEnumerableConverters
   ///   <para></para>
   /// </summary>
   /// <typeparam name="T"></typeparam>
-  /// <param name="conversion"></param>
+  /// <param name="conversion">Conversion to perform.</param>
   /// <param name="cancellation"></param>
-  /// <returns></returns>
-  /// <exception cref="ArgumentNullException"></exception>
+  /// <param name="error">Error description phrase for a failed <paramref name="conversion"/>.</param>
+  /// <returns>Conversion result.</returns>
+  /// <exception cref="ArgumentNullException">If <paramref name="conversion"/> is a <see langword="null"/> reference.</exception>
+  /// <exception cref="InvalidOperationException">In case of a failed conversion.</exception>
   /// <seealso cref="ImmutableQueue{T}(IConversion{IAsyncEnumerable{T}}, string)"/>
   public static Task<ImmutableQueue<T>> ImmutableQueueAsync<T>(this IConversion<IAsyncEnumerable<T>> conversion, CancellationToken cancellation = default, string error = null) => conversion.To(sequence => sequence.ToImmutableQueueAsync(cancellation), error);
   #endif

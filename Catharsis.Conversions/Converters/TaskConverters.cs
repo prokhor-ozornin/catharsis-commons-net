@@ -12,10 +12,11 @@ public static class TaskConverters
   /// <summary>
   ///   <para></para>
   /// </summary>
-  /// <param name="conversion"></param>
-  /// <param name="error"></param>
-  /// <returns></returns>
-  /// <exception cref="ArgumentNullException"></exception>
+  /// <param name="conversion">Conversion to perform.</param>
+  /// <param name="error">Error description phrase for a failed <paramref name="conversion"/>.</param>
+  /// <returns>Conversion result.</returns>
+  /// <exception cref="ArgumentNullException">If <paramref name="conversion"/> is a <see langword="null"/> reference.</exception>
+  /// <exception cref="InvalidOperationException">In case of a failed conversion.</exception>
   /// <seealso cref="ValueTask{T}(IConversion{Task{T}}, string)"/>
   public static ValueTask ValueTask(this IConversion<Task> conversion, string error = null) => conversion.To(task => task.ToValueTask(), error);
 
@@ -23,10 +24,11 @@ public static class TaskConverters
   ///   <para></para>
   /// </summary>
   /// <typeparam name="T"></typeparam>
-  /// <param name="conversion"></param>
-  /// <param name="error"></param>
-  /// <returns></returns>
-  /// <exception cref="ArgumentNullException"></exception>
+  /// <param name="conversion">Conversion to perform.</param>
+  /// <param name="error">Error description phrase for a failed <paramref name="conversion"/>.</param>
+  /// <returns>Conversion result.</returns>
+  /// <exception cref="ArgumentNullException">If <paramref name="conversion"/> is a <see langword="null"/> reference.</exception>
+  /// <exception cref="InvalidOperationException">In case of a failed conversion.</exception>
   /// <seealso cref="ValueTask(IConversion{Task}, string)"/>
   public static ValueTask<T> ValueTask<T>(this IConversion<Task<T>> conversion, string error = null) => conversion.To(task => task.ToValueTask(), error);
 }

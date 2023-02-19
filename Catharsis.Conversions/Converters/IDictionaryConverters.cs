@@ -13,11 +13,12 @@ public static class IDictionaryConverters
   /// </summary>
   /// <typeparam name="TKey"></typeparam>
   /// <typeparam name="TValue"></typeparam>
-  /// <param name="conversion"></param>
+  /// <param name="conversion">Conversion to perform.</param>
   /// <param name="comparer"></param>
-  /// <param name="error"></param>
-  /// <returns></returns>
-  /// <exception cref="ArgumentNullException"></exception>
+  /// <param name="error">Error description phrase for a failed <paramref name="conversion"/>.</param>
+  /// <returns>Conversion result.</returns>
+  /// <exception cref="ArgumentNullException">If <paramref name="conversion"/> is a <see langword="null"/> reference.</exception>
+  /// <exception cref="InvalidOperationException">In case of a failed conversion.</exception>
   public static SortedList<TKey, TValue> SortedList<TKey, TValue>(this IConversion<IDictionary<TKey, TValue>> conversion, IComparer<TKey> comparer = null, string error = null) where TKey : notnull => conversion.To(dictionary => dictionary.ToSortedList(comparer), error);
 
   /// <summary>
@@ -25,10 +26,11 @@ public static class IDictionaryConverters
   /// </summary>
   /// <typeparam name="TKey"></typeparam>
   /// <typeparam name="TValue"></typeparam>
-  /// <param name="conversion"></param>
+  /// <param name="conversion">Conversion to perform.</param>
   /// <param name="comparer"></param>
-  /// <param name="error"></param>
-  /// <returns></returns>
-  /// <exception cref="ArgumentNullException"></exception>
+  /// <param name="error">Error description phrase for a failed <paramref name="conversion"/>.</param>
+  /// <returns>Conversion result.</returns>
+  /// <exception cref="ArgumentNullException">If <paramref name="conversion"/> is a <see langword="null"/> reference.</exception>
+  /// <exception cref="InvalidOperationException">In case of a failed conversion.</exception>
   public static SortedDictionary<TKey, TValue> SortedDictionary<TKey, TValue>(this IConversion<IDictionary<TKey, TValue>> conversion, IComparer<TKey> comparer = null, string error = null) where TKey : notnull => conversion.To(dictionary => dictionary.ToSortedDictionary(comparer), error);
 }
