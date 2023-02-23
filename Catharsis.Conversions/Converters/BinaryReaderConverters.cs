@@ -10,6 +10,7 @@ public static class BinaryReaderConverters
 {
   /// <summary>
   ///   <para>Converts given <see cref="BinaryReader"/> instance to the instance of <see cref="IEnumerable{T}"/> type.</para>
+  ///   <para>Conversion is performed by returning all available bytes from the underlying reader's stream.</para>
   /// </summary>
   /// <param name="conversion">Conversion to perform.</param>
   /// <param name="error">Error description phrase for a failed <paramref name="conversion"/>.</param>
@@ -21,6 +22,7 @@ public static class BinaryReaderConverters
 
   /// <summary>
   ///   <para>Converts given <see cref="BinaryReader"/> instance to the instance of <see cref="IAsyncEnumerable{T}"/> type.</para>
+  ///   <para>Asynchronous conversion is performed by returning all available bytes from the underlying reader's stream.</para>
   /// </summary>
   /// <param name="conversion">Conversion to perform.</param>
   /// <param name="error">Error description phrase for a failed <paramref name="conversion"/>.</param>

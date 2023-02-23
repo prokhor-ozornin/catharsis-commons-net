@@ -1,16 +1,16 @@
 ﻿namespace Catharsis.Conversions;
 
 /// <summary>
-///   <para></para>
+///   <para>A custom conversion for an object between a source and destination types.</para>
 /// </summary>
-/// <typeparam name="TSource"></typeparam>
+/// <typeparam name="TSource">Type of source object.</typeparam>
 public interface IConversion<out TSource>
 {
   /// <summary>
-  ///   <para></para>
+  ///   <para>Performs a conversion of a source object to a target type, using a specified delegate method.</para>
   /// </summary>
-  /// <typeparam name="TResult"></typeparam>
-  /// <param name="converter"></param>
+  /// <typeparam name="TResult">Type of resulting object.</typeparam>
+  /// <param name="converter">Conversion method to use.</param>
   /// <param name="error">Error description phrase for a failed conversion.</param>
   /// <returns>Conversion result.</returns>
   /// <exception cref="ArgumentNullException">If <paramref name="converter"/> is a <see langword="null"/> reference.</exception>
