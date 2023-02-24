@@ -17,5 +17,6 @@ public static class PhysicalAddressConverters
   /// <returns>Conversion result.</returns>
   /// <exception cref="ArgumentNullException">If <paramref name="conversion"/> is a <see langword="null"/> reference.</exception>
   /// <exception cref="InvalidOperationException">In case of a failed conversion.</exception>
+  /// <seealso cref="PhysicalAddressExtensions.ToBytes(PhysicalAddress)"/>
   public static byte[] Bytes(this IConversion<PhysicalAddress> conversion, string error = null) => conversion.To(address => address.ToBytes(), error);
 }

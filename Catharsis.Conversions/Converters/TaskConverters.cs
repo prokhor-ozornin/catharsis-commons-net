@@ -18,6 +18,7 @@ public static class TaskConverters
   /// <exception cref="ArgumentNullException">If <paramref name="conversion"/> is a <see langword="null"/> reference.</exception>
   /// <exception cref="InvalidOperationException">In case of a failed conversion.</exception>
   /// <seealso cref="ValueTask{T}(IConversion{Task{T}}, string)"/>
+  /// <seealso cref="Extensions.TaskExtensions.ToValueTask(Task)"/>
   public static ValueTask ValueTask(this IConversion<Task> conversion, string error = null) => conversion.To(task => task.ToValueTask(), error);
 
   /// <summary>
@@ -30,5 +31,6 @@ public static class TaskConverters
   /// <exception cref="ArgumentNullException">If <paramref name="conversion"/> is a <see langword="null"/> reference.</exception>
   /// <exception cref="InvalidOperationException">In case of a failed conversion.</exception>
   /// <seealso cref="ValueTask(IConversion{Task}, string)"/>
+  /// <seealso cref="Extensions.TaskExtensions.ToValueTask{T}(Task{T})"/>
   public static ValueTask<T> ValueTask<T>(this IConversion<Task<T>> conversion, string error = null) => conversion.To(task => task.ToValueTask(), error);
 }

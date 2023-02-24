@@ -16,6 +16,7 @@ public static class DateTimeConverters
   /// <returns>Conversion result.</returns>
   /// <exception cref="ArgumentNullException">If <paramref name="conversion"/> is a <see langword="null"/> reference.</exception>
   /// <exception cref="InvalidOperationException">In case of a failed conversion.</exception>
+  /// <seealso cref="DateTimeExtensions.ToDateTimeOffset(DateTime)"/>
   public static DateTimeOffset DateTimeOffset(this IConversion<DateTime> conversion, string error = null) => conversion.To(date => date.ToDateTimeOffset(), error);
 
 #if NET7_0_OR_GREATER
@@ -27,6 +28,7 @@ public static class DateTimeConverters
   /// <returns>Conversion result.</returns>
   /// <exception cref="ArgumentNullException">If <paramref name="conversion"/> is a <see langword="null"/> reference.</exception>
   /// <exception cref="InvalidOperationException">In case of a failed conversion.</exception>
+  /// <seealso cref="DateTimeExtensions.ToDateOnly(DateTime)"/>
   public static DateOnly DateOnly(this IConversion<DateTime> conversion, string error = null) => conversion.To(date => date.ToDateOnly(), error);
 
 /// <summary>
@@ -37,6 +39,7 @@ public static class DateTimeConverters
   /// <returns>Conversion result.</returns>
   /// <exception cref="ArgumentNullException">If <paramref name="conversion"/> is a <see langword="null"/> reference.</exception>
   /// <exception cref="InvalidOperationException">In case of a failed conversion.</exception>
+  /// <seealso cref="DateTimeExtensions.ToTimeOnly(DateTime)"/>
   public static TimeOnly TimeOnly(this IConversion<DateTime> conversion, string error = null) => conversion.To(date => date.ToTimeOnly(), error);
 #endif
 }

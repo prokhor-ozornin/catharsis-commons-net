@@ -1,5 +1,4 @@
-﻿using System.Net;
-using Catharsis.Extensions;
+﻿using Catharsis.Extensions;
 
 namespace Catharsis.Conversions;
 
@@ -20,5 +19,6 @@ public static class IReadOnlyDictionaryConverters
   /// <returns>Conversion result.</returns>
   /// <exception cref="ArgumentNullException">If <paramref name="conversion"/> is a <see langword="null"/> reference.</exception>
   /// <exception cref="InvalidOperationException">In case of a failed conversion.</exception>
+  /// <seealso cref="IReadOnlyDictionaryExtensions.ToValueTuple{TKey, TValue}(IReadOnlyDictionary{TKey, TValue}, IComparer{TKey})"/>
   public static IEnumerable<(TKey Key, TValue Value)> ValueTuple<TKey, TValue>(this IConversion<IReadOnlyDictionary<TKey, TValue>> conversion, IComparer<TKey> comparer = null, string error = null) where TKey : notnull => conversion.To(dictionary => dictionary.ToValueTuple(comparer), error);
 }

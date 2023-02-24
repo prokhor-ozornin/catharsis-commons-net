@@ -18,5 +18,6 @@ public static class DirectoryInfoConverters
   /// <returns>Conversion result.</returns>
   /// <exception cref="ArgumentNullException">If <paramref name="conversion"/> is a <see langword="null"/> reference.</exception>
   /// <exception cref="InvalidOperationException">In case of a failed conversion.</exception>
+  /// <seealso cref="DirectoryInfoExtensions.ToEnumerable(DirectoryInfo, string, bool)"/>
   public static IEnumerable<FileSystemInfo> Enumerable(this IConversion<DirectoryInfo> conversion, string pattern = null, bool recursive = false, string error = null) => conversion.To(directory => directory.ToEnumerable(pattern, recursive), error);
 }

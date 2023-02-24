@@ -21,6 +21,7 @@ public static class FuncConverters
   /// <exception cref="ArgumentNullException">If <paramref name="conversion"/> is a <see langword="null"/> reference.</exception>
   /// <exception cref="InvalidOperationException">In case of a failed conversion.</exception>
   /// <seealso cref="Task{T}(IConversion{Func{object, T}}, object, TaskCreationOptions, CancellationToken, string)"/>
+  /// <seealso cref="FuncExtensions.ToTask{T}(Func{T}, TaskCreationOptions, CancellationToken)"/>
   public static Task<T> Task<T>(this IConversion<Func<T>> conversion, TaskCreationOptions options = TaskCreationOptions.None, CancellationToken cancellation = default, string error = null) => conversion.To(function => function.ToTask(options, cancellation), error);
 
   /// <summary>
@@ -36,5 +37,6 @@ public static class FuncConverters
   /// <exception cref="ArgumentNullException">If <paramref name="conversion"/> is a <see langword="null"/> reference.</exception>
   /// <exception cref="InvalidOperationException">In case of a failed conversion.</exception>
   /// <seealso cref="Task{T}(IConversion{Func{T}}, TaskCreationOptions, CancellationToken, string)"/>
+  /// <seealso cref="FuncExtensions.ToTask{T}(Func{object, T}, object, TaskCreationOptions, CancellationToken)"/>
   public static Task<T> Task<T>(this IConversion<Func<object, T>> conversion, object state, TaskCreationOptions options = TaskCreationOptions.None, CancellationToken cancellation = default, string error = null) => conversion.To(function => function.ToTask(state, options, cancellation), error);
 }

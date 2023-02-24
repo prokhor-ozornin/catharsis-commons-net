@@ -16,6 +16,7 @@ public static class XmlDocumentConverters
   /// <param name="error">Error description phrase for a failed <paramref name="conversion"/>.</param>
   /// <returns>Conversion result.</returns>
   /// <exception cref="ArgumentNullException">If <paramref name="conversion"/> is a <see langword="null"/> reference.</exception>
+  /// <seealso cref="XmlDocumentExtensions.ToBytes(XmlDocument)"/>
   public static byte[] Bytes(this IConversion<XmlDocument> conversion, string error = null) => conversion.To(document => document.ToBytes(), error);
 
   /// <summary>
@@ -25,5 +26,6 @@ public static class XmlDocumentConverters
   /// <param name="error">Error description phrase for a failed <paramref name="conversion"/>.</param>
   /// <returns>Conversion result.</returns>
   /// <exception cref="ArgumentNullException">If <paramref name="conversion"/> is a <see langword="null"/> reference.</exception>
+  /// <seealso cref="XmlDocumentExtensions.ToText(XmlDocument)"/>
   public static string Text(this IConversion<XmlDocument> conversion, string error = null) => conversion.To(document => document.ToText(), error);
 }

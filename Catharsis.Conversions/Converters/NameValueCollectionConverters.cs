@@ -17,6 +17,7 @@ public static class NameValueCollectionConverters
   /// <returns>Conversion result.</returns>
   /// <exception cref="ArgumentNullException">If <paramref name="conversion"/> is a <see langword="null"/> reference.</exception>
   /// <exception cref="InvalidOperationException">In case of a failed conversion.</exception>
+  /// <seealso cref="NameValueCollectionExtensions.ToDictionary(NameValueCollection)"/>
   public static Dictionary<string, string> Dictionary(this IConversion<NameValueCollection> conversion, string error = null) => conversion.To(collection => collection.ToDictionary(), error);
 
   /// <summary>
@@ -27,5 +28,6 @@ public static class NameValueCollectionConverters
   /// <returns>Conversion result.</returns>
   /// <exception cref="ArgumentNullException">If <paramref name="conversion"/> is a <see langword="null"/> reference.</exception>
   /// <exception cref="InvalidOperationException">In case of a failed conversion.</exception>
+  /// <seealso cref="NameValueCollectionExtensions.ToValueTuple(NameValueCollection)"/>
   public static IEnumerable<(string Name, string Value)> ValueTuple(this IConversion<NameValueCollection> conversion, string error = null) => conversion.To(collection => collection.ToValueTuple(), error);
 }

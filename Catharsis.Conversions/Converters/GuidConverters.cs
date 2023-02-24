@@ -14,5 +14,6 @@ public static class GuidConverters
   /// <returns>Conversion result.</returns>
   /// <exception cref="ArgumentNullException">If <paramref name="conversion"/> is a <see langword="null"/> reference.</exception>
   /// <exception cref="InvalidOperationException">In case of a failed conversion.</exception>
+  /// <seealso cref="Guid.ToByteArray()"/>
   public static byte[] Bytes(this IConversion<Guid> conversion, string error = null) => conversion.To(guid => guid.ToByteArray(), error);
 }

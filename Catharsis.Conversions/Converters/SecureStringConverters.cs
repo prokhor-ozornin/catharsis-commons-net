@@ -19,6 +19,7 @@ public static class SecureStringConverters
   /// <returns>Conversion result.</returns>
   /// <exception cref="ArgumentNullException">If <paramref name="conversion"/> is a <see langword="null"/> reference.</exception>
   /// <exception cref="InvalidOperationException">In case of a failed conversion.</exception>
+  /// <seealso cref="SecureStringExtensions.ToBytes(SecureString, Encoding)"/>
   public static byte[] Bytes(this IConversion<SecureString> conversion, Encoding encoding = null, string error = null) => conversion.To(secure => secure.ToBytes(encoding), error);
 
   /// <summary>
@@ -29,5 +30,6 @@ public static class SecureStringConverters
   /// <returns>Conversion result.</returns>
   /// <exception cref="ArgumentNullException">If <paramref name="conversion"/> is a <see langword="null"/> reference.</exception>
   /// <exception cref="InvalidOperationException">In case of a failed conversion.</exception>
+  /// <seealso cref="SecureStringExtensions.ToText(SecureString)"/>
   public static string Text(this IConversion<SecureString> conversion, string error = null) => conversion.To(secure => secure.ToText(), error);
 }

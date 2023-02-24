@@ -16,5 +16,6 @@ public static class FileSystemInfoConverters
   /// <returns>Conversion result.</returns>
   /// <exception cref="ArgumentNullException">If <paramref name="conversion"/> is a <see langword="null"/> reference.</exception>
   /// <exception cref="InvalidOperationException">In case of a failed conversion.</exception>
+  /// <seealso cref="FileSystemInfoExtensions.ToUri(FileSystemInfo)"/>
   public static Uri Uri(this IConversion<FileSystemInfo> conversion, string error = null) => conversion.To(info => info.ToUri(), error);
 }

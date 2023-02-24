@@ -24,6 +24,17 @@ public sealed class XmlReaderConvertersTest : UnitTest
   }
 
   /// <summary>
+  ///   <para>Performs testing of <see cref="XmlReaderConverters.TextAsync(IConversion{XmlReader}, string)"/> method.</para>
+  /// </summary>
+  [Fact]
+  public void TextAsync_Method()
+  {
+    AssertionExtensions.Should(() => XmlReaderConverters.TextAsync(null)).ThrowExactlyAsync<ArgumentNullException>().WithParameterName("conversion").Await();
+
+    throw new NotImplementedException();
+  }
+
+  /// <summary>
   ///   <para>Performs testing of <see cref="XmlReaderConverters.XmlDocument(IConversion{XmlReader}, string)"/> method.</para>
   /// </summary>
   [Fact]

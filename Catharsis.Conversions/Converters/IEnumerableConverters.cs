@@ -21,6 +21,7 @@ public static class IEnumerableConverters
   /// <returns>Conversion result.</returns>
   /// <exception cref="ArgumentNullException">If <paramref name="conversion"/> is a <see langword="null"/> reference.</exception>
   /// <exception cref="InvalidOperationException">In case of a failed conversion.</exception>
+  /// <seealso cref="IEnumerableExtensions.ToArraySegment{T}(IEnumerable{T})"/>
   public static T[] Array<T>(this IConversion<IEnumerable<T>> conversion, string error = null) => conversion.To(sequence => sequence.AsArray(), error);
 
   /// <summary>
@@ -32,6 +33,7 @@ public static class IEnumerableConverters
   /// <returns>Conversion result.</returns>
   /// <exception cref="ArgumentNullException">If <paramref name="conversion"/> is a <see langword="null"/> reference.</exception>
   /// <exception cref="InvalidOperationException">In case of a failed conversion.</exception>
+  /// <seealso cref="IEnumerableExtensions.ToAsyncEnumerable{T}(IEnumerable{T})"/>
   public static IAsyncEnumerable<T> AsyncEnumerable<T>(this IConversion<IEnumerable<T>> conversion, string error = null) => conversion.To(sequence => sequence.ToAsyncEnumerable(), error);
 
   /// <summary>
@@ -43,6 +45,7 @@ public static class IEnumerableConverters
   /// <returns>Conversion result.</returns>
   /// <exception cref="ArgumentNullException">If <paramref name="conversion"/> is a <see langword="null"/> reference.</exception>
   /// <exception cref="InvalidOperationException">In case of a failed conversion.</exception>
+  /// <seealso cref="IEnumerableExtensions.ToLinkedList{T}(IEnumerable{T})"/>
   public static LinkedList<T> LinkedList<T>(this IConversion<IEnumerable<T>> conversion, string error = null) => conversion.To(sequence => sequence.ToLinkedList(), error);
 
   /// <summary>
@@ -54,6 +57,7 @@ public static class IEnumerableConverters
   /// <returns>Conversion result.</returns>
   /// <exception cref="ArgumentNullException">If <paramref name="conversion"/> is a <see langword="null"/> reference.</exception>
   /// <exception cref="InvalidOperationException">In case of a failed conversion.</exception>
+  /// <seealso cref="IEnumerableExtensions.ToReadOnlyList{T}(IEnumerable{T})"/>
   public static IReadOnlyList<T> ReadOnlyList<T>(this IConversion<IEnumerable<T>> conversion, string error = null) => conversion.To(sequence => sequence.ToReadOnlyList(), error);
 
   /// <summary>
@@ -66,6 +70,7 @@ public static class IEnumerableConverters
   /// <returns>Conversion result.</returns>
   /// <exception cref="ArgumentNullException">If <paramref name="conversion"/> is a <see langword="null"/> reference.</exception>
   /// <exception cref="InvalidOperationException">In case of a failed conversion.</exception>
+  /// <seealso cref="IEnumerableExtensions.ToSortedSet{T}(IEnumerable{T}, IComparer{T})"/>
   public static SortedSet<T> SortedSet<T>(this IConversion<IEnumerable<T>> conversion, IComparer<T> comparer = null, string error = null) => conversion.To(sequence => sequence.ToSortedSet(comparer), error);
 
   /// <summary>
@@ -77,6 +82,7 @@ public static class IEnumerableConverters
   /// <returns>Conversion result.</returns>
   /// <exception cref="ArgumentNullException">If <paramref name="conversion"/> is a <see langword="null"/> reference.</exception>
   /// <exception cref="InvalidOperationException">In case of a failed conversion.</exception>
+  /// <seealso cref="IEnumerableExtensions.ToStack{T}(IEnumerable{T})"/>
   public static Stack<T> Stack<T>(this IConversion<IEnumerable<T>> conversion, string error = null) => conversion.To(sequence => sequence.ToStack(), error);
 
   /// <summary>
@@ -88,6 +94,7 @@ public static class IEnumerableConverters
   /// <returns>Conversion result.</returns>
   /// <exception cref="ArgumentNullException">If <paramref name="conversion"/> is a <see langword="null"/> reference.</exception>
   /// <exception cref="InvalidOperationException">In case of a failed conversion.</exception>
+  /// <seealso cref="IEnumerableExtensions.ToQueue{T}(IEnumerable{T})"/>
   public static Queue<T> Queue<T>(this IConversion<IEnumerable<T>> conversion, string error = null) => conversion.To(sequence => sequence.ToQueue(), error);
 
   /// <summary>
@@ -99,6 +106,7 @@ public static class IEnumerableConverters
   /// <returns>Conversion result.</returns>
   /// <exception cref="ArgumentNullException">If <paramref name="conversion"/> is a <see langword="null"/> reference.</exception>
   /// <exception cref="InvalidOperationException">In case of a failed conversion.</exception>
+  /// <seealso cref="IEnumerableExtensions.ToArraySegment{T}(IEnumerable{T})"/>
   public static ArraySegment<T> ArraySegment<T>(this IConversion<IEnumerable<T>> conversion, string error = null) => conversion.To(sequence => sequence.ToArraySegment(), error);
 
   /// <summary>
@@ -110,6 +118,7 @@ public static class IEnumerableConverters
   /// <returns>Conversion result.</returns>
   /// <exception cref="ArgumentNullException">If <paramref name="conversion"/> is a <see langword="null"/> reference.</exception>
   /// <exception cref="InvalidOperationException">In case of a failed conversion.</exception>
+  /// <seealso cref="IEnumerableExtensions.ToMemory{T}(IEnumerable{T})"/>
   public static Memory<T> Memory<T>(this IConversion<IEnumerable<T>> conversion, string error = null) => conversion.To(sequence => sequence.ToMemory(), error);
 
   /// <summary>
@@ -121,6 +130,7 @@ public static class IEnumerableConverters
   /// <returns>Conversion result.</returns>
   /// <exception cref="ArgumentNullException">If <paramref name="conversion"/> is a <see langword="null"/> reference.</exception>
   /// <exception cref="InvalidOperationException">In case of a failed conversion.</exception>
+  /// <seealso cref="IEnumerableExtensions.ToReadOnlyMemory{T}(IEnumerable{T})"/>
   public static ReadOnlyMemory<T> ReadOnlyMemory<T>(this IConversion<IEnumerable<T>> conversion, string error = null) => conversion.To(sequence => sequence.ToReadOnlyMemory(), error);
 
   /// <summary>
@@ -131,6 +141,7 @@ public static class IEnumerableConverters
   /// <returns>Conversion result.</returns>
   /// <exception cref="ArgumentNullException">If <paramref name="conversion"/> is a <see langword="null"/> reference.</exception>
   /// <exception cref="InvalidOperationException">In case of a failed conversion.</exception>
+  /// <seealso cref="IEnumerableExtensions.ToRange(IEnumerable{Range})"/>
   public static IEnumerable<int> Range(this IConversion<IEnumerable<Range>> conversion, string error = null) => conversion.To(sequence => sequence.ToRange(), error);
 
   /// <summary>
@@ -143,6 +154,7 @@ public static class IEnumerableConverters
   /// <exception cref="ArgumentNullException">If <paramref name="conversion"/> is a <see langword="null"/> reference.</exception>
   /// <exception cref="InvalidOperationException">In case of a failed conversion.</exception>
   /// <seealso cref="ValueTuple{TKey, TValue}(IConversion{IEnumerable{TValue}}, Func{TValue, TKey}, IComparer{TKey}, string)"/>
+  /// <seealso cref="IEnumerableExtensions.ToValueTuple{T}(IEnumerable{T})"/>
   public static IEnumerable<(T item, int index)> ValueTuple<T>(this IConversion<IEnumerable<T>> conversion, string error = null) => conversion.To(sequence => sequence.ToValueTuple(), error);
 
   /// <summary>
@@ -171,6 +183,7 @@ public static class IEnumerableConverters
   /// <returns>Conversion result.</returns>
   /// <exception cref="ArgumentNullException">If <paramref name="conversion"/> is a <see langword="null"/> reference.</exception>
   /// <exception cref="InvalidOperationException">In case of a failed conversion.</exception>
+  /// <seealso cref="IEnumerableExtensions.ToDictionary{TKey, TValue}(IEnumerable{(TKey Key, TValue Value)}, IEqualityComparer{TKey})"/>
   public static Dictionary<TKey, TValue> Dictionary<TKey, TValue>(this IConversion<IEnumerable<(TKey Key, TValue Value)>> conversion, IEqualityComparer<TKey> comparer = null, string error = null) where TKey : notnull => conversion.To(sequence => sequence.ToDictionary(comparer), error);
 
   /// <summary>
@@ -184,6 +197,7 @@ public static class IEnumerableConverters
   /// <returns>Conversion result.</returns>
   /// <exception cref="ArgumentNullException">If <paramref name="conversion"/> is a <see langword="null"/> reference.</exception>
   /// <exception cref="InvalidOperationException">In case of a failed conversion.</exception>
+  /// <seealso cref="IEnumerableExtensions.ToReadOnlyDictionary{TKey, TValue}(IEnumerable{(TKey Key, TValue Value)}, IEqualityComparer{TKey})"/>
   public static IReadOnlyDictionary<TKey, TValue> ReadOnlyDictionary<TKey, TValue>(this IConversion<IEnumerable<(TKey Key, TValue Value)>> conversion, IEqualityComparer<TKey> comparer = null, string error = null) where TKey : notnull => conversion.To(sequence => sequence.ToReadOnlyDictionary(comparer), error);
 
   /// <summary>
@@ -195,10 +209,11 @@ public static class IEnumerableConverters
   /// <exception cref="ArgumentNullException">If <paramref name="conversion"/> is a <see langword="null"/> reference.</exception>
   /// <exception cref="InvalidOperationException">In case of a failed conversion.</exception>
   /// <seealso cref="MemoryStreamAsync(IConversion{IEnumerable{byte}}, CancellationToken, string)"/>
+  /// <seealso cref="IEnumerableExtensions.ToMemoryStream(IEnumerable{byte})"/>
   public static MemoryStream MemoryStream(this IConversion<IEnumerable<byte>> conversion, string error = null) => conversion.To(sequence => sequence.ToMemoryStream(), error);
 
   /// <summary>
-  ///   <para>Converts given <see cref="IEnumerable{byte}"/> instance to the instance of <see cref="Task{MemoryStream}"/> type.</para>
+  ///   <para>Asynchronously converts given <see cref="IEnumerable{byte}"/> instance to the instance of <see cref="Task{MemoryStream}"/> type.</para>
   /// </summary>
   /// <param name="conversion">Conversion to perform.</param>
   /// <param name="cancellation"></param>
@@ -207,6 +222,7 @@ public static class IEnumerableConverters
   /// <exception cref="ArgumentNullException">If <paramref name="conversion"/> is a <see langword="null"/> reference.</exception>
   /// <exception cref="InvalidOperationException">In case of a failed conversion.</exception>
   /// <seealso cref="MemoryStream(IConversion{IEnumerable{byte}}, string)"/>
+  /// <seealso cref="IEnumerableExtensions.ToMemoryStreamAsync(IEnumerable{byte}, CancellationToken)"/>
   public static Task<MemoryStream> MemoryStreamAsync(this IConversion<IEnumerable<byte>> conversion, CancellationToken cancellation = default, string error = null) => conversion.To(sequence => sequence.ToMemoryStreamAsync(cancellation), error);
 
   /// <summary>
@@ -218,10 +234,11 @@ public static class IEnumerableConverters
   /// <exception cref="ArgumentNullException">If <paramref name="conversion"/> is a <see langword="null"/> reference.</exception>
   /// <exception cref="InvalidOperationException">In case of a failed conversion.</exception>
   /// <seealso cref="MemoryStreamAsync(IConversion{IEnumerable{byte[]}}, CancellationToken, string)"/>
+  /// <seealso cref="IEnumerableExtensions.ToMemoryStream(IEnumerable{byte[]})"/>
   public static MemoryStream MemoryStream(this IConversion<IEnumerable<byte[]>> conversion, string error = null) => conversion.To(sequence => sequence.ToMemoryStream(), error);
 
   /// <summary>
-  ///   <para>Converts given <see cref="IEnumerable{byte[]}"/> instance to the instance of <see cref="Task{MemoryStream}"/> type.</para>
+  ///   <para>Asynchronously converts given <see cref="IEnumerable{byte[]}"/> instance to the instance of <see cref="Task{MemoryStream}"/> type.</para>
   /// </summary>
   /// <param name="conversion">Conversion to perform.</param>
   /// <param name="cancellation"></param>
@@ -230,6 +247,7 @@ public static class IEnumerableConverters
   /// <exception cref="ArgumentNullException">If <paramref name="conversion"/> is a <see langword="null"/> reference.</exception>
   /// <exception cref="InvalidOperationException">In case of a failed conversion.</exception>
   /// <seealso cref="MemoryStreamAsync(IConversion{IEnumerable{byte}}, CancellationToken, string)"/>
+  /// <seealso cref="IEnumerableExtensions.ToMemoryStreamAsync(IEnumerable{byte[]}, CancellationToken)"/>
   public static Task<MemoryStream> MemoryStreamAsync(this IConversion<IEnumerable<byte[]>> conversion, CancellationToken cancellation = default, string error = null) => conversion.To(sequence => sequence.ToMemoryStreamAsync(cancellation), error);
 
 #if NET7_0_OR_GREATER
@@ -243,6 +261,7 @@ public static class IEnumerableConverters
   /// <returns>Conversion result.</returns>
   /// <exception cref="ArgumentNullException">If <paramref name="conversion"/> is a <see langword="null"/> reference.</exception>
   /// <exception cref="InvalidOperationException">In case of a failed conversion.</exception>
+  /// <seealso cref="IEnumerableExtensions.ToReadOnlySet{T}(IEnumerable{T}, IEqualityComparer{T})"/>
   public static IReadOnlySet<T> ReadOnlySet<T>(this IConversion<IEnumerable<T>> conversion, IEqualityComparer<T> comparer = null, string error = null) => conversion.To(sequence => sequence.ToReadOnlySet(comparer), error);
 
   /// <summary>
@@ -256,6 +275,7 @@ public static class IEnumerableConverters
   /// <returns>Conversion result.</returns>
   /// <exception cref="ArgumentNullException">If <paramref name="conversion"/> is a <see langword="null"/> reference.</exception>
   /// <exception cref="InvalidOperationException">In case of a failed conversion.</exception>
+  /// <seealso cref="IEnumerableExtensions.ToPriorityQueue{TElement, TPriority}(IEnumerable{(TElement Element, TPriority Priority)}, IComparer{TPriority})"/>
   public static PriorityQueue<TElement, TPriority> PriorityQueue<TElement, TPriority>(this IConversion<IEnumerable<(TElement Element, TPriority Priority)>> conversion, IComparer<TPriority> comparer = null, string error = null) => conversion.To(sequence => sequence.ToPriorityQueue(comparer), error);
 
   /// <summary>
@@ -267,6 +287,7 @@ public static class IEnumerableConverters
   /// <returns>Conversion result.</returns>
   /// <exception cref="ArgumentNullException">If <paramref name="conversion"/> is a <see langword="null"/> reference.</exception>
   /// <exception cref="InvalidOperationException">In case of a failed conversion.</exception>
+  /// <seealso cref="IEnumerableExtensions.ToImmutableQueue{T}(IEnumerable{T})"/>
   public static ImmutableQueue<T> ImmutableQueue<T>(this IConversion<IEnumerable<T>> conversion, string error = null) => conversion.To(sequence => sequence.ToImmutableQueue(), error);
   #endif
 }

@@ -17,5 +17,6 @@ public static class IPHostEntryConverters
   /// <returns>Conversion result.</returns>
   /// <exception cref="ArgumentNullException">If <paramref name="conversion"/> is a <see langword="null"/> reference.</exception>
   /// <exception cref="InvalidOperationException">In case of a failed conversion.</exception>
+  /// <seealso cref="IPHostEntryExtensions.ToEnumerable(IPHostEntry)"/>
   public static IEnumerable<IPAddress> Enumerable(this IConversion<IPHostEntry> conversion, string error = null) => conversion.To(host => host.ToEnumerable(), error);
 }

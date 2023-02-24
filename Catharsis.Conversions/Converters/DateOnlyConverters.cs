@@ -17,6 +17,7 @@ public static class DateOnlyConverters
   /// <returns>Conversion result.</returns>
   /// <exception cref="ArgumentNullException">If <paramref name="conversion"/> is a <see langword="null"/> reference.</exception>
   /// <exception cref="InvalidOperationException">In case of a failed conversion.</exception>
+  /// <seealso cref="DateOnlyExtensions.ToDateTime(DateOnly)"/>
   public static DateTime DateTime(this IConversion<DateOnly> conversion, string error = null) => conversion.To(date => date.ToDateTime(), error);
 
   /// <summary>
@@ -27,6 +28,7 @@ public static class DateOnlyConverters
   /// <returns>Conversion result.</returns>
   /// <exception cref="ArgumentNullException">If <paramref name="conversion"/> is a <see langword="null"/> reference.</exception>
   /// <exception cref="InvalidOperationException">In case of a failed conversion.</exception>
+  /// <seealso cref="DateOnlyExtensions.ToDateTimeOffset(DateOnly)"/>
   public static DateTimeOffset DateTimeOffset(this IConversion<DateOnly> conversion, string error = null) => conversion.To(date => date.ToDateTimeOffset(), error);
 }
 #endif

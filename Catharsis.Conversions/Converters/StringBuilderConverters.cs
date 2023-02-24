@@ -19,6 +19,7 @@ public static class StringBuilderConverters
   /// <returns>Conversion result.</returns>
   /// <exception cref="ArgumentNullException">If <paramref name="conversion"/> is a <see langword="null"/> reference.</exception>
   /// <exception cref="InvalidOperationException">In case of a failed conversion.</exception>
+  /// <seealso cref="StringBuilderExtensions.ToStringWriter(StringBuilder, IFormatProvider)"/>
   public static StringWriter StringWriter(this IConversion<StringBuilder> conversion, IFormatProvider format = null, string error = null) => conversion.To(builder => builder.ToStringWriter(format), error);
 
   /// <summary>
@@ -29,5 +30,6 @@ public static class StringBuilderConverters
   /// <returns>Conversion result.</returns>
   /// <exception cref="ArgumentNullException">If <paramref name="conversion"/> is a <see langword="null"/> reference.</exception>
   /// <exception cref="InvalidOperationException">In case of a failed conversion.</exception>
+  /// <seealso cref="StringBuilderExtensions.ToXmlWriter(StringBuilder)"/>
   public static XmlWriter XmlWriter(this IConversion<StringBuilder> conversion, string error = null) => conversion.To(builder => builder.ToXmlWriter(), error);
 }

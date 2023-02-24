@@ -16,5 +16,6 @@ public static class RangeConverters
   /// <returns>Conversion result.</returns>
   /// <exception cref="ArgumentNullException">If <paramref name="conversion"/> is a <see langword="null"/> reference.</exception>
   /// <exception cref="InvalidOperationException">In case of a failed conversion.</exception>
+  /// <seealso cref="RangeExtensions.ToEnumerable(Range)"/>
   public static IEnumerable<int> Enumerable(this IConversion<Range> conversion, string error = null) => conversion.To(range => range.ToEnumerable(), error);
 }

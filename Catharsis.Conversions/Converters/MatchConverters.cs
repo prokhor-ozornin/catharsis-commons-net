@@ -18,6 +18,7 @@ public static class MatchConverters
   /// <returns>Conversion result.</returns>
   /// <exception cref="ArgumentNullException">If <paramref name="conversion"/> is a <see langword="null"/> reference.</exception>
   /// <exception cref="InvalidOperationException">In case of a failed conversion.</exception>
+  /// <seealso cref="MatchExtensions.ToEnumerable(Match)"/>
   public static IEnumerable<Capture> Enumerable(this IConversion<Match> conversion, string error = null) => conversion.To(match => match.ToEnumerable(), error);
 }
 #endif

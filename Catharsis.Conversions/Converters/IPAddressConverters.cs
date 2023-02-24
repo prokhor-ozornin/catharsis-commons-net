@@ -17,6 +17,7 @@ public static class IPAddressConverters
   /// <returns>Conversion result.</returns>
   /// <exception cref="ArgumentNullException">If <paramref name="conversion"/> is a <see langword="null"/> reference.</exception>
   /// <exception cref="InvalidOperationException">In case of a failed conversion.</exception>
+  /// <seealso cref="IPAddressExtensions.ToBytes(IPAddress)"/>
   public static byte[] Bytes(this IConversion<IPAddress> conversion, string error = null) => conversion.To(address => address.ToBytes(), error);
 
   /// <summary>
@@ -38,7 +39,7 @@ public static class IPAddressConverters
   /// <returns>Conversion result.</returns>
   /// <exception cref="ArgumentNullException">If <paramref name="conversion"/> is a <see langword="null"/> reference.</exception>
   /// <exception cref="InvalidOperationException">In case of a failed conversion.</exception>
-  /// <seealso cref="IpAddress(IConversion{long}, string)"/>
+  /// <seealso cref="IpAddress(IConversion{uint}, string)"/>
   public static IPAddress IpAddress(this IConversion<uint> conversion, string error = null) => conversion.To(value => new IPAddress(value), error);
 
   /// <summary>
@@ -49,5 +50,6 @@ public static class IPAddressConverters
   /// <returns>Conversion result.</returns>
   /// <exception cref="ArgumentNullException">If <paramref name="conversion"/> is a <see langword="null"/> reference.</exception>
   /// <exception cref="InvalidOperationException">In case of a failed conversion.</exception>
+  /// <seealso cref="IPAddressExtensions.ToIpHost(IPAddress)"/>
   public static IPHostEntry IpHost(this IConversion<IPAddress> conversion, string error = null) => conversion.To(address => address.ToIpHost(), error);
 }
