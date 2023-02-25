@@ -19,13 +19,13 @@ namespace Catharsis.Conversions;
 public static class IConverterExtensions
 {
   /// <summary>
-  ///   <para>Converts target object to the <see cref="string"/> value. Returns <c>null</c> if object is a <c>null</c> reference or conversion is not possible.</para>
+  ///   <para>Performs conversion of the given <see cref="object"/> to the instance of <see cref="string"/> type.</para>
   /// </summary>
-  /// <param name="converter">Extended converter instance.</param>
-  /// <param name="instance">Target object for conversion.</param>
-  /// <param name="encoding"></param>
-  /// <returns><paramref name="instance"/> instance that was converted to <see cref="string"/>, or a <c>null</c> reference.</returns>
-  /// <exception cref="ArgumentNullException">If <paramref name="conversion"/> is a <see langword="null"/> reference.</exception>
+  /// <param name="converter">Converter to use.</param>
+  /// <param name="instance">Source object to convert from.</param>
+  /// <param name="encoding">Text encoding to use or a <see langword="null"/> reference for a default value.</param>
+  /// <returns>Conversion result object or a <c>null</c> reference in case of a failed conversion.</returns>
+  /// <exception cref="ArgumentNullException">If <paramref name="converter"/> is a <see langword="null"/> reference.</exception>
   public static string String(this IConverter converter, object instance, Encoding encoding = null)
   {
     if (converter is null) throw new ArgumentNullException(nameof(converter));
@@ -50,23 +50,24 @@ public static class IConverterExtensions
   }
 
   /// <summary>
-  ///   <para></para>
+  ///   <para>Performs conversion of the given <see cref="object"/> to the instance of <see cref="string"/> type.</para>
   /// </summary>
-  /// <param name="converter"></param>
-  /// <param name="instance"></param>
-  /// <param name="result"></param>
-  /// <param name="encoding"></param>
-  /// <returns></returns>
+  /// <param name="converter">Converter to use.</param>
+  /// <param name="instance">Source object to convert from.</param>
+  /// <param name="result">Conversion result object or a <c>null</c> reference in case of a failed conversion.</param>
+  /// <param name="encoding">Text encoding to use or a <see langword="null"/> reference for a default value.</param>
+  /// <returns><see langword="true"/> if conversion was performed successfully, <see langword="false"/> otherwise.</returns>
+  /// <exception cref="ArgumentNullException">If <paramref name="converter"/> is a <see langword="null"/> reference.</exception>
   public static bool String(this IConverter converter, object instance, out string result, Encoding encoding = null) => (result = converter.String(instance, encoding)) is not null;
 
   /// <summary>
-  ///   <para>Performs a conversion of the given <see cref="object"/> to a <see cref="byte"/> array.</para>
+  ///   <para>Performs conversion of the given <see cref="object"/> to the array of <see cref="byte"/> type.</para>
   /// </summary>
-  /// <param name="converter"></param>
-  /// <param name="instance"></param>
-  /// <param name="encoding"></param>
+  /// <param name="converter">Converter to use.</param>
+  /// <param name="instance">Source object to convert from.</param>
+  /// <param name="encoding">Text encoding to use or a <see langword="null"/> reference for a default value.</param>
   /// <returns>Conversion result object or a <c>null</c> reference in case of a failed conversion.</returns>
-  /// <exception cref="ArgumentNullException">If <paramref name="conversion"/> is a <see langword="null"/> reference.</exception>
+  /// <exception cref="ArgumentNullException">If <paramref name="converter"/> is a <see langword="null"/> reference.</exception>
   public static byte[] Binary(this IConverter converter, object instance, Encoding encoding = null)
   {
     if (converter is null) throw new ArgumentNullException(nameof(converter));
@@ -92,23 +93,25 @@ public static class IConverterExtensions
   }
 
   /// <summary>
-  ///   <para></para>
+  ///   <para>Performs conversion of the given <see cref="object"/> to the array of <see cref="byte"/> type.</para>
   /// </summary>
-  /// <param name="converter"></param>
-  /// <param name="instance"></param>
-  /// <param name="result"></param>
-  /// <param name="encoding"></param>
-  /// <returns></returns>
+  /// <param name="converter">Converter to use.</param>
+  /// <param name="instance">Source object to convert from.</param>
+  /// <returns>Conversion result object or a <c>null</c> reference in case of a failed conversion.</returns>
+  /// <param name="result">Conversion result object or a <c>null</c> reference in case of a failed conversion.</param>
+  /// <param name="encoding">Text encoding to use or a <see langword="null"/> reference for a default value.</param>
+  /// <returns><see langword="true"/> if conversion was performed successfully, <see langword="false"/> otherwise.</returns>
+  /// <exception cref="ArgumentNullException">If <paramref name="converter"/> is a <see langword="null"/> reference.</exception>
   public static bool Binary(this IConverter converter, object instance, out byte[] result, Encoding encoding = null) => (result = converter.Binary(instance, encoding)) is not null;
-  
+
   /// <summary>
-  ///   <para></para>
+  ///   <para>Performs conversion of the given <see cref="object"/> to the array of <see cref="T"/> type.</para>
   /// </summary>
-  /// <typeparam name="T"></typeparam>
-  /// <param name="converter"></param>
-  /// <param name="instance"></param>
-  /// <returns></returns>
-  /// <exception cref="ArgumentNullException">If <paramref name="conversion"/> is a <see langword="null"/> reference.</exception>
+  /// <typeparam name="T">Type of array elements.</typeparam>
+  /// <param name="converter">Converter to use.</param>
+  /// <param name="instance">Source object to convert from.</param>
+  /// <returns>Conversion result object or a <c>null</c> reference in case of a failed conversion.</returns>
+  /// <exception cref="ArgumentNullException">If <paramref name="converter"/> is a <see langword="null"/> reference.</exception>
   public static T[] Array<T>(this IConverter converter, object instance)
   {
     if (converter is null) throw new ArgumentNullException(nameof(converter));
@@ -124,23 +127,25 @@ public static class IConverterExtensions
   }
 
   /// <summary>
-  ///   <para></para>
+  ///   <para>Performs conversion of the given <see cref="object"/> to the array of <see cref="T"/> type.</para>
   /// </summary>
-  /// <typeparam name="T"></typeparam>
-  /// <param name="converter"></param>
-  /// <param name="instance"></param>
-  /// <param name="result"></param>
-  /// <returns></returns>
+  /// <typeparam name="T">Type of array elements.</typeparam>
+  /// <param name="converter">Converter to use.</param>
+  /// <param name="instance">Source object to convert from.</param>
+  /// <param name="result">Conversion result object or a <c>null</c> reference in case of a failed conversion.</param>
+  /// <returns>Conversion result object or a <c>null</c> reference in case of a failed conversion.</returns>
+  /// <returns><see langword="true"/> if conversion was performed successfully, <see langword="false"/> otherwise.</returns>
+  /// <exception cref="ArgumentNullException">If <paramref name="converter"/> is a <see langword="null"/> reference.</exception>
   public static bool Array<T>(this IConverter converter, object instance, out T[] result) => (result = converter.Array<T>(instance)) is not null;
 
   /// <summary>
-  ///   <para></para>
+  ///   <para>Performs conversion of the given <see cref="object"/> to the instance of <see cref="sbyte"/> type.</para>
   /// </summary>
-  /// <param name="converter"></param>
-  /// <param name="instance"></param>
-  /// <param name="format"></param>
-  /// <returns></returns>
-  /// <exception cref="ArgumentNullException">If <paramref name="conversion"/> is a <see langword="null"/> reference.</exception>
+  /// <param name="converter">Converter to use.</param>
+  /// <param name="instance">Source object to convert from.</param>
+  /// <param name="format">Text format controller.</param>
+  /// <returns>Conversion result object or a <c>null</c> reference in case of a failed conversion.</returns>
+  /// <exception cref="ArgumentNullException">If <paramref name="converter"/> is a <see langword="null"/> reference.</exception>
   public static sbyte? Sbyte(this IConverter converter, object instance, IFormatProvider format = null)
   {
     if (converter is null) throw new ArgumentNullException(nameof(converter));
@@ -164,23 +169,25 @@ public static class IConverterExtensions
   }
 
   /// <summary>
-  ///   <para></para>
+  ///   <para>Performs conversion of the given <see cref="object"/> to the instance of <see cref="sbyte"/> type.</para>
   /// </summary>
-  /// <param name="converter"></param>
-  /// <param name="instance"></param>
-  /// <param name="result"></param>
-  /// <param name="format"></param>
-  /// <returns></returns>
+  /// <param name="converter">Converter to use.</param>
+  /// <param name="instance">Source object to convert from.</param>
+  /// <returns>Conversion result object or a <c>null</c> reference in case of a failed conversion.</returns>
+  /// <param name="result">Conversion result object or a <c>null</c> reference in case of a failed conversion.</param>
+  /// <param name="format">Text formatting controller.</param>
+  /// <returns><see langword="true"/> if conversion was performed successfully, <see langword="false"/> otherwise.</returns>
+  /// <exception cref="ArgumentNullException">If <paramref name="converter"/> is a <see langword="null"/> reference.</exception>
   public static bool Sbyte(this IConverter converter, object instance, out sbyte? result, IFormatProvider format = null) => (result = converter.Sbyte(instance, format)) is not null;
 
   /// <summary>
-  ///   <para>Converts target object to the <see cref="byte"/> value. Returns <c>null</c> if object is a <c>null</c> reference or conversion is not possible.</para>
+  ///   <para>Performs conversion of the given <see cref="object"/> to the instance of <see cref="byte"/> type.</para>
   /// </summary>
-  /// <param name="converter">Extended converter instance.</param>
-  /// <param name="instance">Target object for conversion.</param>
-  /// <param name="format"></param>
-  /// <returns><paramref name="instance"/> instance that was converted to <see cref="byte"/>, or a <c>null</c> reference.</returns>
-  /// <exception cref="ArgumentNullException">If <paramref name="conversion"/> is a <see langword="null"/> reference.</exception>
+  /// <param name="converter">Converter to use.</param>
+  /// <param name="instance">Source object to convert from.</param>
+  /// <param name="format">Text formatting controller.</param>
+  /// <returns>Conversion result object or a <c>null</c> reference in case of a failed conversion.</returns>
+  /// <exception cref="ArgumentNullException">If <paramref name="converter"/> is a <see langword="null"/> reference.</exception>
   public static byte? Byte(this IConverter converter, object instance, IFormatProvider format = null)
   {
     if (converter is null) throw new ArgumentNullException(nameof(converter));
@@ -204,23 +211,25 @@ public static class IConverterExtensions
   }
 
   /// <summary>
-  ///   <para></para>
+  ///   <para>Performs conversion of the given <see cref="object"/> to the instance of <see cref="byte"/> type.</para>
   /// </summary>
-  /// <param name="converter"></param>
-  /// <param name="instance"></param>
-  /// <param name="result"></param>
-  /// <param name="format"></param>
-  /// <returns></returns>
+  /// <param name="converter">Converter to use.</param>
+  /// <param name="instance">Source object to convert from.</param>
+  /// <returns>Conversion result object or a <c>null</c> reference in case of a failed conversion.</returns>
+  /// <param name="result">Conversion result object or a <c>null</c> reference in case of a failed conversion.</param>
+  /// <param name="format">Text formatting controller.</param>
+  /// <returns><see langword="true"/> if conversion was performed successfully, <see langword="false"/> otherwise.</returns>
+  /// <exception cref="ArgumentNullException">If <paramref name="converter"/> is a <see langword="null"/> reference.</exception>
   public static bool Byte(this IConverter converter, object instance, out byte? result, IFormatProvider format = null) => (result = converter.Byte(instance, format)) is not null;
 
   /// <summary>
-  ///   <para>Converts target object to the <see cref="short"/> value. Returns <c>null</c> if object is a <c>null</c> reference or conversion is not possible.</para>
+  ///   <para>Performs conversion of the given <see cref="object"/> to the instance of <see cref="short"/> type.</para>
   /// </summary>
   /// <param name="converter">Extended converter instance.</param>
   /// <param name="instance">Target object for conversion.</param>
-  /// <param name="format"></param>
-  /// <returns><paramref name="instance"/> instance that was converted to <see cref="short"/>, or a <c>null</c> reference.</returns>
-  /// <exception cref="ArgumentNullException">If <paramref name="conversion"/> is a <see langword="null"/> reference.</exception>
+  /// <param name="format">Text formatting controller.</param>
+  /// <returns>Conversion result object or a <c>null</c> reference in case of a failed conversion.</returns>
+  /// <exception cref="ArgumentNullException">If <paramref name="converter"/> is a <see langword="null"/> reference.</exception>
   public static short? Short(this IConverter converter, object instance, IFormatProvider format = null)
   {
     if (converter is null) throw new ArgumentNullException(nameof(converter));
@@ -244,23 +253,25 @@ public static class IConverterExtensions
   }
 
   /// <summary>
-  ///   <para></para>
+  ///   <para>Performs conversion of the given <see cref="object"/> to the instance of <see cref="short"/> type.</para>
   /// </summary>
-  /// <param name="converter"></param>
-  /// <param name="instance"></param>
-  /// <param name="result"></param>
-  /// <param name="format"></param>
-  /// <returns></returns>
+  /// <param name="converter">Converter to use.</param>
+  /// <param name="instance">Source object to convert from.</param>
+  /// <returns>Conversion result object or a <c>null</c> reference in case of a failed conversion.</returns>
+  /// <param name="result">Conversion result object or a <c>null</c> reference in case of a failed conversion.</param>
+  /// <param name="format">Text formatting controller.</param>
+  /// <returns><see langword="true"/> if conversion was performed successfully, <see langword="false"/> otherwise.</returns>
+  /// <exception cref="ArgumentNullException">If <paramref name="converter"/> is a <see langword="null"/> reference.</exception>
   public static bool Short(this IConverter converter, object instance, out short? result, IFormatProvider format = null) => (result = converter.Short(instance, format)) is not null;
 
   /// <summary>
-  ///   <para></para>
+  ///   <para>Performs conversion of the given <see cref="object"/> to the instance of <see cref="ushort"/> type.</para>
   /// </summary>
-  /// <param name="converter"></param>
-  /// <param name="instance"></param>
-  /// <param name="format"></param>
-  /// <returns></returns>
-  /// <exception cref="ArgumentNullException">If <paramref name="conversion"/> is a <see langword="null"/> reference.</exception>
+  /// <param name="converter">Converter to use.</param>
+  /// <param name="instance">Source object to convert from.</param>
+  /// <param name="format">Text formatting controller.</param>
+  /// <returns>Conversion result object or a <c>null</c> reference in case of a failed conversion.</returns>
+  /// <exception cref="ArgumentNullException">If <paramref name="converter"/> is a <see langword="null"/> reference.</exception>
   public static ushort? Ushort(this IConverter converter, object instance, IFormatProvider format = null)
   {
     if (converter is null) throw new ArgumentNullException(nameof(converter));
@@ -284,23 +295,25 @@ public static class IConverterExtensions
   }
 
   /// <summary>
-  ///   <para></para>
+  ///   <para>Performs conversion of the given <see cref="object"/> to the instance of <see cref="ushort"/> type.</para>
   /// </summary>
-  /// <param name="converter"></param>
-  /// <param name="instance"></param>
-  /// <param name="result"></param>
-  /// <param name="format"></param>
-  /// <returns></returns>
+  /// <param name="converter">Converter to use.</param>
+  /// <param name="instance">Source object to convert from.</param>
+  /// <returns>Conversion result object or a <c>null</c> reference in case of a failed conversion.</returns>
+  /// <param name="result">Conversion result object or a <c>null</c> reference in case of a failed conversion.</param>
+  /// <param name="format">Text formatting controller.</param>
+  /// <returns><see langword="true"/> if conversion was performed successfully, <see langword="false"/> otherwise.</returns>
+  /// <exception cref="ArgumentNullException">If <paramref name="converter"/> is a <see langword="null"/> reference.</exception>
   public static bool Ushort(this IConverter converter, object instance, out ushort? result, IFormatProvider format = null) => (result = converter.Ushort(instance, format)) is not null;
 
   /// <summary>
-  ///   <para>Converts target object to the <see cref="int"/> value. Returns <c>null</c> if object is a <c>null</c> reference or conversion is not possible.</para>
+  ///   <para>Performs conversion of the given <see cref="object"/> to the instance of <see cref="int"/> type.</para>
   /// </summary>
   /// <param name="converter">Extended converter instance.</param>
   /// <param name="instance">Target object for conversion.</param>
-  /// <param name="format"></param>
-  /// <returns><paramref name="instance"/> instance that was converted to <see cref="int"/>, or a <c>null</c> reference.</returns>
-  /// <exception cref="ArgumentNullException">If <paramref name="conversion"/> is a <see langword="null"/> reference.</exception>
+  /// <param name="format">Text formatting controller.</param>
+  /// <returns>Conversion result object or a <c>null</c> reference in case of a failed conversion.</returns>
+  /// <exception cref="ArgumentNullException">If <paramref name="converter"/> is a <see langword="null"/> reference.</exception>
   public static int? Int(this IConverter converter, object instance, IFormatProvider format = null)
   {
     if (converter is null) throw new ArgumentNullException(nameof(converter));
@@ -324,23 +337,25 @@ public static class IConverterExtensions
   }
 
   /// <summary>
-  ///   <para></para>
+  ///   <para>Performs conversion of the given <see cref="object"/> to the instance of <see cref="int"/> type.</para>
   /// </summary>
-  /// <param name="converter"></param>
-  /// <param name="instance"></param>
-  /// <param name="result"></param>
-  /// <param name="format"></param>
-  /// <returns></returns>
+  /// <param name="converter">Converter to use.</param>
+  /// <param name="instance">Source object to convert from.</param>
+  /// <returns>Conversion result object or a <c>null</c> reference in case of a failed conversion.</returns>
+  /// <param name="result">Conversion result object or a <c>null</c> reference in case of a failed conversion.</param>
+  /// <param name="format">Text formatting controller.</param>
+  /// <returns><see langword="true"/> if conversion was performed successfully, <see langword="false"/> otherwise.</returns>
+  /// <exception cref="ArgumentNullException">If <paramref name="converter"/> is a <see langword="null"/> reference.</exception>
   public static bool Int(this IConverter converter, object instance, out int? result, IFormatProvider format = null) => (result = converter.Int(instance, format)) is not null;
 
   /// <summary>
-  ///   <para></para>
+  ///   <para>Performs conversion of the given <see cref="object"/> to the instance of <see cref="uint"/> type.</para>
   /// </summary>
-  /// <param name="converter"></param>
-  /// <param name="instance"></param>
-  /// <param name="format"></param>
-  /// <returns></returns>
-  /// <exception cref="ArgumentNullException">If <paramref name="conversion"/> is a <see langword="null"/> reference.</exception>
+  /// <param name="converter">Converter to use.</param>
+  /// <param name="instance">Source object to convert from.</param>
+  /// <param name="format">Text formatting controller.</param>
+  /// <returns>Conversion result object or a <c>null</c> reference in case of a failed conversion.</returns>
+  /// <exception cref="ArgumentNullException">If <paramref name="converter"/> is a <see langword="null"/> reference.</exception>
   public static uint? Uint(this IConverter converter, object instance, IFormatProvider format = null)
   {
     if (converter is null) throw new ArgumentNullException(nameof(converter));
@@ -364,13 +379,15 @@ public static class IConverterExtensions
   }
 
   /// <summary>
-  ///   <para></para>
+  ///   <para>Performs conversion of the given <see cref="object"/> to the instance of <see cref="uint"/> type.</para>
   /// </summary>
-  /// <param name="converter"></param>
-  /// <param name="instance"></param>
-  /// <param name="result"></param>
-  /// <param name="format"></param>
-  /// <returns></returns>
+  /// <param name="converter">Converter to use.</param>
+  /// <param name="instance">Source object to convert from.</param>
+  /// <returns>Conversion result object or a <c>null</c> reference in case of a failed conversion.</returns>
+  /// <param name="result">Conversion result object or a <c>null</c> reference in case of a failed conversion.</param>
+  /// <param name="format">Text formatting controller.</param>
+  /// <returns><see langword="true"/> if conversion was performed successfully, <see langword="false"/> otherwise.</returns>
+  /// <exception cref="ArgumentNullException">If <paramref name="converter"/> is a <see langword="null"/> reference.</exception>
   public static bool Uint(this IConverter converter, object instance, out uint? result, IFormatProvider format = null) => (result = converter.Uint(instance, format)) is not null;
 
   /// <summary>
@@ -378,9 +395,9 @@ public static class IConverterExtensions
   /// </summary>
   /// <param name="converter">Extended converter instance.</param>
   /// <param name="instance">Target object for conversion.</param>
-  /// <param name="format"></param>
-  /// <returns><paramref name="instance"/> instance that was converted to <see cref="long"/>, or a <c>null</c> reference.</returns>
-  /// <exception cref="ArgumentNullException">If <paramref name="conversion"/> is a <see langword="null"/> reference.</exception>
+  /// <param name="format">Text formatting controller.</param>
+  /// <returns>Conversion result object or a <c>null</c> reference in case of a failed conversion.</returns>
+  /// <exception cref="ArgumentNullException">If <paramref name="converter"/> is a <see langword="null"/> reference.</exception>
   public static long? Long(this IConverter converter, object instance, IFormatProvider format = null)
   {
     if (converter is null) throw new ArgumentNullException(nameof(converter));
@@ -404,23 +421,25 @@ public static class IConverterExtensions
   }
 
   /// <summary>
-  ///   <para></para>
+  ///   <para>Performs conversion of the given <see cref="object"/> to the instance of <see cref="long"/> type.</para>
   /// </summary>
-  /// <param name="converter"></param>
-  /// <param name="instance"></param>
-  /// <param name="result"></param>
-  /// <param name="format"></param>
-  /// <returns></returns>
+  /// <param name="converter">Converter to use.</param>
+  /// <param name="instance">Source object to convert from.</param>
+  /// <returns>Conversion result object or a <c>null</c> reference in case of a failed conversion.</returns>
+  /// <param name="result">Conversion result object or a <c>null</c> reference in case of a failed conversion.</param>
+  /// <param name="format">Text formatting controller.</param>
+  /// <returns><see langword="true"/> if conversion was performed successfully, <see langword="false"/> otherwise.</returns>
+  /// <exception cref="ArgumentNullException">If <paramref name="converter"/> is a <see langword="null"/> reference.</exception>
   public static bool Long(this IConverter converter, object instance, out long? result, IFormatProvider format = null) => (result = converter.Long(instance, format)) is not null;
 
   /// <summary>
-  ///   <para></para>
+  ///   <para>Performs conversion of the given <see cref="object"/> to the instance of <see cref="ulong"/> type.</para>
   /// </summary>
-  /// <param name="converter"></param>
-  /// <param name="instance"></param>
-  /// <param name="format"></param>
-  /// <returns></returns>
-  /// <exception cref="ArgumentNullException">If <paramref name="conversion"/> is a <see langword="null"/> reference.</exception>
+  /// <param name="converter">Converter to use.</param>
+  /// <param name="instance">Source object to convert from.</param>
+  /// <param name="format">Text formatting controller.</param>
+  /// <returns>Conversion result object or a <c>null</c> reference in case of a failed conversion.</returns>
+  /// <exception cref="ArgumentNullException">If <paramref name="converter"/> is a <see langword="null"/> reference.</exception>
   public static ulong? Ulong(this IConverter converter, object instance, IFormatProvider format = null)
   {
     if (converter is null) throw new ArgumentNullException(nameof(converter));
@@ -444,23 +463,25 @@ public static class IConverterExtensions
   }
 
   /// <summary>
-  ///   <para></para>
+  ///   <para>Performs conversion of the given <see cref="object"/> to the instance of <see cref="ulong"/> type.</para>
   /// </summary>
-  /// <param name="converter"></param>
-  /// <param name="instance"></param>
-  /// <param name="result"></param>
-  /// <param name="format"></param>
-  /// <returns></returns>
+  /// <param name="converter">Converter to use.</param>
+  /// <param name="instance">Source object to convert from.</param>
+  /// <returns>Conversion result object or a <c>null</c> reference in case of a failed conversion.</returns>
+  /// <param name="result">Conversion result object or a <c>null</c> reference in case of a failed conversion.</param>
+  /// <param name="format">Text formatting controller.</param>
+  /// <returns><see langword="true"/> if conversion was performed successfully, <see langword="false"/> otherwise.</returns>
+  /// <exception cref="ArgumentNullException">If <paramref name="converter"/> is a <see langword="null"/> reference.</exception>
   public static bool Ulong(this IConverter converter, object instance, out ulong? result, IFormatProvider format = null) => (result = converter.Ulong(instance, format)) is not null;
 
   /// <summary>
-  ///   <para>Converts target object to the <see cref="Float"/> value. Returns <c>null</c> if object is a <c>null</c> reference or conversion is not possible.</para>
+  ///   <para>Performs conversion of the given <see cref="object"/> to the instance of <see cref="float"/> type.</para>
   /// </summary>
-  /// <param name="converter">Extended converter instance.</param>
-  /// <param name="instance">Target object for conversion.</param>
-  /// <param name="format"></param>
-  /// <returns><paramref name="instance"/> instance that was converted to <see cref="Float"/>, or a <c>null</c> reference.</returns>
-  /// <exception cref="ArgumentNullException">If <paramref name="conversion"/> is a <see langword="null"/> reference.</exception>
+  /// <param name="converter">Converter to use.</param>
+  /// <param name="instance">Source object to convert from.</param>
+  /// <param name="format">Text formatting controller.</param>
+  /// <returns>Conversion result object or a <c>null</c> reference in case of a failed conversion.</returns>
+  /// <exception cref="ArgumentNullException">If <paramref name="converter"/> is a <see langword="null"/> reference.</exception>
   public static float? Float(this IConverter converter, object instance, IFormatProvider format = null)
   {
     if (converter is null) throw new ArgumentNullException(nameof(converter));
@@ -484,23 +505,25 @@ public static class IConverterExtensions
   }
 
   /// <summary>
-  ///   <para></para>
+  ///   <para>Performs conversion of the given <see cref="object"/> to the instance of <see cref="float"/> type.</para>
   /// </summary>
-  /// <param name="converter"></param>
-  /// <param name="instance"></param>
-  /// <param name="result"></param>
-  /// <param name="format"></param>
-  /// <returns></returns>
+  /// <param name="converter">Converter to use.</param>
+  /// <param name="instance">Source object to convert from.</param>
+  /// <returns>Conversion result object or a <c>null</c> reference in case of a failed conversion.</returns>
+  /// <param name="result">Conversion result object or a <c>null</c> reference in case of a failed conversion.</param>
+  /// <param name="format">Text formatting controller.</param>
+  /// <returns><see langword="true"/> if conversion was performed successfully, <see langword="false"/> otherwise.</returns>
+  /// <exception cref="ArgumentNullException">If <paramref name="converter"/> is a <see langword="null"/> reference.</exception>
   public static bool Float(this IConverter converter, object instance, out float? result, IFormatProvider format = null) => (result = converter.Float(instance, format)) is not null;
 
   /// <summary>
-  ///   <para>Converts target object to the <see cref="double"/> value. Returns <c>null</c> if object is a <c>null</c> reference or conversion is not possible.</para>
+  ///   <para>Performs conversion of the given <see cref="object"/> to the instance of <see cref="double"/> type.</para>
   /// </summary>
-  /// <param name="converter">Extended converter instance.</param>
-  /// <param name="instance">Target object for conversion.</param>
-  /// <param name="format"></param>
-  /// <returns><paramref name="instance"/> instance that was converted to <see cref="double"/>, or a <c>null</c> reference.</returns>
-  /// <exception cref="ArgumentNullException">If <paramref name="conversion"/> is a <see langword="null"/> reference.</exception>
+  /// <param name="converter">Converter to use.</param>
+  /// <param name="instance">Source object to convert from.</param>
+  /// <param name="format">Text formatting controller.</param>
+  /// <returns>Conversion result object or a <c>null</c> reference in case of a failed conversion.</returns>
+  /// <exception cref="ArgumentNullException">If <paramref name="converter"/> is a <see langword="null"/> reference.</exception>
   public static double? Double(this IConverter converter, object instance, IFormatProvider format = null)
   {
     if (converter is null) throw new ArgumentNullException(nameof(converter));
@@ -524,23 +547,25 @@ public static class IConverterExtensions
   }
 
   /// <summary>
-  ///   <para></para>
+  ///   <para>Performs conversion of the given <see cref="object"/> to the instance of <see cref="double"/> type.</para>
   /// </summary>
-  /// <param name="converter"></param>
-  /// <param name="instance"></param>
-  /// <param name="result"></param>
-  /// <param name="format"></param>
-  /// <returns></returns>
+  /// <param name="converter">Converter to use.</param>
+  /// <param name="instance">Source object to convert from.</param>
+  /// <returns>Conversion result object or a <c>null</c> reference in case of a failed conversion.</returns>
+  /// <param name="result">Conversion result object or a <c>null</c> reference in case of a failed conversion.</param>
+  /// <param name="format">Text formatting controller.</param>
+  /// <returns><see langword="true"/> if conversion was performed successfully, <see langword="false"/> otherwise.</returns>
+  /// <exception cref="ArgumentNullException">If <paramref name="converter"/> is a <see langword="null"/> reference.</exception>
   public static bool Double(this IConverter converter, object instance, out double? result, IFormatProvider format = null) => (result = converter.Double(instance, format)) is not null;
 
   /// <summary>
-  ///   <para>Converts target object to the <see cref="decimal"/> value. Returns <c>null</c> if object is a <c>null</c> reference or conversion is not possible.</para>
+  ///   <para>Performs conversion of the given <see cref="object"/> to the instance of <see cref="decimal"/> type.</para>
   /// </summary>
-  /// <param name="converter">Extended converter instance.</param>
-  /// <param name="instance">Target object for conversion.</param>
-  /// <param name="format"></param>
-  /// <returns><paramref name="instance"/> instance that was converted to <see cref="decimal"/>, or a <c>null</c> reference.</returns>
-  /// <exception cref="ArgumentNullException">If <paramref name="conversion"/> is a <see langword="null"/> reference.</exception>
+  /// <param name="converter">Converter to use.</param>
+  /// <param name="instance">Source object to convert from.</param>
+  /// <param name="format">Text formatting controller.</param>
+  /// <returns>Conversion result object or a <c>null</c> reference in case of a failed conversion.</returns>
+  /// <exception cref="ArgumentNullException">If <paramref name="converter"/> is a <see langword="null"/> reference.</exception>
   public static decimal? Decimal(this IConverter converter, object instance, IFormatProvider format = null)
   {
     if (converter is null) throw new ArgumentNullException(nameof(converter));
@@ -564,23 +589,25 @@ public static class IConverterExtensions
   }
 
   /// <summary>
-  ///   <para></para>
+  ///   <para>Performs conversion of the given <see cref="object"/> to the instance of <see cref="decimal"/> type.</para>
   /// </summary>
-  /// <param name="converter"></param>
-  /// <param name="instance"></param>
-  /// <param name="result"></param>
-  /// <param name="format"></param>
-  /// <returns></returns>
+  /// <param name="converter">Converter to use.</param>
+  /// <param name="instance">Source object to convert from.</param>
+  /// <returns>Conversion result object or a <c>null</c> reference in case of a failed conversion.</returns>
+  /// <param name="result">Conversion result object or a <c>null</c> reference in case of a failed conversion.</param>
+  /// <param name="format">Text formatting controller.</param>
+  /// <returns><see langword="true"/> if conversion was performed successfully, <see langword="false"/> otherwise.</returns>
+  /// <exception cref="ArgumentNullException">If <paramref name="converter"/> is a <see langword="null"/> reference.</exception>
   public static bool Decimal(this IConverter converter, object instance, out decimal? result, IFormatProvider format = null) => (result = converter.Decimal(instance, format)) is not null;
 
   /// <summary>
-  ///   <para></para>
+  ///   <para>Performs conversion of the given <see cref="object"/> to the instance of <see cref="Enum"/> type.</para>
   /// </summary>
-  /// <typeparam name="T"></typeparam>
-  /// <param name="converter"></param>
-  /// <param name="instance"></param>
-  /// <returns></returns>
-  /// <exception cref="ArgumentNullException">If <paramref name="conversion"/> is a <see langword="null"/> reference.</exception>
+  /// <typeparam name="T">Type of enumeration.</typeparam>
+  /// <param name="converter">Converter to use.</param>
+  /// <param name="instance">Source object to convert from.</param>
+  /// <returns>Conversion result object or a <c>null</c> reference in case of a failed conversion.</returns>
+  /// <exception cref="ArgumentNullException">If <paramref name="converter"/> is a <see langword="null"/> reference.</exception>
   public static T? Enum<T>(this IConverter converter, object instance) where T : struct
   {
     if (converter is null) throw new ArgumentNullException(nameof(converter));
@@ -593,23 +620,25 @@ public static class IConverterExtensions
   }
 
   /// <summary>
-  ///   <para></para>
+  ///   <para>Performs conversion of the given <see cref="object"/> to the instance of <see cref="Enum"/> type.</para>
   /// </summary>
-  /// <typeparam name="T"></typeparam>
-  /// <param name="converter"></param>
-  /// <param name="instance"></param>
-  /// <param name="result"></param>
-  /// <returns></returns>
+  /// <typeparam name="T">Type of enumeration.</typeparam>
+  /// <param name="converter">Converter to use.</param>
+  /// <param name="instance">Source object to convert from.</param>
+  /// <param name="result">Conversion result object or a <c>null</c> reference in case of a failed conversion.</param>
+  /// <returns>Conversion result object or a <c>null</c> reference in case of a failed conversion.</returns>
+  /// <returns><see langword="true"/> if conversion was performed successfully, <see langword="false"/> otherwise.</returns>
+  /// <exception cref="ArgumentNullException">If <paramref name="converter"/> is a <see langword="null"/> reference.</exception>
   public static bool Enum<T>(this IConverter converter, object instance, out T? result) where T : struct => (result = converter.Enum<T>(instance)) is not null;
 
   /// <summary>
-  ///   <para>Converts target object to the <see cref="DateTime"/> value. Returns <c>null</c> if object is a <c>null</c> reference or conversion is not possible.</para>
+  ///   <para>Performs conversion of the given <see cref="object"/> to the instance of <see cref="System.DateTime"/> type.</para>
   /// </summary>
-  /// <param name="converter">Extended converter instance.</param>
-  /// <param name="instance">Target object for conversion.</param>
-  /// <param name="format"></param>
-  /// <returns><paramref name="instance"/> instance that was converted to <see cref="DateTime"/>, or a <c>null</c> reference.</returns>
-  /// <exception cref="ArgumentNullException">If <paramref name="conversion"/> is a <see langword="null"/> reference.</exception>
+  /// <param name="converter">Converter to use.</param>
+  /// <param name="instance">Source object to convert from.</param>
+  /// <param name="format">Text formatting controller.</param>
+  /// <returns>Conversion result object or a <c>null</c> reference in case of a failed conversion.</returns>
+  /// <exception cref="ArgumentNullException">If <paramref name="converter"/> is a <see langword="null"/> reference.</exception>
   public static DateTime? DateTime(this IConverter converter, object instance, IFormatProvider format = null)
   {
     if (converter is null) throw new ArgumentNullException(nameof(converter));
@@ -630,23 +659,25 @@ public static class IConverterExtensions
   }
 
   /// <summary>
-  ///   <para></para>
+  ///   <para>Performs conversion of the given <see cref="object"/> to the instance of <see cref="System.DateTime"/> type.</para>
   /// </summary>
-  /// <param name="converter"></param>
-  /// <param name="instance"></param>
-  /// <param name="result"></param>
-  /// <param name="format"></param>
-  /// <returns></returns>
+  /// <param name="converter">Converter to use.</param>
+  /// <param name="instance">Source object to convert from.</param>
+  /// <returns>Conversion result object or a <c>null</c> reference in case of a failed conversion.</returns>
+  /// <param name="result">Conversion result object or a <c>null</c> reference in case of a failed conversion.</param>
+  /// <param name="format">Text formatting controller.</param>
+  /// <returns><see langword="true"/> if conversion was performed successfully, <see langword="false"/> otherwise.</returns>
+  /// <exception cref="ArgumentNullException">If <paramref name="converter"/> is a <see langword="null"/> reference.</exception>
   public static bool DateTime(this IConverter converter, object instance, out DateTime? result, IFormatProvider format = null) => (result = converter.DateTime(instance, format)) is not null;
 
   /// <summary>
-  ///   <para></para>
+  ///   <para>Performs conversion of the given <see cref="object"/> to the instance of <see cref="System.DateTimeOffset"/> type.</para>
   /// </summary>
-  /// <param name="converter"></param>
-  /// <param name="instance"></param>
-  /// <param name="format"></param>
-  /// <returns></returns>
-  /// <exception cref="ArgumentNullException">If <paramref name="conversion"/> is a <see langword="null"/> reference.</exception>
+  /// <param name="converter">Converter to use.</param>
+  /// <param name="instance">Source object to convert from.</param>
+  /// <param name="format">Text formatting controller.</param>
+  /// <returns>Conversion result object or a <c>null</c> reference in case of a failed conversion.</returns>
+  /// <exception cref="ArgumentNullException">If <paramref name="converter"/> is a <see langword="null"/> reference.</exception>
   public static DateTimeOffset? DateTimeOffset(this IConverter converter, object instance, IFormatProvider format = null)
   {
     if (converter is null) throw new ArgumentNullException(nameof(converter));
@@ -667,22 +698,24 @@ public static class IConverterExtensions
   }
 
   /// <summary>
-  ///   <para></para>
+  ///   <para>Performs conversion of the given <see cref="object"/> to the instance of <see cref="System.DateTimeOffset"/> type.</para>
   /// </summary>
-  /// <param name="converter"></param>
-  /// <param name="instance"></param>
-  /// <param name="result"></param>
-  /// <param name="format"></param>
-  /// <returns></returns>
+  /// <param name="converter">Converter to use.</param>
+  /// <param name="instance">Source object to convert from.</param>
+  /// <returns>Conversion result object or a <c>null</c> reference in case of a failed conversion.</returns>
+  /// <param name="result">Conversion result object or a <c>null</c> reference in case of a failed conversion.</param>
+  /// <param name="format">Text formatting controller.</param>
+  /// <returns><see langword="true"/> if conversion was performed successfully, <see langword="false"/> otherwise.</returns>
+  /// <exception cref="ArgumentNullException">If <paramref name="converter"/> is a <see langword="null"/> reference.</exception>
   public static bool DateTimeOffset(this IConverter converter, object instance, out DateTimeOffset? result, IFormatProvider format = null) => (result = converter.DateTimeOffset(instance, format)) is not null;
 
   /// <summary>
-  ///   <para>Converts target object to the <see cref="Guid"/> value. Returns <c>null</c> if object is a <c>null</c> reference or conversion is not possible.</para>
+  ///   <para>Performs conversion of the given <see cref="object"/> to the instance of <see cref="System.Guid"/> type.</para>
   /// </summary>
-  /// <param name="converter">Extended converter instance.</param>
-  /// <param name="instance">Target object for conversion.</param>
-  /// <returns><paramref name="instance"/> instance that was converted to <see cref="Guid"/>, or a <c>null</c> reference.</returns>
-  /// <exception cref="ArgumentNullException">If <paramref name="conversion"/> is a <see langword="null"/> reference.</exception>
+  /// <param name="converter">Converter to use.</param>
+  /// <param name="instance">Source object to convert from.</param>
+  /// <returns>Conversion result object or a <c>null</c> reference in case of a failed conversion.</returns>
+  /// <exception cref="ArgumentNullException">If <paramref name="converter"/> is a <see langword="null"/> reference.</exception>
   public static Guid? Guid(this IConverter converter, object instance)
   {
     if (converter is null) throw new ArgumentNullException(nameof(converter));
@@ -697,22 +730,24 @@ public static class IConverterExtensions
   }
 
   /// <summary>
-  ///   <para></para>
+  ///   <para>Performs conversion of the given <see cref="object"/> to the instance of <see cref="System.Guid"/> type.</para>
   /// </summary>
-  /// <param name="converter"></param>
-  /// <param name="instance"></param>
-  /// <param name="result"></param>
-  /// <returns></returns>
+  /// <param name="converter">Converter to use.</param>
+  /// <param name="instance">Source object to convert from.</param>
+  /// <param name="result">Conversion result object or a <c>null</c> reference in case of a failed conversion.</param>
+  /// <returns>Conversion result object or a <c>null</c> reference in case of a failed conversion.</returns>
+  /// <returns><see langword="true"/> if conversion was performed successfully, <see langword="false"/> otherwise.</returns>
+  /// <exception cref="ArgumentNullException">If <paramref name="converter"/> is a <see langword="null"/> reference.</exception>
   public static bool Guid(this IConverter converter, object instance, out Guid? result) => (result = converter.Guid(instance)) is not null;
 
   /// <summary>
-  ///   <para>Converts target object to the <see cref="Regex"/> value. Returns <c>null</c> if object is a <c>null</c> reference or conversion is not possible.</para>
+  ///   <para>Performs conversion of the given <see cref="object"/> to the instance of <see cref="System.Text.RegularExpressions.Regex"/> type.</para>
   /// </summary>
   /// <param name="converter">Extended converter instance.</param>
   /// <param name="instance">Target object for conversion.</param>
-  /// <param name="options"></param>
-  /// <returns><paramref name="instance"/> instance that was converted to <see cref="Regex"/>, or a <c>null</c> reference.</returns>
-  /// <exception cref="ArgumentNullException">If <paramref name="conversion"/> is a <see langword="null"/> reference.</exception>
+  /// <param name="options">Expression creation options.</param> 
+  /// <returns>Conversion result object or a <c>null</c> reference in case of a failed conversion.</returns>
+  /// <exception cref="ArgumentNullException">If <paramref name="converter"/> is a <see langword="null"/> reference.</exception>
   public static Regex Regex(this IConverter converter, object instance, RegexOptions options = RegexOptions.None)
   {
     if (converter is null) throw new ArgumentNullException(nameof(converter));
@@ -726,22 +761,24 @@ public static class IConverterExtensions
   }
 
   /// <summary>
-  ///   <para></para>
+  ///   <para>Performs conversion of the given <see cref="object"/> to the instance of <see cref="System.Text.RegularExpressions.Regex"/> type.</para>
   /// </summary>
-  /// <param name="converter"></param>
-  /// <param name="instance"></param>
-  /// <param name="result"></param>
-  /// <param name="options"></param>
-  /// <returns></returns>
+  /// <param name="converter">Converter to use.</param>
+  /// <param name="instance">Source object to convert from.</param>
+  /// <returns>Conversion result object or a <c>null</c> reference in case of a failed conversion.</returns>
+  /// <param name="result">Conversion result object or a <c>null</c> reference in case of a failed conversion.</param>
+  /// <param name="options">Expression creation options.</param>
+  /// <returns><see langword="true"/> if conversion was performed successfully, <see langword="false"/> otherwise.</returns>
+  /// <exception cref="ArgumentNullException">If <paramref name="converter"/> is a <see langword="null"/> reference.</exception>
   public static bool Regex(this IConverter converter, object instance, out Regex result, RegexOptions options = RegexOptions.None) => (result = converter.Regex(instance, options)) is not null;
 
   /// <summary>
-  ///   <para>Converts target object to the <see cref="Uri"/> value. Returns <c>null</c> if object is a <c>null</c> reference or conversion is not possible.</para>
+  ///   <para>Performs conversion of the given <see cref="object"/> to the instance of <see cref="System.Uri"/> type.</para>
   /// </summary>
   /// <param name="converter">Extended converter instance.</param>
   /// <param name="instance">Target object for conversion.</param>
-  /// <returns><paramref name="instance"/> instance that was converted to <see cref="Uri"/>, or a <c>null</c> reference.</returns>
-  /// <exception cref="ArgumentNullException">If <paramref name="conversion"/> is a <see langword="null"/> reference.</exception>
+  /// <returns>Conversion result object or a <c>null</c> reference in case of a failed conversion.</returns>
+  /// <exception cref="ArgumentNullException">If <paramref name="converter"/> is a <see langword="null"/> reference.</exception>
   public static Uri Uri(this IConverter converter, object instance)
   {
     if (converter is null) throw new ArgumentNullException(nameof(converter));
@@ -755,21 +792,23 @@ public static class IConverterExtensions
   }
 
   /// <summary>
-  ///   <para></para>
+  ///   <para>Performs conversion of the given <see cref="object"/> to the instance of <see cref="System.Uri"/> type.</para>
   /// </summary>
-  /// <param name="converter"></param>
-  /// <param name="instance"></param>
-  /// <param name="result"></param>
-  /// <returns></returns>
+  /// <param name="converter">Converter to use.</param>
+  /// <param name="instance">Source object to convert from.</param>
+  /// <param name="result">Conversion result object or a <c>null</c> reference in case of a failed conversion.</param>
+  /// <returns>Conversion result object or a <c>null</c> reference in case of a failed conversion.</returns>
+  /// <returns><see langword="true"/> if conversion was performed successfully, <see langword="false"/> otherwise.</returns>
+  /// <exception cref="ArgumentNullException">If <paramref name="converter"/> is a <see langword="null"/> reference.</exception>
   public static bool Uri(this IConverter converter, object instance, out Uri result) => (result = converter.Uri(instance)) is not null;
 
   /// <summary>
-  ///   <para></para>
+  ///   <para>Performs conversion of the given <see cref="object"/> to the instance of <see cref="System.Text.StringBuilder"/> type.</para>
   /// </summary>
-  /// <param name="converter"></param>
-  /// <param name="instance"></param>
-  /// <returns></returns>
-  /// <exception cref="ArgumentNullException">If <paramref name="conversion"/> is a <see langword="null"/> reference.</exception>
+  /// <param name="converter">Converter to use.</param>
+  /// <param name="instance">Source object to convert from.</param>
+  /// <returns>Conversion result object or a <c>null</c> reference in case of a failed conversion.</returns>
+  /// <exception cref="ArgumentNullException">If <paramref name="converter"/> is a <see langword="null"/> reference.</exception>
   public static StringBuilder StringBuilder(this IConverter converter, object instance)
   {
     if (converter is null) throw new ArgumentNullException(nameof(converter));
@@ -783,21 +822,23 @@ public static class IConverterExtensions
   }
 
   /// <summary>
-  ///   <para></para>
+  ///   <para>Performs conversion of the given <see cref="object"/> to the instance of <see cref="System.Text.StringBuilder"/> type.</para>
   /// </summary>
-  /// <param name="converter"></param>
-  /// <param name="instance"></param>
-  /// <param name="result"></param>
-  /// <returns></returns>
+  /// <param name="converter">Converter to use.</param>
+  /// <param name="instance">Source object to convert from.</param>
+  /// <param name="result">Conversion result object or a <c>null</c> reference in case of a failed conversion.</param>
+  /// <returns>Conversion result object or a <c>null</c> reference in case of a failed conversion.</returns>
+  /// <returns><see langword="true"/> if conversion was performed successfully, <see langword="false"/> otherwise.</returns>
+  /// <exception cref="ArgumentNullException">If <paramref name="converter"/> is a <see langword="null"/> reference.</exception>
   public static bool StringBuilder(this IConverter converter, object instance, out StringBuilder result) => (result = converter.StringBuilder(instance)) is not null;
 
   /// <summary>
-  ///   <para></para>
+  ///   <para>Performs conversion of the given <see cref="object"/> to the instance of <see cref="IPAddress"/> type.</para>
   /// </summary>
-  /// <param name="converter"></param>
-  /// <param name="instance"></param>
-  /// <returns></returns>
-  /// <exception cref="ArgumentNullException">If <paramref name="conversion"/> is a <see langword="null"/> reference.</exception>
+  /// <param name="converter">Converter to use.</param>
+  /// <param name="instance">Source object to convert from.</param>
+  /// <returns>Conversion result object or a <c>null</c> reference in case of a failed conversion.</returns>
+  /// <exception cref="ArgumentNullException">If <paramref name="converter"/> is a <see langword="null"/> reference.</exception>
   public static IPAddress IpAddress(this IConverter converter, object instance)
   {
     if (converter is null) throw new ArgumentNullException(nameof(converter));
@@ -813,21 +854,23 @@ public static class IConverterExtensions
   }
 
   /// <summary>
-  ///   <para></para>
+  ///   <para>Performs conversion of the given <see cref="object"/> to the instance of <see cref="IPAddress"/> type.</para>
   /// </summary>
-  /// <param name="converter"></param>
-  /// <param name="instance"></param>
-  /// <param name="result"></param>
-  /// <returns></returns>
+  /// <param name="converter">Converter to use.</param>
+  /// <param name="instance">Source object to convert from.</param>
+  /// <param name="result">Conversion result object or a <c>null</c> reference in case of a failed conversion.</param>
+  /// <returns>Conversion result object or a <c>null</c> reference in case of a failed conversion.</returns>
+  /// <returns><see langword="true"/> if conversion was performed successfully, <see langword="false"/> otherwise.</returns>
+  /// <exception cref="ArgumentNullException">If <paramref name="converter"/> is a <see langword="null"/> reference.</exception>
   public static bool IpAddress(this IConverter converter, object instance, out IPAddress result) => (result = converter.IpAddress(instance)) is not null;
 
   /// <summary>
-  ///   <para></para>
+  ///   <para>Performs conversion of the given <see cref="object"/> to the instance of <see cref="DirectoryInfo"/> type.</para>
   /// </summary>
-  /// <param name="converter"></param>
-  /// <param name="instance"></param>
-  /// <returns></returns>
-  /// <exception cref="ArgumentNullException">If <paramref name="conversion"/> is a <see langword="null"/> reference.</exception>
+  /// <param name="converter">Converter to use.</param>
+  /// <param name="instance">Source object to convert from.</param>
+  /// <returns>Conversion result object or a <c>null</c> reference in case of a failed conversion.</returns>
+  /// <exception cref="ArgumentNullException">If <paramref name="converter"/> is a <see langword="null"/> reference.</exception>
   public static DirectoryInfo Directory(this IConverter converter, object instance)
   {
     if (converter is null) throw new ArgumentNullException(nameof(converter));
@@ -841,21 +884,23 @@ public static class IConverterExtensions
   }
 
   /// <summary>
-  ///   <para></para>
+  ///   <para>Performs conversion of the given <see cref="object"/> to the instance of <see cref="DirectoryInfo"/> type.</para>
   /// </summary>
-  /// <param name="converter"></param>
-  /// <param name="instance"></param>
-  /// <param name="result"></param>
-  /// <returns></returns>
+  /// <param name="converter">Converter to use.</param>
+  /// <param name="instance">Source object to convert from.</param>
+  /// <param name="result">Conversion result object or a <c>null</c> reference in case of a failed conversion.</param>
+  /// <returns>Conversion result object or a <c>null</c> reference in case of a failed conversion.</returns>
+  /// <returns><see langword="true"/> if conversion was performed successfully, <see langword="false"/> otherwise.</returns>
+  /// <exception cref="ArgumentNullException">If <paramref name="converter"/> is a <see langword="null"/> reference.</exception>
   public static bool Directory(this IConverter converter, object instance, out DirectoryInfo result) => (result = converter.Directory(instance)) is not null;
 
   /// <summary>
-  ///   <para></para>
+  ///   <para>Performs conversion of the given <see cref="object"/> to the instance of <see cref="FileInfo"/> type.</para>
   /// </summary>
-  /// <param name="converter"></param>
-  /// <param name="instance"></param>
-  /// <returns></returns>
-  /// <exception cref="ArgumentNullException">If <paramref name="conversion"/> is a <see langword="null"/> reference.</exception>
+  /// <param name="converter">Converter to use.</param>
+  /// <param name="instance">Source object to convert from.</param>
+  /// <returns>Conversion result object or a <c>null</c> reference in case of a failed conversion.</returns>
+  /// <exception cref="ArgumentNullException">If <paramref name="converter"/> is a <see langword="null"/> reference.</exception>
   public static FileInfo File(this IConverter converter, object instance)
   {
     if (converter is null) throw new ArgumentNullException(nameof(converter));
@@ -869,21 +914,23 @@ public static class IConverterExtensions
   }
 
   /// <summary>
-  ///   <para></para>
+  ///   <para>Performs conversion of the given <see cref="object"/> to the instance of <see cref="FileInfo"/> type.</para>
   /// </summary>
-  /// <param name="converter"></param>
-  /// <param name="instance"></param>
-  /// <param name="result"></param>
-  /// <returns></returns>
+  /// <param name="converter">Converter to use.</param>
+  /// <param name="instance">Source object to convert from.</param>
+  /// <param name="result">Conversion result object or a <c>null</c> reference in case of a failed conversion.</param>
+  /// <returns>Conversion result object or a <c>null</c> reference in case of a failed conversion.</returns>
+  /// <returns><see langword="true"/> if conversion was performed successfully, <see langword="false"/> otherwise.</returns>
+  /// <exception cref="ArgumentNullException">If <paramref name="converter"/> is a <see langword="null"/> reference.</exception>
   public static bool File(this IConverter converter, object instance, out FileInfo result) => (result = converter.File(instance)) is not null;
 
   /// <summary>
-  ///   <para></para>
+  ///   <para>Performs conversion of the given <see cref="object"/> to the instance of <see cref="System.Type"/> type.</para>
   /// </summary>
-  /// <param name="converter"></param>
-  /// <param name="instance"></param>
-  /// <returns></returns>
-  /// <exception cref="ArgumentNullException">If <paramref name="conversion"/> is a <see langword="null"/> reference.</exception>
+  /// <param name="converter">Converter to use.</param>
+  /// <param name="instance">Source object to convert from.</param>
+  /// <returns>Conversion result object or a <c>null</c> reference in case of a failed conversion.</returns>
+  /// <exception cref="ArgumentNullException">If <paramref name="converter"/> is a <see langword="null"/> reference.</exception>
   public static Type Type(this IConverter converter, object instance)
   {
     if (converter is null) throw new ArgumentNullException(nameof(converter));
@@ -897,12 +944,14 @@ public static class IConverterExtensions
   }
 
   /// <summary>
-  ///   <para></para>
+  ///   <para>Performs conversion of the given <see cref="object"/> to the instance of <see cref="System.Type"/> type.</para>
   /// </summary>
-  /// <param name="converter"></param>
-  /// <param name="instance"></param>
-  /// <param name="result"></param>
-  /// <returns></returns>
+  /// <param name="converter">Converter to use.</param>
+  /// <param name="instance">Source object to convert from.</param>
+  /// <param name="result">Conversion result object or a <c>null</c> reference in case of a failed conversion.</param>
+  /// <returns>Conversion result object or a <c>null</c> reference in case of a failed conversion.</returns>
+  /// <returns><see langword="true"/> if conversion was performed successfully, <see langword="false"/> otherwise.</returns>
+  /// <exception cref="ArgumentNullException">If <paramref name="converter"/> is a <see langword="null"/> reference.</exception>
   public static bool Type(this IConverter converter, object instance, out Type result) => (result = converter.Type(instance)) is not null;
 
   /// <summary>
@@ -921,8 +970,8 @@ public static class IConverterExtensions
   /// </summary>
   /// <param name="converter">Extended converter instance.</param>
   /// <param name="instance">Target object for conversion.</param>
-  /// <returns><paramref name="instance"/> instance that was converted to <see cref="bool"/>.</returns>
-  /// <exception cref="ArgumentNullException">If <paramref name="conversion"/> is a <see langword="null"/> reference.</exception>
+  /// <returns>Conversion result object or a <c>null</c> reference in case of a failed conversion.</returns>
+  /// <exception cref="ArgumentNullException">If <paramref name="converter"/> is a <see langword="null"/> reference.</exception>
   public static bool Boolean(this IConverter converter, object instance)
   {
     if (converter is null) throw new ArgumentNullException(nameof(converter));
@@ -957,19 +1006,18 @@ public static class IConverterExtensions
     };
   }
 
-  #if NET7_0_OR_GREATER
+#if NET7_0_OR_GREATER
   /// <summary>
   ///   <para></para>
   /// </summary>
-  /// <param name="converter"></param>
-  /// <param name="instance"></param>
-  /// <param name="format"></param>
-  /// <returns></returns>
-  /// <exception cref="ArgumentNullException">If <paramref name="conversion"/> is a <see langword="null"/> reference.</exception>
+  /// <param name="converter">Converter to use.</param>
+  /// <param name="instance">Source object to convert from.</param>
+  /// <param name="format">Text formatting controller.</param>
+  /// <returns>Conversion result object or a <c>null</c> reference in case of a failed conversion.</returns>
+  /// <exception cref="ArgumentNullException">If <paramref name="converter"/> is a <see langword="null"/> reference.</exception>
   public static DateOnly? DateOnly(this IConverter converter, object instance, IFormatProvider format = null)
   {
-    if (converter is null)
-      throw new ArgumentNullException(nameof(converter));
+    if (converter is null) throw new ArgumentNullException(nameof(converter));
 
     return instance switch
     {
@@ -984,21 +1032,23 @@ public static class IConverterExtensions
   /// <summary>
   ///   <para></para>
   /// </summary>
-  /// <param name="converter"></param>
-  /// <param name="instance"></param>
-  /// <param name="result"></param>
-  /// <param name="format"></param>
-  /// <returns></returns>
+  /// <param name="converter">Converter to use.</param>
+  /// <param name="instance">Source object to convert from.</param>
+  /// <returns>Conversion result object or a <c>null</c> reference in case of a failed conversion.</returns>
+  /// <param name="result">Conversion result object or a <c>null</c> reference in case of a failed conversion.</param>
+  /// <param name="format">Text formatting controller.</param>
+  /// <returns><see langword="true"/> if conversion was performed successfully, <see langword="false"/> otherwise.</returns>
+  /// <exception cref="ArgumentNullException">If <paramref name="converter"/> is a <see langword="null"/> reference.</exception>
   public static bool DateOnly(this IConverter converter, object instance, out DateOnly? result, IFormatProvider format = null) => (result = converter.DateOnly(instance, format)) is not null;
 
   /// <summary>
   ///   <para></para>
   /// </summary>
-  /// <param name="converter"></param>
-  /// <param name="instance"></param>
-  /// <param name="format"></param>
-  /// <returns></returns>
-  /// <exception cref="ArgumentNullException">If <paramref name="conversion"/> is a <see langword="null"/> reference.</exception>
+  /// <param name="converter">Converter to use.</param>
+  /// <param name="instance">Source object to convert from.</param>
+  /// <param name="format">Text formatting controller.</param>
+  /// <returns>Conversion result object or a <c>null</c> reference in case of a failed conversion.</returns>
+  /// <exception cref="ArgumentNullException">If <paramref name="converter"/> is a <see langword="null"/> reference.</exception>
   public static TimeOnly? TimeOnly(this IConverter converter, object instance, IFormatProvider format = null)
   {
     if (converter is null) throw new ArgumentNullException(nameof(converter));
@@ -1016,11 +1066,13 @@ public static class IConverterExtensions
   /// <summary>
   ///   <para></para>
   /// </summary>
-  /// <param name="converter"></param>
-  /// <param name="instance"></param>
-  /// <param name="result"></param>
-  /// <param name="format"></param>
-  /// <returns></returns>
+  /// <param name="converter">Converter to use.</param>
+  /// <param name="instance">Source object to convert from.</param>
+  /// <returns>Conversion result object or a <c>null</c> reference in case of a failed conversion.</returns>
+  /// <param name="result">Conversion result object or a <c>null</c> reference in case of a failed conversion.</param>
+  /// <param name="format">Text formatting controller.</param>
+  /// <returns><see langword="true"/> if conversion was performed successfully, <see langword="false"/> otherwise.</returns>
+  /// <exception cref="ArgumentNullException">If <paramref name="converter"/> is a <see langword="null"/> reference.</exception>
   public static bool TimeOnly(this IConverter converter, object instance, out TimeOnly? result, IFormatProvider format = null) => (result = converter.TimeOnly(instance, format)) is not null;
 #endif
 }
