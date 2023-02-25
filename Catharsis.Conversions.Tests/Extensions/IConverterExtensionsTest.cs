@@ -21,10 +21,14 @@ namespace Catharsis.Conversions.Tests;
 public sealed class IConverterExtensionsTest : UnitTest
 {
   /// <summary>
-  ///   <para>Performs testing of <see cref="IConverterExtensions.String(IConverter, object, Encoding)"/> method.</para>
+  ///   <para>Performs testing of following methods :</para>
+  ///   <list type="bullet">
+  ///     <item><description><see cref="IConverterExtensions.String(IConverter, object, Encoding)"/></description></item>
+  ///     <item><description><see cref="IConverterExtensions.String(IConverter, object, out string, Encoding)"/></description></item>
+  ///   </list>
   /// </summary>
   [Fact]
-  public void Convert_String_Method()
+  public void Convert_String_Methods()
   {
     void ValidateBinaryReader(Encoding encoding)
     {
@@ -230,10 +234,14 @@ public sealed class IConverterExtensionsTest : UnitTest
   }
 
   /// <summary>
-  ///   <para>Performs testing of <see cref="IConverterExtensions.Binary(IConverter, object, Encoding)"/> method.</para>
+  ///   <para>Performs testing of following methods :</para>
+  ///   <list type="bullet">
+  ///     <item><description><see cref="IConverterExtensions.Binary(IConverter, object, Encoding)"/></description></item>
+  ///     <item><description><see cref="IConverterExtensions.Binary(IConverter, object, out byte[], Encoding)"/></description></item>
+  ///   </list>
   /// </summary>
   [Fact]
-  public void Convert_Binary_Method()
+  public void Convert_Binary_Methods()
   {
     void ValidateString(Encoding encoding)
     {
@@ -411,10 +419,14 @@ public sealed class IConverterExtensionsTest : UnitTest
   }
 
   /// <summary>
-  ///   <para>Performs testing of <see cref="IConverterExtensions.Array{T}(IConverter, object)"/> method.</para>
+  ///   <para>Performs testing of following methods :</para>
+  ///   <list type="bullet">
+  ///     <item><description><see cref="IConverterExtensions.Array{T}(IConverter, object)"/></description></item>
+  ///     <item><description><see cref="IConverterExtensions.Array{T}(IConverter, object, out T[])"/></description></item>
+  ///   </list>
   /// </summary>
   [Fact]
-  public void Convert_Array_Method()
+  public void Convert_Array_Methods()
   {
     AssertionExtensions.Should(() => IConverterExtensions.Array<object>(null, new object())).ThrowExactly<ArgumentNullException>().WithParameterName("convert");
     AssertionExtensions.Should(() => Convert.To.Array<string>(new object())).ThrowExactly<InvalidCastException>();
@@ -450,10 +462,14 @@ public sealed class IConverterExtensionsTest : UnitTest
   }
 
   /// <summary>
-  ///   <para>Performs testing of <see cref="IConverterExtensions.Sbyte(IConverter, object, IFormatProvider)"/> method.</para>
+  ///   <para>Performs testing of following methods :</para>
+  ///   <list type="bullet">
+  ///     <item><description><see cref="IConverterExtensions.Sbyte(IConverter, object, IFormatProvider)"/></description></item>
+  ///     <item><description><see cref="IConverterExtensions.Sbyte(IConverter, object, out sbyte?, IFormatProvider)"/></description></item>
+  ///   </list>
   /// </summary>
   [Fact]
-  public void Convert_Sbyte_Method()
+  public void Convert_Sbyte_Methods()
   {
     static void Validate(IFormatProvider format)
     {
@@ -518,10 +534,14 @@ public sealed class IConverterExtensionsTest : UnitTest
   }
 
   /// <summary>
-  ///   <para>Performs testing of <see cref="IConverterExtensions.Byte(IConverter, object, IFormatProvider)"/> method.</para>
+  ///   <para>Performs testing of following methods :</para>
+  ///   <list type="bullet">
+  ///     <item><description><see cref="IConverterExtensions.Byte(IConverter, object, IFormatProvider)"/></description></item>
+  ///     <item><description><see cref="IConverterExtensions.Byte(IConverter, object, out byte?, IFormatProvider)"/></description></item>
+  ///   </list>
   /// </summary>
   [Fact]
-  public void Convert_Byte_Method()
+  public void Convert_Byte_Methods()
   {
     static void Validate(IFormatProvider format)
     {
@@ -586,10 +606,14 @@ public sealed class IConverterExtensionsTest : UnitTest
   }
 
   /// <summary>
-  ///   <para>Performs testing of <see cref="IConverterExtensions.Short(IConverter, object, IFormatProvider)"/> method.</para>
+  ///   <para>Performs testing of following methods :</para>
+  ///   <list type="bullet">
+  ///     <item><description><see cref="IConverterExtensions.Short(IConverter, object, IFormatProvider)"/></description></item>
+  ///     <item><description><see cref="IConverterExtensions.Short(IConverter, object, out short?, IFormatProvider)"/></description></item>
+  ///   </list>
   /// </summary>
   [Fact]
-  public void Convert_Short_Method()
+  public void Convert_Short_Methods()
   {
     static void Validate(IFormatProvider format)
     {
@@ -654,10 +678,14 @@ public sealed class IConverterExtensionsTest : UnitTest
   }
 
   /// <summary>
-  ///   <para>Performs testing of <see cref="IConverterExtensions.Ushort(IConverter, object, IFormatProvider)"/> method.</para>
+  ///   <para>Performs testing of following methods :</para>
+  ///   <list type="bullet">
+  ///     <item><description><see cref="IConverterExtensions.Ushort(IConverter, object, IFormatProvider)"/></description></item>
+  ///     <item><description><see cref="IConverterExtensions.Ushort(IConverter, object, out ushort?, IFormatProvider)"/></description></item>
+  ///   </list>
   /// </summary>
   [Fact]
-  public void Convert_Ushort_Method()
+  public void Convert_Ushort_Methods()
   {
     static void Validate(IFormatProvider format)
     {
@@ -722,10 +750,14 @@ public sealed class IConverterExtensionsTest : UnitTest
   }
 
   /// <summary>
-  ///   <para>Performs testing of <see cref="IConverterExtensions.Int(IConverter, object, IFormatProvider)"/> method.</para>
+  ///   <para>Performs testing of following methods :</para>
+  ///   <list type="bullet">
+  ///     <item><description><see cref="IConverterExtensions.Int(IConverter, object, IFormatProvider)"/></description></item>
+  ///     <item><description><see cref="IConverterExtensions.Int(IConverter, object, out int?, IFormatProvider)"/></description></item>
+  ///   </list>
   /// </summary>
   [Fact]
-  public void Convert_Int_Method()
+  public void Convert_Int_Methods()
   {
     static void Validate(IFormatProvider format)
     {
@@ -790,10 +822,14 @@ public sealed class IConverterExtensionsTest : UnitTest
   }
 
   /// <summary>
-  ///   <para>Performs testing of <see cref="IConverterExtensions.Uint(IConverter, object, IFormatProvider)"/> method.</para>
+  ///   <para>Performs testing of following methods :</para>
+  ///   <list type="bullet">
+  ///     <item><description><see cref="IConverterExtensions.Uint(IConverter, object, IFormatProvider)"/></description></item>
+  ///     <item><description><see cref="IConverterExtensions.Uint(IConverter, object, out uint?, IFormatProvider)"/></description></item>
+  ///   </list>
   /// </summary>
   [Fact]
-  public void Convert_Uint_Method()
+  public void Convert_Uint_Methods()
   {
     static void Validate(IFormatProvider format)
     {
@@ -858,10 +894,14 @@ public sealed class IConverterExtensionsTest : UnitTest
   }
 
   /// <summary>
-  ///   <para>Performs testing of <see cref="IConverterExtensions.Long(IConverter, object, IFormatProvider)"/> method.</para>
+  ///   <para>Performs testing of following methods :</para>
+  ///   <list type="bullet">
+  ///     <item><description><see cref="IConverterExtensions.Long(IConverter, object, IFormatProvider)"/></description></item>
+  ///     <item><description><see cref="IConverterExtensions.Long(IConverter, object, out long?, IFormatProvider)"/></description></item>
+  ///   </list>
   /// </summary>
   [Fact]
-  public void Convert_Long_Method()
+  public void Convert_Long_Methods()
   {
     static void Validate(IFormatProvider format)
     {
@@ -927,10 +967,14 @@ public sealed class IConverterExtensionsTest : UnitTest
   }
 
   /// <summary>
-  ///   <para>Performs testing of <see cref="IConverterExtensions.Ulong(IConverter, object, IFormatProvider)"/> method.</para>
+  ///   <para>Performs testing of following methods :</para>
+  ///   <list type="bullet">
+  ///     <item><description><see cref="IConverterExtensions.Ulong(IConverter, object, IFormatProvider)"/></description></item>
+  ///     <item><description><see cref="IConverterExtensions.Ulong(IConverter, object, out ulong?, IFormatProvider)"/></description></item>
+  ///   </list>
   /// </summary>
   [Fact]
-  public void Convert_Ulong_Method()
+  public void Convert_Ulong_Methods()
   {
     static void Validate(IFormatProvider format)
     {
@@ -995,10 +1039,14 @@ public sealed class IConverterExtensionsTest : UnitTest
   }
 
   /// <summary>
-  ///   <para>Performs testing of <see cref="IConverterExtensions.Float(IConverter, object, IFormatProvider)"/> method.</para>
+  ///   <para>Performs testing of following methods :</para>
+  ///   <list type="bullet">
+  ///     <item><description><see cref="IConverterExtensions.Float(IConverter, object, IFormatProvider)"/></description></item>
+  ///     <item><description><see cref="IConverterExtensions.Float(IConverter, object, out float?, IFormatProvider)/></description></item>
+  ///   </list>
   /// </summary>
   [Fact]
-  public void Convert_Float_Method()
+  public void Convert_Float_Methods()
   {
     static void Validate(IFormatProvider format)
     {
@@ -1067,10 +1115,14 @@ public sealed class IConverterExtensionsTest : UnitTest
   }
 
   /// <summary>
-  ///   <para>Performs testing of <see cref="IConverterExtensions.Double(IConverter, object, IFormatProvider)"/> method.</para>
+  ///   <para>Performs testing of following methods :</para>
+  ///   <list type="bullet">
+  ///     <item><description><see cref="IConverterExtensions.Double(IConverter, object, IFormatProvider)"/></description></item>
+  ///     <item><description><see cref="IConverterExtensions.Double(IConverter, object, out double?, IFormatProvider)"/></description></item>
+  ///   </list>
   /// </summary>
   [Fact]
-  public void Convert_Double_Method()
+  public void Convert_Double_Methods()
   {
     static void Validate(IFormatProvider format)
     {
@@ -1139,10 +1191,14 @@ public sealed class IConverterExtensionsTest : UnitTest
   }
 
   /// <summary>
-  ///   <para>Performs testing of <see cref="IConverterExtensions.Decimal(IConverter, object, IFormatProvider)"/> method.</para>
+  ///   <para>Performs testing of following methods :</para>
+  ///   <list type="bullet">
+  ///     <item><description><see cref="IConverterExtensions.Decimal(IConverter, object, IFormatProvider)"/></description></item>
+  ///     <item><description><see cref="IConverterExtensions.Decimal(IConverter, object, out decimal?, IFormatProvider)"/></description></item>
+  ///   </list>
   /// </summary>
   [Fact]
-  public void Convert_Decimal_Method()
+  public void Convert_Decimal_Methods()
   {
     static void Validate(IFormatProvider format)
     {
@@ -1197,10 +1253,14 @@ public sealed class IConverterExtensionsTest : UnitTest
   }
 
   /// <summary>
-  ///   <para>Performs testing of <see cref="IConverterExtensions.Enum{T}(IConverter, object)"/> method.</para>
+  ///   <para>Performs testing of following methods :</para>
+  ///   <list type="bullet">
+  ///     <item><description><see cref="IConverterExtensions.Enum{T}(IConverter, object)"/></description></item>
+  ///     <item><description><see cref="IConverterExtensions.Enum{T}(IConverter, object, out T?)"/></description></item>
+  ///   </list>
   /// </summary>
   [Fact]
-  public void Convert_Enum_Method()
+  public void Convert_Enum_Methods()
   {
     AssertionExtensions.Should(() => IConverterExtensions.Enum<DayOfWeek>(null, DayOfWeek.Monday)).ThrowExactly<ArgumentNullException>().WithParameterName("convert");
 
@@ -1213,10 +1273,14 @@ public sealed class IConverterExtensionsTest : UnitTest
   }
 
   /// <summary>
-  ///   <para>Performs testing of <see cref="IConverterExtensions.DateTime(IConverter, object, IFormatProvider)"/> method.</para>
+  ///   <para>Performs testing of following methods :</para>
+  ///   <list type="bullet">
+  ///     <item><description><see cref="IConverterExtensions.DateTime(IConverter, object, IFormatProvider)"/></description></item>
+  ///     <item><description><see cref="IConverterExtensions.DateTime(IConverter, object, out DateTime?, IFormatProvider)"/></description></item>
+  ///   </list>
   /// </summary>
   [Fact]
-  public void Convert_DateTime_Method()
+  public void Convert_DateTime_Methods()
   {
     static void Validate(IFormatProvider format)
     {
@@ -1246,10 +1310,14 @@ public sealed class IConverterExtensionsTest : UnitTest
   }
 
   /// <summary>
-  ///   <para>Performs testing of <see cref="IConverterExtensions.DateTimeOffset(IConverter, object, IFormatProvider)"/> method.</para>
+  ///   <para>Performs testing of following methods :</para>
+  ///   <list type="bullet">
+  ///     <item><description><see cref="IConverterExtensions.DateTimeOffset(IConverter, object, IFormatProvider)"/></description></item>
+  ///     <item><description><see cref="IConverterExtensions.DateTimeOffset(IConverter, object, out DateTimeOffset?, IFormatProvider)"/></description></item>
+  ///   </list>
   /// </summary>
   [Fact]
-  public void Convert_DateTimeOffset_Method()
+  public void Convert_DateTimeOffset_Methods()
   {
     static void Validate(IFormatProvider format)
     {
@@ -1263,8 +1331,8 @@ public sealed class IConverterExtensionsTest : UnitTest
         Convert.To.DateTimeOffset($" {utcDate.ToString("o", format)} ", format).Should().Be(utcDate);
 
         Convert.To.DateTimeOffset(date, format).Should().Be(utcDate);
-        Convert.To.DateTimeOffset(Extensions.DateTimeExtensions.ToDateTimeOffset(date), format).Should().Be(utcDate);
-        Convert.To.DateTimeOffset(date.ToDateOnly(), format).Should().Be((Extensions.DateTimeExtensions.ToDateTimeOffset(date).TruncateToDayStart()));
+        Convert.To.DateTimeOffset(date.ToDateTimeOffset(), format).Should().Be(utcDate);
+        Convert.To.DateTimeOffset(date.ToDateOnly(), format).Should().Be(date.ToDateTimeOffset().TruncateToDayStart());
         Convert.To.DateTimeOffset(date.ToTimeOnly(), format).Should().Be(DateTime.UtcNow.TruncateToDayStart().Add(date.ToTimeOnly().ToTimeSpan()));
       }
     }
@@ -1279,10 +1347,14 @@ public sealed class IConverterExtensionsTest : UnitTest
   }
 
   /// <summary>
-  ///   <para>Performs testing of <see cref="IConverterExtensions.DateOnly(IConverter, object, IFormatProvider)"/> method.</para>
+  ///   <para>Performs testing of following methods :</para>
+  ///   <list type="bullet">
+  ///     <item><description><see cref="IConverterExtensions.DateOnly(IConverter, object, IFormatProvider)"/></description></item>
+  ///     <item><description><see cref="IConverterExtensions.DateOnly(IConverter, object, out DateOnly?, IFormatProvider)"/></description></item>
+  ///   </list>
   /// </summary>
   [Fact]
-  public void Convert_DateOnly_Method()
+  public void Convert_DateOnly_Methods()
   {
     static void Validate(IFormatProvider format)
     {
@@ -1297,7 +1369,7 @@ public sealed class IConverterExtensionsTest : UnitTest
         //Convert.To.DateOnly($" {dateOnly.ToLongDateString()} ").Should().Be(dateOnly);
 
         Convert.To.DateOnly(date, format).Should().Be(dateOnly);
-        Convert.To.DateOnly(Extensions.DateTimeExtensions.ToDateTimeOffset(date), format).Should().Be(dateOnly);
+        Convert.To.DateOnly(date.ToDateTimeOffset(), format).Should().Be(dateOnly);
         Convert.To.DateOnly(dateOnly, format).Should().Be(dateOnly);
       }
     }
@@ -1312,10 +1384,14 @@ public sealed class IConverterExtensionsTest : UnitTest
   }
 
   /// <summary>
-  ///   <para>Performs testing of <see cref="IConverterExtensions.TimeOnly(IConverter, object, IFormatProvider)"/> method.</para>
+  ///   <para>Performs testing of following methods :</para>
+  ///   <list type="bullet">
+  ///     <item><description><see cref="IConverterExtensions.TimeOnly(IConverter, object, IFormatProvider)"/></description></item>
+  ///     <item><description><see cref="IConverterExtensions.TimeOnly(IConverter, object, out TimeOnly?, IFormatProvider)"/></description></item>
+  ///   </list>
   /// </summary>
   [Fact]
-  public void Convert_TimeOnly_Method()
+  public void Convert_TimeOnly_Methods()
   {
     static void Validate(IFormatProvider format)
     {
@@ -1331,7 +1407,7 @@ public sealed class IConverterExtensionsTest : UnitTest
         Convert.To.TimeOnly($" {timeOnly.ToLongTimeString()} ").Should().Be(timeOnly.TruncateToSecondStart());
 
         Convert.To.TimeOnly(utcDate, format).Should().Be(timeOnly);
-        Convert.To.TimeOnly(Extensions.DateTimeExtensions.ToDateTimeOffset(utcDate), format).Should().Be(timeOnly);
+        Convert.To.TimeOnly(utcDate.ToDateTimeOffset(), format).Should().Be(timeOnly);
         Convert.To.TimeOnly(timeOnly, format).Should().Be(timeOnly);
       }
     }
@@ -1346,10 +1422,14 @@ public sealed class IConverterExtensionsTest : UnitTest
   }
 
   /// <summary>
-  ///   <para>Performs testing of <see cref="IConverterExtensions.Guid(IConverter, object)"/> method.</para>
+  ///   <para>Performs testing of following methods :</para>
+  ///   <list type="bullet">
+  ///     <item><description><see cref="IConverterExtensions.Guid(IConverter, object)"/></description></item>
+  ///     <item><description><see cref="IConverterExtensions.Guid(IConverter, object, out Guid?)"/></description></item>
+  ///   </list>
   /// </summary>
   [Fact]
-  public void Convert_Guid_Method()
+  public void Convert_Guid_Methods()
   {
     AssertionExtensions.Should(() => IConverterExtensions.Guid(null, new object())).ThrowExactly<ArgumentNullException>().WithParameterName("convert");
 
@@ -1373,10 +1453,14 @@ public sealed class IConverterExtensionsTest : UnitTest
   }
 
   /// <summary>
-  ///   <para>Performs testing of <see cref="IConverterExtensions.Regex(IConverter, object, RegexOptions)"/> method.</para>
+  ///   <para>Performs testing of following methods :</para>
+  ///   <list type="bullet">
+  ///     <item><description><see cref="IConverterExtensions.Regex(IConverter, object, RegexOptions)"/></description></item>
+  ///     <item><description><see cref="IConverterExtensions.Regex(IConverter, object, out Regex, RegexOptions)"/></description></item>
+  ///   </list>
   /// </summary>
   [Fact]
-  public void Convert_Regex_Method()
+  public void Convert_Regex_Methods()
   {
     AssertionExtensions.Should(() => IConverterExtensions.Regex(null, new object())).ThrowExactly<ArgumentNullException>().WithParameterName("convert");
 
@@ -1401,10 +1485,14 @@ public sealed class IConverterExtensionsTest : UnitTest
   }
 
   /// <summary>
-  ///   <para>Performs testing of <see cref="IConverterExtensions.Uri(IConverter, object)"/> method.</para>
+  ///   <para>Performs testing of following methods :</para>
+  ///   <list type="bullet">
+  ///     <item><description><see cref="IConverterExtensions.Uri(IConverter, object)"/></description></item>
+  ///     <item><description><see cref="IConverterExtensions.Uri(IConverter, object, out Uri)"/></description></item>
+  ///   </list>
   /// </summary>
   [Fact]
-  public void Convert_Uri_Method()
+  public void Convert_Uri_Methods()
   {
     AssertionExtensions.Should(() => IConverterExtensions.Uri(null, new object())).ThrowExactly<ArgumentNullException>().WithParameterName("convert");
 
@@ -1455,10 +1543,14 @@ public sealed class IConverterExtensionsTest : UnitTest
   }
 
   /// <summary>
-  ///   <para>Performs testing of <see cref="IConverterExtensions.StringBuilder(IConverter, object)"/> method.</para>
+  ///   <para>Performs testing of following methods :</para>
+  ///   <list type="bullet">
+  ///     <item><description><see cref="IConverterExtensions.StringBuilder(IConverter, object)"/></description></item>
+  ///     <item><description><see cref="IConverterExtensions.StringBuilder(IConverter, object, out StringBuilder)"/></description></item>
+  ///   </list>
   /// </summary>
   [Fact]
-  public void Convert_StringBuilder_Method()
+  public void Convert_StringBuilder_Methods()
   {
     AssertionExtensions.Should(() => IConverterExtensions.StringBuilder(null, new object())).ThrowExactly<ArgumentNullException>().WithParameterName("convert");
 
@@ -1484,10 +1576,14 @@ public sealed class IConverterExtensionsTest : UnitTest
   }
 
   /// <summary>
-  ///   <para>Performs testing of <see cref="IConverterExtensions.IpAddress(IConverter, object)"/> method.</para>
+  ///   <para>Performs testing of following methods :</para>
+  ///   <list type="bullet">
+  ///     <item><description><see cref="IConverterExtensions.IpAddress(IConverter, object)"/></description></item>
+  ///     <item><description><see cref="IConverterExtensions.IpAddress(IConverter, object, out IPAddress)"/></description></item>
+  ///   </list>
   /// </summary>
   [Fact]
-  public void Convert_IpAddress_Method()
+  public void Convert_IpAddress_Methods()
   {
     AssertionExtensions.Should(() => IConverterExtensions.IpAddress(null, new object())).ThrowExactly<ArgumentNullException>().WithParameterName("convert");
 
@@ -1509,10 +1605,14 @@ public sealed class IConverterExtensionsTest : UnitTest
   }
 
   /// <summary>
-  ///   <para>Performs testing of <see cref="IConverterExtensions.Directory(IConverter, object)"/> method.</para>
+  ///   <para>Performs testing of following methods :</para>
+  ///   <list type="bullet">
+  ///     <item><description><see cref="IConverterExtensions.Directory(IConverter, object)"/></description></item>
+  ///     <item><description><see cref="IConverterExtensions.Directory(IConverter, object, out DirectoryInfo)"/></description></item>
+  ///   </list>
   /// </summary>
   [Fact]
-  public void Convert_Directory_Method()
+  public void Convert_Directory_Methods()
   {
     AssertionExtensions.Should(() => IConverterExtensions.Directory(null, new object())).ThrowExactly<ArgumentNullException>().WithParameterName("convert");
 
@@ -1530,10 +1630,14 @@ public sealed class IConverterExtensionsTest : UnitTest
   }
 
   /// <summary>
-  ///   <para>Performs testing of <see cref="IConverterExtensions.File(IConverter, object)"/> method.</para>
+  ///   <para>Performs testing of following methods :</para>
+  ///   <list type="bullet">
+  ///     <item><description><see cref="IConverterExtensions.File(IConverter, object)"/></description></item>
+  ///     <item><description><see cref="IConverterExtensions.File(IConverter, object, out FileInfo)"/></description></item>
+  ///   </list>
   /// </summary>
   [Fact]
-  public void Convert_File_Method()
+  public void Convert_File_Methods()
   {
     AssertionExtensions.Should(() => IConverterExtensions.File(null, new object())).ThrowExactly<ArgumentNullException>().WithParameterName("convert");
 
@@ -1551,10 +1655,14 @@ public sealed class IConverterExtensionsTest : UnitTest
   }
 
   /// <summary>
-  ///   <para>Performs testing of <see cref="IConverterExtensions.Type(IConverter, object)"/> method.</para>
+  ///   <para>Performs testing of following methods :</para>
+  ///   <list type="bullet">
+  ///     <item><description><see cref="IConverterExtensions.Type(IConverter, object)"/></description></item>
+  ///     <item><description><see cref="IConverterExtensions.Type(IConverter, object, out Type)"/></description></item>
+  ///   </list>
   /// </summary>
   [Fact]
-  public void Convert_Type_Method()
+  public void Convert_Type_Methods()
   {
     AssertionExtensions.Should(() => IConverterExtensions.Type(null, new object())).ThrowExactly<ArgumentNullException>().WithParameterName("convert");
 
@@ -1577,7 +1685,7 @@ public sealed class IConverterExtensionsTest : UnitTest
   ///   <para>Performs testing of <see cref="IConverterExtensions.Boolean(IConverter, object)"/> method.</para>
   /// </summary>
   [Fact]
-  public void Convert_Boolean_Method()
+  public void Convert_Boolean_Methods()
   {
     AssertionExtensions.Should(() => IConverterExtensions.Boolean(null, new object())).ThrowExactly<ArgumentNullException>().WithParameterName("convert");
 
