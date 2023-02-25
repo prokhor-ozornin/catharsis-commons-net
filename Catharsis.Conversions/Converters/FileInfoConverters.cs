@@ -39,7 +39,7 @@ public static class FileInfoConverters
   ///   <para>Converts given <see cref="FileInfo"/> instance to the instance of <see cref="string"/> type.</para>
   /// </summary>
   /// <param name="conversion">Conversion to perform.</param>
-  /// <param name="encoding"></param>
+  /// <param name="encoding">Text encoding to use or <see langword="null"/> for a default value.</param>
   /// <param name="error">Error description phrase for a failed <paramref name="conversion"/>.</param>
   /// <returns>Conversion result.</returns>
   /// <exception cref="ArgumentNullException">If <paramref name="conversion"/> is a <see langword="null"/> reference.</exception>
@@ -52,7 +52,7 @@ public static class FileInfoConverters
   ///   <para>Asynchronously converts given <see cref="FileInfo"/> instance to the instance of <see cref="Task{string}"/> type.</para>
   /// </summary>
   /// <param name="conversion">Conversion to perform.</param>
-  /// <param name="encoding"></param>
+  /// <param name="encoding">Text encoding to use or <see langword="null"/> for a default value.</param>
   /// <param name="error">Error description phrase for a failed <paramref name="conversion"/>.</param>
   /// <returns>Conversion result.</returns>
   /// <exception cref="ArgumentNullException">If <paramref name="conversion"/> is a <see langword="null"/> reference.</exception>
@@ -100,7 +100,7 @@ public static class FileInfoConverters
   ///   <para>Converts given <see cref="FileInfo"/> instance to the instance of <see cref="System.IO.StreamReader"/> type.</para>
   /// </summary>
   /// <param name="conversion">Conversion to perform.</param>
-  /// <param name="encoding"></param>
+  /// <param name="encoding">Text encoding to use or <see langword="null"/> for a default value.</param>
   /// <param name="error">Error description phrase for a failed <paramref name="conversion"/>.</param>
   /// <returns>Conversion result.</returns>
   /// <exception cref="ArgumentNullException">If <paramref name="conversion"/> is a <see langword="null"/> reference.</exception>
@@ -112,7 +112,7 @@ public static class FileInfoConverters
   ///   <para>Converts given <see cref="FileInfo"/> instance to the instance of <see cref="System.IO.StreamWriter"/> type.</para>
   /// </summary>
   /// <param name="conversion">Conversion to perform.</param>
-  /// <param name="encoding"></param>
+  /// <param name="encoding">Text encoding to use or <see langword="null"/> for a default value.</param>
   /// <param name="error">Error description phrase for a failed <paramref name="conversion"/>.</param>
   /// <returns>Conversion result.</returns>
   /// <exception cref="ArgumentNullException">If <paramref name="conversion"/> is a <see langword="null"/> reference.</exception>
@@ -147,7 +147,7 @@ public static class FileInfoConverters
   ///   <para>Asynchronously converts given <see cref="FileInfo"/> instance to the instance of <see cref="Task{XDocument}"/> type.</para>
   /// </summary>
   /// <param name="conversion">Conversion to perform.</param>
-  /// <param name="cancellation"></param>
+  /// <param name="cancellation">Token to use for asynchronous cancellation of conversion.</param>
   /// <param name="error">Error description phrase for a failed <paramref name="conversion"/>.</param>
   /// <returns>Conversion result.</returns>
   /// <exception cref="ArgumentNullException">If <paramref name="conversion"/> is a <see langword="null"/> reference.</exception>

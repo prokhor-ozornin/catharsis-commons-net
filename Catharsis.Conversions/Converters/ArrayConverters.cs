@@ -13,7 +13,7 @@ public static class ArrayConverters
   ///   <para>Converts given <see cref="char"/> array to the <see cref="byte"/> array.</para>
   /// </summary>
   /// <param name="conversion">Conversion to perform.</param>
-  /// <param name="encoding"></param>
+  /// <param name="encoding">Text encoding to use or <see langword="null"/> for a default value.</param>
   /// <param name="error">Error description phrase for a failed <paramref name="conversion"/>.</param>
   /// <returns>Conversion result.</returns>
   /// <exception cref="ArgumentNullException">If <paramref name="conversion"/> is a <see langword="null"/> reference.</exception>
@@ -37,7 +37,7 @@ public static class ArrayConverters
   ///   <para>Converts given <see cref="byte"/> array to the instance of <see cref="string"/> type.</para>
   /// </summary>
   /// <param name="conversion">Conversion to perform.</param>
-  /// <param name="encoding"></param>
+  /// <param name="encoding">Text encoding to use or <see langword="null"/> for a default value.</param>
   /// <param name="error">Error description phrase for a failed <paramref name="conversion"/>.</param>
   /// <returns>Conversion result.</returns>
   /// <exception cref="ArgumentNullException">If <paramref name="conversion"/> is a <see langword="null"/> reference.</exception>

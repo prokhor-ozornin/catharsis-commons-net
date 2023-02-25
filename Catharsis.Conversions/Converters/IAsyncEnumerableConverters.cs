@@ -15,7 +15,7 @@ public static class IAsyncEnumerableConverters
   /// <summary>
   ///   <para>Converts given <see cref="IAsyncEnumerable{T}"/> instance to the instance of <see cref="IEnumerable{T}"/> type.</para>
   /// </summary>
-  /// <typeparam name="T"></typeparam>
+  /// <typeparam name="T">Type of sequence elements.</typeparam>
   /// <param name="conversion">Conversion to perform.</param>
   /// <param name="error">Error description phrase for a failed <paramref name="conversion"/>.</param>
   /// <returns>Conversion result.</returns>
@@ -27,7 +27,7 @@ public static class IAsyncEnumerableConverters
   /// <summary>
   ///   <para>Converts given <see cref="IAsyncEnumerable{T}"/> instance to the <see cref="T"/> array.</para>
   /// </summary>
-  /// <typeparam name="T"></typeparam>
+  /// <typeparam name="T">Type of sequence elements.</typeparam>
   /// <param name="conversion">Conversion to perform.</param>
   /// <param name="error">Error description phrase for a failed <paramref name="conversion"/>.</param>
   /// <returns>Conversion result.</returns>
@@ -40,21 +40,20 @@ public static class IAsyncEnumerableConverters
   /// <summary>
   ///   <para>Asynchronously converts given <see cref="IAsyncEnumerable{T}"/> instance to the instance of <see cref="Task{T[]}"/> type.</para>
   /// </summary>
-  /// <typeparam name="T"></typeparam>
+  /// <typeparam name="T">Type of sequence elements.</typeparam>
   /// <param name="conversion">Conversion to perform.</param>
-  /// <param name="cancellation"></param>
+  /// <param name="cancellation">Token to use for asynchronous cancellation of conversion.</param>
   /// <param name="error">Error description phrase for a failed <paramref name="conversion"/>.</param>
   /// <returns>Conversion result.</returns>
   /// <exception cref="ArgumentNullException">If <paramref name="conversion"/> is a <see langword="null"/> reference.</exception>
   /// <exception cref="InvalidOperationException">In case of a failed conversion.</exception>
   /// <seealso cref="Array{T}(IConversion{IAsyncEnumerable{T}}, string)"/>
-  /// 
   public static Task<T[]> ArrayAsync<T>(this IConversion<IAsyncEnumerable<T>> conversion, CancellationToken cancellation = default, string error = null) => conversion.To(sequence => sequence.ToArrayAsync(cancellation), error);
 
   /// <summary>
   ///   <para>Converts given <see cref="IAsyncEnumerable{T}"/> instance to the instance of <see cref="List{T}"/> type.</para>
   /// </summary>
-  /// <typeparam name="T"></typeparam>
+  /// <typeparam name="T">Type of sequence elements.</typeparam>
   /// <param name="conversion">Conversion to perform.</param>
   /// <param name="error">Error description phrase for a failed <paramref name="conversion"/>.</param>
   /// <returns>Conversion result.</returns>
@@ -66,9 +65,9 @@ public static class IAsyncEnumerableConverters
   /// <summary>
   ///   <para>Asynchronously converts given <see cref="IAsyncEnumerable{T}"/> instance to the instance of <see cref="Task{List{T}}"/> type.</para>
   /// </summary>
-  /// <typeparam name="T"></typeparam>
+  /// <typeparam name="T">Type of sequence elements.</typeparam>
   /// <param name="conversion">Conversion to perform.</param>
-  /// <param name="cancellation"></param>
+  /// <param name="cancellation">Token to use for asynchronous cancellation of conversion.</param>
   /// <param name="error">Error description phrase for a failed <paramref name="conversion"/>.</param>
   /// <returns>Conversion result.</returns>
   /// <exception cref="ArgumentNullException">If <paramref name="conversion"/> is a <see langword="null"/> reference.</exception>
@@ -79,7 +78,7 @@ public static class IAsyncEnumerableConverters
   /// <summary>
   ///   <para>Converts given <see cref="IAsyncEnumerable{T}"/> instance to the instance of <see cref="System.Collections.Generic.LinkedList{T}"/> type.</para>
   /// </summary>
-  /// <typeparam name="T"></typeparam>
+  /// <typeparam name="T">Type of sequence elements.</typeparam>
   /// <param name="conversion">Conversion to perform.</param>
   /// <param name="error">Error description phrase for a failed <paramref name="conversion"/>.</param>
   /// <returns>Conversion result.</returns>
@@ -91,9 +90,9 @@ public static class IAsyncEnumerableConverters
   /// <summary>
   ///   <para>Asynchronously converts given <see cref="IAsyncEnumerable{T}"/> instance to the instance of <see cref="Task{LinkedList{T}}"/> type.</para>
   /// </summary>
-  /// <typeparam name="T"></typeparam>
+  /// <typeparam name="T">Type of sequence elements.</typeparam>
   /// <param name="conversion">Conversion to perform.</param>
-  /// <param name="cancellation"></param>
+  /// <param name="cancellation">Token to use for asynchronous cancellation of conversion.</param>
   /// <param name="error">Error description phrase for a failed <paramref name="conversion"/>.</param>
   /// <returns>Conversion result.</returns>
   /// <exception cref="ArgumentNullException">If <paramref name="conversion"/> is a <see langword="null"/> reference.</exception>
@@ -104,7 +103,7 @@ public static class IAsyncEnumerableConverters
   /// <summary>
   ///   <para>Converts given <see cref="IAsyncEnumerable{T}"/> instance to the instance of <see cref="IReadOnlyList{T}"/> type.</para>
   /// </summary>
-  /// <typeparam name="T"></typeparam>
+  /// <typeparam name="T">Type of sequence elements.</typeparam>
   /// <param name="conversion">Conversion to perform.</param>
   /// <param name="error">Error description phrase for a failed <paramref name="conversion"/>.</param>
   /// <returns>Conversion result.</returns>
@@ -116,9 +115,9 @@ public static class IAsyncEnumerableConverters
   /// <summary>
   ///   <para>Asynchronously converts given <see cref="IAsyncEnumerable{T}"/> instance to the instance of <see cref="Task{IReadOnlyList{T}}"/> type.</para>
   /// </summary>
-  /// <typeparam name="T"></typeparam>
+  /// <typeparam name="T">Type of sequence elements.</typeparam>
   /// <param name="conversion">Conversion to perform.</param>
-  /// <param name="cancellation"></param>
+  /// <param name="cancellation">Token to use for asynchronous cancellation of conversion.</param>
   /// <param name="error">Error description phrase for a failed <paramref name="conversion"/>.</param>
   /// <returns>Conversion result.</returns>
   /// <exception cref="ArgumentNullException">If <paramref name="conversion"/> is a <see langword="null"/> reference.</exception>
@@ -129,9 +128,9 @@ public static class IAsyncEnumerableConverters
   /// <summary>
   ///   <para>Converts given <see cref="IAsyncEnumerable{T}"/> instance to the instance of <see cref="System.Collections.Generic.HashSet{T}"/> type.</para>
   /// </summary>
-  /// <typeparam name="T"></typeparam>
+  /// <typeparam name="T">Type of sequence elements.</typeparam>
   /// <param name="conversion">Conversion to perform.</param>
-  /// <param name="comparer"></param>
+  /// <param name="comparer">Comparer to perform comparison of objects for equality.</param>
   /// <param name="error">Error description phrase for a failed <paramref name="conversion"/>.</param>
   /// <returns>Conversion result.</returns>
   /// <exception cref="ArgumentNullException">If <paramref name="conversion"/> is a <see langword="null"/> reference.</exception>
@@ -142,10 +141,10 @@ public static class IAsyncEnumerableConverters
   /// <summary>
   ///   <para>Asynchronously converts given <see cref="IAsyncEnumerable{T}"/> instance to the instance of <see cref="Task{HashSet{T}}"/> type.</para>
   /// </summary>
-  /// <typeparam name="T"></typeparam>
+  /// <typeparam name="T">Type of sequence elements.</typeparam>
   /// <param name="conversion">Conversion to perform.</param>
-  /// <param name="comparer"></param>
-  /// <param name="cancellation"></param>
+  /// <param name="comparer">Comparer to perform comparison of objects for equality.</param>
+  /// <param name="cancellation">Token to use for asynchronous cancellation of conversion.</param>
   /// <param name="error">Error description phrase for a failed <paramref name="conversion"/>.</param>
   /// <returns>Conversion result.</returns>
   /// <exception cref="ArgumentNullException">If <paramref name="conversion"/> is a <see langword="null"/> reference.</exception>
@@ -156,9 +155,9 @@ public static class IAsyncEnumerableConverters
   /// <summary>
   ///   <para>Converts given <see cref="IAsyncEnumerable{T}"/> instance to the instance of <see cref="System.Collections.Generic.SortedSet{T}"/> type.</para>
   /// </summary>
-  /// <typeparam name="T"></typeparam>
+  /// <typeparam name="T">Type of sequence elements.</typeparam>
   /// <param name="conversion">Conversion to perform.</param>
-  /// <param name="comparer"></param>
+  /// <param name="comparer">Comparer to perform comparison of objects.</param>
   /// <param name="error">Error description phrase for a failed <paramref name="conversion"/>.</param>
   /// <returns>Conversion result.</returns>
   /// <exception cref="ArgumentNullException">If <paramref name="conversion"/> is a <see langword="null"/> reference.</exception>
@@ -169,10 +168,10 @@ public static class IAsyncEnumerableConverters
   /// <summary>
   ///   <para>Asynchronously converts given <see cref="IAsyncEnumerable{T}"/> instance to the instance of <see cref="Task{SortedSet{T}}"/> type.</para>
   /// </summary>
-  /// <typeparam name="T"></typeparam>
+  /// <typeparam name="T">Type of sequence elements.</typeparam>
   /// <param name="conversion">Conversion to perform.</param>
-  /// <param name="comparer"></param>
-  /// <param name="cancellation"></param>
+  /// <param name="comparer">Comparer to perform comparison of objects.</param>
+  /// <param name="cancellation">Token to use for asynchronous cancellation of conversion.</param>
   /// <param name="error">Error description phrase for a failed <paramref name="conversion"/>.</param>
   /// <returns>Conversion result.</returns>
   /// <exception cref="ArgumentNullException">If <paramref name="conversion"/> is a <see langword="null"/> reference.</exception>
@@ -183,11 +182,11 @@ public static class IAsyncEnumerableConverters
   /// <summary>
   ///   <para>Converts given <see cref="IAsyncEnumerable{TValue}"/> instance to the instance of <see cref="System.Collections.Generic.Dictionary{TKey, TValue}"/> type.</para>
   /// </summary>
-  /// <typeparam name="TKey"></typeparam>
-  /// <typeparam name="TValue"></typeparam>
+  /// <typeparam name="TKey">Type of the resulting dictionary's keys.</typeparam>
+  /// <typeparam name="TValue">Type of the resulting dictionary's values.</typeparam>
   /// <param name="conversion">Conversion to perform.</param>
-  /// <param name="key"></param>
-  /// <param name="comparer"></param>
+  /// <param name="key">Key selector delegate.</param>
+  /// <param name="comparer">Comparer to perform comparison of objects for equality.</param>
   /// <param name="error">Error description phrase for a failed <paramref name="conversion"/>.</param>
   /// <returns>Conversion result.</returns>
   /// <exception cref="ArgumentNullException">If <paramref name="conversion"/> is a <see langword="null"/> reference.</exception>
@@ -198,12 +197,12 @@ public static class IAsyncEnumerableConverters
   /// <summary>
   ///   <para>Asynchronously converts given <see cref="IAsyncEnumerable{TValue}"/> instance to the instance of <see cref="Task{Dictionary{TKey, TValue}}"/> type.</para>
   /// </summary>
-  /// <typeparam name="TKey"></typeparam>
-  /// <typeparam name="TValue"></typeparam>
+  /// <typeparam name="TKey">Type of the resulting dictionary's keys.</typeparam>
+  /// <typeparam name="TValue">Type of the resulting dictionary's values.</typeparam>
   /// <param name="conversion">Conversion to perform.</param>
-  /// <param name="key"></param>
-  /// <param name="comparer"></param>
-  /// <param name="cancellation"></param>
+  /// <param name="key">Key selector delegate.</param>
+  /// <param name="comparer">Comparer to perform comparison of objects for equality.</param>
+  /// <param name="cancellation">Token to use for asynchronous cancellation of conversion.</param>
   /// <param name="error">Error description phrase for a failed <paramref name="conversion"/>.</param>
   /// <returns>Conversion result.</returns>
   /// <exception cref="ArgumentNullException">If <paramref name="conversion"/> is a <see langword="null"/> reference.</exception>
@@ -214,11 +213,11 @@ public static class IAsyncEnumerableConverters
   /// <summary>
   ///   <para>Converts given <see cref="IAsyncEnumerable{TValue}"/> instance to the instance of <see cref="IReadOnlyDictionary{TKey, TValue}"/> type.</para>
   /// </summary>
-  /// <typeparam name="TKey"></typeparam>
-  /// <typeparam name="TValue"></typeparam>
+  /// <typeparam name="TKey">Type of the resulting dictionary's keys.</typeparam>
+  /// <typeparam name="TValue">Type of the resulting dictionary's values.</typeparam>
   /// <param name="conversion">Conversion to perform.</param>
-  /// <param name="key"></param>
-  /// <param name="comparer"></param>
+  /// <param name="key">Key selector's delegate.</param>
+  /// <param name="comparer">Comparer to perform comparison of objects for equality.</param>
   /// <param name="error">Error description phrase for a failed <paramref name="conversion"/>.</param>
   /// <returns>Conversion result.</returns>
   /// <exception cref="ArgumentNullException">If <paramref name="conversion"/> is a <see langword="null"/> reference.</exception>
@@ -229,12 +228,12 @@ public static class IAsyncEnumerableConverters
   /// <summary>
   ///   <para>Asynchronously converts given <see cref="IAsyncEnumerable{TValue}"/> instance to the instance of <see cref="Task{IReadOnlyDictionary{TKey, TValue}}"/> type.</para>
   /// </summary>
-  /// <typeparam name="TKey"></typeparam>
-  /// <typeparam name="TValue"></typeparam>
+  /// <typeparam name="TKey">Type of the resulting dictionary's keys.</typeparam>
+  /// <typeparam name="TValue">Type of the resulting dictionary's values.</typeparam>
   /// <param name="conversion">Conversion to perform.</param>
-  /// <param name="key"></param>
-  /// <param name="comparer"></param>
-  /// <param name="cancellation"></param>
+  /// <param name="key">Key selector delegate.</param>
+  /// <param name="comparer">Comparer to perform comparison of objects for equality.</param>
+  /// <param name="cancellation">Token to use for asynchronous cancellation of conversion.</param>
   /// <param name="error">Error description phrase for a failed <paramref name="conversion"/>.</param>
   /// <returns>Conversion result.</returns>
   /// <exception cref="ArgumentNullException">If <paramref name="conversion"/> is a <see langword="null"/> reference.</exception>
@@ -245,7 +244,7 @@ public static class IAsyncEnumerableConverters
   /// <summary>
   ///   <para>Converts given <see cref="IAsyncEnumerable{T}"/> instance to the instance of <see cref="IEnumerable{(T, int)}"/> type.</para>
   /// </summary>
-  /// <typeparam name="T"></typeparam>
+  /// <typeparam name="T">Type of sequence elements.</typeparam>
   /// <param name="conversion">Conversion to perform.</param>
   /// <param name="error">Error description phrase for a failed <paramref name="conversion"/>.</param>
   /// <returns>Conversion result.</returns>
@@ -257,11 +256,11 @@ public static class IAsyncEnumerableConverters
   /// <summary>
   ///   <para>Converts given <see cref="IAsyncEnumerable{TValue}"/> instance to the instance of <see cref="IEnumerable{(TKey, TValue)}"/> type.</para>
   /// </summary>
-  /// <typeparam name="TKey"></typeparam>
-  /// <typeparam name="TValue"></typeparam>
+  /// <typeparam name="TKey">Type of the resulting tuple's first element.</typeparam>
+  /// <typeparam name="TValue">Type of the resulting tuple's second element.</typeparam>
   /// <param name="conversion">Conversion to perform.</param>
-  /// <param name="key"></param>
-  /// <param name="comparer"></param>
+  /// <param name="key">Key selector delegate.</param>
+  /// <param name="comparer">Comparer to perform comparison of objects.</param>
   /// <param name="error">Error description phrase for a failed <paramref name="conversion"/>.</param>
   /// <returns>Conversion result.</returns>
   /// <exception cref="ArgumentNullException">If <paramref name="conversion"/> is a <see langword="null"/> reference.</exception>
@@ -272,9 +271,9 @@ public static class IAsyncEnumerableConverters
   /// <summary>
   ///   <para>Asynchronously converts given <see cref="IAsyncEnumerable{T}"/> instance to the instance of <see cref="Task{IEnumerable{(T, int)}}"/> type.</para>
   /// </summary>
-  /// <typeparam name="T"></typeparam>
+  /// <typeparam name="T">Type of sequence elements.</typeparam>
   /// <param name="conversion">Conversion to perform.</param>
-  /// <param name="cancellation"></param>
+  /// <param name="cancellation">Token to use for asynchronous cancellation of conversion.</param>
   /// <param name="error">Error description phrase for a failed <paramref name="conversion"/>.</param>
   /// <returns>Conversion result.</returns>
   /// <exception cref="ArgumentNullException">If <paramref name="conversion"/> is a <see langword="null"/> reference.</exception>
@@ -285,12 +284,12 @@ public static class IAsyncEnumerableConverters
   /// <summary>
   ///   <para>Asynchronously converts given <see cref="IAsyncEnumerable{TValue}"/> instance to the instance of <see cref="Task{IEnumerable{(TKey, TValue)}}"/> type.</para>
   /// </summary>
-  /// <typeparam name="TKey"></typeparam>
-  /// <typeparam name="TValue"></typeparam>
+  /// <typeparam name="TKey">Type of the resulting tuple's first element.</typeparam>
+  /// <typeparam name="TValue">Type of the resulting tuple's second element.</typeparam>
   /// <param name="conversion">Conversion to perform.</param>
-  /// <param name="key"></param>
-  /// <param name="comparer"></param>
-  /// <param name="cancellation"></param>
+  /// <param name="key">Key selector delegate.</param>
+  /// <param name="comparer">Comparer to perform comparison of objects.</param>
+  /// <param name="cancellation">Token to use for asynchronous cancellation of conversion.</param>
   /// <param name="error">Error description phrase for a failed <paramref name="conversion"/>.</param>
   /// <returns>Conversion result.</returns>
   /// <exception cref="ArgumentNullException">If <paramref name="conversion"/> is a <see langword="null"/> reference.</exception>
@@ -301,7 +300,7 @@ public static class IAsyncEnumerableConverters
   /// <summary>
   ///   <para>Converts given <see cref="IAsyncEnumerable{T}"/> instance to the instance of <see cref="System.Collections.Generic.Stack{T}"/> type.</para>
   /// </summary>
-  /// <typeparam name="T"></typeparam>
+  /// <typeparam name="T">Type of sequence elements.</typeparam>
   /// <param name="conversion">Conversion to perform.</param>
   /// <param name="error">Error description phrase for a failed <paramref name="conversion"/>.</param>
   /// <returns>Conversion result.</returns>
@@ -314,9 +313,9 @@ public static class IAsyncEnumerableConverters
   /// <summary>
   ///   <para>Converts given <see cref="IAsyncEnumerable{T}"/> instance to the instance of <see cref="Task{Stack{T}}"/> type.</para>
   /// </summary>
-  /// <typeparam name="T"></typeparam>
+  /// <typeparam name="T">Type of sequence elements.</typeparam>
   /// <param name="conversion">Conversion to perform.</param>
-  /// <param name="cancellation"></param>
+  /// <param name="cancellation">Token to use for asynchronous cancellation of conversion.</param>
   /// <param name="error">Error description phrase for a failed <paramref name="conversion"/>.</param>
   /// <returns>Conversion result.</returns>
   /// <exception cref="ArgumentNullException">If <paramref name="conversion"/> is a <see langword="null"/> reference.</exception>
@@ -328,10 +327,10 @@ public static class IAsyncEnumerableConverters
   /// <summary>
   ///   <para>Converts given <see cref="IAsyncEnumerable{T}"/> instance to the instance of <see cref="System.Collections.Generic.Queue{T}"/> type.</para>
   /// </summary>
-  /// <typeparam name="T"></typeparam>
+  /// <typeparam name="T">Type of sequence elements.</typeparam>
   /// <param name="conversion">Conversion to perform.</param>
   /// <param name="error">Error description phrase for a failed <paramref name="conversion"/>.</param>
-  /// <returns></returns>
+  /// <returns>Conversion result.</returns>
   /// <exception cref="ArgumentNullException">If <paramref name="conversion"/> is a <see langword="null"/> reference.</exception>
   /// <exception cref="InvalidOperationException">In case of a failed conversion.</exception>
   /// <seealso cref="QueueAsync{T}(IConversion{IAsyncEnumerable{T}}, CancellationToken, string)"/>
@@ -341,9 +340,9 @@ public static class IAsyncEnumerableConverters
   /// <summary>
   ///   <para>Converts given <see cref="IAsyncEnumerable{T}"/> instance to the instance of <see cref="Task{Queue{T}}"/> type.</para>
   /// </summary>
-  /// <typeparam name="T"></typeparam>
+  /// <typeparam name="T">Type of sequence elements.</typeparam>
   /// <param name="conversion">Conversion to perform.</param>
-  /// <param name="cancellation"></param>
+  /// <param name="cancellation">Token to use for asynchronous cancellation of conversion.</param>
   /// <param name="error">Error description phrase for a failed <paramref name="conversion"/>.</param>
   /// <returns>Conversion result.</returns>
   /// <exception cref="ArgumentNullException">If <paramref name="conversion"/> is a <see langword="null"/> reference.</exception>
@@ -368,7 +367,7 @@ public static class IAsyncEnumerableConverters
   ///   <para>Asynchronously converts given <see cref="IAsyncEnumerable{byte}"/> instance to the instance of <see cref="Task{MemoryStream}"/> type.</para>
   /// </summary>
   /// <param name="conversion">Conversion to perform.</param>
-  /// <param name="cancellation"></param>
+  /// <param name="cancellation">Token to use for asynchronous cancellation of conversion.</param>
   /// <param name="error">Error description phrase for a failed <paramref name="conversion"/>.</param>
   /// <returns>Conversion result.</returns>
   /// <exception cref="ArgumentNullException">If <paramref name="conversion"/> is a <see langword="null"/> reference.</exception>
@@ -393,7 +392,7 @@ public static class IAsyncEnumerableConverters
   ///   <para>Asynchronously converts given <see cref="IAsyncEnumerable{byte[]}"/> instance to the instance of <see cref="Task{MemoryStream}"/> type.</para>
   /// </summary>
   /// <param name="conversion">Conversion to perform.</param>
-  /// <param name="cancellation"></param>
+  /// <param name="cancellation">Token to use for asynchronous cancellation of conversion.</param>
   /// <param name="error">Error description phrase for a failed <paramref name="conversion"/>.</param>
   /// <returns>Conversion result.</returns>
   /// <exception cref="ArgumentNullException">If <paramref name="conversion"/> is a <see langword="null"/> reference.</exception>
@@ -406,9 +405,9 @@ public static class IAsyncEnumerableConverters
   /// <summary>
   ///   <para>Converts given <see cref="IAsyncEnumerable{T}"/> instance to the instance of <see cref="IReadOnlySet{T}"/> type.</para>
   /// </summary>
-  /// <typeparam name="T"></typeparam>
+  /// <typeparam name="T">Type of sequence elements.</typeparam>
   /// <param name="conversion">Conversion to perform.</param>
-  /// <param name="comparer"></param>
+  /// <param name="comparer">Comparer to perform comparison of objects for equality.</param>
   /// <param name="error">Error description phrase for a failed <paramref name="conversion"/>.</param>
   /// <returns>Conversion result.</returns>
   /// <exception cref="ArgumentNullException">If <paramref name="conversion"/> is a <see langword="null"/> reference.</exception>
@@ -420,10 +419,10 @@ public static class IAsyncEnumerableConverters
   /// <summary>
   ///   <para>Converts given <see cref="IAsyncEnumerable{T}"/> instance to the instance of <see cref="Task{IReadOnlySet{T}}"/> type.</para>
   /// </summary>
-  /// <typeparam name="T"></typeparam>
+  /// <typeparam name="T">Type of sequence elements.</typeparam>
   /// <param name="conversion">Conversion to perform.</param>
-  /// <param name="comparer"></param>
-  /// <param name="cancellation"></param>
+  /// <param name="comparer">Comparer to perform comparison of objects for equality.</param>
+  /// <param name="cancellation">Token to use for asynchronous cancellation of conversion.</param>
   /// <param name="error">Error description phrase for a failed <paramref name="conversion"/>.</param>
   /// <returns>Conversion result.</returns>
   /// <exception cref="ArgumentNullException">If <paramref name="conversion"/> is a <see langword="null"/> reference.</exception>
@@ -435,10 +434,10 @@ public static class IAsyncEnumerableConverters
   /// <summary>
   ///   <para>Converts given <see cref="IAsyncEnumerable{(TElement, TPriority)}"/> instance to the instance of <see cref="System.Collections.Generic.PriorityQueue{TElement, TPriority}"/> type.</para>
   /// </summary>
-  /// <typeparam name="TElement"></typeparam>
-  /// <typeparam name="TPriority"></typeparam>
+  /// <typeparam name="TElement">Type of elements in the resulting queue.</typeparam>
+  /// <typeparam name="TPriority">Type of priority associated with enqueued elements in the resulting queue.</typeparam>
   /// <param name="conversion">Conversion to perform.</param>
-  /// <param name="comparer"></param>
+  /// <param name="comparer">Comparer to perform comparison of objects.</param>
   /// <param name="error">Error description phrase for a failed <paramref name="conversion"/>.</param>
   /// <returns>Conversion result.</returns>
   /// <exception cref="ArgumentNullException">If <paramref name="conversion"/> is a <see langword="null"/> reference.</exception>
@@ -450,11 +449,11 @@ public static class IAsyncEnumerableConverters
   /// <summary>
   ///   <para>Converts given <see cref="IAsyncEnumerable{(TElement, TPriority)}"/> instance to the instance of <see cref="Task{PriorityQueue{TElement, TPriority}}"/> type.</para>
   /// </summary>
-  /// <typeparam name="TElement"></typeparam>
-  /// <typeparam name="TPriority"></typeparam>
+  /// <typeparam name="TElement">Type of elements in the resulting queue.</typeparam>
+  /// <typeparam name="TPriority">Type of priority associated with enqueued elements in the resulting queue.</typeparam>
   /// <param name="conversion">Conversion to perform.</param>
-  /// <param name="comparer"></param>
-  /// <param name="cancellation"></param>
+  /// <param name="comparer">Comparer to perform comparison of objects.</param>
+  /// <param name="cancellation">Token to use for asynchronous cancellation of conversion.</param>
   /// <param name="error">Error description phrase for a failed <paramref name="conversion"/>.</param>
   /// <returns>Conversion result.</returns>
   /// <exception cref="ArgumentNullException">If <paramref name="conversion"/> is a <see langword="null"/> reference.</exception>
@@ -466,7 +465,7 @@ public static class IAsyncEnumerableConverters
   /// <summary>
   ///   <para>Converts given <see cref="IAsyncEnumerable{T}"/> instance to the instance of <see cref="System.Collections.Immutable.ImmutableArray{T}"/> type.</para>
   /// </summary>
-  /// <typeparam name="T"></typeparam>
+  /// <typeparam name="T">Type of sequence elements.</typeparam>
   /// <param name="conversion">Conversion to perform.</param>
   /// <param name="error">Error description phrase for a failed <paramref name="conversion"/>.</param>
   /// <returns>Conversion result.</returns>
@@ -479,9 +478,9 @@ public static class IAsyncEnumerableConverters
   /// <summary>
   ///   <para>Converts given <see cref="IAsyncEnumerable{T}"/> instance to the instance of <see cref="Task{ImmutableArray{T}}"/> type.</para>
   /// </summary>
-  /// <typeparam name="T"></typeparam>
+  /// <typeparam name="T">Type of sequence elements.</typeparam>
   /// <param name="conversion">Conversion to perform.</param>
-  /// <param name="cancellation"></param>
+  /// <param name="cancellation">Token to use for asynchronous cancellation of conversion.</param>
   /// <param name="error">Error description phrase for a failed <paramref name="conversion"/>.</param>
   /// <returns>Conversion result.</returns>
   /// <exception cref="ArgumentNullException">If <paramref name="conversion"/> is a <see langword="null"/> reference.</exception>
@@ -493,7 +492,7 @@ public static class IAsyncEnumerableConverters
   /// <summary>
   ///   <para>Converts given <see cref="IAsyncEnumerable{T}"/> instance to the instance of <see cref="System.Collections.Immutable.ImmutableList{T}"/> type.</para>
   /// </summary>
-  /// <typeparam name="T"></typeparam>
+  /// <typeparam name="T">Type of sequence elements.</typeparam>
   /// <param name="conversion">Conversion to perform.</param>
   /// <param name="error">Error description phrase for a failed <paramref name="conversion"/>.</param>
   /// <returns>Conversion result.</returns>
@@ -506,9 +505,9 @@ public static class IAsyncEnumerableConverters
   /// <summary>
   ///   <para>Converts given <see cref="IAsyncEnumerable{T}"/> instance to the instance of <see cref="Task{ImmutableList{T}}"/> type.</para>
   /// </summary>
-  /// <typeparam name="T"></typeparam>
+  /// <typeparam name="T">Type of sequence elements.</typeparam>
   /// <param name="conversion">Conversion to perform.</param>
-  /// <param name="cancellation"></param>
+  /// <param name="cancellation">Token to use for asynchronous cancellation of conversion.</param>
   /// <param name="error">Error description phrase for a failed <paramref name="conversion"/>.</param>
   /// <returns>Conversion result.</returns>
   /// <exception cref="ArgumentNullException">If <paramref name="conversion"/> is a <see langword="null"/> reference.</exception>
@@ -520,9 +519,9 @@ public static class IAsyncEnumerableConverters
   /// <summary>
   ///   <para>Converts given <see cref="IAsyncEnumerable{T}"/> instance to the instance of <see cref="System.Collections.Immutable.ImmutableHashSet{T}"/> type.</para>
   /// </summary>
-  /// <typeparam name="T"></typeparam>
+  /// <typeparam name="T">Type of sequence elements.</typeparam>
   /// <param name="conversion">Conversion to perform.</param>
-  /// <param name="comparer"></param>
+  /// <param name="comparer">Comparer to perform comparison of objects for equality.</param>
   /// <param name="error">Error description phrase for a failed <paramref name="conversion"/>.</param>
   /// <returns>Conversion result.</returns>
   /// <exception cref="ArgumentNullException">If <paramref name="conversion"/> is a <see langword="null"/> reference.</exception>
@@ -534,10 +533,10 @@ public static class IAsyncEnumerableConverters
   /// <summary>
   ///   <para>Converts given <see cref="IAsyncEnumerable{T}"/> instance to the instance of <see cref="Task{ImmutableHashSet{T}}"/> type.</para>
   /// </summary>
-  /// <typeparam name="T"></typeparam>
+  /// <typeparam name="T">Type of sequence elements.</typeparam>
   /// <param name="conversion">Conversion to perform.</param>
-  /// <param name="comparer"></param>
-  /// <param name="cancellation"></param>
+  /// <param name="comparer">Comparer to perform comparison of objects for equality.</param>
+  /// <param name="cancellation">Token to use for asynchronous cancellation of conversion.</param>
   /// <param name="error">Error description phrase for a failed <paramref name="conversion"/>.</param>
   /// <returns>Conversion result.</returns>
   /// <exception cref="ArgumentNullException">If <paramref name="conversion"/> is a <see langword="null"/> reference.</exception>
@@ -549,9 +548,9 @@ public static class IAsyncEnumerableConverters
   /// <summary>
   ///   <para>Converts given <see cref="IAsyncEnumerable{T}"/> instance to the instance of <see cref="System.Collections.Immutable.ImmutableSortedSet{T}"/> type.</para>
   /// </summary>
-  /// <typeparam name="T"></typeparam>
+  /// <typeparam name="T">Type of sequence elements.</typeparam>
   /// <param name="conversion">Conversion to perform.</param>
-  /// <param name="comparer"></param>
+  /// <param name="comparer">Comparer to perform comparison of objects.</param>
   /// <param name="error">Error description phrase for a failed <paramref name="conversion"/>.</param>
   /// <returns>Conversion result.</returns>
   /// <exception cref="ArgumentNullException">If <paramref name="conversion"/> is a <see langword="null"/> reference.</exception>
@@ -563,10 +562,10 @@ public static class IAsyncEnumerableConverters
   /// <summary>
   ///   <para>Converts given <see cref="IAsyncEnumerable{T}"/> instance to the instance of <see cref="Task{ImmutableSortedSet{T}}"/> type.</para>
   /// </summary>
-  /// <typeparam name="T"></typeparam>
+  /// <typeparam name="T">Type of sequence elements.</typeparam>
   /// <param name="conversion">Conversion to perform.</param>
-  /// <param name="comparer"></param>
-  /// <param name="cancellation"></param>
+  /// <param name="comparer">Comparer to perform comparison of objects.</param>
+  /// <param name="cancellation">Token to use for asynchronous cancellation of conversion.</param>
   /// <param name="error">Error description phrase for a failed <paramref name="conversion"/>.</param>
   /// <returns>Conversion result.</returns>
   /// <exception cref="ArgumentNullException">If <paramref name="conversion"/> is a <see langword="null"/> reference.</exception>
@@ -578,11 +577,11 @@ public static class IAsyncEnumerableConverters
   /// <summary>
   ///   <para>Converts given <see cref="IAsyncEnumerable{TValue}"/> instance to the instance of <see cref="System.Collections.Immutable.ImmutableDictionary{TKey, TValue}"/> type.</para>
   /// </summary>
-  /// <typeparam name="TKey"></typeparam>
-  /// <typeparam name="TValue"></typeparam>
+  /// <typeparam name="TKey">Type of the resulting dictionary's keys.</typeparam>
+  /// <typeparam name="TValue">Type of the resulting dictionary's values.</typeparam>
   /// <param name="conversion">Conversion to perform.</param>
-  /// <param name="key"></param>
-  /// <param name="comparer"></param>
+  /// <param name="key">Key selector delegate.</param>
+  /// <param name="comparer">Comparer to perform comparison of objects for equality.</param>
   /// <param name="error">Error description phrase for a failed <paramref name="conversion"/>.</param>
   /// <returns>Conversion result.</returns>
   /// <exception cref="ArgumentNullException">If <paramref name="conversion"/> is a <see langword="null"/> reference.</exception>
@@ -594,12 +593,12 @@ public static class IAsyncEnumerableConverters
   /// <summary>
   ///   <para>Converts given <see cref="IAsyncEnumerable{TValue}"/> instance to the instance of <see cref="Task{ImmutableDictionary{TKey, TValue}}"/> type.</para>
   /// </summary>
-  /// <typeparam name="TKey"></typeparam>
-  /// <typeparam name="TValue"></typeparam>
+  /// <typeparam name="TKey">Type of the resulting dictionary's keys.</typeparam>
+  /// <typeparam name="TValue">Type of the resulting dictionary's values.</typeparam>
   /// <param name="conversion">Conversion to perform.</param>
-  /// <param name="key"></param>
-  /// <param name="comparer"></param>
-  /// <param name="cancellation"></param>
+  /// <param name="key">Key selector delegate.</param>
+  /// <param name="comparer">Comparer to perform comparison of objects for equality.</param>
+  /// <param name="cancellation">Token to use for asynchronous cancellation of conversion.</param>
   /// <param name="error">Error description phrase for a failed <paramref name="conversion"/>.</param>
   /// <returns>Conversion result.</returns>
   /// <exception cref="ArgumentNullException">If <paramref name="conversion"/> is a <see langword="null"/> reference.</exception>
@@ -611,12 +610,12 @@ public static class IAsyncEnumerableConverters
   /// <summary>
   ///   <para>Converts given <see cref="IAsyncEnumerable{TValue}"/> instance to the instance of <see cref="System.Collections.Immutable.ImmutableSortedDictionary{TKey, TValue}"/> type.</para>
   /// </summary>
-  /// <typeparam name="TKey"></typeparam>
-  /// <typeparam name="TValue"></typeparam>
+  /// <typeparam name="TKey">Type of the resulting dictionary's keys.</typeparam>
+  /// <typeparam name="TValue">Type of the resulting dictionary's values.</typeparam>
   /// <param name="conversion">Conversion to perform.</param>
-  /// <param name="key"></param>
-  /// <param name="keyComparer"></param>
-  /// <param name="valueComparer"></param>
+  /// <param name="key">Key selector delegate.</param>
+  /// <param name="keyComparer">Comparer to perform comparison of keys.</param>
+  /// <param name="valueComparer">Comparer to perform comparison of values for equality.</param>
   /// <param name="error">Error description phrase for a failed <paramref name="conversion"/>.</param>
   /// <returns>Conversion result.</returns>
   /// <exception cref="ArgumentNullException">If <paramref name="conversion"/> is a <see langword="null"/> reference.</exception>
@@ -628,13 +627,13 @@ public static class IAsyncEnumerableConverters
   /// <summary>
   ///   <para>Converts given <see cref="IAsyncEnumerable{TValue}"/> instance to the instance of <see cref="Task{ImmutableSortedDictionary{TKey, TValue}}"/> type.</para>
   /// </summary>
-  /// <typeparam name="TKey"></typeparam>
-  /// <typeparam name="TValue"></typeparam>
+  /// <typeparam name="TKey">Type of the resulting dictionary's keys.</typeparam>
+  /// <typeparam name="TValue">Type of the resulting dictionary's values.</typeparam>
   /// <param name="conversion">Conversion to perform.</param>
-  /// <param name="key"></param>
-  /// <param name="keyComparer"></param>
-  /// <param name="valueComparer"></param>
-  /// <param name="cancellation"></param>
+  /// <param name="key">Key selector delegate.</param>
+  /// <param name="keyComparer">Comparer to perform comparison of keys.</param>
+  /// <param name="valueComparer">Comparer to perform comparison of values for equality.</param>
+  /// <param name="cancellation">Token to use for asynchronous cancellation of conversion.</param>
   /// <param name="error">Error description phrase for a failed <paramref name="conversion"/>.</param>
   /// <returns>Conversion result.</returns>
   /// <exception cref="ArgumentNullException">If <paramref name="conversion"/> is a <see langword="null"/> reference.</exception>
@@ -646,7 +645,7 @@ public static class IAsyncEnumerableConverters
   /// <summary>
   ///   <para>Converts given <see cref="IAsyncEnumerable{T}"/> instance to the instance of <see cref="System.Collections.Immutable.ImmutableQueue{T}"/> type.</para>
   /// </summary>
-  /// <typeparam name="T"></typeparam>
+  /// <typeparam name="T">Type of sequence elements.</typeparam>
   /// <param name="conversion">Conversion to perform.</param>
   /// <param name="error">Error description phrase for a failed <paramref name="conversion"/>.</param>
   /// <returns>Conversion result.</returns>
@@ -659,9 +658,9 @@ public static class IAsyncEnumerableConverters
   /// <summary>
   ///   <para>Converts given <see cref="IAsyncEnumerable{T}"/> instance to the instance of <see cref="Task{ImmutableQueue{T}}"/> type.</para>
   /// </summary>
-  /// <typeparam name="T"></typeparam>
+  /// <typeparam name="T">Type of sequence elements.</typeparam>
   /// <param name="conversion">Conversion to perform.</param>
-  /// <param name="cancellation"></param>
+  /// <param name="cancellation">Token to use for asynchronous cancellation of conversion.</param>
   /// <param name="error">Error description phrase for a failed <paramref name="conversion"/>.</param>
   /// <returns>Conversion result.</returns>
   /// <exception cref="ArgumentNullException">If <paramref name="conversion"/> is a <see langword="null"/> reference.</exception>

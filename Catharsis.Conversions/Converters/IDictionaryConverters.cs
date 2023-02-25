@@ -11,10 +11,10 @@ public static class IDictionaryConverters
   /// <summary>
   ///   <para>Converts given <see cref="IDictionary{TKey, TValue}"/> instance to the instance of <see cref="System.Collections.Generic.SortedList{TKey, TValue}"/> type.</para>
   /// </summary>
-  /// <typeparam name="TKey"></typeparam>
-  /// <typeparam name="TValue"></typeparam>
+  /// <typeparam name="TKey">Type of dictionary keys.</typeparam>
+  /// <typeparam name="TValue">Type of dictionary values.</typeparam>
   /// <param name="conversion">Conversion to perform.</param>
-  /// <param name="comparer"></param>
+  /// <param name="comparer">Comparer to perform comparison of objects.</param>
   /// <param name="error">Error description phrase for a failed <paramref name="conversion"/>.</param>
   /// <returns>Conversion result.</returns>
   /// <exception cref="ArgumentNullException">If <paramref name="conversion"/> is a <see langword="null"/> reference.</exception>
@@ -25,10 +25,10 @@ public static class IDictionaryConverters
   /// <summary>
   ///   <para>Converts given <see cref="IDictionary{TKey, TValue}"/> instance to the instance of <see cref="System.Collections.Generic.SortedDictionary{TKey, TValue}"/> type.</para>
   /// </summary>
-  /// <typeparam name="TKey"></typeparam>
-  /// <typeparam name="TValue"></typeparam>
+  /// <typeparam name="TKey">Type of dictionary keys.</typeparam>
+  /// <typeparam name="TValue">Type of dictionary values.</typeparam>
   /// <param name="conversion">Conversion to perform.</param>
-  /// <param name="comparer"></param>
+  /// <param name="comparer">Comparer to perform comparison of objects.</param>
   /// <param name="error">Error description phrase for a failed <paramref name="conversion"/>.</param>
   /// <returns>Conversion result.</returns>
   /// <exception cref="ArgumentNullException">If <paramref name="conversion"/> is a <see langword="null"/> reference.</exception>

@@ -18,7 +18,7 @@ public static class StringConverters
   ///   <para>Converts given <see cref="string"/> instance to the <see cref="byte"/> array.</para>
   /// </summary>
   /// <param name="conversion">Conversion to perform.</param>
-  /// <param name="encoding"></param>
+  /// <param name="encoding">Text encoding to use or <see langword="null"/> for a default value.</param>
   /// <param name="error">Error description phrase for a failed <paramref name="conversion"/>.</param>
   /// <returns>Conversion result.</returns>
   /// <exception cref="ArgumentNullException">If <paramref name="conversion"/> is a <see langword="null"/> reference.</exception>
@@ -41,7 +41,7 @@ public static class StringConverters
   ///   <para>Converts given <see cref="string"/> instance to the <see cref="sbyte"/> value.</para>
   /// </summary>
   /// <param name="conversion">Conversion to perform.</param>
-  /// <param name="format"></param>
+  /// <param name="format">Text formatting controller.</param>
   /// <param name="error">Error description phrase for a failed <paramref name="conversion"/>.</param>
   /// <returns>Conversion result.</returns>
   /// <exception cref="ArgumentNullException">If <paramref name="conversion"/> is a <see langword="null"/> reference.</exception>
@@ -53,7 +53,7 @@ public static class StringConverters
   ///   <para>Converts given <see cref="string"/> instance to the <see cref="byte"/> value.</para>
   /// </summary>
   /// <param name="conversion">Conversion to perform.</param>
-  /// <param name="format"></param>
+  /// <param name="format">Text formatting controller.</param>
   /// <param name="error">Error description phrase for a failed <paramref name="conversion"/>.</param>
   /// <returns>Conversion result.</returns>
   /// <exception cref="ArgumentNullException">If <paramref name="conversion"/> is a <see langword="null"/> reference.</exception>
@@ -65,7 +65,7 @@ public static class StringConverters
   ///   <para>Converts given <see cref="string"/> instance to the <see cref="short"/> value.</para>
   /// </summary>
   /// <param name="conversion">Conversion to perform.</param>
-  /// <param name="format"></param>
+  /// <param name="format">Text formatting controller.</param>
   /// <param name="error">Error description phrase for a failed <paramref name="conversion"/>.</param>
   /// <returns>Conversion result.</returns>
   /// <exception cref="ArgumentNullException">If <paramref name="conversion"/> is a <see langword="null"/> reference.</exception>
@@ -77,7 +77,7 @@ public static class StringConverters
   ///   <para>Converts given <see cref="string"/> instance to the <see cref="ushort"/> value.</para>
   /// </summary>
   /// <param name="conversion">Conversion to perform.</param>
-  /// <param name="format"></param>
+  /// <param name="format">Text formatting controller.</param>
   /// <param name="error">Error description phrase for a failed <paramref name="conversion"/>.</param>
   /// <returns>Conversion result.</returns>
   /// <exception cref="ArgumentNullException">If <paramref name="conversion"/> is a <see langword="null"/> reference.</exception>
@@ -89,7 +89,7 @@ public static class StringConverters
   ///   <para>Converts given <see cref="string"/> instance to the <see cref="int"/> value.</para>
   /// </summary>
   /// <param name="conversion">Conversion to perform.</param>
-  /// <param name="format"></param>
+  /// <param name="format">Text formatting controller.</param>
   /// <param name="error">Error description phrase for a failed <paramref name="conversion"/>.</param>
   /// <returns>Conversion result.</returns>
   /// <exception cref="ArgumentNullException">If <paramref name="conversion"/> is a <see langword="null"/> reference.</exception>
@@ -101,7 +101,7 @@ public static class StringConverters
   ///   <para>Converts given <see cref="string"/> instance to the <see cref="uint"/> value.</para>
   /// </summary>
   /// <param name="conversion">Conversion to perform.</param>
-  /// <param name="format"></param>
+  /// <param name="format">Text formatting controller.</param>
   /// <param name="error">Error description phrase for a failed <paramref name="conversion"/>.</param>
   /// <returns>Conversion result.</returns>
   /// <exception cref="ArgumentNullException">If <paramref name="conversion"/> is a <see langword="null"/> reference.</exception>
@@ -113,7 +113,7 @@ public static class StringConverters
   ///   <para>Converts given <see cref="string"/> instance to the <see cref="long"/> value.</para>
   /// </summary>
   /// <param name="conversion">Conversion to perform.</param>
-  /// <param name="format"></param>
+  /// <param name="format">Text formatting controller.</param>
   /// <param name="error">Error description phrase for a failed <paramref name="conversion"/>.</param>
   /// <returns>Conversion result.</returns>
   /// <exception cref="ArgumentNullException">If <paramref name="conversion"/> is a <see langword="null"/> reference.</exception>
@@ -125,7 +125,7 @@ public static class StringConverters
   ///   <para>Converts given <see cref="string"/> instance to the <see cref="ulong"/> value.</para>
   /// </summary>
   /// <param name="conversion">Conversion to perform.</param>
-  /// <param name="format"></param>
+  /// <param name="format">Text formatting controller.</param>
   /// <param name="error">Error description phrase for a failed <paramref name="conversion"/>.</param>
   /// <returns>Conversion result.</returns>
   /// <exception cref="ArgumentNullException">If <paramref name="conversion"/> is a <see langword="null"/> reference.</exception>
@@ -137,7 +137,7 @@ public static class StringConverters
   ///   <para>Converts given <see cref="string"/> instance to the <see cref="float"/> value.</para>
   /// </summary>
   /// <param name="conversion">Conversion to perform.</param>
-  /// <param name="format"></param>
+  /// <param name="format">Text formatting controller.</param>
   /// <param name="error">Error description phrase for a failed <paramref name="conversion"/>.</param>
   /// <returns>Conversion result.</returns>
   /// <exception cref="ArgumentNullException">If <paramref name="conversion"/> is a <see langword="null"/> reference.</exception>
@@ -149,7 +149,7 @@ public static class StringConverters
   ///   <para>Converts given <see cref="string"/> instance to the <see cref="double"/> value.</para>
   /// </summary>
   /// <param name="conversion">Conversion to perform.</param>
-  /// <param name="format"></param>
+  /// <param name="format">Text formatting controller.</param>
   /// <param name="error">Error description phrase for a failed <paramref name="conversion"/>.</param>
   /// <returns>Conversion result.</returns>
   /// <exception cref="ArgumentNullException">If <paramref name="conversion"/> is a <see langword="null"/> reference.</exception>
@@ -161,7 +161,7 @@ public static class StringConverters
   ///   <para>Converts given <see cref="string"/> instance to the <see cref="decimal"/> value.</para>
   /// </summary>
   /// <param name="conversion">Conversion to perform.</param>
-  /// <param name="format"></param>
+  /// <param name="format">Text formatting controller.</param>
   /// <param name="error">Error description phrase for a failed <paramref name="conversion"/>.</param>
   /// <returns>Conversion result.</returns>
   /// <exception cref="ArgumentNullException">If <paramref name="conversion"/> is a <see langword="null"/> reference.</exception>
@@ -206,7 +206,7 @@ public static class StringConverters
   ///   <para>Converts given <see cref="string"/> instance to the instance of <see cref="System.DateTime"/> type.</para>
   /// </summary>
   /// <param name="conversion">Conversion to perform.</param>
-  /// <param name="format"></param>
+  /// <param name="format">Text formatting controller.</param>
   /// <param name="error">Error description phrase for a failed <paramref name="conversion"/>.</param>
   /// <returns>Conversion result.</returns>
   /// <exception cref="ArgumentNullException">If <paramref name="conversion"/> is a <see langword="null"/> reference.</exception>
@@ -218,7 +218,7 @@ public static class StringConverters
   ///   <para>Converts given <see cref="string"/> instance to the instance of <see cref="System.DateTimeOffset"/> type.</para>
   /// </summary>
   /// <param name="conversion">Conversion to perform.</param>
-  /// <param name="format"></param>
+  /// <param name="format">Text formatting controller.</param>
   /// <param name="error">Error description phrase for a failed <paramref name="conversion"/>.</param>
   /// <returns>Conversion result.</returns>
   /// <exception cref="ArgumentNullException">If <paramref name="conversion"/> is a <see langword="null"/> reference.</exception>
@@ -341,7 +341,7 @@ public static class StringConverters
   ///   <para>Asynchronously converts given <see cref="string"/> instance to the instance of <see cref="Task{XDocument}"/> type.</para>
   /// </summary>
   /// <param name="conversion">Conversion to perform.</param>
-  /// <param name="cancellation"></param>
+  /// <param name="cancellation">Token to use for asynchronous cancellation of conversion.</param>
   /// <param name="error">Error description phrase for a failed <paramref name="conversion"/>.</param>
   /// <returns>Conversion result.</returns>
   /// <exception cref="ArgumentNullException">If <paramref name="conversion"/> is a <see langword="null"/> reference.</exception>
@@ -355,7 +355,7 @@ public static class StringConverters
   ///   <para>Converts given <see cref="string"/> instance to the instance of <see cref="System.DateOnly"/> type.</para>
   /// </summary>
   /// <param name="conversion">Conversion to perform.</param>
-  /// <param name="format"></param>
+  /// <param name="format">Text formatting controller.</param>
   /// <param name="error">Error description phrase for a failed <paramref name="conversion"/>.</param>
   /// <returns>Conversion result.</returns>
   /// <exception cref="ArgumentNullException">If <paramref name="conversion"/> is a <see langword="null"/> reference.</exception>
@@ -367,7 +367,7 @@ public static class StringConverters
   ///   <para>Converts given <see cref="string"/> instance to the instance of <see cref="System.TimeOnly"/> type.</para>
   /// </summary>
   /// <param name="conversion">Conversion to perform.</param>
-  /// <param name="format"></param>
+  /// <param name="format">Text formatting controller.</param>
   /// <param name="error">Error description phrase for a failed <paramref name="conversion"/>.</param>
   /// <returns>Conversion result.</returns>
   /// <exception cref="ArgumentNullException">If <paramref name="conversion"/> is a <see langword="null"/> reference.</exception>

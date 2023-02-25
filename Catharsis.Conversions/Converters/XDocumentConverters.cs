@@ -24,7 +24,7 @@ public static class XDocumentConverters
   ///   <para>Asynchronously converts given <see cref="XDocument"/> instance to the instance of <see cref="Task{byte[]}"/> type.</para>
   /// </summary>
   /// <param name="conversion">Conversion to perform.</param>
-  /// <param name="cancellation"></param>
+  /// <param name="cancellation">Token to use for asynchronous cancellation of conversion.</param>
   /// <param name="error">Error description phrase for a failed <paramref name="conversion"/>.</param>
   /// <returns>Conversion result.</returns>
   /// <exception cref="ArgumentNullException">If <paramref name="conversion"/> is a <see langword="null"/> reference.</exception>
@@ -47,7 +47,7 @@ public static class XDocumentConverters
   ///   <para>Asynchronously converts given <see cref="XDocument"/> instance to the instance of <see cref="string"/> type.</para>
   /// </summary>
   /// <param name="conversion">Conversion to perform.</param>
-  /// <param name="cancellation"></param>
+  /// <param name="cancellation">Token to use for asynchronous cancellation of conversion.</param>
   /// <param name="error">Error description phrase for a failed <paramref name="conversion"/>.</param>
   /// <returns>Conversion result.</returns>
   /// <exception cref="ArgumentNullException">If <paramref name="conversion"/> is a <see langword="null"/> reference.</exception>

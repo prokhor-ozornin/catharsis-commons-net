@@ -15,9 +15,9 @@ public static class UriConverters
   ///   <para>Converts given <see cref="Uri"/> instance to the instance of <see cref="IEnumerable{byte}"/> type.</para>
   /// </summary>
   /// <param name="conversion">Conversion to perform.</param>
-  /// <param name="timeout"></param>
+  /// <param name="timeout">Timeout for I/O operation.</param>
   /// <param name="error">Error description phrase for a failed <paramref name="conversion"/>.</param>
-  /// <param name="headers"></param>
+  /// <param name="headers">Headers to send alongside the network request during conversion.</param>
   /// <returns>Conversion result.</returns>
   /// <exception cref="ArgumentNullException">If <paramref name="conversion"/> is a <see langword="null"/> reference.</exception>
   /// <exception cref="InvalidOperationException">In case of a failed conversion.</exception>
@@ -29,9 +29,9 @@ public static class UriConverters
   ///   <para>Asynchronously converts given <see cref="Uri"/> instance to the instance of <see cref="IAsyncEnumerable{byte}"/> type.</para>
   /// </summary>
   /// <param name="conversion">Conversion to perform.</param>
-  /// <param name="timeout"></param>
+  /// <param name="timeout">Timeout for I/O operation.</param>
   /// <param name="error">Error description phrase for a failed <paramref name="conversion"/>.</param>
-  /// <param name="headers"></param>
+  /// <param name="headers">Headers to send alongside the network request during conversion.</param>
   /// <returns>Conversion result.</returns>
   /// <exception cref="ArgumentNullException">If <paramref name="conversion"/> is a <see langword="null"/> reference.</exception>
   /// <exception cref="InvalidOperationException">In case of a failed conversion.</exception>
@@ -43,10 +43,10 @@ public static class UriConverters
   ///   <para>Converts given <see cref="Uri"/> instance to the instance of <see cref="string"/> type.</para>
   /// </summary>
   /// <param name="conversion">Conversion to perform.</param>
-  /// <param name="encoding"></param>
-  /// <param name="timeout"></param>
+  /// <param name="encoding">Text encoding to use or <see langword="null"/> for a default value.</param>
+  /// <param name="timeout">Timeout for I/O operation.</param>
   /// <param name="error">Error description phrase for a failed <paramref name="conversion"/>.</param>
-  /// <param name="headers"></param>
+  /// <param name="headers">Headers to send alongside the network request during conversion.</param>
   /// <returns>Conversion result.</returns>
   /// <exception cref="ArgumentNullException">If <paramref name="conversion"/> is a <see langword="null"/> reference.</exception>
   /// <exception cref="InvalidOperationException">In case of a failed conversion.</exception>
@@ -57,9 +57,9 @@ public static class UriConverters
   ///   <para>Converts given <see cref="Uri"/> instance to the instance of <see cref="System.Xml.XmlDocument"/> type.</para>
   /// </summary>
   /// <param name="conversion">Conversion to perform.</param>
-  /// <param name="timeout"></param>
+  /// <param name="timeout">Timeout for I/O operation.</param>
   /// <param name="error">Error description phrase for a failed <paramref name="conversion"/>.</param>
-  /// <param name="headers"></param>
+  /// <param name="headers">Headers to send alongside the network request during conversion.</param>
   /// <returns>Conversion result.</returns>
   /// <exception cref="ArgumentNullException">If <paramref name="conversion"/> is a <see langword="null"/> reference.</exception>
   /// <seealso cref="XmlDocumentAsync(IConversion{Uri}, TimeSpan?, (string Name, object Value)[])"/>
@@ -70,9 +70,9 @@ public static class UriConverters
   ///   <para>Asynchronously converts given <see cref="Uri"/> instance to the instance of <see cref="Task{XmlDocument}"/> type.</para>
   /// </summary>
   /// <param name="conversion">Conversion to perform.</param>
-  /// <param name="timeout"></param>
+  /// <param name="timeout">Timeout for I/O operation.</param>
   /// <param name="error">Error description phrase for a failed <paramref name="conversion"/>.</param>
-  /// <param name="headers"></param>
+  /// <param name="headers">Headers to send alongside the network request during conversion.</param>
   /// <returns>Conversion result.</returns>
   /// <exception cref="ArgumentNullException">If <paramref name="conversion"/> is a <see langword="null"/> reference.</exception>
   /// <seealso cref="XmlDocument(IConversion{Uri}, TimeSpan?, (string Name, object Value)[])"/>
@@ -83,9 +83,9 @@ public static class UriConverters
   ///   <para>Converts given <see cref="Uri"/> instance to the instance of <see cref="System.Xml.Linq.XDocument"/> type.</para>
   /// </summary>
   /// <param name="conversion">Conversion to perform.</param>
-  /// <param name="timeout"></param>
+  /// <param name="timeout">Timeout for I/O operation.</param>
   /// <param name="error">Error description phrase for a failed <paramref name="conversion"/>.</param>
-  /// <param name="headers"></param>
+  /// <param name="headers">Headers to send alongside the network request during conversion.</param>
   /// <returns>Conversion result.</returns>
   /// <exception cref="ArgumentNullException">If <paramref name="conversion"/> is a <see langword="null"/> reference.</exception>
   /// <seealso cref="XmlDocumentAsync(IConversion{Uri}, TimeSpan?, (string Name, object Value)[])"/>
@@ -96,10 +96,10 @@ public static class UriConverters
   ///   <para>Asynchronously converts given <see cref="Uri"/> instance to the instance of <see cref="Task{XDocument}"/> type.</para>
   /// </summary>
   /// <param name="conversion">Conversion to perform.</param>
-  /// <param name="timeout"></param>
-  /// <param name="cancellation"></param>
+  /// <param name="timeout">Timeout for I/O operation.</param>
+  /// <param name="cancellation">Token to use for asynchronous cancellation of conversion.</param>
   /// <param name="error">Error description phrase for a failed <paramref name="conversion"/>.</param>
-  /// <param name="headers"></param>
+  /// <param name="headers">Headers to send alongside the network request during conversion.</param>
   /// <returns>Conversion result.</returns>
   /// <exception cref="ArgumentNullException">If <paramref name="conversion"/> is a <see langword="null"/> reference.</exception>
   /// <seealso cref="XDocument(IConversion{Uri}, TimeSpan?, (string Name, object Value)[])"/>

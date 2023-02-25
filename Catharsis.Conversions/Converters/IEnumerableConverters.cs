@@ -15,7 +15,7 @@ public static class IEnumerableConverters
   /// <summary>
   ///   <para>Converts given <see cref="IEnumerable{T}"/> instance to the <see cref="T"/> array.</para>
   /// </summary>
-  /// <typeparam name="T"></typeparam>
+  /// <typeparam name="T">Type of sequence elements.</typeparam>
   /// <param name="conversion">Conversion to perform.</param>
   /// <param name="error">Error description phrase for a failed <paramref name="conversion"/>.</param>
   /// <returns>Conversion result.</returns>
@@ -27,7 +27,7 @@ public static class IEnumerableConverters
   /// <summary>
   ///   <para>Converts given <see cref="IEnumerable{T}"/> instance to the instance of <see cref="IAsyncEnumerable{T}"/> type.</para>
   /// </summary>
-  /// <typeparam name="T"></typeparam>
+  /// <typeparam name="T">Type of sequence elements.</typeparam>
   /// <param name="conversion">Conversion to perform.</param>
   /// <param name="error">Error description phrase for a failed <paramref name="conversion"/>.</param>
   /// <returns>Conversion result.</returns>
@@ -39,7 +39,7 @@ public static class IEnumerableConverters
   /// <summary>
   ///   <para>Converts given <see cref="IEnumerable{T}"/> instance to the instance of <see cref="System.Collections.Generic.LinkedList{T}"/> type.</para>
   /// </summary>
-  /// <typeparam name="T"></typeparam>
+  /// <typeparam name="T">Type of sequence elements.</typeparam>
   /// <param name="conversion">Conversion to perform.</param>
   /// <param name="error">Error description phrase for a failed <paramref name="conversion"/>.</param>
   /// <returns>Conversion result.</returns>
@@ -51,7 +51,7 @@ public static class IEnumerableConverters
   /// <summary>
   ///   <para>Converts given <see cref="IEnumerable{T}"/> instance to the instance of <see cref="IReadOnlyList{T}"/> type.</para>
   /// </summary>
-  /// <typeparam name="T"></typeparam>
+  /// <typeparam name="T">Type of sequence elements.</typeparam>
   /// <param name="conversion">Conversion to perform.</param>
   /// <param name="error">Error description phrase for a failed <paramref name="conversion"/>.</param>
   /// <returns>Conversion result.</returns>
@@ -63,9 +63,9 @@ public static class IEnumerableConverters
   /// <summary>
   ///   <para>Converts given <see cref="IEnumerable{T}"/> instance to the instance of <see cref="System.Collections.Generic.SortedSet{T}"/> type.</para>
   /// </summary>
-  /// <typeparam name="T"></typeparam>
+  /// <typeparam name="T">Type of sequence elements.</typeparam>
   /// <param name="conversion">Conversion to perform.</param>
-  /// <param name="comparer"></param>
+  /// <param name="comparer">Comparer to perform comparison of objects.</param>
   /// <param name="error">Error description phrase for a failed <paramref name="conversion"/>.</param>
   /// <returns>Conversion result.</returns>
   /// <exception cref="ArgumentNullException">If <paramref name="conversion"/> is a <see langword="null"/> reference.</exception>
@@ -76,7 +76,7 @@ public static class IEnumerableConverters
   /// <summary>
   ///   <para>Converts given <see cref="IEnumerable{T}"/> instance to the instance of <see cref="System.Collections.Generic.Stack{T}"/> type.</para>
   /// </summary>
-  /// <typeparam name="T"></typeparam>
+  /// <typeparam name="T">Type of sequence elements.</typeparam>
   /// <param name="conversion">Conversion to perform.</param>
   /// <param name="error">Error description phrase for a failed <paramref name="conversion"/>.</param>
   /// <returns>Conversion result.</returns>
@@ -88,7 +88,7 @@ public static class IEnumerableConverters
   /// <summary>
   ///   <para>Converts given <see cref="IEnumerable{T}"/> instance to the instance of <see cref="System.Collections.Generic.Queue{T}"/> type.</para>
   /// </summary>
-  /// <typeparam name="T"></typeparam>
+  /// <typeparam name="T">Type of sequence elements.</typeparam>
   /// <param name="conversion">Conversion to perform.</param>
   /// <param name="error">Error description phrase for a failed <paramref name="conversion"/>.</param>
   /// <returns>Conversion result.</returns>
@@ -100,7 +100,7 @@ public static class IEnumerableConverters
   /// <summary>
   ///   <para>Converts given <see cref="IEnumerable{T}"/> instance to the instance of <see cref="System.ArraySegment{T}"/> type.</para>
   /// </summary>
-  /// <typeparam name="T"></typeparam>
+  /// <typeparam name="T">Type of sequence elements.</typeparam>
   /// <param name="conversion">Conversion to perform.</param>
   /// <param name="error">Error description phrase for a failed <paramref name="conversion"/>.</param>
   /// <returns>Conversion result.</returns>
@@ -112,7 +112,7 @@ public static class IEnumerableConverters
   /// <summary>
   ///   <para>Converts given <see cref="IEnumerable{T}"/> instance to the instance of <see cref="System.Memory{T}"/> type.</para>
   /// </summary>
-  /// <typeparam name="T"></typeparam>
+  /// <typeparam name="T">Type of sequence elements.</typeparam>
   /// <param name="conversion">Conversion to perform.</param>
   /// <param name="error">Error description phrase for a failed <paramref name="conversion"/>.</param>
   /// <returns>Conversion result.</returns>
@@ -124,7 +124,7 @@ public static class IEnumerableConverters
   /// <summary>
   ///   <para>Converts given <see cref="IEnumerable{T}"/> instance to the instance of <see cref="System.ReadOnlyMemory{T}"/> type.</para>
   /// </summary>
-  /// <typeparam name="T"></typeparam>
+  /// <typeparam name="T">Type of sequence elements.</typeparam>
   /// <param name="conversion">Conversion to perform.</param>
   /// <param name="error">Error description phrase for a failed <paramref name="conversion"/>.</param>
   /// <returns>Conversion result.</returns>
@@ -147,7 +147,7 @@ public static class IEnumerableConverters
   /// <summary>
   ///   <para>Converts given <see cref="IEnumerable{T}"/> instance to the instance of <see cref="IEnumerable{(Task, int)}"/> type.</para>
   /// </summary>
-  /// <typeparam name="T"></typeparam>
+  /// <typeparam name="T">Type of sequence elements.</typeparam>
   /// <param name="conversion">Conversion to perform.</param>
   /// <param name="error">Error description phrase for a failed <paramref name="conversion"/>.</param>
   /// <returns>Conversion result.</returns>
@@ -160,11 +160,11 @@ public static class IEnumerableConverters
   /// <summary>
   ///   <para>Converts given <see cref="IEnumerable{TValue}"/> instance to the instance of <see cref="IEnumerable{(TKey, TValue)}"/> type.</para>
   /// </summary>
-  /// <typeparam name="TKey"></typeparam>
-  /// <typeparam name="TValue"></typeparam>
+  /// <typeparam name="TKey">Type of the resulting tuple's first element.</typeparam>
+  /// <typeparam name="TValue">Type of the resulting tuple's second element.</typeparam>
   /// <param name="conversion">Conversion to perform.</param>
-  /// <param name="key"></param>
-  /// <param name="comparer"></param>
+  /// <param name="key">Key selector delegate.</param>
+  /// <param name="comparer">Comparer to perform comparison of objects.</param>
   /// <param name="error">Error description phrase for a failed <paramref name="conversion"/>.</param>
   /// <returns>Conversion result.</returns>
   /// <exception cref="ArgumentNullException">If <paramref name="conversion"/> is a <see langword="null"/> reference.</exception>
@@ -175,10 +175,10 @@ public static class IEnumerableConverters
   /// <summary>
   ///   <para>Converts given <see cref="IEnumerable{(TKey, TValue)}"/> instance to the instance of <see cref="System.Collections.Generic.Dictionary{TKey, TValue}"/> type.</para>
   /// </summary>
-  /// <typeparam name="TKey"></typeparam>
-  /// <typeparam name="TValue"></typeparam>
+  /// <typeparam name="TKey">Type of the resulting dictionary's keys.</typeparam>
+  /// <typeparam name="TValue">Type of the resulting dictionary's values.</typeparam>
   /// <param name="conversion">Conversion to perform.</param>
-  /// <param name="comparer"></param>
+  /// <param name="comparer">Comparer to perform comparison of objects for equality.</param>
   /// <param name="error">Error description phrase for a failed <paramref name="conversion"/>.</param>
   /// <returns>Conversion result.</returns>
   /// <exception cref="ArgumentNullException">If <paramref name="conversion"/> is a <see langword="null"/> reference.</exception>
@@ -189,10 +189,10 @@ public static class IEnumerableConverters
   /// <summary>
   ///   <para>Converts given <see cref="IEnumerable{(TKey, TValue)}"/> instance to the instance of <see cref="IReadOnlyDictionary{TKey, TValue}"/> type.</para>
   /// </summary>
-  /// <typeparam name="TKey"></typeparam>
-  /// <typeparam name="TValue"></typeparam>
+  /// <typeparam name="TKey">Type of the resulting dictionary's keys.</typeparam>
+  /// <typeparam name="TValue">Type of the resulting dictionary's values.</typeparam>
   /// <param name="conversion">Conversion to perform.</param>
-  /// <param name="comparer"></param>
+  /// <param name="comparer">Comparer to perform comparison of objects for equality.</param>
   /// <param name="error">Error description phrase for a failed <paramref name="conversion"/>.</param>
   /// <returns>Conversion result.</returns>
   /// <exception cref="ArgumentNullException">If <paramref name="conversion"/> is a <see langword="null"/> reference.</exception>
@@ -216,7 +216,7 @@ public static class IEnumerableConverters
   ///   <para>Asynchronously converts given <see cref="IEnumerable{byte}"/> instance to the instance of <see cref="Task{MemoryStream}"/> type.</para>
   /// </summary>
   /// <param name="conversion">Conversion to perform.</param>
-  /// <param name="cancellation"></param>
+  /// <param name="cancellation">Token to use for asynchronous cancellation of conversion.</param>
   /// <param name="error">Error description phrase for a failed <paramref name="conversion"/>.</param>
   /// <returns>Conversion result.</returns>
   /// <exception cref="ArgumentNullException">If <paramref name="conversion"/> is a <see langword="null"/> reference.</exception>
@@ -241,7 +241,7 @@ public static class IEnumerableConverters
   ///   <para>Asynchronously converts given <see cref="IEnumerable{byte[]}"/> instance to the instance of <see cref="Task{MemoryStream}"/> type.</para>
   /// </summary>
   /// <param name="conversion">Conversion to perform.</param>
-  /// <param name="cancellation"></param>
+  /// <param name="cancellation">Token to use for asynchronous cancellation of conversion.</param>
   /// <param name="error">Error description phrase for a failed <paramref name="conversion"/>.</param>
   /// <returns>Conversion result.</returns>
   /// <exception cref="ArgumentNullException">If <paramref name="conversion"/> is a <see langword="null"/> reference.</exception>
@@ -254,9 +254,9 @@ public static class IEnumerableConverters
   /// <summary>
   ///   <para>Converts given <see cref="IEnumerable{T}"/> instance to the instance of <see cref="IReadOnlySet{T}"/> type.</para>
   /// </summary>
-  /// <typeparam name="T"></typeparam>
+  /// <typeparam name="T">Type of sequence elements.</typeparam>
   /// <param name="conversion">Conversion to perform.</param>
-  /// <param name="comparer"></param>
+  /// <param name="comparer">Comparer to perform comparison of objects for equality.</param>
   /// <param name="error">Error description phrase for a failed <paramref name="conversion"/>.</param>
   /// <returns>Conversion result.</returns>
   /// <exception cref="ArgumentNullException">If <paramref name="conversion"/> is a <see langword="null"/> reference.</exception>
@@ -270,7 +270,7 @@ public static class IEnumerableConverters
   /// <typeparam name="TElement"></typeparam>
   /// <typeparam name="TPriority"></typeparam>
   /// <param name="conversion">Conversion to perform.</param>
-  /// <param name="comparer"></param>
+  /// <param name="comparer">Comparer to perform comparison of objects.</param>
   /// <param name="error">Error description phrase for a failed <paramref name="conversion"/>.</param>
   /// <returns>Conversion result.</returns>
   /// <exception cref="ArgumentNullException">If <paramref name="conversion"/> is a <see langword="null"/> reference.</exception>
@@ -281,7 +281,7 @@ public static class IEnumerableConverters
   /// <summary>
   ///   <para>Converts given <see cref="IEnumerable{T}"/> instance to the instance of <see cref="System.Collections.Immutable.ImmutableQueue{T}"/> type.</para>
   /// </summary>
-  /// <typeparam name="T"></typeparam>
+  /// <typeparam name="T">Type of sequence elements.</typeparam>
   /// <param name="conversion">Conversion to perform.</param>
   /// <param name="error">Error description phrase for a failed <paramref name="conversion"/>.</param>
   /// <returns>Conversion result.</returns>

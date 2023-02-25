@@ -62,7 +62,7 @@ public static class BinaryReaderConverters
   ///   <para>Converts given <see cref="BinaryReader"/> instance to the instance of <see cref="IEnumerable{byte[]}"/> type.</para>
   /// </summary>
   /// <param name="conversion">Conversion to perform.</param>
-  /// <param name="count"></param>
+  /// <param name="count">Size of bytes block to read.</param>
   /// <param name="error">Error description phrase for a failed <paramref name="conversion"/>.</param>
   /// <returns>Conversion result.</returns>
   /// <exception cref="ArgumentNullException">If <paramref name="conversion"/> is a <see langword="null"/> reference.</exception>
@@ -87,7 +87,7 @@ public static class BinaryReaderConverters
   ///   <para>Converts given <see cref="BinaryReader"/> instance to the instance of <see cref="IAsyncEnumerable{byte[]}"/> type.</para>
   /// </summary>
   /// <param name="conversion">Conversion to perform.</param>
-  /// <param name="count"></param>
+  /// <param name="count">Size of bytes block to read.</param>
   /// <param name="error">Error description phrase for a failed <paramref name="conversion"/>.</param>
   /// <returns>Conversion result.</returns>
   /// <exception cref="ArgumentNullException">If <paramref name="conversion"/> is a <see langword="null"/> reference.</exception>

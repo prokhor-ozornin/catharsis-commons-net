@@ -12,10 +12,10 @@ public static class FuncConverters
   /// <summary>
   ///   <para>Converts given <see cref="Func{T}"/> instance to the instance of <see cref="System.Threading.Tasks.Task{T}"/> type.</para>
   /// </summary>
-  /// <typeparam name="T"></typeparam>
+  /// <typeparam name="T">Type of task result.</typeparam>
   /// <param name="conversion">Conversion to perform.</param>
-  /// <param name="options"></param>
-  /// <param name="cancellation"></param>
+  /// <param name="options">Task creation flags.</param>
+  /// <param name="cancellation">Cancellation token to be observed by the new task.</param>
   /// <param name="error">Error description phrase for a failed <paramref name="conversion"/>.</param>
   /// <returns>Conversion result.</returns>
   /// <exception cref="ArgumentNullException">If <paramref name="conversion"/> is a <see langword="null"/> reference.</exception>
@@ -27,11 +27,11 @@ public static class FuncConverters
   /// <summary>
   ///   <para>Converts given <see cref="Func{object, T}"/> instance to the instance of <see cref="System.Threading.Tasks.Task{T}"/> type.</para>
   /// </summary>
-  /// <typeparam name="T"></typeparam>
+  /// <typeparam name="T">Type of task result.</typeparam>
   /// <param name="conversion">Conversion to perform.</param>
-  /// <param name="state"></param>
-  /// <param name="options"></param>
-  /// <param name="cancellation"></param>
+  /// <param name="state">Data to be used by the task.</param>
+  /// <param name="options">Task creation flags.</param>
+  /// <param name="cancellation">Cancellation token to be observed by the new task.</param>
   /// <param name="error">Error description phrase for a failed <paramref name="conversion"/>.</param>
   /// <returns>Conversion result.</returns>
   /// <exception cref="ArgumentNullException">If <paramref name="conversion"/> is a <see langword="null"/> reference.</exception>

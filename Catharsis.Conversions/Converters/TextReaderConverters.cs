@@ -15,7 +15,7 @@ public static class TextReaderConverters
   ///   <para>Converts given <see cref="TextReader"/> instance to the <see cref="byte"/> array.</para>
   /// </summary>
   /// <param name="conversion">Conversion to perform.</param>
-  /// <param name="encoding"></param>
+  /// <param name="encoding">Text encoding to use or <see langword="null"/> for a default value.</param>
   /// <param name="error">Error description phrase for a failed <paramref name="conversion"/>.</param>
   /// <returns>Conversion result.</returns>
   /// <exception cref="ArgumentNullException">If <paramref name="conversion"/> is a <see langword="null"/> reference.</exception>
@@ -28,7 +28,7 @@ public static class TextReaderConverters
   ///   <para>Asynchronously converts given <see cref="TextReader"/> instance to the instance of <see cref="Task{byte[]}"/> type.</para>
   /// </summary>
   /// <param name="conversion">Conversion to perform.</param>
-  /// <param name="encoding"></param>
+  /// <param name="encoding">Text encoding to use or <see langword="null"/> for a default value.</param>
   /// <param name="error">Error description phrase for a failed <paramref name="conversion"/>.</param>
   /// <returns>Conversion result.</returns>
   /// <exception cref="ArgumentNullException">If <paramref name="conversion"/> is a <see langword="null"/> reference.</exception>
@@ -88,7 +88,7 @@ public static class TextReaderConverters
   ///   <para>Asynchronously converts given <see cref="TextReader"/> instance to the instance of <see cref="Task{XDocument}"/> type.</para>
   /// </summary>
   /// <param name="conversion">Conversion to perform.</param>
-  /// <param name="cancellation"></param>
+  /// <param name="cancellation">Token to use for asynchronous cancellation of conversion.</param>
   /// <param name="error">Error description phrase for a failed <paramref name="conversion"/>.</param>
   /// <returns>Conversion result.</returns>
   /// <exception cref="ArgumentNullException">If <paramref name="conversion"/> is a <see langword="null"/> reference.</exception>
@@ -101,7 +101,7 @@ public static class TextReaderConverters
   ///   <para>Converts given <see cref="TextReader"/> instance to the instance of <see cref="IEnumerable{char}"/> type.</para>
   /// </summary>
   /// <param name="conversion">Conversion to perform.</param>
-  /// <param name="close"></param>
+  /// <param name="close">Whether to automatically close the reader's underlying stream after enumeration of the conversion result.</param>
   /// <param name="error">Error description phrase for a failed <paramref name="conversion"/>.</param>
   /// <returns>Conversion result.</returns>
   /// <exception cref="ArgumentNullException">If <paramref name="conversion"/> is a <see langword="null"/> reference.</exception>
@@ -114,8 +114,8 @@ public static class TextReaderConverters
   ///   <para>Converts given <see cref="TextReader"/> instance to the instance of <see cref="IEnumerable{char[]}"/> type.</para>
   /// </summary>
   /// <param name="conversion">Conversion to perform.</param>
-  /// <param name="count"></param>
-  /// <param name="close"></param>
+  /// <param name="count">Size of bytes block to read.</param>
+  /// <param name="close">Whether to automatically close the reader's underlying stream after enumeration of the conversion result.</param>
   /// <param name="error">Error description phrase for a failed <paramref name="conversion"/>.</param>
   /// <returns>Conversion result.</returns>
   /// <exception cref="ArgumentNullException">If <paramref name="conversion"/> is a <see langword="null"/> reference.</exception>
@@ -128,7 +128,7 @@ public static class TextReaderConverters
   ///   <para>Converts given <see cref="TextReader"/> instance to the instance of <see cref="IAsyncEnumerable{char}"/> type.</para>
   /// </summary>
   /// <param name="conversion">Conversion to perform.</param>
-  /// <param name="close"></param>
+  /// <param name="close">Whether to automatically close the reader's underlying stream after enumeration of the conversion result.</param>
   /// <param name="error">Error description phrase for a failed <paramref name="conversion"/>.</param>
   /// <returns>Conversion result.</returns>
   /// <exception cref="ArgumentNullException">If <paramref name="conversion"/> is a <see langword="null"/> reference.</exception>
@@ -141,8 +141,8 @@ public static class TextReaderConverters
   ///   <para>Converts given <see cref="TextReader"/> instance to the instance of <see cref="IAsyncEnumerable{char[]}"/> type.</para>
   /// </summary>
   /// <param name="conversion">Conversion to perform.</param>
-  /// <param name="count"></param>
-  /// <param name="close"></param>
+  /// <param name="count">Size of bytes block to read.</param>
+  /// <param name="close">Whether to automatically close the reader's underlying stream after enumeration of the conversion result.</param>
   /// <param name="error">Error description phrase for a failed <paramref name="conversion"/>.</param>
   /// <returns>Conversion result.</returns>
   /// <exception cref="ArgumentNullException">If <paramref name="conversion"/> is a <see langword="null"/> reference.</exception>

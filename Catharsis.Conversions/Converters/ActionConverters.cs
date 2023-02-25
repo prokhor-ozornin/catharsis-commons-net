@@ -14,7 +14,7 @@ public static class ActionConverters
   /// </summary>
   /// <param name="conversion">Conversion to perform.</param>
   /// <param name="options">Task creation flags.</param>
-  /// <param name="cancellation">Task cancellation token.</param>
+  /// <param name="cancellation">Cancellation token to be observed by the new task.</param>
   /// <param name="error">Error description phrase for a failed <paramref name="conversion"/>.</param>
   /// <returns>Conversion result.</returns>
   /// <exception cref="ArgumentNullException">If <paramref name="conversion"/> is a <see langword="null"/> reference.</exception>

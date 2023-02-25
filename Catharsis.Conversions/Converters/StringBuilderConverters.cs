@@ -14,7 +14,7 @@ public static class StringBuilderConverters
   ///   <para>Converts given <see cref="StringBuilder"/> instance to the instance of <see cref="System.IO.StringWriter"/> type.</para>
   /// </summary>
   /// <param name="conversion">Conversion to perform.</param>
-  /// <param name="format"></param>
+  /// <param name="format">Text formatting controller.</param>
   /// <param name="error">Error description phrase for a failed <paramref name="conversion"/>.</param>
   /// <returns>Conversion result.</returns>
   /// <exception cref="ArgumentNullException">If <paramref name="conversion"/> is a <see langword="null"/> reference.</exception>

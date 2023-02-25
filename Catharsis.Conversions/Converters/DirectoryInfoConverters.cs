@@ -12,8 +12,8 @@ public static class DirectoryInfoConverters
   ///   <para>Converts given <see cref="DirectoryInfo"/> instance to the instance of <see cref="IEnumerable{FileSystemInfo}"/> type.</para>
   /// </summary>
   /// <param name="conversion">Conversion to perform.</param>
-  /// <param name="pattern"></param>
-  /// <param name="recursive"></param>
+  /// <param name="pattern">Files/directories search pattern.</param>
+  /// <param name="recursive">Whether to search recursively in subdirectories as well.</param>
   /// <param name="error">Error description phrase for a failed <paramref name="conversion"/>.</param>
   /// <returns>Conversion result.</returns>
   /// <exception cref="ArgumentNullException">If <paramref name="conversion"/> is a <see langword="null"/> reference.</exception>

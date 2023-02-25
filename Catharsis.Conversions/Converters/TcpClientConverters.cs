@@ -37,7 +37,7 @@ public static class TcpClientConverters
   ///   <para>Converts given <see cref="TcpClient"/> instance to the instance of <see cref="IEnumerable{byte}"/> type.</para>
   /// </summary>
   /// <param name="conversion">Conversion to perform.</param>
-  /// <param name="close"></param>
+  /// <param name="close">Whether to automatically close the client's underlying stream after enumeration of the conversion result.</param>
   /// <param name="error">Error description phrase for a failed <paramref name="conversion"/>.</param>
   /// <returns>Conversion result.</returns>
   /// <exception cref="ArgumentNullException">If <paramref name="conversion"/> is a <see langword="null"/> reference.</exception>
@@ -50,8 +50,8 @@ public static class TcpClientConverters
   ///   <para>Converts given <see cref="TcpClient"/> instance to the instance of <see cref="IEnumerable{byte[]}"/> type.</para>
   /// </summary>
   /// <param name="conversion">Conversion to perform.</param>
-  /// <param name="count"></param>
-  /// <param name="close"></param>
+  /// <param name="count">Size of bytes block to read.</param>
+  /// <param name="close">Whether to automatically close the client's underlying stream after enumeration of the conversion result.</param>
   /// <param name="error">Error description phrase for a failed <paramref name="conversion"/>.</param>
   /// <returns>Conversion result.</returns>
   /// <exception cref="ArgumentNullException">If <paramref name="conversion"/> is a <see langword="null"/> reference.</exception>
@@ -64,7 +64,7 @@ public static class TcpClientConverters
   ///   <para>Converts given <see cref="TcpClient"/> instance to the instance of <see cref="IAsyncEnumerable{byte}"/> type.</para>
   /// </summary>
   /// <param name="conversion">Conversion to perform.</param>
-  /// <param name="close"></param>
+  /// <param name="close">Whether to automatically close the client's underlying stream after enumeration of the conversion result.</param>
   /// <param name="error">Error description phrase for a failed <paramref name="conversion"/>.</param>
   /// <returns>Conversion result.</returns>
   /// <exception cref="ArgumentNullException">If <paramref name="conversion"/> is a <see langword="null"/> reference.</exception>
@@ -77,8 +77,8 @@ public static class TcpClientConverters
   ///   <para>Converts given <see cref="TcpClient"/> instance to the instance of <see cref="IAsyncEnumerable{byte[]}"/> type.</para>
   /// </summary>
   /// <param name="conversion">Conversion to perform.</param>
-  /// <param name="count"></param>
-  /// <param name="close"></param>
+  /// <param name="count">Size of bytes block to read.</param>
+  /// <param name="close">Whether to automatically close the client's underlying stream after enumeration of the conversion result.</param>
   /// <param name="error">Error description phrase for a failed <paramref name="conversion"/>.</param>
   /// <returns>Conversion result.</returns>
   /// <exception cref="ArgumentNullException">If <paramref name="conversion"/> is a <see langword="null"/> reference.</exception>

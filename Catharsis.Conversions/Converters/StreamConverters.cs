@@ -15,7 +15,7 @@ public static class StreamConverters
   ///   <para>Converts given <see cref="Stream"/> instance to the instance of <see cref="IEnumerable{byte}"/> type.</para>
   /// </summary>
   /// <param name="conversion">Conversion to perform.</param>
-  /// <param name="close"></param>
+  /// <param name="close">Whether to automatically close the stream after enumeration of the conversion result.</param>
   /// <param name="error">Error description phrase for a failed <paramref name="conversion"/>.</param>
   /// <returns>Conversion result.</returns>
   /// <exception cref="ArgumentNullException">If <paramref name="conversion"/> is a <see langword="null"/> reference.</exception>
@@ -28,7 +28,7 @@ public static class StreamConverters
   ///   <para>Asynchronously converts given <see cref="Stream"/> instance to the instance of <see cref="IAsyncEnumerable{byte}"/> type.</para>
   /// </summary>
   /// <param name="conversion">Conversion to perform.</param>
-  /// <param name="close"></param>
+  /// <param name="close">Whether to automatically close the stream after enumeration of the conversion result.</param>
   /// <param name="error">Error description phrase for a failed <paramref name="conversion"/>.</param>
   /// <returns>Conversion result.</returns>
   /// <exception cref="ArgumentNullException">If <paramref name="conversion"/> is a <see langword="null"/> reference.</exception>
@@ -41,7 +41,7 @@ public static class StreamConverters
   ///   <para>Converts given <see cref="Stream"/> instance to the instance of <see cref="string"/> type.</para>
   /// </summary>
   /// <param name="conversion">Conversion to perform.</param>
-  /// <param name="encoding"></param>
+  /// <param name="encoding">Text encoding to use or <see langword="null"/> for a default value.</param>
   /// <param name="error">Error description phrase for a failed <paramref name="conversion"/>.</param>
   /// <returns>Conversion result.</returns>
   /// <exception cref="ArgumentNullException">If <paramref name="conversion"/> is a <see langword="null"/> reference.</exception>
@@ -54,7 +54,7 @@ public static class StreamConverters
   ///   <para>Asynchronously converts given <see cref="Stream"/> instance to the instance of <see cref="Task{string}"/> type.</para>
   /// </summary>
   /// <param name="conversion">Conversion to perform.</param>
-  /// <param name="encoding"></param>
+  /// <param name="encoding">Text encoding to use or <see langword="null"/> for a default value.</param>
   /// <param name="error">Error description phrase for a failed <paramref name="conversion"/>.</param>
   /// <returns>Conversion result.</returns>
   /// <exception cref="ArgumentNullException">If <paramref name="conversion"/> is a <see langword="null"/> reference.</exception>
@@ -90,7 +90,7 @@ public static class StreamConverters
   ///   <para>Asynchronously converts given <see cref="Stream"/> instance to the instance of <see cref="Task{XDocument}"/> type.</para>
   /// </summary>
   /// <param name="conversion">Conversion to perform.</param>
-  /// <param name="cancellation"></param>
+  /// <param name="cancellation">Token to use for asynchronous cancellation of conversion.</param>
   /// <param name="error">Error description phrase for a failed <paramref name="conversion"/>.</param>
   /// <returns>Conversion result.</returns>
   /// <exception cref="ArgumentNullException">If <paramref name="conversion"/> is a <see langword="null"/> reference.</exception>
@@ -103,7 +103,7 @@ public static class StreamConverters
   ///   <para>Converts given <see cref="Stream"/> instance to the instance of <see cref="IEnumerable{byte}"/> type.</para>
   /// </summary>
   /// <param name="conversion">Conversion to perform.</param>
-  /// <param name="close"></param>
+  /// <param name="close">Whether to automatically close the stream after enumeration of the conversion result.</param>
   /// <param name="error">Error description phrase for a failed <paramref name="conversion"/>.</param>
   /// <returns>Conversion result.</returns>
   /// <exception cref="ArgumentNullException">If <paramref name="conversion"/> is a <see langword="null"/> reference.</exception>
@@ -116,8 +116,8 @@ public static class StreamConverters
   ///   <para>Converts given <see cref="Stream"/> instance to the instance of <see cref="IEnumerable{byte[]}"/> type.</para>
   /// </summary>
   /// <param name="conversion">Conversion to perform.</param>
-  /// <param name="count"></param>
-  /// <param name="close"></param>
+  /// <param name="count">Size of bytes block to read.</param>
+  /// <param name="close">Whether to automatically close the stream after enumeration of the conversion result.</param>
   /// <param name="error">Error description phrase for a failed <paramref name="conversion"/>.</param>
   /// <returns>Conversion result.</returns>
   /// <exception cref="ArgumentNullException">If <paramref name="conversion"/> is a <see langword="null"/> reference.</exception>
@@ -130,7 +130,7 @@ public static class StreamConverters
   ///   <para>Converts given <see cref="Stream"/> instance to the instance of <see cref="IAsyncEnumerable{byte}"/> type.</para>
   /// </summary>
   /// <param name="conversion">Conversion to perform.</param>
-  /// <param name="close"></param>
+  /// <param name="close">Whether to automatically close the stream after enumeration of the conversion result.</param>
   /// <param name="error">Error description phrase for a failed <paramref name="conversion"/>.</param>
   /// <returns>Conversion result.</returns>
   /// <exception cref="ArgumentNullException">If <paramref name="conversion"/> is a <see langword="null"/> reference.</exception>
@@ -143,8 +143,8 @@ public static class StreamConverters
   ///   <para>Converts given <see cref="Stream"/> instance to the instance of <see cref="IAsyncEnumerable{byte[]}"/> type.</para>
   /// </summary>
   /// <param name="conversion">Conversion to perform.</param>
-  /// <param name="count"></param>
-  /// <param name="close"></param>
+  /// <param name="count">Size of bytes block to read.</param>
+  /// <param name="close">Whether to automatically close the stream after enumeration of the conversion result.</param>
   /// <param name="error">Error description phrase for a failed <paramref name="conversion"/>.</param>
   /// <returns>Conversion result.</returns>
   /// <exception cref="ArgumentNullException">If <paramref name="conversion"/> is a <see langword="null"/> reference.</exception>
@@ -157,7 +157,7 @@ public static class StreamConverters
   ///   <para>Converts given <see cref="Stream"/> instance to the instance of <see cref="System.IO.BufferedStream"/> type.</para>
   /// </summary>
   /// <param name="conversion">Conversion to perform.</param>
-  /// <param name="bufferSize"></param>
+  /// <param name="bufferSize">Size of buffer in bytes or <see langword="null"/> for a default value.</param>
   /// <param name="error">Error description phrase for a failed <paramref name="conversion"/>.</param>
   /// <returns>Conversion result.</returns>
   /// <exception cref="ArgumentNullException">If <paramref name="conversion"/> is a <see langword="null"/> reference.</exception>
@@ -169,8 +169,8 @@ public static class StreamConverters
   ///   <para>Converts given <see cref="Stream"/> instance to the instance of <see cref="System.IO.BinaryReader"/> type.</para>
   /// </summary>
   /// <param name="conversion">Conversion to perform.</param>
-  /// <param name="encoding"></param>
-  /// <param name="close"></param>
+  /// <param name="encoding">Text encoding to use or <see langword="null"/> for a default value.</param>
+  /// <param name="close">Whether to automatically close the stream after disposal of the conversion result.</param>
   /// <param name="error">Error description phrase for a failed <paramref name="conversion"/>.</param>
   /// <returns>Conversion result.</returns>
   /// <exception cref="ArgumentNullException">If <paramref name="conversion"/> is a <see langword="null"/> reference.</exception>
@@ -182,8 +182,8 @@ public static class StreamConverters
   ///   <para>Converts given <see cref="Stream"/> instance to the instance of <see cref="System.IO.BinaryWriter"/> type.</para>
   /// </summary>
   /// <param name="conversion">Conversion to perform.</param>
-  /// <param name="encoding"></param>
-  /// <param name="close"></param>
+  /// <param name="encoding">Text encoding to use or <see langword="null"/> for a default value.</param>
+  /// <param name="close">Whether to automatically close the stream after disposal of the conversion result.</param>
   /// <param name="error">Error description phrase for a failed <paramref name="conversion"/>.</param>
   /// <returns>Conversion result.</returns>
   /// <exception cref="ArgumentNullException">If <paramref name="conversion"/> is a <see langword="null"/> reference.</exception>
@@ -195,8 +195,8 @@ public static class StreamConverters
   ///   <para>Converts given <see cref="Stream"/> instance to the instance of <see cref="System.IO.StreamReader"/> type.</para>
   /// </summary>
   /// <param name="conversion">Conversion to perform.</param>
-  /// <param name="encoding"></param>
-  /// <param name="close"></param>
+  /// <param name="encoding">Text encoding to use or <see langword="null"/> for a default value.</param>
+  /// <param name="close">Whether to automatically close the stream after disposal of the conversion result.</param>
   /// <param name="error">Error description phrase for a failed <paramref name="conversion"/>.</param>
   /// <returns>Conversion result.</returns>
   /// <exception cref="ArgumentNullException">If <paramref name="conversion"/> is a <see langword="null"/> reference.</exception>
@@ -208,8 +208,8 @@ public static class StreamConverters
   ///   <para>Converts given <see cref="Stream"/> instance to the instance of <see cref="System.IO.StreamWriter"/> type.</para>
   /// </summary>
   /// <param name="conversion">Conversion to perform.</param>
-  /// <param name="encoding"></param>
-  /// <param name="close"></param>
+  /// <param name="encoding">Text encoding to use or <see langword="null"/> for a default value.</param>
+  /// <param name="close">Whether to automatically close the stream after disposal of the conversion result.</param>
   /// <param name="error">Error description phrase for a failed <paramref name="conversion"/>.</param>
   /// <returns>Conversion result.</returns>
   /// <exception cref="ArgumentNullException">If <paramref name="conversion"/> is a <see langword="null"/> reference.</exception>
