@@ -1,4 +1,5 @@
-﻿using FluentAssertions;
+﻿using Catharsis.Extensions;
+using FluentAssertions;
 using Xunit;
 
 namespace Catharsis.Conversions.Tests;
@@ -16,7 +17,10 @@ public sealed class DateTimeConvertersTest : UnitTest
   {
     AssertionExtensions.Should(() => DateTimeConverters.DateTimeOffset(null)).ThrowExactly<ArgumentNullException>().WithParameterName("conversion");
 
-    throw new NotImplementedException();
+    foreach (var date in new[] { DateTime.MinValue, DateTime.MaxValue, DateTime.Now, DateTime.UtcNow })
+    {
+      date.ToDateTimeOffset().Should().BeSameDateAs(date.ToDateTimeOffset()).And.BeSameDateAs(new DateTimeOffset(date.ToUniversalTime())).And.BeWithin(TimeSpan.Zero);
+    }
   }
 
   /// <summary>

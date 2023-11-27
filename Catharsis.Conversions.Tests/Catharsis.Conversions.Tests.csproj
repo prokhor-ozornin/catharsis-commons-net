@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net7.0</TargetFramework>
+    <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>disable</Nullable>
     <ProduceReferenceAssembly>False</ProduceReferenceAssembly>
@@ -11,9 +11,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="FluentAssertions" Version="6.9.0" />
-    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.4.1" />
-    <PackageReference Include="xunit" Version="2.4.2" />
+    <PackageReference Include="FluentAssertions" Version="6.12.0" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.8.0" />
+    <PackageReference Include="xunit" Version="2.6.2" />
   </ItemGroup>
 
   <ItemGroup>
@@ -22,7 +22,7 @@
 
   <ItemGroup>
     <Reference Include="Catharsis.Extensions">
-      <HintPath>..\..\Catharsis.Extensions\src\Catharsis.Extensions.Core\bin\Release\net7.0\Catharsis.Extensions.dll</HintPath>
+      <HintPath>..\..\Catharsis.Extensions\src\Catharsis.Extensions.Core\bin\Release\net8.0\Catharsis.Extensions.dll</HintPath>
     </Reference>
   </ItemGroup>
 
