@@ -2,6 +2,8 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.1</TargetFramework>
+    <AssemblyName>Catharsis.Commons</AssemblyName>
+    <RootNamespace>Catharsis.Commons</RootNamespace>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>disable</Nullable>
     <GenerateDocumentationFile>True</GenerateDocumentationFile>
@@ -57,6 +59,7 @@
     <Compile Include="..\Catharsis.Commons\Interfaces\Extensions\ITimeAwareExtensions.cs" Link="Interfaces\Extensions\ITimeAwareExtensions.cs" />
     <Compile Include="..\Catharsis.Commons\Interfaces\Extensions\IValidateableExtensions.cs" Link="Interfaces\Extensions\IValidateableExtensions.cs" />
     <Compile Include="..\Catharsis.Commons\Interfaces\Extensions\ObjectExtensions.cs" Link="Interfaces\Extensions\ObjectExtensions.cs" />
+    <Compile Include="..\Catharsis.Commons\Interfaces\IBuilder.cs" Link="Interfaces\IBuilder.cs" />
     <Compile Include="..\Catharsis.Commons\Interfaces\ITimeAware.cs" Link="Interfaces\ITimeAware.cs" />
     <Compile Include="..\Catharsis.Commons\Interfaces\IValidateable.cs" Link="Interfaces\IValidateable.cs" />
   </ItemGroup>
