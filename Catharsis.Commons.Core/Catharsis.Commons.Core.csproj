@@ -1,0 +1,84 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>disable</Nullable>
+    <ProduceReferenceAssembly>False</ProduceReferenceAssembly>
+    <GenerateDocumentationFile>True</GenerateDocumentationFile>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <LangVersion>latest</LangVersion>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="..\Catharsis.Commons\Conversion\Conversion.cs" Link="Conversion\Conversion.cs" />
+    <Compile Include="..\Catharsis.Commons\Conversion\Convert.cs" Link="Conversion\Convert.cs" />
+    <Compile Include="..\Catharsis.Commons\Conversion\Converter.cs" Link="Conversion\Converter.cs" />
+    <Compile Include="..\Catharsis.Commons\Conversion\Converters\ActionConverters.cs" Link="Conversion\Converters\ActionConverters.cs" />
+    <Compile Include="..\Catharsis.Commons\Conversion\Converters\ArrayConverters.cs" Link="Conversion\Converters\ArrayConverters.cs" />
+    <Compile Include="..\Catharsis.Commons\Conversion\Converters\BinaryReaderConverters.cs" Link="Conversion\Converters\BinaryReaderConverters.cs" />
+    <Compile Include="..\Catharsis.Commons\Conversion\Converters\DateOnlyConverters.cs" Link="Conversion\Converters\DateOnlyConverters.cs" />
+    <Compile Include="..\Catharsis.Commons\Conversion\Converters\DateTimeConverters.cs" Link="Conversion\Converters\DateTimeConverters.cs" />
+    <Compile Include="..\Catharsis.Commons\Conversion\Converters\DateTimeOffsetConverters.cs" Link="Conversion\Converters\DateTimeOffsetConverters.cs" />
+    <Compile Include="..\Catharsis.Commons\Conversion\Converters\DirectoryInfoConverters.cs" Link="Conversion\Converters\DirectoryInfoConverters.cs" />
+    <Compile Include="..\Catharsis.Commons\Conversion\Converters\FileInfoConverters.cs" Link="Conversion\Converters\FileInfoConverters.cs" />
+    <Compile Include="..\Catharsis.Commons\Conversion\Converters\FileSystemInfoConverters.cs" Link="Conversion\Converters\FileSystemInfoConverters.cs" />
+    <Compile Include="..\Catharsis.Commons\Conversion\Converters\FuncConverters.cs" Link="Conversion\Converters\FuncConverters.cs" />
+    <Compile Include="..\Catharsis.Commons\Conversion\Converters\GuidConverters.cs" Link="Conversion\Converters\GuidConverters.cs" />
+    <Compile Include="..\Catharsis.Commons\Conversion\Converters\HttpContentConverters.cs" Link="Conversion\Converters\HttpContentConverters.cs" />
+    <Compile Include="..\Catharsis.Commons\Conversion\Converters\IAsyncEnumerableConverters.cs" Link="Conversion\Converters\IAsyncEnumerableConverters.cs" />
+    <Compile Include="..\Catharsis.Commons\Conversion\Converters\IDictionaryConverters.cs" Link="Conversion\Converters\IDictionaryConverters.cs" />
+    <Compile Include="..\Catharsis.Commons\Conversion\Converters\IEnumerableConverters.cs" Link="Conversion\Converters\IEnumerableConverters.cs" />
+    <Compile Include="..\Catharsis.Commons\Conversion\Converters\IPAddressConverters.cs" Link="Conversion\Converters\IPAddressConverters.cs" />
+    <Compile Include="..\Catharsis.Commons\Conversion\Converters\IPHostEntryConverters.cs" Link="Conversion\Converters\IPHostEntryConverters.cs" />
+    <Compile Include="..\Catharsis.Commons\Conversion\Converters\IReadOnlyDictionaryConverters.cs" Link="Conversion\Converters\IReadOnlyDictionaryConverters.cs" />
+    <Compile Include="..\Catharsis.Commons\Conversion\Converters\MatchConverters.cs" Link="Conversion\Converters\MatchConverters.cs" />
+    <Compile Include="..\Catharsis.Commons\Conversion\Converters\NameValueCollectionConverters.cs" Link="Conversion\Converters\NameValueCollectionConverters.cs" />
+    <Compile Include="..\Catharsis.Commons\Conversion\Converters\PhysicalAddressConverters.cs" Link="Conversion\Converters\PhysicalAddressConverters.cs" />
+    <Compile Include="..\Catharsis.Commons\Conversion\Converters\ProcessConverters.cs" Link="Conversion\Converters\ProcessConverters.cs" />
+    <Compile Include="..\Catharsis.Commons\Conversion\Converters\RangeConverters.cs" Link="Conversion\Converters\RangeConverters.cs" />
+    <Compile Include="..\Catharsis.Commons\Conversion\Converters\SecureStringConverters.cs" Link="Conversion\Converters\SecureStringConverters.cs" />
+    <Compile Include="..\Catharsis.Commons\Conversion\Converters\StreamConverters.cs" Link="Conversion\Converters\StreamConverters.cs" />
+    <Compile Include="..\Catharsis.Commons\Conversion\Converters\StringBuilderConverters.cs" Link="Conversion\Converters\StringBuilderConverters.cs" />
+    <Compile Include="..\Catharsis.Commons\Conversion\Converters\StringConverters.cs" Link="Conversion\Converters\StringConverters.cs" />
+    <Compile Include="..\Catharsis.Commons\Conversion\Converters\TaskConverters.cs" Link="Conversion\Converters\TaskConverters.cs" />
+    <Compile Include="..\Catharsis.Commons\Conversion\Converters\TcpClientConverters.cs" Link="Conversion\Converters\TcpClientConverters.cs" />
+    <Compile Include="..\Catharsis.Commons\Conversion\Converters\TextReaderConverters.cs" Link="Conversion\Converters\TextReaderConverters.cs" />
+    <Compile Include="..\Catharsis.Commons\Conversion\Converters\TimeOnlyConverters.cs" Link="Conversion\Converters\TimeOnlyConverters.cs" />
+    <Compile Include="..\Catharsis.Commons\Conversion\Converters\UdpClientConverters.cs" Link="Conversion\Converters\UdpClientConverters.cs" />
+    <Compile Include="..\Catharsis.Commons\Conversion\Converters\UriConverters.cs" Link="Conversion\Converters\UriConverters.cs" />
+    <Compile Include="..\Catharsis.Commons\Conversion\Converters\XDocumentConverters.cs" Link="Conversion\Converters\XDocumentConverters.cs" />
+    <Compile Include="..\Catharsis.Commons\Conversion\Converters\XmlDocumentConverters.cs" Link="Conversion\Converters\XmlDocumentConverters.cs" />
+    <Compile Include="..\Catharsis.Commons\Conversion\Converters\XmlReaderConverters.cs" Link="Conversion\Converters\XmlReaderConverters.cs" />
+    <Compile Include="..\Catharsis.Commons\Conversion\Extensions\IConversionExtensions.cs" Link="Conversion\Extensions\IConversionExtensions.cs" />
+    <Compile Include="..\Catharsis.Commons\Conversion\Extensions\IConverterExtensions.cs" Link="Conversion\Extensions\IConverterExtensions.cs" />
+    <Compile Include="..\Catharsis.Commons\Conversion\Extensions\ObjectExtensions.cs" Link="Conversion\Extensions\ObjectExtensions.cs" />
+    <Compile Include="..\Catharsis.Commons\Conversion\IConversion.cs" Link="Conversion\IConversion.cs" />
+    <Compile Include="..\Catharsis.Commons\Conversion\IConverter.cs" Link="Conversion\IConverter.cs" />
+    <Compile Include="..\Catharsis.Commons\Interfaces\Extensions\ITimeAwareExtensions.cs" Link="Interfaces\Extensions\ITimeAwareExtensions.cs" />
+    <Compile Include="..\Catharsis.Commons\Interfaces\Extensions\IValidateableExtensions.cs" Link="Interfaces\Extensions\IValidateableExtensions.cs" />
+    <Compile Include="..\Catharsis.Commons\Interfaces\Extensions\ObjectExtensions.cs" Link="Interfaces\Extensions\ObjectExtensions.cs" />
+    <Compile Include="..\Catharsis.Commons\Interfaces\ITimeAware.cs" Link="Interfaces\ITimeAware.cs" />
+    <Compile Include="..\Catharsis.Commons\Interfaces\IValidateable.cs" Link="Interfaces\IValidateable.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <InternalsVisibleTo Include="Catharsis.Convert.Tests" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Catharsis.Extensions">
+      <HintPath>..\..\Catharsis.Extensions\src\Catharsis.Extensions.Core\bin\Release\net8.0\Catharsis.Extensions.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Conversion\Converters\" />
+    <Folder Include="Conversion\Extensions\" />
+    <Folder Include="Interfaces\Extensions\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+  </ItemGroup>
+</Project>

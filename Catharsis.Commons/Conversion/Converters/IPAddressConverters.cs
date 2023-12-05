@@ -1,0 +1,55 @@
+﻿using System.Net;
+using Catharsis.Extensions;
+
+namespace Catharsis.Commons;
+
+/// <summary>
+///   <para>Set of converters to/from <see cref="IPAddress"/> type.</para>
+/// </summary>
+/// <seealso cref="IPAddress"/>
+public static class IPAddressConverters
+{
+  /// <summary>
+  ///   <para>Converts given <see cref="IPAddress"/> instance to the <see cref="byte"/> array.</para>
+  /// </summary>
+  /// <param name="conversion">Conversion to perform.</param>
+  /// <param name="error">Error description phrase for a failed <paramref name="conversion"/>.</param>
+  /// <returns>Conversion result.</returns>
+  /// <exception cref="ArgumentNullException">If <paramref name="conversion"/> is a <see langword="null"/> reference.</exception>
+  /// <exception cref="InvalidOperationException">In case of a failed conversion.</exception>
+  /// <seealso cref="IPAddressExtensions.ToBytes(IPAddress)"/>
+  public static byte[] Bytes(this IConversion<IPAddress> conversion, string error = null) => conversion.To(address => address.ToBytes(), error);
+
+  /// <summary>
+  ///   <para>Converts given <see cref="long"/> value to the instance of <see cref="IPAddress"/> type.</para>
+  /// </summary>
+  /// <param name="conversion">Conversion to perform.</param>
+  /// <param name="error">Error description phrase for a failed <paramref name="conversion"/>.</param>
+  /// <returns>Conversion result.</returns>
+  /// <exception cref="ArgumentNullException">If <paramref name="conversion"/> is a <see langword="null"/> reference.</exception>
+  /// <exception cref="InvalidOperationException">In case of a failed conversion.</exception>
+  /// <seealso cref="IpAddress(IConversion{uint}, string)"/>
+  public static IPAddress IpAddress(this IConversion<long> conversion, string error = null) => conversion.To(value => new IPAddress(value), error);
+
+  /// <summary>
+  ///   <para>Converts given <see cref="uint"/> value to the instance of <see cref="IPAddress"/> type.</para>
+  /// </summary>
+  /// <param name="conversion">Conversion to perform.</param>
+  /// <param name="error">Error description phrase for a failed <paramref name="conversion"/>.</param>
+  /// <returns>Conversion result.</returns>
+  /// <exception cref="ArgumentNullException">If <paramref name="conversion"/> is a <see langword="null"/> reference.</exception>
+  /// <exception cref="InvalidOperationException">In case of a failed conversion.</exception>
+  /// <seealso cref="IpAddress(IConversion{uint}, string)"/>
+  public static IPAddress IpAddress(this IConversion<uint> conversion, string error = null) => conversion.To(value => new IPAddress(value), error);
+
+  /// <summary>
+  ///   <para>Converts given <see cref="IPAddress"/> instance to the instance of <see cref="IPHostEntry"/> type.</para>
+  /// </summary>
+  /// <param name="conversion">Conversion to perform.</param>
+  /// <param name="error">Error description phrase for a failed <paramref name="conversion"/>.</param>
+  /// <returns>Conversion result.</returns>
+  /// <exception cref="ArgumentNullException">If <paramref name="conversion"/> is a <see langword="null"/> reference.</exception>
+  /// <exception cref="InvalidOperationException">In case of a failed conversion.</exception>
+  /// <seealso cref="IPAddressExtensions.ToIpHost(IPAddress)"/>
+  public static IPHostEntry IpHost(this IConversion<IPAddress> conversion, string error = null) => conversion.To(address => address.ToIpHost(), error);
+}
