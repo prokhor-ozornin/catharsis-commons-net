@@ -122,7 +122,7 @@ public static class IConverterExtensions
       T[] array => array,
       IEnumerable<T> sequence => sequence.AsArray(),
       IAsyncEnumerable<T> sequence => sequence.ToArray(),
-      _ => new[] { (T) instance }
+      _ => [(T) instance]
     };
   }
 
