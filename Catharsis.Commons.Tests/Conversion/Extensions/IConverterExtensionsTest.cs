@@ -348,7 +348,7 @@ public sealed class IConverterExtensionsTest : UnitTest
     // HttpContent
     using (new AssertionScope())
     {
-      using (var content = new ByteArrayContent(Array.Empty<byte>()))
+      using (var content = new ByteArrayContent([]))
       {
         Convert.To.Binary(content).Should().NotBeNull().And.BeSameAs(Convert.To.Binary(content)).And.BeEmpty();
       }
