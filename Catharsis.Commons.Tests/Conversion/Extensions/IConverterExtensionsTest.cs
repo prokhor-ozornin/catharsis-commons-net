@@ -471,6 +471,16 @@ public sealed class IConverterExtensionsTest : UnitTest
   [Fact]
   public void Convert_Sbyte_Methods()
   {
+    using (new AssertionScope())
+    {
+      AssertionExtensions.Should(() => IConverterExtensions.Sbyte(null, new object())).ThrowExactly<ArgumentNullException>().WithParameterName("convert");
+
+      Validate(null);
+      CultureInfo.GetCultures(CultureTypes.AllCultures).ForEach(Validate);
+    }
+    
+    return;
+
     static void Validate(IFormatProvider format)
     {
       Convert.To.Sbyte(null, format).Should().BeNull();
@@ -523,14 +533,6 @@ public sealed class IConverterExtensionsTest : UnitTest
       Convert.To.Sbyte(decimal.One, format).Should().Be((sbyte) decimal.One);
       Convert.To.Sbyte((decimal) 1.5, format).Should().Be(2);
     }
-
-    using (new AssertionScope())
-    {
-      AssertionExtensions.Should(() => IConverterExtensions.Sbyte(null, new object())).ThrowExactly<ArgumentNullException>().WithParameterName("convert");
-
-      Validate(null);
-      CultureInfo.GetCultures(CultureTypes.AllCultures).ForEach(Validate);
-    }
   }
 
   /// <summary>
@@ -543,6 +545,16 @@ public sealed class IConverterExtensionsTest : UnitTest
   [Fact]
   public void Convert_Byte_Methods()
   {
+    using (new AssertionScope())
+    {
+      AssertionExtensions.Should(() => IConverterExtensions.Byte(null, new object())).ThrowExactly<ArgumentNullException>().WithParameterName("convert");
+
+      Validate(null);
+      CultureInfo.GetCultures(CultureTypes.AllCultures).ForEach(Validate);
+    }
+
+    return;
+
     static void Validate(IFormatProvider format)
     {
       Convert.To.Byte(null, format).Should().BeNull();
@@ -595,14 +607,6 @@ public sealed class IConverterExtensionsTest : UnitTest
       Convert.To.Byte(decimal.One, format).Should().Be((byte) decimal.One);
       Convert.To.Byte((decimal) 1.5, format).Should().Be(2);
     }
-
-    using (new AssertionScope())
-    {
-      AssertionExtensions.Should(() => IConverterExtensions.Byte(null, new object())).ThrowExactly<ArgumentNullException>().WithParameterName("convert");
-
-      Validate(null);
-      CultureInfo.GetCultures(CultureTypes.AllCultures).ForEach(Validate);
-    }
   }
 
   /// <summary>
@@ -615,6 +619,16 @@ public sealed class IConverterExtensionsTest : UnitTest
   [Fact]
   public void Convert_Short_Methods()
   {
+    using (new AssertionScope())
+    {
+      AssertionExtensions.Should(() => IConverterExtensions.Short(null, new object())).ThrowExactly<ArgumentNullException>().WithParameterName("convert");
+
+      Validate(null);
+      CultureInfo.GetCultures(CultureTypes.AllCultures).ForEach(Validate);
+    }
+
+    return;
+
     static void Validate(IFormatProvider format)
     {
       Convert.To.Short(null, format).Should().BeNull();
@@ -667,14 +681,6 @@ public sealed class IConverterExtensionsTest : UnitTest
       Convert.To.Short(decimal.One, format).Should().Be((short) decimal.One);
       Convert.To.Short((decimal) 1.5, format).Should().Be(2);
     }
-
-    using (new AssertionScope())
-    {
-      AssertionExtensions.Should(() => IConverterExtensions.Short(null, new object())).ThrowExactly<ArgumentNullException>().WithParameterName("convert");
-
-      Validate(null);
-      CultureInfo.GetCultures(CultureTypes.AllCultures).ForEach(Validate);
-    }
   }
 
   /// <summary>
@@ -687,6 +693,16 @@ public sealed class IConverterExtensionsTest : UnitTest
   [Fact]
   public void Convert_Ushort_Methods()
   {
+    using (new AssertionScope())
+    {
+      AssertionExtensions.Should(() => IConverterExtensions.Ushort(null, new object())).ThrowExactly<ArgumentNullException>().WithParameterName("convert");
+
+      Validate(null);
+      CultureInfo.GetCultures(CultureTypes.AllCultures).ForEach(Validate);
+    }
+
+    return;
+
     static void Validate(IFormatProvider format)
     {
       Convert.To.Ushort(null, format).Should().BeNull();
@@ -739,14 +755,6 @@ public sealed class IConverterExtensionsTest : UnitTest
       Convert.To.Ushort(decimal.One, format).Should().Be((ushort) decimal.One);
       Convert.To.Ushort((decimal) 1.5, format).Should().Be(2);
     }
-
-    using (new AssertionScope())
-    {
-      AssertionExtensions.Should(() => IConverterExtensions.Ushort(null, new object())).ThrowExactly<ArgumentNullException>().WithParameterName("convert");
-
-      Validate(null);
-      CultureInfo.GetCultures(CultureTypes.AllCultures).ForEach(Validate);
-    }
   }
 
   /// <summary>
@@ -759,6 +767,16 @@ public sealed class IConverterExtensionsTest : UnitTest
   [Fact]
   public void Convert_Int_Methods()
   {
+    using (new AssertionScope())
+    {
+      AssertionExtensions.Should(() => IConverterExtensions.Int(null, new object())).ThrowExactly<ArgumentNullException>().WithParameterName("convert");
+
+      Validate(null);
+      CultureInfo.GetCultures(CultureTypes.AllCultures).ForEach(Validate);
+    }
+
+    return;
+
     static void Validate(IFormatProvider format)
     {
       Convert.To.Int(null, format).Should().BeNull();
@@ -811,14 +829,6 @@ public sealed class IConverterExtensionsTest : UnitTest
       Convert.To.Int(decimal.One, format).Should().Be((int) decimal.One);
       Convert.To.Int((decimal) 1.5, format).Should().Be(2);
     }
-
-    using (new AssertionScope())
-    {
-      AssertionExtensions.Should(() => IConverterExtensions.Int(null, new object())).ThrowExactly<ArgumentNullException>().WithParameterName("convert");
-
-      Validate(null);
-      CultureInfo.GetCultures(CultureTypes.AllCultures).ForEach(Validate);
-    }
   }
 
   /// <summary>
@@ -831,6 +841,16 @@ public sealed class IConverterExtensionsTest : UnitTest
   [Fact]
   public void Convert_Uint_Methods()
   {
+    using (new AssertionScope())
+    {
+      AssertionExtensions.Should(() => IConverterExtensions.Uint(null, new object())).ThrowExactly<ArgumentNullException>().WithParameterName("convert");
+
+      Validate(null);
+      CultureInfo.GetCultures(CultureTypes.AllCultures).ForEach(Validate);
+    }
+
+    return;
+
     static void Validate(IFormatProvider format)
     {
       Convert.To.Uint(null, format).Should().BeNull();
@@ -883,14 +903,6 @@ public sealed class IConverterExtensionsTest : UnitTest
       Convert.To.Uint(decimal.One, format).Should().Be((uint) decimal.One);
       Convert.To.Uint(1.5, format).Should().Be(2);
     }
-
-    using (new AssertionScope())
-    {
-      AssertionExtensions.Should(() => IConverterExtensions.Uint(null, new object())).ThrowExactly<ArgumentNullException>().WithParameterName("convert");
-
-      Validate(null);
-      CultureInfo.GetCultures(CultureTypes.AllCultures).ForEach(Validate);
-    }
   }
 
   /// <summary>
@@ -903,6 +915,16 @@ public sealed class IConverterExtensionsTest : UnitTest
   [Fact]
   public void Convert_Long_Methods()
   {
+    using (new AssertionScope())
+    {
+      AssertionExtensions.Should(() => IConverterExtensions.Long(null, new object())).ThrowExactly<ArgumentNullException>().WithParameterName("convert");
+
+      Validate(null);
+      CultureInfo.GetCultures(CultureTypes.AllCultures).ForEach(Validate);
+    }
+
+    return;
+
     static void Validate(IFormatProvider format)
     {
       Convert.To.Long(null, format).Should().BeNull();
@@ -956,14 +978,6 @@ public sealed class IConverterExtensionsTest : UnitTest
       Convert.To.Long(decimal.One, format).Should().Be((long) decimal.One);
       Convert.To.Long((decimal) 1.5, format).Should().Be(2);
     }
-
-    using (new AssertionScope())
-    {
-      AssertionExtensions.Should(() => IConverterExtensions.Long(null, new object())).ThrowExactly<ArgumentNullException>().WithParameterName("convert");
-
-      Validate(null);
-      CultureInfo.GetCultures(CultureTypes.AllCultures).ForEach(Validate);
-    }
   }
 
   /// <summary>
@@ -976,6 +990,16 @@ public sealed class IConverterExtensionsTest : UnitTest
   [Fact]
   public void Convert_Ulong_Methods()
   {
+    using (new AssertionScope())
+    {
+      AssertionExtensions.Should(() => IConverterExtensions.Ulong(null, new object())).ThrowExactly<ArgumentNullException>().WithParameterName("convert");
+
+      Validate(null);
+      CultureInfo.GetCultures(CultureTypes.AllCultures).ForEach(Validate);
+    }
+
+    return;
+
     static void Validate(IFormatProvider format)
     {
       Convert.To.Ulong(null, format).Should().BeNull();
@@ -1028,14 +1052,6 @@ public sealed class IConverterExtensionsTest : UnitTest
       Convert.To.Ulong(decimal.One, format).Should().Be((ulong) decimal.One);
       Convert.To.Ulong((decimal) 1.5, format).Should().Be(2);
     }
-
-    using (new AssertionScope())
-    {
-      AssertionExtensions.Should(() => IConverterExtensions.Ulong(null, new object())).ThrowExactly<ArgumentNullException>().WithParameterName("convert");
-
-      Validate(null);
-      CultureInfo.GetCultures(CultureTypes.AllCultures).ForEach(Validate);
-    }
   }
 
   /// <summary>
@@ -1048,6 +1064,16 @@ public sealed class IConverterExtensionsTest : UnitTest
   [Fact]
   public void Convert_Float_Methods()
   {
+    using (new AssertionScope())
+    {
+      AssertionExtensions.Should(() => IConverterExtensions.Float(null, new object())).ThrowExactly<ArgumentNullException>().WithParameterName("convert");
+
+      Validate(null);
+      CultureInfo.GetCultures(CultureTypes.AllCultures).ForEach(Validate);
+    }
+
+    return;
+
     static void Validate(IFormatProvider format)
     {
       Convert.To.Float(null, format).Should().BeNull();
@@ -1104,14 +1130,6 @@ public sealed class IConverterExtensionsTest : UnitTest
         Convert.To.Float(float.MaxValue.ToString(format), format).Should().Be(float.MaxValue);
       }
     }
-
-    using (new AssertionScope())
-    {
-      AssertionExtensions.Should(() => IConverterExtensions.Float(null, new object())).ThrowExactly<ArgumentNullException>().WithParameterName("convert");
-
-      Validate(null);
-      CultureInfo.GetCultures(CultureTypes.AllCultures).ForEach(Validate);
-    }
   }
 
   /// <summary>
@@ -1124,6 +1142,16 @@ public sealed class IConverterExtensionsTest : UnitTest
   [Fact]
   public void Convert_Double_Methods()
   {
+    using (new AssertionScope())
+    {
+      AssertionExtensions.Should(() => IConverterExtensions.Double(null, new object())).ThrowExactly<ArgumentNullException>().WithParameterName("convert");
+
+      Validate(null);
+      CultureInfo.GetCultures(CultureTypes.AllCultures).ForEach(Validate);
+    }
+
+    return;
+
     static void Validate(IFormatProvider format)
     {
       Convert.To.Double(null, format).Should().BeNull();
@@ -1180,14 +1208,6 @@ public sealed class IConverterExtensionsTest : UnitTest
         Convert.To.Double(double.MaxValue.ToString(format), format).Should().Be(double.MaxValue);
       }
     }
-
-    using (new AssertionScope())
-    {
-      AssertionExtensions.Should(() => IConverterExtensions.Double(null, new object())).ThrowExactly<ArgumentNullException>().WithParameterName("convert");
-
-      Validate(null);
-      CultureInfo.GetCultures(CultureTypes.AllCultures).ForEach(Validate);
-    }
   }
 
   /// <summary>
@@ -1200,6 +1220,16 @@ public sealed class IConverterExtensionsTest : UnitTest
   [Fact]
   public void Convert_Decimal_Methods()
   {
+    using (new AssertionScope())
+    {
+      AssertionExtensions.Should(() => IConverterExtensions.Decimal(null, new object())).ThrowExactly<ArgumentNullException>().WithParameterName("convert");
+
+      Validate(null);
+      CultureInfo.GetCultures(CultureTypes.AllCultures).ForEach(Validate);
+    }
+
+    return;
+
     static void Validate(IFormatProvider format)
     {
       Convert.To.Decimal(null, format).Should().BeNull();
@@ -1242,14 +1272,6 @@ public sealed class IConverterExtensionsTest : UnitTest
       Convert.To.Decimal(decimal.Zero, format).Should().Be(decimal.Zero);
       Convert.To.Decimal(decimal.One, format).Should().Be(decimal.One);
     }
-
-    using (new AssertionScope())
-    {
-      AssertionExtensions.Should(() => IConverterExtensions.Decimal(null, new object())).ThrowExactly<ArgumentNullException>().WithParameterName("convert");
-
-      Validate(null);
-      CultureInfo.GetCultures(CultureTypes.AllCultures).ForEach(Validate);
-    }
   }
 
   /// <summary>
@@ -1282,6 +1304,16 @@ public sealed class IConverterExtensionsTest : UnitTest
   [Fact]
   public void Convert_DateTime_Methods()
   {
+    using (new AssertionScope())
+    {
+      AssertionExtensions.Should(() => IConverterExtensions.DateTime(null, new object())).ThrowExactly<ArgumentNullException>().WithParameterName("convert");
+
+      Validate(null);
+      CultureInfo.GetCultures(CultureTypes.AllCultures).ForEach(Validate);
+    }
+
+    return;
+
     static void Validate(IFormatProvider format)
     {
       foreach (var date in new[] { DateTime.MinValue, DateTime.MaxValue, DateTime.Now, DateTime.UtcNow })
@@ -1294,18 +1326,10 @@ public sealed class IConverterExtensionsTest : UnitTest
         Convert.To.DateTime($" {utcDate.ToString("o", format)} ", format).Should().Be(utcDate);
 
         Convert.To.DateTime(date, format).Should().Be(date);
-        Convert.To.DateTime(Extensions.DateTimeExtensions.ToDateTimeOffset(date), format).Should().Be(utcDate);
+        Convert.To.DateTime(date.ToDateTimeOffset(), format).Should().Be(utcDate);
         Convert.To.DateTime(date.ToDateOnly(), format).Should().Be(date.TruncateToDayStart());
         Convert.To.DateTime(date.ToTimeOnly(), format).Should().Be(DateTime.UtcNow.TruncateToDayStart().Add(date.ToTimeOnly().ToTimeSpan()));
       }
-    }
-
-    using (new AssertionScope())
-    {
-      AssertionExtensions.Should(() => IConverterExtensions.DateTime(null, new object())).ThrowExactly<ArgumentNullException>().WithParameterName("convert");
-
-      Validate(null);
-      CultureInfo.GetCultures(CultureTypes.AllCultures).ForEach(Validate);
     }
   }
 
@@ -1319,6 +1343,16 @@ public sealed class IConverterExtensionsTest : UnitTest
   [Fact]
   public void Convert_DateTimeOffset_Methods()
   {
+    using (new AssertionScope())
+    {
+      AssertionExtensions.Should(() => IConverterExtensions.DateTimeOffset(null, new object())).ThrowExactly<ArgumentNullException>().WithParameterName("convert");
+
+      Validate(null);
+      CultureInfo.GetCultures(CultureTypes.AllCultures).ForEach(Validate);
+    }
+
+    return;
+
     static void Validate(IFormatProvider format)
     {
       foreach (var date in new[] { DateTime.MinValue, DateTime.MaxValue, DateTime.Now, DateTime.UtcNow })
@@ -1336,14 +1370,6 @@ public sealed class IConverterExtensionsTest : UnitTest
         Convert.To.DateTimeOffset(date.ToTimeOnly(), format).Should().Be(DateTime.UtcNow.TruncateToDayStart().Add(date.ToTimeOnly().ToTimeSpan()));
       }
     }
-
-    using (new AssertionScope())
-    {
-      AssertionExtensions.Should(() => IConverterExtensions.DateTimeOffset(null, new object())).ThrowExactly<ArgumentNullException>().WithParameterName("convert");
-
-      Validate(null);
-      CultureInfo.GetCultures(CultureTypes.AllCultures).ForEach(Validate);
-    }
   }
 
   /// <summary>
@@ -1356,6 +1382,16 @@ public sealed class IConverterExtensionsTest : UnitTest
   [Fact]
   public void Convert_DateOnly_Methods()
   {
+    using (new AssertionScope())
+    {
+      AssertionExtensions.Should(() => IConverterExtensions.DateOnly(null, new object())).ThrowExactly<ArgumentNullException>().WithParameterName("convert");
+
+      Validate(null);
+      CultureInfo.GetCultures(CultureTypes.AllCultures).ForEach(Validate);
+    }
+
+    return;
+
     static void Validate(IFormatProvider format)
     {
       foreach (var date in new[] { DateTime.MinValue, DateTime.MaxValue, DateTime.Now, DateTime.UtcNow })
@@ -1373,14 +1409,6 @@ public sealed class IConverterExtensionsTest : UnitTest
         Convert.To.DateOnly(dateOnly, format).Should().Be(dateOnly);
       }
     }
-
-    using (new AssertionScope())
-    {
-      AssertionExtensions.Should(() => IConverterExtensions.DateOnly(null, new object())).ThrowExactly<ArgumentNullException>().WithParameterName("convert");
-
-      Validate(null);
-      CultureInfo.GetCultures(CultureTypes.AllCultures).ForEach(Validate);
-    }
   }
 
   /// <summary>
@@ -1393,6 +1421,16 @@ public sealed class IConverterExtensionsTest : UnitTest
   [Fact]
   public void Convert_TimeOnly_Methods()
   {
+    using (new AssertionScope())
+    {
+      AssertionExtensions.Should(() => IConverterExtensions.TimeOnly(null, new object())).ThrowExactly<ArgumentNullException>().WithParameterName("convert");
+
+      Validate(null);
+      CultureInfo.GetCultures(CultureTypes.AllCultures).ForEach(Validate);
+    }
+
+    return;
+
     static void Validate(IFormatProvider format)
     {
       foreach (var date in new[] { DateTime.MinValue, DateTime.MaxValue, DateTime.Now, DateTime.UtcNow })
@@ -1410,14 +1448,6 @@ public sealed class IConverterExtensionsTest : UnitTest
         Convert.To.TimeOnly(utcDate.ToDateTimeOffset(), format).Should().Be(timeOnly);
         Convert.To.TimeOnly(timeOnly, format).Should().Be(timeOnly);
       }
-    }
-
-    using (new AssertionScope())
-    {
-      AssertionExtensions.Should(() => IConverterExtensions.TimeOnly(null, new object())).ThrowExactly<ArgumentNullException>().WithParameterName("convert");
-
-      Validate(null);
-      CultureInfo.GetCultures(CultureTypes.AllCultures).ForEach(Validate);
     }
   }
 
