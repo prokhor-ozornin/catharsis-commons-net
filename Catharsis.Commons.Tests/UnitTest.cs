@@ -6,7 +6,7 @@ namespace Catharsis.Commons.Tests;
 /// <summary>
 ///   <para></para>
 /// </summary>
-public abstract class UnitTest : IDisposable
+public abstract class UnitTest : AbstractTest
 {
   /// <summary>
   ///   <para></para>
@@ -16,17 +16,7 @@ public abstract class UnitTest : IDisposable
   /// <summary>
   ///   <para></para>
   /// </summary>
-  protected CancellationToken Cancellation { get; } = new(true);
-
-  /// <summary>
-  ///   <para></para>
-  /// </summary>
   protected Uri LocalHost { get; } = "https://localhost".ToUri();
-
-  /// <summary>
-  ///   <para></para>
-  /// </summary>
-  protected Random Randomizer { get; } = new();
 
   /// <summary>
   ///   <para></para>
@@ -86,8 +76,5 @@ public abstract class UnitTest : IDisposable
   /// <summary>
   ///   <para></para>
   /// </summary>
-  public virtual void Dispose()
-  {
-    EmptySecureString.Dispose();
-  }
+  public override void Dispose() => EmptySecureString.Dispose();
 }

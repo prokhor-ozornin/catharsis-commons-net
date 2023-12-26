@@ -63,6 +63,8 @@
     <Compile Include="..\Catharsis.Commons\Interfaces\IBuilder.cs" Link="Interfaces\IBuilder.cs" />
     <Compile Include="..\Catharsis.Commons\Interfaces\ITimeAware.cs" Link="Interfaces\ITimeAware.cs" />
     <Compile Include="..\Catharsis.Commons\Interfaces\IValidateable.cs" Link="Interfaces\IValidateable.cs" />
+    <Compile Include="..\Catharsis.Commons\Tests\AbstractTest.cs" Link="Tests\AbstractTest.cs" />
+    <Compile Include="..\Catharsis.Commons\Tests\ClassTest.cs" Link="Tests\ClassTest.cs" />
   </ItemGroup>
 
   <ItemGroup>
@@ -79,9 +81,11 @@
     <Folder Include="Conversion\Converters\" />
     <Folder Include="Conversion\Extensions\" />
     <Folder Include="Interfaces\Extensions\" />
+    <Folder Include="Tests\" />
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="FluentAssertions" Version="6.12.0" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
   </ItemGroup>
 </Project>
