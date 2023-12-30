@@ -51,7 +51,7 @@ public sealed class HttpContentConvertersTest : UnitTest
   public void TextAsync_Method()
   {
     AssertionExtensions.Should(() => HttpContentConverters.TextAsync(null)).ThrowExactlyAsync<ArgumentNullException>().WithParameterName("conversion").Await();
-    AssertionExtensions.Should(() => Conversion.TextAsync(Cancellation)).ThrowExactlyAsync<OperationCanceledException>().Await();
+    AssertionExtensions.Should(() => Conversion.TextAsync(Attributes.CancellationToken())).ThrowExactlyAsync<OperationCanceledException>().Await();
 
     throw new NotImplementedException();
   }
@@ -74,7 +74,7 @@ public sealed class HttpContentConvertersTest : UnitTest
   public void StreamAsync_Method()
   {
     AssertionExtensions.Should(() => HttpContentConverters.StreamAsync(null)).ThrowExactlyAsync<ArgumentNullException>().WithParameterName("conversion").Await();
-    AssertionExtensions.Should(() => Conversion.StreamAsync(Cancellation)).ThrowExactlyAsync<OperationCanceledException>().Await();
+    AssertionExtensions.Should(() => Conversion.StreamAsync(Attributes.CancellationToken())).ThrowExactlyAsync<OperationCanceledException>().Await();
 
     throw new NotImplementedException();
   }

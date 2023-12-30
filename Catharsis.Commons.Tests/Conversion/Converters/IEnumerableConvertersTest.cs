@@ -252,14 +252,14 @@ public sealed class IEnumerableConvertersTest : UnitTest
     using (new AssertionScope())
     {
       AssertionExtensions.Should(() => ((IConversion<IEnumerable<byte>>) null).MemoryStreamAsync()).ThrowExactlyAsync<ArgumentNullException>().WithParameterName("conversion").Await();
-      AssertionExtensions.Should(() => ((IConversion<IEnumerable<byte>>) null).MemoryStreamAsync(Cancellation)).ThrowExactlyAsync<OperationCanceledException>().Await();
+      AssertionExtensions.Should(() => ((IConversion<IEnumerable<byte>>) null).MemoryStreamAsync(Attributes.CancellationToken())).ThrowExactlyAsync<OperationCanceledException>().Await();
 
     }
 
     using (new AssertionScope())
     {
       AssertionExtensions.Should(() => ((IConversion<IEnumerable<byte[]>>) null).MemoryStreamAsync()).ThrowExactlyAsync<ArgumentNullException>().WithParameterName("conversion").Await();
-      AssertionExtensions.Should(() => ((IConversion<IEnumerable<byte[]>>) null).MemoryStreamAsync(Cancellation)).ThrowExactlyAsync<OperationCanceledException>().Await();
+      AssertionExtensions.Should(() => ((IConversion<IEnumerable<byte[]>>) null).MemoryStreamAsync(Attributes.CancellationToken())).ThrowExactlyAsync<OperationCanceledException>().Await();
 
     }
 

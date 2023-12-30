@@ -25,7 +25,7 @@ public sealed class FuncConvertersTest : UnitTest
     using (new AssertionScope())
     {
       AssertionExtensions.Should(() => FuncConverters.Task<object>(null)).ThrowExactlyAsync<ArgumentNullException>().WithParameterName("conversion").Await();
-      AssertionExtensions.Should(() => FuncConverters.Task<object>(null, TaskCreationOptions.None, Cancellation)).ThrowExactlyAsync<ArgumentNullException>().WithParameterName("conversion").Await();
+      AssertionExtensions.Should(() => FuncConverters.Task<object>(null, TaskCreationOptions.None, Attributes.CancellationToken())).ThrowExactlyAsync<ArgumentNullException>().WithParameterName("conversion").Await();
 
     }
 

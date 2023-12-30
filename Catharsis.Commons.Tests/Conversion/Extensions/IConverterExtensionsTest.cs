@@ -32,7 +32,7 @@ public sealed class IConverterExtensionsTest : UnitTest
   {
     void ValidateBinaryReader(Encoding encoding)
     {
-      var text = RandomString;
+      var text = Attributes.RandomString();
 
       using (var reader = Stream.Null.ToBinaryReader(encoding))
       {
@@ -59,14 +59,14 @@ public sealed class IConverterExtensionsTest : UnitTest
 
     void ValidateFile(Encoding encoding)
     {
-      AssertionExtensions.Should(() => Convert.To.String(RandomFakeFile)).ThrowExactly<AggregateException>().WithInnerExceptionExactly<FileNotFoundException>();
+      AssertionExtensions.Should(() => Convert.To.String(Attributes.RandomFakeFile())).ThrowExactly<AggregateException>().WithInnerExceptionExactly<FileNotFoundException>();
 
-      RandomEmptyFile.TryFinallyDelete(file =>
+      Attributes.RandomEmptyFile().TryFinallyDelete(file =>
       {
         Convert.To.String(file, encoding).Should().NotBeNull().And.BeSameAs(Convert.To.String(file, encoding)).And.BeEmpty();
       });
 
-      RandomNonEmptyFile.TryFinallyDelete(x =>
+      Attributes.RandomNonEmptyFile().TryFinallyDelete(x =>
       {
         Convert.To.String(x, encoding).Should().NotBeNull().And.NotBeSameAs(Convert.To.String(x, encoding)).And.Be(x.ToTextAsync(encoding).Await());
       });
@@ -79,7 +79,7 @@ public sealed class IConverterExtensionsTest : UnitTest
         Convert.To.String(stream, encoding).Should().NotBeNull().And.BeSameAs(Convert.To.String(stream, encoding)).And.BeEmpty();
       }
 
-      using (var stream = RandomStream)
+      using (var stream = Attributes.RandomStream())
       {
         Convert.To.String(stream, encoding).Should().NotBeNull().And.NotBeSameAs(Convert.To.String(stream.MoveToStart(), encoding)).And.Be(stream.MoveToStart().ToTextAsync(encoding).Await());
       }
@@ -87,7 +87,7 @@ public sealed class IConverterExtensionsTest : UnitTest
 
     void ValidateUri(Encoding encoding)
     {
-      var file = RandomNonEmptyFile;
+      var file = Attributes.RandomNonEmptyFile();
 
       file.TryFinallyDelete(file =>
       {
@@ -110,7 +110,7 @@ public sealed class IConverterExtensionsTest : UnitTest
     // String
     using (new AssertionScope())
     {
-      var text = RandomString;
+      var text = Attributes.RandomString();
 
       Convert.To.String(string.Empty).Should().NotBeNull().And.BeSameAs(Convert.To.String(string.Empty)).And.BeEmpty();
       Convert.To.String(text).Should().NotBeNull().And.BeSameAs(Convert.To.String(text)).And.Be(text);
@@ -126,12 +126,12 @@ public sealed class IConverterExtensionsTest : UnitTest
     // SecureString
     using (new AssertionScope())
     {
-      using (var secure = EmptySecureString)
+      using (var secure = Attributes.EmptySecureString())
       {
         Convert.To.String(secure).Should().NotBeNull().And.BeSameAs(Convert.To.String(secure)).And.BeEmpty();
       }
 
-      using (var secure = RandomSecureString)
+      using (var secure = Attributes.RandomSecureString())
       {
         Convert.To.String(secure).Should().NotBeNull().And.NotBeSameAs(Convert.To.String(secure)).And.Be(secure.ToText());
       }
@@ -152,7 +152,7 @@ public sealed class IConverterExtensionsTest : UnitTest
         Convert.To.String(content).Should().NotBeNull().And.BeSameAs(Convert.To.String(content)).And.BeEmpty();
       }
 
-      var text = RandomString;
+      var text = Attributes.RandomString();
       using (var content = new StringContent(text))
       {
         Convert.To.String(content).Should().NotBeNullOrEmpty().And.NotBeSameAs(Convert.To.String(content)).And.Be(text);
@@ -162,7 +162,7 @@ public sealed class IConverterExtensionsTest : UnitTest
     // Process
     using (new AssertionScope())
     {
-      var process = ShellCommand.Execute("/c", "dir");
+      var process = Attributes.ShellCommand().Execute("/c", "dir");
       process.Start();
       process.Finish(TimeSpan.FromSeconds(5));
       Convert.To.String(process).Should().NotBeNullOrEmpty().And.NotBeSameAs(Convert.To.String(process));
@@ -178,7 +178,7 @@ public sealed class IConverterExtensionsTest : UnitTest
     // TextReader
     using (new AssertionScope())
     {
-      var text = RandomString;
+      var text = Attributes.RandomString();
 
       using (var reader = Stream.Null.ToStreamReader())
       {
@@ -217,7 +217,7 @@ public sealed class IConverterExtensionsTest : UnitTest
     // XmlReader
     using (new AssertionScope())
     {
-      var value = RandomName;
+      var value = Attributes.RandomName();
       var xml = new XDocument(new XElement("root", value));
       using (var reader = xml.ToTextAsync().Await().ToXmlReader())
       {
@@ -245,7 +245,7 @@ public sealed class IConverterExtensionsTest : UnitTest
   {
     void ValidateString(Encoding encoding)
     {
-      var text = RandomString;
+      var text = Attributes.RandomString();
 
       Convert.To.Binary(string.Empty, encoding).Should().NotBeNull().And.BeSameAs(Convert.To.Binary(string.Empty, encoding)).And.BeEmpty();
       Convert.To.Binary(text, encoding).Should().NotBeNull().And.NotBeSameAs(Convert.To.Binary(text, encoding)).And.Equal((encoding ?? Encoding.Default).GetBytes(text));
@@ -253,12 +253,12 @@ public sealed class IConverterExtensionsTest : UnitTest
 
     void ValidateSecureString(Encoding encoding)
     {
-      using (var secure = EmptySecureString)
+      using (var secure = Attributes.EmptySecureString())
       {
         Convert.To.Binary(secure, encoding).Should().NotBeNull().And.BeSameAs(Convert.To.Binary(secure, encoding)).And.BeEmpty();
       }
 
-      using (var secure = RandomSecureString)
+      using (var secure = Attributes.RandomSecureString())
       {
         Convert.To.Binary(secure, encoding).Should().NotBeNull().And.NotBeSameAs(Convert.To.Binary(secure, encoding)).And.Equal(secure.ToBytes(encoding));
       }
@@ -287,7 +287,7 @@ public sealed class IConverterExtensionsTest : UnitTest
       Convert.To.Binary(Enumerable.Empty<byte>()).Should().NotBeNull().And.BeSameAs(Convert.To.Binary(Enumerable.Empty<byte>())).And.NotBeSameAs(Enumerable.Empty<byte>()).And.BeEmpty();
       Convert.To.Binary(Array.Empty<byte>()).Should().NotBeNull().And.BeSameAs(Convert.To.Binary(Array.Empty<byte>())).And.BeSameAs(Array.Empty<byte>()).And.BeEmpty();
 
-      var bytes = RandomBytes;
+      var bytes = Attributes.RandomBytes();
       Convert.To.Binary(bytes).Should().NotBeNull().And.BeSameAs(Convert.To.Binary(bytes)).And.BeSameAs(bytes).And.Equal(bytes);
     }
 
@@ -314,14 +314,14 @@ public sealed class IConverterExtensionsTest : UnitTest
     // FileInfo
     using (new AssertionScope())
     {
-      AssertionExtensions.Should(() => Convert.To.Binary(RandomFakeFile)).ThrowExactly<AggregateException>().WithInnerExceptionExactly<FileNotFoundException>();
+      AssertionExtensions.Should(() => Convert.To.Binary(Attributes.RandomFakeFile())).ThrowExactly<AggregateException>().WithInnerExceptionExactly<FileNotFoundException>();
 
-      RandomEmptyFile.TryFinallyDelete(file =>
+      Attributes.RandomEmptyFile().TryFinallyDelete(file =>
       {
         Convert.To.Binary(file).Should().NotBeNull().And.BeSameAs(Convert.To.Binary(file)).And.BeEmpty();
       });
 
-      RandomNonEmptyFile.TryFinallyDelete(file =>
+      Attributes.RandomNonEmptyFile().TryFinallyDelete(file =>
       {
         Convert.To.Binary(file).Should().NotBeNull().And.NotBeSameAs(Convert.To.Binary(file)).And.Equal(file.ToBytesAsync().ToArray());
       });
@@ -339,7 +339,7 @@ public sealed class IConverterExtensionsTest : UnitTest
     // PhysicalAddress
     using (new AssertionScope())
     {
-      foreach (var address in new[] { PhysicalAddress.None, new PhysicalAddress(RandomBytes) })
+      foreach (var address in new[] { PhysicalAddress.None, new PhysicalAddress(Attributes.RandomBytes()) })
       {
         Convert.To.Binary(address).Should().NotBeNull().And.NotBeSameAs(Convert.To.Binary(address)).And.Equal(address.ToBytes());
       }
@@ -353,7 +353,7 @@ public sealed class IConverterExtensionsTest : UnitTest
         Convert.To.Binary(content).Should().NotBeNull().And.BeSameAs(Convert.To.Binary(content)).And.BeEmpty();
       }
 
-      var bytes = RandomBytes;
+      var bytes = Attributes.RandomBytes();
       using (var content = new ByteArrayContent(bytes))
       {
         Convert.To.Binary(content).Should().NotBeNull().And.NotBeSameAs(Convert.To.Binary(content)).And.Equal(bytes);
@@ -363,7 +363,7 @@ public sealed class IConverterExtensionsTest : UnitTest
     // Process
     using (new AssertionScope())
     {
-      var process = ShellCommand.Execute("/c", "dir");
+      var process = Attributes.ShellCommand().Execute("/c", "dir");
       process.Start();
       process.Finish(TimeSpan.FromSeconds(5));
       Convert.To.Binary(process).Should().NotBeNullOrEmpty().And.NotBeSameAs(Convert.To.Binary(process));
@@ -377,7 +377,7 @@ public sealed class IConverterExtensionsTest : UnitTest
         Convert.To.Binary(stream).Should().NotBeNull().And.BeSameAs(Convert.To.Binary(stream)).And.BeEmpty();
       }
 
-      using (var stream = RandomStream)
+      using (var stream = Attributes.RandomStream())
       {
         Convert.To.Binary(stream).Should().NotBeNull().And.NotBeSameAs(Convert.To.Binary(stream.MoveToStart())).And.Equal(stream.ToArray());
       }
@@ -385,7 +385,7 @@ public sealed class IConverterExtensionsTest : UnitTest
 
     using (new AssertionScope())
     {
-      var file = RandomNonEmptyFile;
+      var file = Attributes.RandomNonEmptyFile();
       var bytes = file.ToBytesAsync().ToArray();
 
       file.TryFinallyDelete(file =>
@@ -437,17 +437,17 @@ public sealed class IConverterExtensionsTest : UnitTest
     // Array
     Convert.To.Array<object>(Array.Empty<object>()).Should().NotBeNull().And.BeSameAs(Convert.To.Array<object>(Array.Empty<object>())).And.BeSameAs(Array.Empty<object>()).And.BeEmpty();
 
-    var array = 1000.Objects(() => RandomString).AsArray();
+    var array = 1000.Objects(() => Attributes.RandomString()).AsArray();
     Convert.To.Array<string>(array).Should().NotBeNull().And.BeSameAs(Convert.To.Array<string>(array)).And.BeSameAs(array).And.Equal(array);
 
     // IEnumerable
     Convert.To.Array<object>(Enumerable.Empty<object>()).Should().NotBeNull().And.BeSameAs(Convert.To.Array<object>(Enumerable.Empty<object>())).And.NotBeSameAs(Enumerable.Empty<object>()).And.BeEmpty();
 
-    var list = 1000.Objects(() => RandomString).ToList();
+    var list = 1000.Objects(() => Attributes.RandomString()).ToList();
     Convert.To.Array<object>(list).Should().NotBeNull().And.NotBeSameAs(Convert.To.Array<object>(list)).And.Equal(list);
 
     // IAsyncEnumerable
-    using (var stream = RandomStream)
+    using (var stream = Attributes.RandomStream())
     {
       var sequence = stream.ToBytesAsync();
       var result = Convert.To.Array<byte>(sequence);
@@ -1528,7 +1528,7 @@ public sealed class IConverterExtensionsTest : UnitTest
 
     Convert.To.Uri(null).Should().BeNull();
 
-    var uri = LocalHost;
+    var uri = Attributes.LocalHost();
     Convert.To.Uri(uri).Should().NotBeNull().And.BeSameAs(uri);
 
     uri = Convert.To.Uri(string.Empty);
@@ -1596,7 +1596,7 @@ public sealed class IConverterExtensionsTest : UnitTest
     builder.MaxCapacity.Should().Be(int.MaxValue);
     builder.ToString().Should().BeEmpty();
 
-    var value = RandomString;
+    var value = Attributes.RandomString();
     builder = Convert.To.StringBuilder(value);
     builder.Should().NotBeNull();
     builder.Length.Should().Be(value.Length);
@@ -1648,12 +1648,12 @@ public sealed class IConverterExtensionsTest : UnitTest
 
     Convert.To.Directory(null).Should().BeNull();
 
-    Convert.To.Directory(RandomName).Should().BeNull();
+    Convert.To.Directory(Attributes.RandomName()).Should().BeNull();
 
-    var directory = RandomFakeDirectory;
+    var directory = Attributes.RandomFakeDirectory();
     Convert.To.Directory(directory).Should().NotBeNull().And.BeSameAs(directory);
 
-    RandomDirectory.TryFinallyDelete(directory =>
+    Attributes.RandomDirectory().TryFinallyDelete(directory =>
     {
       Convert.To.Directory(directory.FullName).Should().NotBeNull().And.NotBeSameAs(Convert.To.Directory(directory.FullName));
     });
@@ -1673,12 +1673,12 @@ public sealed class IConverterExtensionsTest : UnitTest
 
     Convert.To.File(null).Should().BeNull();
 
-    Convert.To.File(RandomName).Should().BeNull();
+    Convert.To.File(Attributes.RandomName()).Should().BeNull();
 
-    var file = RandomFakeFile;
+    var file = Attributes.RandomFakeFile();
     Convert.To.File(file).Should().NotBeNull().And.BeSameAs(file);
 
-    RandomEmptyFile.TryFinallyDelete(file =>
+    Attributes.RandomEmptyFile().TryFinallyDelete(file =>
     {
       Convert.To.File(file.FullName).Should().NotBeNull().And.NotBeSameAs(Convert.To.File(file.FullName));
     });
@@ -1698,7 +1698,7 @@ public sealed class IConverterExtensionsTest : UnitTest
 
     Convert.To.Type(null).Should().BeNull();
     Convert.To.Type(string.Empty).Should().BeNull();
-    Convert.To.Type(RandomName).Should().BeNull();
+    Convert.To.Type(Attributes.RandomName()).Should().BeNull();
 
     Convert.To.Type(nameof(Object)).Should().BeNull();
     Convert.To.Type(typeof(object).FullName).Should().NotBeNull().And.BeSameAs(Convert.To.Type(typeof(object).FullName)).And.Be(typeof(object));
@@ -1789,14 +1789,14 @@ public sealed class IConverterExtensionsTest : UnitTest
     Convert.To.Boolean(Enumerable.Empty<object>()).Should().BeFalse();
     Convert.To.Boolean(new object[] { new() }).Should().BeTrue();
 
-    Convert.To.Boolean(RandomFakeFile).Should().BeFalse();
+    Convert.To.Boolean(Attributes.RandomFakeFile()).Should().BeFalse();
     Convert.To.Boolean(Assembly.GetExecutingAssembly().Location.ToFile()).Should().BeTrue();
 
-    Convert.To.Boolean(RandomFakeDirectory).Should().BeFalse();
+    Convert.To.Boolean(Attributes.RandomFakeDirectory()).Should().BeFalse();
     Convert.To.Boolean(Environment.SystemDirectory.ToDirectory()).Should().BeTrue();
 
     Convert.To.Boolean(Stream.Null).Should().BeFalse();
-    using (var stream = Randomizer.MemoryStreamAsync(1).Await())
+    using (var stream = Attributes.Random().MemoryStreamAsync(1).Await())
     {
       Convert.To.Boolean(stream).Should().BeTrue();
     }
@@ -1805,7 +1805,7 @@ public sealed class IConverterExtensionsTest : UnitTest
     {
       Convert.To.Boolean(reader).Should().BeFalse();
     }
-    using (var stream = Randomizer.MemoryStreamAsync(1, byte.MinValue, byte.MinValue).Await())
+    using (var stream = Attributes.Random().MemoryStreamAsync(1, byte.MinValue, byte.MinValue).Await())
     {
       using (var reader = stream.ToBinaryReader())
       {
@@ -1817,17 +1817,17 @@ public sealed class IConverterExtensionsTest : UnitTest
     {
       Convert.To.Boolean(reader).Should().BeFalse();
     }
-    using (var reader = Randomizer.String(1).ToStringReader())
+    using (var reader = Attributes.Random().String(1).ToStringReader())
     {
       Convert.To.Boolean(reader).Should().BeTrue();
     }
 
     Convert.To.Boolean(Match.Empty).Should().BeFalse();
-    Convert.To.Boolean(Regex.Match(RandomName, ".*")).Should().BeTrue();
+    Convert.To.Boolean(Regex.Match(Attributes.RandomName(), ".*")).Should().BeTrue();
 
     Convert.To.Boolean(new StringBuilder()).Should().BeFalse();
     Convert.To.Boolean(new StringBuilder(string.Empty)).Should().BeFalse();
-    Convert.To.Boolean(new StringBuilder(Randomizer.String(1))).Should().BeTrue();
+    Convert.To.Boolean(new StringBuilder(Attributes.Random().String(1))).Should().BeTrue();
 
     using (var secure = new SecureString())
     {

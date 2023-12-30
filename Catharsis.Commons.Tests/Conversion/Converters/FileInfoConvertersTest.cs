@@ -10,7 +10,9 @@ namespace Catharsis.Commons.Tests;
 /// </summary>
 public sealed class FileInfoConvertersTest : UnitTest
 {
-  private IConversion<FileInfo> Conversion { get; } = RandomFakeFile.Convert();
+  private IConversion<FileInfo> Conversion { get; }
+
+  public FileInfoConvertersTest() => Conversion = Attributes.RandomFakeFile().Convert();
 
   /// <summary>
   ///   <para>Performs testing of <see cref="FileInfoConverters.Bytes(IConversion{FileInfo}, string)"/> method.</para>
