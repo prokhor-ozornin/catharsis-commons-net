@@ -67,11 +67,17 @@
     <Compile Include="..\Catharsis.Commons\Interfaces\Extensions\ObjectExtensions.cs" Link="Interfaces\Extensions\ObjectExtensions.cs" />
     <Compile Include="..\Catharsis.Commons\Interfaces\IBuilder.cs" Link="Interfaces\IBuilder.cs" />
     <Compile Include="..\Catharsis.Commons\Interfaces\ITimeAware.cs" Link="Interfaces\ITimeAware.cs" />
+    <Compile Include="..\Catharsis.Commons\Interfaces\ITypedCloneable.cs" Link="Interfaces\ITypedCloneable.cs" />
     <Compile Include="..\Catharsis.Commons\Interfaces\IValidateable.cs" Link="Interfaces\IValidateable.cs" />
-    <Compile Include="..\Catharsis.Commons\Tests\AbstractTest.cs" Link="Tests\AbstractTest.cs" />
+    <Compile Include="..\Catharsis.Commons\Plugin\IPlugin.cs" Link="Plugin\IPlugin.cs" />
+    <Compile Include="..\Catharsis.Commons\Plugin\IPluginManager.cs" Link="Plugin\IPluginManager.cs" />
+    <Compile Include="..\Catharsis.Commons\Plugin\IPluginManagerExtensions.cs" Link="Plugin\IPluginManagerExtensions.cs" />
+    <Compile Include="..\Catharsis.Commons\Plugin\PluginManager.cs" Link="Plugin\PluginManager.cs" />
     <Compile Include="..\Catharsis.Commons\Tests\ClassTest.cs" Link="Tests\ClassTest.cs" />
     <Compile Include="..\Catharsis.Commons\Tests\ITestable.cs" Link="Tests\ITestable.cs" />
     <Compile Include="..\Catharsis.Commons\Tests\ITestAttributes.cs" Link="Tests\ITestAttributes.cs" />
+    <Compile Include="..\Catharsis.Commons\Tests\ITestAttributesExtensions.cs" Link="Tests\ITestAttributesExtensions.cs" />
+    <Compile Include="..\Catharsis.Commons\Tests\UnitTest.cs" Link="Tests\UnitTest.cs" />
   </ItemGroup>
 
   <ItemGroup>
@@ -89,6 +95,7 @@
     <Folder Include="Conversion\Extensions\" />
     <Folder Include="Interfaces\Extensions\" />
     <Folder Include="Attributes\" />
+    <Folder Include="Plugin\" />
     <Folder Include="Tests\" />
   </ItemGroup>
 

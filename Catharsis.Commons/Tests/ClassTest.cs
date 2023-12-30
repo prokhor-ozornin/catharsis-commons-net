@@ -3,11 +3,11 @@ using FluentAssertions;
 
 namespace Catharsis.Commons;
 
-public class ClassTest<T> : AbstractTest
+public class ClassTest<T> : UnitTest
 {
   protected void TestCompareTo<TProperty>(string property, TProperty lower, TProperty greater, Func<T> constructor = null)
   {
-    constructor ??= () => typeof(T).Instance().To<T>();
+    constructor ??= () => typeof(T).Instance<T>();
 
     var first = constructor().To<IComparable<T>>();
     var second = constructor().To<T>();
@@ -22,7 +22,7 @@ public class ClassTest<T> : AbstractTest
 
   protected void TestEquality<TProperty>(string property, TProperty oldValue, TProperty newValue, Func<T> constructor = null)
   {
-    constructor ??= () => typeof(T).Instance().To<T>();
+    constructor ??= () => typeof(T).Instance<T>();
     var entity = constructor();
 
     entity.Equals(new object()).Should().BeFalse();
@@ -36,7 +36,7 @@ public class ClassTest<T> : AbstractTest
 
   protected void TestHashCode<TProperty>(string property, TProperty oldValue, TProperty newValue, Func<T> constructor = null)
   {
-    constructor ??= () => typeof(T).Instance().To<T>();
+    constructor ??= () => typeof(T).Instance<T>();
     var entity = constructor();
 
     entity.GetHashCode().Should().Be(entity.GetHashCode());

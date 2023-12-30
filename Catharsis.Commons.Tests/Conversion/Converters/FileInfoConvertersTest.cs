@@ -140,7 +140,7 @@ public sealed class FileInfoConvertersTest : UnitTest
   public void XDocumentAsync_Method()
   {
     AssertionExtensions.Should(() => FileInfoConverters.XDocumentAsync(null)).ThrowExactlyAsync<ArgumentNullException>().WithParameterName("conversion").Await();
-    AssertionExtensions.Should(() => Conversion.XDocumentAsync(Cancellation)).ThrowExactlyAsync<OperationCanceledException>().Await();
+    AssertionExtensions.Should(() => Conversion.XDocumentAsync(Attributes.CancellationToken())).ThrowExactlyAsync<OperationCanceledException>().Await();
 
     throw new NotImplementedException();
   }
