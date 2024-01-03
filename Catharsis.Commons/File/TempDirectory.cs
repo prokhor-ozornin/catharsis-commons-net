@@ -46,7 +46,7 @@ public class TempDirectory : IDisposable
       return;
     }
 
-    Directory.Delete();
+    Directory.Delete(true);
 
     disposed = true;
   }
