@@ -1,4 +1,6 @@
-﻿namespace Catharsis.Commons;
+﻿using Catharsis.Extensions;
+
+namespace Catharsis.Commons;
 
 /// <summary>
 ///   <para></para>
@@ -12,6 +14,14 @@ public static class ITestAttributesExtensions
   /// <returns></returns>
   /// <exception cref="ArgumentNullException"></exception>
   public static Guid Guid(this ITestAttributes attributes) => attributes?.Retrieve(nameof(Guid), System.Guid.NewGuid()) ?? throw new ArgumentNullException(nameof(attributes));
+
+  /// <summary>
+  ///   <para></para>
+  /// </summary>
+  /// <param name="attributes"></param>
+  /// <returns></returns>
+  /// <exception cref="ArgumentNullException"></exception>
+  public static Uri LocalHost(this ITestAttributes attributes) => attributes?.Retrieve(nameof(LocalHost), "http://localhost".ToUri()) ?? throw new ArgumentNullException(nameof(attributes));
 
   /// <summary>
   ///   <para></para>

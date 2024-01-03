@@ -61,6 +61,8 @@
     <Compile Include="..\Catharsis.Commons\Conversion\Extensions\ObjectExtensions.cs" Link="Conversion\Extensions\ObjectExtensions.cs" />
     <Compile Include="..\Catharsis.Commons\Conversion\IConversion.cs" Link="Conversion\IConversion.cs" />
     <Compile Include="..\Catharsis.Commons\Conversion\IConverter.cs" Link="Conversion\IConverter.cs" />
+    <Compile Include="..\Catharsis.Commons\File\TempDirectory.cs" Link="File\TempDirectory.cs" />
+    <Compile Include="..\Catharsis.Commons\File\TempFile.cs" Link="File\TempFile.cs" />
     <Compile Include="..\Catharsis.Commons\Interfaces\Extensions\ITimeAwareExtensions.cs" Link="Interfaces\Extensions\ITimeAwareExtensions.cs" />
     <Compile Include="..\Catharsis.Commons\Interfaces\Extensions\IValidateableExtensions.cs" Link="Interfaces\Extensions\IValidateableExtensions.cs" />
     <Compile Include="..\Catharsis.Commons\Interfaces\Extensions\ObjectExtensions.cs" Link="Interfaces\Extensions\ObjectExtensions.cs" />
@@ -93,6 +95,7 @@
     <Folder Include="Attributes\" />
     <Folder Include="Conversion\Converters\" />
     <Folder Include="Conversion\Extensions\" />
+    <Folder Include="File\" />
     <Folder Include="Interfaces\Extensions\" />
     <Folder Include="Plugin\" />
     <Folder Include="Tests\" />

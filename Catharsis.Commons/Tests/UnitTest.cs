@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using Catharsis.Extensions;
+using Newtonsoft.Json;
 
 namespace Catharsis.Commons;
 
@@ -8,7 +9,18 @@ public class UnitTest : ITestable, IDisposable
 
   public ITestAttributes Attributes { get; } = new TestAttributes();
 
-  public virtual void Dispose() => Attributes.Clear();
+  public virtual void Dispose()
+  {
+    Attributes.ForEach(attribute =>
+    {
+      if (attribute.Value is IDisposable)
+      {
+        attribute.Value.To<IDisposable>().Dispose();
+      }
+    });
+
+    Attributes.Clear();
+  }
 
   private sealed class TestAttributes : Attributes, ITestAttributes
   {
