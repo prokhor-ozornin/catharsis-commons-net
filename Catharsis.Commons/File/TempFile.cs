@@ -46,6 +46,7 @@ public class TempFile : IDisposable
       return;
     }
 
+    File.IsReadOnly = false;
     File.Delete();
 
     disposed = true;
