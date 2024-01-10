@@ -3,15 +3,15 @@
 /// <summary>
 ///   <para></para>
 /// </summary>
-public interface ITimeAware
+public interface ITimeable : ITimed
 {
   /// <summary>
   ///   <para></para>
   /// </summary>
-  DateTimeOffset CreatedOn { get; set; }
+  new DateTimeOffset CreatedOn { get; set; }
 
   /// <summary>
   ///   <para></para>
   /// </summary>
-  DateTimeOffset UpdatedOn { get; set; }
+  new DateTimeOffset UpdatedOn { get; set; }
 }

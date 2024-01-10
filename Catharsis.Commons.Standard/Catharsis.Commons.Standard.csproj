@@ -13,6 +13,7 @@
 
   <ItemGroup>
     <Compile Include="..\Catharsis.Commons\Attributes\Attributes.cs" Link="Attributes\Attributes.cs" />
+    <Compile Include="..\Catharsis.Commons\Attributes\IAttributable.cs" Link="Attributes\IAttributable.cs" />
     <Compile Include="..\Catharsis.Commons\Attributes\IAttributes.cs" Link="Attributes\IAttributes.cs" />
     <Compile Include="..\Catharsis.Commons\Attributes\IAttributesExtensions.cs" Link="Attributes\IAttributesExtensions.cs" />
     <Compile Include="..\Catharsis.Commons\Attributes\IReadOnlyAttributes.cs" Link="Attributes\IReadOnlyAttributes.cs" />
@@ -63,11 +64,18 @@
     <Compile Include="..\Catharsis.Commons\Conversion\IConverter.cs" Link="Conversion\IConverter.cs" />
     <Compile Include="..\Catharsis.Commons\File\TempDirectory.cs" Link="File\TempDirectory.cs" />
     <Compile Include="..\Catharsis.Commons\File\TempFile.cs" Link="File\TempFile.cs" />
-    <Compile Include="..\Catharsis.Commons\Interfaces\Extensions\ITimeAwareExtensions.cs" Link="Interfaces\Extensions\ITimeAwareExtensions.cs" />
+    <Compile Include="..\Catharsis.Commons\Interfaces\Extensions\IDescriptedExtensions.cs" Link="Interfaces\Extensions\IDescriptedExtensions.cs" />
+    <Compile Include="..\Catharsis.Commons\Interfaces\Extensions\INamedExtensions.cs" Link="Interfaces\Extensions\INamedExtensions.cs" />
+    <Compile Include="..\Catharsis.Commons\Interfaces\Extensions\ITimedExtensions.cs" Link="Interfaces\Extensions\ITimedExtensions.cs" />
     <Compile Include="..\Catharsis.Commons\Interfaces\Extensions\IValidateableExtensions.cs" Link="Interfaces\Extensions\IValidateableExtensions.cs" />
     <Compile Include="..\Catharsis.Commons\Interfaces\Extensions\ObjectExtensions.cs" Link="Interfaces\Extensions\ObjectExtensions.cs" />
     <Compile Include="..\Catharsis.Commons\Interfaces\IBuilder.cs" Link="Interfaces\IBuilder.cs" />
-    <Compile Include="..\Catharsis.Commons\Interfaces\ITimeAware.cs" Link="Interfaces\ITimeAware.cs" />
+    <Compile Include="..\Catharsis.Commons\Interfaces\IDescriptable.cs" Link="Interfaces\IDescriptable.cs" />
+    <Compile Include="..\Catharsis.Commons\Interfaces\IDescripted.cs" Link="Interfaces\IDescripted.cs" />
+    <Compile Include="..\Catharsis.Commons\Interfaces\INameable.cs" Link="Interfaces\INameable.cs" />
+    <Compile Include="..\Catharsis.Commons\Interfaces\INamed.cs" Link="Interfaces\INamed.cs" />
+    <Compile Include="..\Catharsis.Commons\Interfaces\ITimeable.cs" Link="Interfaces\ITimeable.cs" />
+    <Compile Include="..\Catharsis.Commons\Interfaces\ITimed.cs" Link="Interfaces\ITimed.cs" />
     <Compile Include="..\Catharsis.Commons\Interfaces\ITypedCloneable.cs" Link="Interfaces\ITypedCloneable.cs" />
     <Compile Include="..\Catharsis.Commons\Interfaces\IValidateable.cs" Link="Interfaces\IValidateable.cs" />
     <Compile Include="..\Catharsis.Commons\Plugin\IPlugin.cs" Link="Plugin\IPlugin.cs" />

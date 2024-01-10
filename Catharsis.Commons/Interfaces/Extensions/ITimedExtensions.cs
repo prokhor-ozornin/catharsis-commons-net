@@ -3,7 +3,7 @@
 /// <summary>
 ///   <para></para>
 /// </summary>
-public static class ITimeAwareExtensions
+public static class ITimedExtensions
 {
   /// <summary>
   ///   <para></para>
@@ -14,7 +14,7 @@ public static class ITimeAwareExtensions
   /// <param name="to"></param>
   /// <returns></returns>
   /// <exception cref="ArgumentNullException"></exception>
-  public static IEnumerable<T> CreatedIn<T>(this IEnumerable<T> sequence, DateTimeOffset? from = null, DateTimeOffset? to = null) where T : ITimeAware
+  public static IEnumerable<T> CreatedIn<T>(this IEnumerable<T> sequence, DateTimeOffset? from = null, DateTimeOffset? to = null) where T : ITimed
   {
     if (sequence is null) throw new ArgumentNullException(nameof(sequence));
 
@@ -40,7 +40,7 @@ public static class ITimeAwareExtensions
   /// <param name="to"></param>
   /// <returns></returns>
   /// <exception cref="ArgumentNullException"></exception>
-  public static IEnumerable<T> UpdatedIn<T>(this IEnumerable<T> sequence, DateTimeOffset? from = null, DateTimeOffset? to = null) where T : ITimeAware
+  public static IEnumerable<T> UpdatedIn<T>(this IEnumerable<T> sequence, DateTimeOffset? from = null, DateTimeOffset? to = null) where T : ITimed
   {
     if (sequence is null) throw new ArgumentNullException(nameof(sequence));
 
