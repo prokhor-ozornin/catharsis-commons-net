@@ -66,6 +66,7 @@
     <Compile Include="..\Catharsis.Commons\File\TempDirectory.cs" Link="File\TempDirectory.cs" />
     <Compile Include="..\Catharsis.Commons\File\TempFile.cs" Link="File\TempFile.cs" />
     <Compile Include="..\Catharsis.Commons\Interfaces\Extensions\IDescriptedExtensions.cs" Link="Interfaces\Extensions\IDescriptedExtensions.cs" />
+    <Compile Include="..\Catharsis.Commons\Interfaces\Extensions\ILocalizableExtensions.cs" Link="Interfaces\Extensions\ILocalizableExtensions.cs" />
     <Compile Include="..\Catharsis.Commons\Interfaces\Extensions\INamedExtensions.cs" Link="Interfaces\Extensions\INamedExtensions.cs" />
     <Compile Include="..\Catharsis.Commons\Interfaces\Extensions\ITimedExtensions.cs" Link="Interfaces\Extensions\ITimedExtensions.cs" />
     <Compile Include="..\Catharsis.Commons\Interfaces\Extensions\IValidateableExtensions.cs" Link="Interfaces\Extensions\IValidateableExtensions.cs" />
@@ -73,6 +74,8 @@
     <Compile Include="..\Catharsis.Commons\Interfaces\IBuilder.cs" Link="Interfaces\IBuilder.cs" />
     <Compile Include="..\Catharsis.Commons\Interfaces\IDescriptable.cs" Link="Interfaces\IDescriptable.cs" />
     <Compile Include="..\Catharsis.Commons\Interfaces\IDescripted.cs" Link="Interfaces\IDescripted.cs" />
+    <Compile Include="..\Catharsis.Commons\Interfaces\ILocalizable.cs" Link="Interfaces\ILocalizable.cs" />
+    <Compile Include="..\Catharsis.Commons\Interfaces\ILocalization.cs" Link="Interfaces\ILocalization.cs" />
     <Compile Include="..\Catharsis.Commons\Interfaces\INameable.cs" Link="Interfaces\INameable.cs" />
     <Compile Include="..\Catharsis.Commons\Interfaces\INamed.cs" Link="Interfaces\INamed.cs" />
     <Compile Include="..\Catharsis.Commons\Interfaces\ITimeable.cs" Link="Interfaces\ITimeable.cs" />
