@@ -16,7 +16,7 @@ public static class ILocalizableExtensions
   /// <param name="culture"></param>
   /// <returns></returns>
   /// <exception cref="ArgumentNullException"></exception>
-  public static T Localization<T>(this ILocalizable<T> localizable, CultureInfo culture = null) where T : ILocalization => localizable is not null ? localizable.Localizations[(culture ?? CultureInfo.CurrentCulture).TwoLetterISOLanguageName] : throw new ArgumentNullException(nameof(localizable));
+  public static T Localization<T>(this ILocalizable<T> localizable, CultureInfo culture = null) where T : ILocalization => localizable is not null ? localizable.Localizations.TryGetValue((culture ?? CultureInfo.CurrentCulture).TwoLetterISOLanguageName, out var localization) ? localization : default : throw new ArgumentNullException(nameof(localizable));
 
   /// <summary>
   ///   <para></para>
