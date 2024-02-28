@@ -9,7 +9,7 @@ namespace Catharsis.Commons.Tests;
 public sealed class ITestAttributesExtensionsTest : UnitTest
 {
   /// <summary>
-  ///   <para>Performs testing of <see cref="Guid"/> method.</para>
+  ///   <para>Performs testing of <see cref="ITestAttributesExtensions.Guid(ITestAttributes)"/> method.</para>
   /// </summary>
   [Fact]
   public void Guid_Method()
@@ -20,7 +20,7 @@ public sealed class ITestAttributesExtensionsTest : UnitTest
   }
 
   /// <summary>
-  ///   <para>Performs testing of <see cref="CancellationToken"/> method.</para>
+  ///   <para>Performs testing of <see cref="ITestAttributesExtensions.CancellationToken(ITestAttributes)"/> method.</para>
   /// </summary>
   [Fact]
   public void CancellationToken_Method()
@@ -31,7 +31,7 @@ public sealed class ITestAttributesExtensionsTest : UnitTest
   }
 
   /// <summary>
-  ///   <para>Performs testing of <see cref="Random"/> method.</para>
+  ///   <para>Performs testing of <see cref="ITestAttributesExtensions.Random(ITestAttributes)"/> method.</para>
   /// </summary>
   [Fact]
   public void Random_Method()
