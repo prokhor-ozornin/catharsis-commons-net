@@ -1,37 +1,12 @@
-﻿using Catharsis.Extensions;
+﻿using System.Collections;
+using Catharsis.Extensions;
 
 namespace Catharsis.Commons;
 
-public class Attributes : Dictionary<string, object>, IAttributes, IReadOnlyAttributes
+public class Attributes<T> : IAttributes<T>
 {
-  public Attributes()
-  {
-  }
+  protected IDictionary<string, T> Items { get; } = new Dictionary<string, T>();
 
-  public Attributes(object attributes) : this(attributes.GetState())
-  {
-  }
-
-  public Attributes(IEnumerable<(string Name, object Value)> attributes)
-  {
-    if (attributes is null) throw new ArgumentNullException(nameof(attributes));
-
-    foreach (var (Name, Value) in attributes)
-    {
-      Add(Name, Value);
-    }
-  }
-
-  public Attributes(IEnumerable<KeyValuePair<string, object>> attributes)
-  {
-    if (attributes is null) throw new ArgumentNullException(nameof(attributes));
-
-    this.AddRange(attributes);
-  }
-}
-
-public class Attributes<T> : Dictionary<string, T>, IAttributes<T>, IReadOnlyAttributes<T>
-{
   public Attributes()
   {
   }
@@ -46,7 +21,7 @@ public class Attributes<T> : Dictionary<string, T>, IAttributes<T>, IReadOnlyAtt
 
     foreach (var (Name, Value) in attributes)
     {
-      Add(Name, Value);
+      Items.Add(Name, Value);
     }
   }
 
@@ -54,6 +29,41 @@ public class Attributes<T> : Dictionary<string, T>, IAttributes<T>, IReadOnlyAtt
   {
     if (attributes is null) throw new ArgumentNullException(nameof(attributes));
 
-    this.AddRange(attributes);
+    Items.AddRange(attributes);
+  }
+
+  public bool Get(string key, out T value) => Items.TryGetValue(key, out value);
+
+  public T this[string key]
+  {
+    get => Items[key];
+    set => Items[key] = value;
+  }
+
+  public void Dispose() => Items.Clear();
+
+  public IEnumerator<KeyValuePair<string, T>> GetEnumerator() => Items.GetEnumerator();
+
+  IEnumerator IEnumerable.GetEnumerator() => GetEnumerator();
+}
+
+public class Attributes : Attributes<object>
+{
+  private readonly IDictionary<string, object> items = new Dictionary<string, object>();
+
+  public Attributes()
+  {
+  }
+
+  public Attributes(object attributes) : base(attributes.GetState())
+  {
+  }
+
+  public Attributes(IEnumerable<(string Name, object Value)> attributes) : base(attributes)
+  {
+  }
+
+  public Attributes(IEnumerable<KeyValuePair<string, object>> attributes) : base(attributes)
+  {
   }
 }

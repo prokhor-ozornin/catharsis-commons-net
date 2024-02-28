@@ -19,7 +19,7 @@ public class UnitTest : ITestable, IDisposable
       }
     });
 
-    Attributes.Clear();
+    Attributes.Dispose();
   }
 
   private sealed class TestAttributes : Attributes, ITestAttributes

@@ -8,18 +8,10 @@ namespace Catharsis.Commons.Tests;
 public sealed class IAttributesExtensionsTest
 {
   /// <summary>
-  ///   <para>Performs testing of following methods :</para>
-  ///   <list type="bullet">
-  ///     <item><description><see cref="IAttributesExtensions.Set{T}(IAttributes, string, T)"/></description></item>
-  ///     <item><description><see cref="IAttributesExtensions.Set{T}(IAttributes{T}, string, T)"/></description></item>
-  ///   </list>
+  ///   <para>Performs testing of <see cref="IAttributesExtensions.Set{T}(IAttributes{T}, string, T)"/> method.</para>
   /// </summary>
-  public void Set_Methods()
+  public void Set_Method()
   {
-    using (new AssertionScope())
-    {
-    }
-
     using (new AssertionScope())
     {
     }
@@ -28,18 +20,10 @@ public sealed class IAttributesExtensionsTest
   }
 
   /// <summary>
-  ///   <para>Performs testing of following methods :</para>
-  ///   <list type="bullet">
-  ///     <item><description><see cref="IAttributesExtensions.Retrieve{T}(IAttributes, string, T)"/></description></item>
-  ///     <item><description><see cref="IAttributesExtensions.Retrieve{T}(IAttributes{T}, string, T)"/></description></item>
-  ///   </list>
+  ///   <para>Performs testing of <see cref="IAttributesExtensions.Retrieve{T}(IAttributes{T}, string, T)"/> method.</para>
   /// </summary>
-  public void Retrieve_Methods()
+  public void Retrieve_Method()
   {
-    using (new AssertionScope())
-    {
-    }
-
     using (new AssertionScope())
     {
     }

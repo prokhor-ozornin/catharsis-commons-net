@@ -8,18 +8,10 @@ namespace Catharsis.Commons.Tests;
 public sealed class IReadOnlyAttributesExtensionsTest
 {
   /// <summary>
-  ///   <para>Performs testing of following methods :</para>
-  ///   <list type="bullet">
-  ///     <item><description><see cref="IReadOnlyAttributesExtensions.Get{T}(IReadOnlyAttributes, string, T)"/></description></item>
-  ///     <item><description><see cref="IReadOnlyAttributesExtensions.Get{T}(IReadOnlyAttributes{T}, string, T)"/></description></item>
-  ///   </list>
+  ///   <para>Performs testing of <see cref="IReadOnlyAttributesExtensions.Get{T}(IReadOnlyAttributes{T}, string, T)"/> method.</para>
   /// </summary>
-  public void Get_Methods()
+  public void Get_Method()
   {
-    using (new AssertionScope())
-    {
-    }
-
     using (new AssertionScope())
     {
     }

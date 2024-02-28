@@ -16,8 +16,6 @@
     <Compile Include="..\Catharsis.Commons\Attributes\IAttributable.cs" Link="Attributes\IAttributable.cs" />
     <Compile Include="..\Catharsis.Commons\Attributes\IAttributes.cs" Link="Attributes\IAttributes.cs" />
     <Compile Include="..\Catharsis.Commons\Attributes\IAttributesExtensions.cs" Link="Attributes\IAttributesExtensions.cs" />
-    <Compile Include="..\Catharsis.Commons\Attributes\IReadOnlyAttributes.cs" Link="Attributes\IReadOnlyAttributes.cs" />
-    <Compile Include="..\Catharsis.Commons\Attributes\IReadOnlyAttributesExtensions.cs" Link="Attributes\IReadOnlyAttributesExtensions.cs" />
     <Compile Include="..\Catharsis.Commons\Conversion\Conversion.cs" Link="Conversion\Conversion.cs" />
     <Compile Include="..\Catharsis.Commons\Conversion\Convert.cs" Link="Conversion\Convert.cs" />
     <Compile Include="..\Catharsis.Commons\Conversion\Converter.cs" Link="Conversion\Converter.cs" />
