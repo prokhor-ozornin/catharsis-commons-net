@@ -14,6 +14,7 @@ public sealed class AttributesTest : UnitTest
   /// <seealso cref="Attributes(object)"/>
   /// <seealso cref="Attributes(IEnumerable{(string, object)})"/>
   /// <seealso cref="Attributes(IEnumerable{KeyValuePair{string, object}})"/>
+  /// <seealso cref="Attributes((string, object)[])"/>
   /// 
   [Fact]
   public void Constructors()

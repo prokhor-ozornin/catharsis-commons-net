@@ -28,6 +28,10 @@ public class Attributes<T> : Dictionary<string, T>, IAttributes<T>, IReadOnlyAtt
 
     this.AddRange(attributes);
   }
+
+  public Attributes(params (string Name, T Value)[] attributes) : this(attributes as IEnumerable<(string, T)>)
+  {
+  }
 }
 
 public class Attributes : Attributes<object>
@@ -45,6 +49,10 @@ public class Attributes : Attributes<object>
   }
 
   public Attributes(IEnumerable<KeyValuePair<string, object>> attributes) : base(attributes)
+  {
+  }
+
+  public Attributes(params (string Name, object Value)[] attributes) : base(attributes)
   {
   }
 }
