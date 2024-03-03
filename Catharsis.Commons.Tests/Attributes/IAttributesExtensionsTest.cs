@@ -9,11 +9,7 @@ namespace Catharsis.Commons.Tests;
 public sealed class IAttributesExtensionsTest
 {
   /// <summary>
-  ///   <para>Performs testing of following methods :</para>
-  ///   <list type="bullet">
-  ///     <item><description><see cref="IAttributesExtensions.Get{T}(IAttributes, string, T)"/></description></item>
-  ///     <item><description><see cref="IAttributesExtensions.Get{T}(IAttributes{T}, string, T)"/></description></item>
-  ///   </list>
+  ///   <para>Performs testing of <see cref="IAttributesExtensions.Get{T}(IAttributes, string, T)"/> method.</para>
   /// </summary>
   [Fact]
   public void Get_Method()
@@ -26,7 +22,7 @@ public sealed class IAttributesExtensionsTest
   }
 
   /// <summary>
-  ///   <para>Performs testing of <see cref="IAttributesExtensions.Set{T}(IAttributes{T}, string, T)"/> method.</para>
+  ///   <para>Performs testing of <see cref="IAttributesExtensions.Set{T}(IAttributes, string, T)"/> method.</para>
   /// </summary>
   [Fact]
   public void Set_Method()
@@ -39,11 +35,7 @@ public sealed class IAttributesExtensionsTest
   }
 
   /// <summary>
-  ///   <para>Performs testing of following methods :</para>
-  ///   <list type="bullet">
-  ///     <item><description><see cref="IAttributesExtensions.Retrieve{T}(IAttributes, string, T)"/></description></item>
-  ///     <item><description><see cref="IAttributesExtensions.Retrieve{T}(IAttributes{T}, string, T)"/></description></item>
-  ///   </list>
+  ///   <para>Performs testing of <see cref="IAttributesExtensions.Retrieve{T}(IAttributes, string, T)"/> method.</para>
   /// </summary>
   [Fact]
   public void Retrieve_Method()
