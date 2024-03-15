@@ -23,7 +23,7 @@ public static class UriConverters
   /// <exception cref="InvalidOperationException">In case of a failed conversion.</exception>
   /// <seealso cref="BytesAsync(IConversion{Uri}, TimeSpan?, (string Name, object Value)[])"/>
   /// <seealso cref="UriExtensions.ToBytes(Uri, TimeSpan?, (string Name, object Value)[])"/>
-  public static IEnumerable<byte> Bytes(this IConversion<Uri> conversion, TimeSpan? timeout = null, string error = null, params(string Name, object Value)[] headers) => conversion.To(uri => uri.ToBytes(timeout, headers), error);
+  public static IEnumerable<byte> Bytes(this IConversion<Uri> conversion, TimeSpan? timeout = null, string error = null, params (string Name, object Value)[] headers) => conversion.To(uri => uri.ToBytes(timeout, headers), error);
 
   /// <summary>
   ///   <para>Asynchronously converts given <see cref="Uri"/> instance to the instance of <see cref="IAsyncEnumerable{byte}"/> type.</para>

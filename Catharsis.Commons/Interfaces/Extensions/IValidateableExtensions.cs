@@ -8,17 +8,6 @@ public static class IValidateableExtensions
   /// <summary>
   ///   <para></para>
   /// </summary>
-  /// <returns></returns>
-  public static bool Check(this IValidateable validateable)
-  {
-    if (validateable is null) throw new ArgumentNullException(nameof(validateable));
-
-    return validateable.Validator();
-  }
-
-  /// <summary>
-  ///   <para></para>
-  /// </summary>
   /// <param name="validateable"></param>
   /// <param name="exception"></param>
   /// <exception cref="ArgumentNullException"></exception>
@@ -27,7 +16,7 @@ public static class IValidateableExtensions
   {
     if (validateable is null) throw new ArgumentNullException(nameof(validateable));
 
-    if (!validateable.Validator())
+    if (!validateable.IsValid())
     {
       throw exception ?? new InvalidOperationException();
     }
