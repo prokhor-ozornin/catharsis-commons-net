@@ -7,7 +7,7 @@ public class PluginManager : IPluginManager
   private readonly IList<IPlugin> available = new List<IPlugin>();
   private readonly IList<IPlugin> loaded = new List<IPlugin>();
 
-  public PluginManager() => available.AddRange(typeof(IPlugin).Implementors().Where(plugin => plugin.IsClass && plugin.HasConstructor()).Select(plugin => plugin.Instance<IPlugin>()).OrderBy(plugin => plugin.Order));
+  public PluginManager() => available.With(typeof(IPlugin).Implementors().Where(plugin => plugin.IsClass && plugin.HasConstructor()).Select(plugin => plugin.Instance<IPlugin>()).OrderBy(plugin => plugin.Order));
 
   public IEnumerable<IPlugin> Loaded => loaded;
 

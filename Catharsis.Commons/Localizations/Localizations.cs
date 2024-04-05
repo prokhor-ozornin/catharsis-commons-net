@@ -38,7 +38,7 @@ public class Localizations<T> : Dictionary<string, T>, ILocalizations<T> where T
   {
     if (localizations is null) throw new ArgumentNullException(nameof(localizations));
 
-    this.AddRange(localizations);
+    this.With(localizations);
   }
 
   /// <summary>

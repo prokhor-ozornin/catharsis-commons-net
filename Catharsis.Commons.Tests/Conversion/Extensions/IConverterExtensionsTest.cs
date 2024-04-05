@@ -1441,8 +1441,8 @@ public sealed class IConverterExtensionsTest : UnitTest
         Convert.To.TimeOnly(null, format).Should().BeNull();
         Convert.To.TimeOnly(string.Empty, format).Should().BeNull();
         Convert.To.TimeOnly(new object(), format).Should().BeNull();
-        Convert.To.TimeOnly($" {timeOnly.ToShortTimeString()} ").Should().Be(timeOnly.TruncateToMinuteStart());
-        Convert.To.TimeOnly($" {timeOnly.ToLongTimeString()} ").Should().Be(timeOnly.TruncateToSecondStart());
+        Convert.To.TimeOnly($" {timeOnly.ToShortTimeString()} ").Should().Be(timeOnly.StartOfMinute());
+        Convert.To.TimeOnly($" {timeOnly.ToLongTimeString()} ").Should().Be(timeOnly.StartOfSecond());
 
         Convert.To.TimeOnly(utcDate, format).Should().Be(timeOnly);
         Convert.To.TimeOnly(utcDate.ToDateTimeOffset(), format).Should().Be(timeOnly);

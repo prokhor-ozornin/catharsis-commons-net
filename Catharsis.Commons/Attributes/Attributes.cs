@@ -26,7 +26,7 @@ public class Attributes : Dictionary<string, object>, IAttributes, IReadOnlyAttr
   {
     if (attributes is null) throw new ArgumentNullException(nameof(attributes));
 
-    this.AddRange(attributes);
+    this.With(attributes);
   }
 
   public Attributes(params (string Name, object Value)[] attributes) : this(attributes as IEnumerable<(string, object)>)
