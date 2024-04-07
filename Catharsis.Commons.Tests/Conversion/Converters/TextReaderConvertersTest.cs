@@ -19,7 +19,10 @@ public sealed class TextReaderConvertersTest : UnitTest
   [Fact]
   public void Bytes_Method()
   {
-    AssertionExtensions.Should(() => TextReaderConverters.Bytes(null)).ThrowExactly<ArgumentNullException>().WithParameterName("conversion");
+    using (new AssertionScope())
+    {
+      AssertionExtensions.Should(() => TextReaderConverters.Bytes(null)).ThrowExactly<ArgumentNullException>().WithParameterName("conversion");
+    }
 
     throw new NotImplementedException();
   }
@@ -30,7 +33,10 @@ public sealed class TextReaderConvertersTest : UnitTest
   [Fact]
   public void BytesAsync_Method()
   {
-    AssertionExtensions.Should(() => TextReaderConverters.BytesAsync(null)).ThrowExactlyAsync<ArgumentNullException>().WithParameterName("conversion").Await();
+    using (new AssertionScope())
+    {
+      AssertionExtensions.Should(() => TextReaderConverters.BytesAsync(null)).ThrowExactlyAsync<ArgumentNullException>().WithParameterName("conversion").Await();
+    }
 
     throw new NotImplementedException();
   }
@@ -41,7 +47,10 @@ public sealed class TextReaderConvertersTest : UnitTest
   [Fact]
   public void Text_Method()
   {
-    AssertionExtensions.Should(() => TextReaderConverters.Text(null)).ThrowExactly<ArgumentNullException>().WithParameterName("conversion");
+    using (new AssertionScope())
+    {
+      AssertionExtensions.Should(() => TextReaderConverters.Text(null)).ThrowExactly<ArgumentNullException>().WithParameterName("conversion");
+    }
 
     throw new NotImplementedException();
   }
@@ -52,7 +61,10 @@ public sealed class TextReaderConvertersTest : UnitTest
   [Fact]
   public void TextAsync_Method()
   {
-    AssertionExtensions.Should(() => TextReaderConverters.TextAsync(null)).ThrowExactlyAsync<ArgumentNullException>().WithParameterName("conversion").Await();
+    using (new AssertionScope())
+    {
+      AssertionExtensions.Should(() => TextReaderConverters.TextAsync(null)).ThrowExactlyAsync<ArgumentNullException>().WithParameterName("conversion").Await();
+    }
 
     throw new NotImplementedException();
   }
@@ -63,7 +75,10 @@ public sealed class TextReaderConvertersTest : UnitTest
   [Fact]
   public void XmlDocument_Method()
   {
-    AssertionExtensions.Should(() => TextReaderConverters.XmlDocument(null)).ThrowExactly<ArgumentNullException>().WithParameterName("conversion");
+    using (new AssertionScope())
+    {
+      AssertionExtensions.Should(() => TextReaderConverters.XmlDocument(null)).ThrowExactly<ArgumentNullException>().WithParameterName("conversion");
+    }
 
     throw new NotImplementedException();
   }
@@ -74,7 +89,10 @@ public sealed class TextReaderConvertersTest : UnitTest
   [Fact]
   public void XDocument_Method()
   {
-    AssertionExtensions.Should(() => TextReaderConverters.XDocument(null)).ThrowExactly<ArgumentNullException>().WithParameterName("conversion");
+    using (new AssertionScope())
+    {
+      AssertionExtensions.Should(() => TextReaderConverters.XDocument(null)).ThrowExactly<ArgumentNullException>().WithParameterName("conversion");
+    }
 
     throw new NotImplementedException();
   }
@@ -85,8 +103,11 @@ public sealed class TextReaderConvertersTest : UnitTest
   [Fact]
   public void XDocumentAsync_Method()
   {
-    AssertionExtensions.Should(() => TextReaderConverters.XDocumentAsync(null)).ThrowExactlyAsync<ArgumentNullException>().WithParameterName("conversion").Await();
-    AssertionExtensions.Should(() => Conversion.XDocumentAsync(Attributes.CancellationToken())).ThrowExactlyAsync<OperationCanceledException>().Await();
+    using (new AssertionScope())
+    {
+      AssertionExtensions.Should(() => TextReaderConverters.XDocumentAsync(null)).ThrowExactlyAsync<ArgumentNullException>().WithParameterName("conversion").Await();
+      AssertionExtensions.Should(() => Conversion.XDocumentAsync(Attributes.CancellationToken())).ThrowExactlyAsync<OperationCanceledException>().Await();
+    }
 
     throw new NotImplementedException();
   }

@@ -1,6 +1,7 @@
 ﻿using System.Xml;
 using Catharsis.Extensions;
 using FluentAssertions;
+using FluentAssertions.Execution;
 using Xunit;
 
 namespace Catharsis.Commons.Tests;
@@ -18,7 +19,10 @@ public sealed class XmlReaderConvertersTest : UnitTest
   [Fact]
   public void Text_Method()
   {
-    AssertionExtensions.Should(() => XmlReaderConverters.Text(null)).ThrowExactly<ArgumentNullException>().WithParameterName("conversion");
+    using (new AssertionScope())
+    {
+      AssertionExtensions.Should(() => XmlReaderConverters.Text(null)).ThrowExactly<ArgumentNullException>().WithParameterName("conversion");
+    }
 
     throw new NotImplementedException();
   }
@@ -29,7 +33,10 @@ public sealed class XmlReaderConvertersTest : UnitTest
   [Fact]
   public void TextAsync_Method()
   {
-    AssertionExtensions.Should(() => XmlReaderConverters.TextAsync(null)).ThrowExactlyAsync<ArgumentNullException>().WithParameterName("conversion").Await();
+    using (new AssertionScope())
+    {
+      AssertionExtensions.Should(() => XmlReaderConverters.TextAsync(null)).ThrowExactlyAsync<ArgumentNullException>().WithParameterName("conversion").Await();
+    }
 
     throw new NotImplementedException();
   }
@@ -40,7 +47,10 @@ public sealed class XmlReaderConvertersTest : UnitTest
   [Fact]
   public void XmlDocument_Method()
   {
-    AssertionExtensions.Should(() => XmlReaderConverters.XmlDocument(null)).ThrowExactly<ArgumentNullException>().WithParameterName("conversion");
+    using (new AssertionScope())
+    {
+      AssertionExtensions.Should(() => XmlReaderConverters.XmlDocument(null)).ThrowExactly<ArgumentNullException>().WithParameterName("conversion");
+    }
 
     throw new NotImplementedException();
   }
@@ -51,7 +61,10 @@ public sealed class XmlReaderConvertersTest : UnitTest
   [Fact]
   public void XDocument_Method()
   {
-    AssertionExtensions.Should(() => XmlReaderConverters.XDocument(null)).ThrowExactly<ArgumentNullException>().WithParameterName("conversion");
+    using (new AssertionScope())
+    {
+      AssertionExtensions.Should(() => XmlReaderConverters.XDocument(null)).ThrowExactly<ArgumentNullException>().WithParameterName("conversion");
+    }
 
     throw new NotImplementedException();
   }
@@ -62,8 +75,11 @@ public sealed class XmlReaderConvertersTest : UnitTest
   [Fact]
   public void XDocumentAsync_Method()
   {
-    AssertionExtensions.Should(() => XmlReaderConverters.XDocumentAsync(null)).ThrowExactlyAsync<ArgumentNullException>().WithParameterName("conversion").Await();
-    AssertionExtensions.Should(() => Conversion.XDocumentAsync(Attributes.CancellationToken())).ThrowExactlyAsync<OperationCanceledException>().Await();
+    using (new AssertionScope())
+    {
+      AssertionExtensions.Should(() => XmlReaderConverters.XDocumentAsync(null)).ThrowExactlyAsync<ArgumentNullException>().WithParameterName("conversion").Await();
+      AssertionExtensions.Should(() => Conversion.XDocumentAsync(Attributes.CancellationToken())).ThrowExactlyAsync<OperationCanceledException>().Await();
+    }
 
     throw new NotImplementedException();
   }

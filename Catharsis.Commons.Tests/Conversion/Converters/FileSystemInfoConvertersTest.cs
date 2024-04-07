@@ -1,4 +1,5 @@
 ﻿using FluentAssertions;
+using FluentAssertions.Execution;
 using Xunit;
 
 namespace Catharsis.Commons.Tests;
@@ -14,7 +15,10 @@ public sealed class FileSystemInfoConvertersTest : UnitTest
   [Fact]
   public void Uri_Method()
   {
-    AssertionExtensions.Should(() => FileSystemInfoConverters.Uri(null)).ThrowExactly<ArgumentNullException>().WithParameterName("conversion");
+    using (new AssertionScope())
+    {
+      AssertionExtensions.Should(() => FileSystemInfoConverters.Uri(null)).ThrowExactly<ArgumentNullException>().WithParameterName("conversion");
+    }
 
     throw new NotImplementedException();
   }

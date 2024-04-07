@@ -1,4 +1,5 @@
 ﻿using FluentAssertions;
+using FluentAssertions.Execution;
 using Xunit;
 
 namespace Catharsis.Commons.Tests;
@@ -14,7 +15,10 @@ public sealed class DateOnlyConvertersTest : UnitTest
   [Fact]
   public void DateTime_Method()
   {
-    AssertionExtensions.Should(() => DateOnlyConverters.DateTime(null)).ThrowExactly<ArgumentNullException>().WithParameterName("conversion");
+    using (new AssertionScope())
+    {
+      AssertionExtensions.Should(() => DateOnlyConverters.DateTime(null)).ThrowExactly<ArgumentNullException>().WithParameterName("conversion");
+    }
 
     throw new NotImplementedException();
   }
@@ -25,7 +29,10 @@ public sealed class DateOnlyConvertersTest : UnitTest
   [Fact]
   public void DateTimeOffset_Method()
   {
-    AssertionExtensions.Should(() => DateOnlyConverters.DateTimeOffset(null)).ThrowExactly<ArgumentNullException>().WithParameterName("conversion");
+    using (new AssertionScope())
+    {
+      AssertionExtensions.Should(() => DateOnlyConverters.DateTimeOffset(null)).ThrowExactly<ArgumentNullException>().WithParameterName("conversion");
+    }
 
     throw new NotImplementedException();
   }

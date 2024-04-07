@@ -1,4 +1,5 @@
 ﻿using FluentAssertions;
+using FluentAssertions.Execution;
 using Xunit;
 
 namespace Catharsis.Commons.Tests;
@@ -14,7 +15,10 @@ public sealed class ITimedExtensionsTest : UnitTest
   [Fact]
   public void CreatedIn_Method()
   {
-    AssertionExtensions.Should(() => ITimedExtensions.CreatedIn<ITimed>(null)).ThrowExactly<ArgumentNullException>().WithParameterName("sequence");
+    using (new AssertionScope())
+    {
+      AssertionExtensions.Should(() => ITimedExtensions.CreatedIn<ITimed>(null)).ThrowExactly<ArgumentNullException>().WithParameterName("sequence");
+    }
 
     throw new NotImplementedException();
   }
@@ -25,7 +29,10 @@ public sealed class ITimedExtensionsTest : UnitTest
   [Fact]
   public void UpdatedIn_Method()
   {
-    AssertionExtensions.Should(() => ITimedExtensions.UpdatedIn<ITimed>(null)).ThrowExactly<ArgumentNullException>().WithParameterName("sequence");
+    using (new AssertionScope())
+    {
+      AssertionExtensions.Should(() => ITimedExtensions.UpdatedIn<ITimed>(null)).ThrowExactly<ArgumentNullException>().WithParameterName("sequence");
+    }
 
     throw new NotImplementedException();
   }

@@ -18,7 +18,10 @@ public sealed class IAsyncEnumerableConvertersTest : UnitTest
   [Fact]
   public void Enumerable_Method()
   {
-    AssertionExtensions.Should(() => IAsyncEnumerableConverters.Enumerable<object>(null)).ThrowExactly<ArgumentNullException>().WithParameterName("conversion");
+    using (new AssertionScope())
+    {
+      AssertionExtensions.Should(() => IAsyncEnumerableConverters.Enumerable<object>(null)).ThrowExactly<ArgumentNullException>().WithParameterName("conversion");
+    }
 
     throw new NotImplementedException();
   }
@@ -29,7 +32,10 @@ public sealed class IAsyncEnumerableConvertersTest : UnitTest
   [Fact]
   public void Array_Method()
   {
-    AssertionExtensions.Should(() => IAsyncEnumerableConverters.Array<object>(null)).ThrowExactly<ArgumentNullException>().WithParameterName("conversion");
+    using (new AssertionScope())
+    {
+      AssertionExtensions.Should(() => IAsyncEnumerableConverters.Array<object>(null)).ThrowExactly<ArgumentNullException>().WithParameterName("conversion");
+    }
 
     throw new NotImplementedException();
   }
@@ -40,8 +46,11 @@ public sealed class IAsyncEnumerableConvertersTest : UnitTest
   [Fact]
   public void ArrayAsync_Method()
   {
-    AssertionExtensions.Should(() => IAsyncEnumerableConverters.ArrayAsync<object>(null)).ThrowExactlyAsync<ArgumentNullException>().WithParameterName("conversion").Await();
-    AssertionExtensions.Should(() => IAsyncEnumerableConverters.ArrayAsync<object>(null, Attributes.CancellationToken())).ThrowExactlyAsync<OperationCanceledException>().Await();
+    using (new AssertionScope())
+    {
+      AssertionExtensions.Should(() => IAsyncEnumerableConverters.ArrayAsync<object>(null)).ThrowExactlyAsync<ArgumentNullException>().WithParameterName("conversion").Await();
+      AssertionExtensions.Should(() => IAsyncEnumerableConverters.ArrayAsync<object>(null, Attributes.CancellationToken())).ThrowExactlyAsync<OperationCanceledException>().Await();
+    }
 
     throw new NotImplementedException();
   }
@@ -52,7 +61,10 @@ public sealed class IAsyncEnumerableConvertersTest : UnitTest
   [Fact]
   public void List_Method()
   {
-    AssertionExtensions.Should(() => IAsyncEnumerableConverters.List<object>(null)).ThrowExactly<ArgumentNullException>().WithParameterName("conversion");
+    using (new AssertionScope())
+    {
+      AssertionExtensions.Should(() => IAsyncEnumerableConverters.List<object>(null)).ThrowExactly<ArgumentNullException>().WithParameterName("conversion");
+    }
 
     throw new NotImplementedException();
   }
@@ -63,8 +75,11 @@ public sealed class IAsyncEnumerableConvertersTest : UnitTest
   [Fact]
   public void ListAsync_Method()
   {
-    AssertionExtensions.Should(() => IAsyncEnumerableConverters.ListAsync<object>(null)).ThrowExactlyAsync<ArgumentNullException>().WithParameterName("conversion").Await();
-    AssertionExtensions.Should(() => IAsyncEnumerableConverters.ListAsync<object>(null, Attributes.CancellationToken())).ThrowExactlyAsync<OperationCanceledException>().Await();
+    using (new AssertionScope())
+    {
+      AssertionExtensions.Should(() => IAsyncEnumerableConverters.ListAsync<object>(null)).ThrowExactlyAsync<ArgumentNullException>().WithParameterName("conversion").Await();
+      AssertionExtensions.Should(() => IAsyncEnumerableConverters.ListAsync<object>(null, Attributes.CancellationToken())).ThrowExactlyAsync<OperationCanceledException>().Await();
+    }
 
     throw new NotImplementedException();
   }
@@ -75,7 +90,10 @@ public sealed class IAsyncEnumerableConvertersTest : UnitTest
   [Fact]
   public void LinkedList_Method()
   {
-    AssertionExtensions.Should(() => IAsyncEnumerableConverters.LinkedList<object>(null)).ThrowExactly<ArgumentNullException>().WithParameterName("conversion");
+    using (new AssertionScope())
+    {
+      AssertionExtensions.Should(() => IAsyncEnumerableConverters.LinkedList<object>(null)).ThrowExactly<ArgumentNullException>().WithParameterName("conversion");
+    }
 
     throw new NotImplementedException();
   }
@@ -86,8 +104,11 @@ public sealed class IAsyncEnumerableConvertersTest : UnitTest
   [Fact]
   public void LinkedListAsync_Method()
   {
-    AssertionExtensions.Should(() => IAsyncEnumerableConverters.LinkedListAsync<object>(null)).ThrowExactlyAsync<ArgumentNullException>().WithParameterName("conversion").Await();
-    AssertionExtensions.Should(() => IAsyncEnumerableConverters.LinkedListAsync<object>(null, Attributes.CancellationToken())).ThrowExactlyAsync<OperationCanceledException>().Await();
+    using (new AssertionScope())
+    {
+      AssertionExtensions.Should(() => IAsyncEnumerableConverters.LinkedListAsync<object>(null)).ThrowExactlyAsync<ArgumentNullException>().WithParameterName("conversion").Await();
+      AssertionExtensions.Should(() => IAsyncEnumerableConverters.LinkedListAsync<object>(null, Attributes.CancellationToken())).ThrowExactlyAsync<OperationCanceledException>().Await();
+    }
 
     throw new NotImplementedException();
   }
@@ -98,7 +119,10 @@ public sealed class IAsyncEnumerableConvertersTest : UnitTest
   [Fact]
   public void ReadOnlyList_Method()
   {
-    AssertionExtensions.Should(() => IAsyncEnumerableConverters.ReadOnlyList<object>(null)).ThrowExactly<ArgumentNullException>().WithParameterName("conversion");
+    using (new AssertionScope())
+    {
+      AssertionExtensions.Should(() => IAsyncEnumerableConverters.ReadOnlyList<object>(null)).ThrowExactly<ArgumentNullException>().WithParameterName("conversion");
+    }
 
     throw new NotImplementedException();
   }
@@ -109,8 +133,11 @@ public sealed class IAsyncEnumerableConvertersTest : UnitTest
   [Fact]
   public void ReadOnlyListAsync_Method()
   {
-    AssertionExtensions.Should(() => IAsyncEnumerableConverters.ReadOnlyListAsync<object>(null)).ThrowExactlyAsync<ArgumentNullException>().WithParameterName("conversion").Await();
-    AssertionExtensions.Should(() => IAsyncEnumerableConverters.ReadOnlyListAsync<object>(null, Attributes.CancellationToken())).ThrowExactlyAsync<OperationCanceledException>().Await();
+    using (new AssertionScope())
+    {
+      AssertionExtensions.Should(() => IAsyncEnumerableConverters.ReadOnlyListAsync<object>(null)).ThrowExactlyAsync<ArgumentNullException>().WithParameterName("conversion").Await();
+      AssertionExtensions.Should(() => IAsyncEnumerableConverters.ReadOnlyListAsync<object>(null, Attributes.CancellationToken())).ThrowExactlyAsync<OperationCanceledException>().Await();
+    }
 
     throw new NotImplementedException();
   }
@@ -121,7 +148,10 @@ public sealed class IAsyncEnumerableConvertersTest : UnitTest
   [Fact]
   public void HashSet_Method()
   {
-    AssertionExtensions.Should(() => IAsyncEnumerableConverters.HashSet<object>(null)).ThrowExactly<ArgumentNullException>().WithParameterName("conversion");
+    using (new AssertionScope())
+    {
+      AssertionExtensions.Should(() => IAsyncEnumerableConverters.HashSet<object>(null)).ThrowExactly<ArgumentNullException>().WithParameterName("conversion");
+    }
 
     throw new NotImplementedException();
   }
@@ -132,8 +162,11 @@ public sealed class IAsyncEnumerableConvertersTest : UnitTest
   [Fact]
   public void HashSetAsync_Method()
   {
-    AssertionExtensions.Should(() => IAsyncEnumerableConverters.HashSetAsync<object>(null)).ThrowExactlyAsync<ArgumentNullException>().WithParameterName("conversion").Await();
-    AssertionExtensions.Should(() => IAsyncEnumerableConverters.HashSetAsync<object>(null, null, Attributes.CancellationToken())).ThrowExactlyAsync<OperationCanceledException>().Await();
+    using (new AssertionScope())
+    {
+      AssertionExtensions.Should(() => IAsyncEnumerableConverters.HashSetAsync<object>(null)).ThrowExactlyAsync<ArgumentNullException>().WithParameterName("conversion").Await();
+      AssertionExtensions.Should(() => IAsyncEnumerableConverters.HashSetAsync<object>(null, null, Attributes.CancellationToken())).ThrowExactlyAsync<OperationCanceledException>().Await();
+    }
 
     throw new NotImplementedException();
   }
@@ -144,7 +177,10 @@ public sealed class IAsyncEnumerableConvertersTest : UnitTest
   [Fact]
   public void SortedSet_Method()
   {
-    AssertionExtensions.Should(() => IAsyncEnumerableConverters.SortedSet<object>(null)).ThrowExactly<ArgumentNullException>().WithParameterName("conversion");
+    using (new AssertionScope())
+    {
+      AssertionExtensions.Should(() => IAsyncEnumerableConverters.SortedSet<object>(null)).ThrowExactly<ArgumentNullException>().WithParameterName("conversion");
+    }
 
     throw new NotImplementedException();
   }
@@ -155,8 +191,11 @@ public sealed class IAsyncEnumerableConvertersTest : UnitTest
   [Fact]
   public void SortedSetAsync_Method()
   {
-    AssertionExtensions.Should(() => IAsyncEnumerableConverters.SortedSetAsync<object>(null)).ThrowExactlyAsync<ArgumentNullException>().WithParameterName("conversion").Await();
-    AssertionExtensions.Should(() => IAsyncEnumerableConverters.SortedSetAsync<object>(null, null, Attributes.CancellationToken())).ThrowExactlyAsync<OperationCanceledException>().Await();
+    using (new AssertionScope())
+    {
+      AssertionExtensions.Should(() => IAsyncEnumerableConverters.SortedSetAsync<object>(null)).ThrowExactlyAsync<ArgumentNullException>().WithParameterName("conversion").Await();
+      AssertionExtensions.Should(() => IAsyncEnumerableConverters.SortedSetAsync<object>(null, null, Attributes.CancellationToken())).ThrowExactlyAsync<OperationCanceledException>().Await();
+    }
 
     throw new NotImplementedException();
   }
@@ -167,7 +206,10 @@ public sealed class IAsyncEnumerableConvertersTest : UnitTest
   [Fact]
   public void ReadOnlySet_Method()
   {
-    AssertionExtensions.Should(() => IAsyncEnumerableConverters.ReadOnlySet<object>(null)).ThrowExactly<ArgumentNullException>().WithParameterName("conversion");
+    using (new AssertionScope())
+    {
+      AssertionExtensions.Should(() => IAsyncEnumerableConverters.ReadOnlySet<object>(null)).ThrowExactly<ArgumentNullException>().WithParameterName("conversion");
+    }
 
     throw new NotImplementedException();
   }
@@ -178,8 +220,11 @@ public sealed class IAsyncEnumerableConvertersTest : UnitTest
   [Fact]
   public void ReadOnlySetAsync_Method()
   {
-    AssertionExtensions.Should(() => IAsyncEnumerableConverters.ReadOnlySetAsync<object>(null)).ThrowExactlyAsync<ArgumentNullException>().WithParameterName("conversion").Await();
-    AssertionExtensions.Should(() => IAsyncEnumerableConverters.ReadOnlySetAsync<object>(null, null, Attributes.CancellationToken())).ThrowExactlyAsync<OperationCanceledException>().Await();
+    using (new AssertionScope())
+    {
+      AssertionExtensions.Should(() => IAsyncEnumerableConverters.ReadOnlySetAsync<object>(null)).ThrowExactlyAsync<ArgumentNullException>().WithParameterName("conversion").Await();
+      AssertionExtensions.Should(() => IAsyncEnumerableConverters.ReadOnlySetAsync<object>(null, null, Attributes.CancellationToken())).ThrowExactlyAsync<OperationCanceledException>().Await();
+    }
 
     throw new NotImplementedException();
   }
@@ -190,8 +235,11 @@ public sealed class IAsyncEnumerableConvertersTest : UnitTest
   [Fact]
   public void Dictionary_Method()
   {
-    AssertionExtensions.Should(() => IAsyncEnumerableConverters.Dictionary<object, object>(null, key => key)).ThrowExactly<ArgumentNullException>().WithParameterName("conversion");
-    AssertionExtensions.Should(() => Conversion.Dictionary<object, object>(null)).ThrowExactly<ArgumentNullException>().WithParameterName("conversion");
+    using (new AssertionScope())
+    {
+      AssertionExtensions.Should(() => IAsyncEnumerableConverters.Dictionary<object, object>(null, key => key)).ThrowExactly<ArgumentNullException>().WithParameterName("conversion");
+      AssertionExtensions.Should(() => Conversion.Dictionary<object, object>(null)).ThrowExactly<ArgumentNullException>().WithParameterName("conversion");
+    }
 
     throw new NotImplementedException();
   }
@@ -202,9 +250,12 @@ public sealed class IAsyncEnumerableConvertersTest : UnitTest
   [Fact]
   public void DictionaryAsync_Method()
   {
-    AssertionExtensions.Should(() => IAsyncEnumerableConverters.DictionaryAsync<object, object>(null, key => key)).ThrowExactlyAsync<ArgumentNullException>().WithParameterName("conversion").Await();
-    AssertionExtensions.Should(() => Conversion.DictionaryAsync<object, object>(null)).ThrowExactlyAsync<ArgumentNullException>().WithParameterName("conversion").Await();
-    AssertionExtensions.Should(() => Conversion.DictionaryAsync(key => key, null, Attributes.CancellationToken())).ThrowExactlyAsync<OperationCanceledException>().Await();
+    using (new AssertionScope())
+    {
+      AssertionExtensions.Should(() => IAsyncEnumerableConverters.DictionaryAsync<object, object>(null, key => key)).ThrowExactlyAsync<ArgumentNullException>().WithParameterName("conversion").Await();
+      AssertionExtensions.Should(() => Conversion.DictionaryAsync<object, object>(null)).ThrowExactlyAsync<ArgumentNullException>().WithParameterName("conversion").Await();
+      AssertionExtensions.Should(() => Conversion.DictionaryAsync(key => key, null, Attributes.CancellationToken())).ThrowExactlyAsync<OperationCanceledException>().Await();
+    }
 
     throw new NotImplementedException();
   }
@@ -215,8 +266,11 @@ public sealed class IAsyncEnumerableConvertersTest : UnitTest
   [Fact]
   public void ReadOnlyDictionary_Method()
   {
-    AssertionExtensions.Should(() => IAsyncEnumerableConverters.ReadOnlyDictionary<object, object>(null, key => key)).ThrowExactly<ArgumentNullException>().WithParameterName("conversion");
-    AssertionExtensions.Should(() => Conversion.ReadOnlyDictionary<object, object>(null)).ThrowExactly<ArgumentNullException>().WithParameterName("conversion");
+    using (new AssertionScope())
+    {
+      AssertionExtensions.Should(() => IAsyncEnumerableConverters.ReadOnlyDictionary<object, object>(null, key => key)).ThrowExactly<ArgumentNullException>().WithParameterName("conversion");
+      AssertionExtensions.Should(() => Conversion.ReadOnlyDictionary<object, object>(null)).ThrowExactly<ArgumentNullException>().WithParameterName("conversion");
+    }
 
     throw new NotImplementedException();
   }
@@ -227,9 +281,12 @@ public sealed class IAsyncEnumerableConvertersTest : UnitTest
   [Fact]
   public void ReadOnlyDictionaryAsync_Method()
   {
-    AssertionExtensions.Should(() => IAsyncEnumerableConverters.ReadOnlyDictionaryAsync<object, object>(null, key => key)).ThrowExactlyAsync<ArgumentNullException>().WithParameterName("conversion").Await();
-    AssertionExtensions.Should(() => Conversion.ReadOnlyDictionaryAsync<object, object>(null)).ThrowExactlyAsync<ArgumentNullException>().WithParameterName("conversion").Await();
-    AssertionExtensions.Should(() => Conversion.ReadOnlyDictionaryAsync(key => key, null, Attributes.CancellationToken())).ThrowExactlyAsync<OperationCanceledException>().Await();
+    using (new AssertionScope())
+    {
+      AssertionExtensions.Should(() => IAsyncEnumerableConverters.ReadOnlyDictionaryAsync<object, object>(null, key => key)).ThrowExactlyAsync<ArgumentNullException>().WithParameterName("conversion").Await();
+      AssertionExtensions.Should(() => Conversion.ReadOnlyDictionaryAsync<object, object>(null)).ThrowExactlyAsync<ArgumentNullException>().WithParameterName("conversion").Await();
+      AssertionExtensions.Should(() => Conversion.ReadOnlyDictionaryAsync(key => key, null, Attributes.CancellationToken())).ThrowExactlyAsync<OperationCanceledException>().Await();
+    }
 
     throw new NotImplementedException();
   }
@@ -294,7 +351,10 @@ public sealed class IAsyncEnumerableConvertersTest : UnitTest
   [Fact]
   public void Stack_Method()
   {
-    AssertionExtensions.Should(() => IAsyncEnumerableConverters.Stack<object>(null)).ThrowExactly<ArgumentNullException>().WithParameterName("conversion");
+    using (new AssertionScope())
+    {
+      AssertionExtensions.Should(() => IAsyncEnumerableConverters.Stack<object>(null)).ThrowExactly<ArgumentNullException>().WithParameterName("conversion");
+    }
 
     throw new NotImplementedException();
   }
@@ -305,8 +365,11 @@ public sealed class IAsyncEnumerableConvertersTest : UnitTest
   [Fact]
   public void StackAsync_Method()
   {
-    AssertionExtensions.Should(() => IAsyncEnumerableConverters.StackAsync<object>(null)).ThrowExactlyAsync<ArgumentNullException>().WithParameterName("conversion").Await();
-    AssertionExtensions.Should(() => Conversion.StackAsync(Attributes.CancellationToken())).ThrowExactlyAsync<OperationCanceledException>().Await();
+    using (new AssertionScope())
+    {
+      AssertionExtensions.Should(() => IAsyncEnumerableConverters.StackAsync<object>(null)).ThrowExactlyAsync<ArgumentNullException>().WithParameterName("conversion").Await();
+      AssertionExtensions.Should(() => Conversion.StackAsync(Attributes.CancellationToken())).ThrowExactlyAsync<OperationCanceledException>().Await();
+    }
 
     throw new NotImplementedException();
   }
@@ -317,7 +380,10 @@ public sealed class IAsyncEnumerableConvertersTest : UnitTest
   [Fact]
   public void Queue_Method()
   {
-    AssertionExtensions.Should(() => IAsyncEnumerableConverters.Queue<object>(null)).ThrowExactly<ArgumentNullException>().WithParameterName("conversion");
+    using (new AssertionScope())
+    {
+      AssertionExtensions.Should(() => IAsyncEnumerableConverters.Queue<object>(null)).ThrowExactly<ArgumentNullException>().WithParameterName("conversion");
+    }
 
     throw new NotImplementedException();
   }
@@ -328,8 +394,11 @@ public sealed class IAsyncEnumerableConvertersTest : UnitTest
   [Fact]
   public void QueueAsync_Method()
   {
-    AssertionExtensions.Should(() => IAsyncEnumerableConverters.QueueAsync<object>(null)).ThrowExactlyAsync<ArgumentNullException>().WithParameterName("conversion").Await();
-    AssertionExtensions.Should(() => Conversion.QueueAsync(Attributes.CancellationToken())).ThrowExactlyAsync<OperationCanceledException>().Await();
+    using (new AssertionScope())
+    {
+      AssertionExtensions.Should(() => IAsyncEnumerableConverters.QueueAsync<object>(null)).ThrowExactlyAsync<ArgumentNullException>().WithParameterName("conversion").Await();
+      AssertionExtensions.Should(() => Conversion.QueueAsync(Attributes.CancellationToken())).ThrowExactlyAsync<OperationCanceledException>().Await();
+    }
 
     throw new NotImplementedException();
   }
@@ -340,7 +409,10 @@ public sealed class IAsyncEnumerableConvertersTest : UnitTest
   [Fact]
   public void PriorityQueue_Method()
   {
-    AssertionExtensions.Should(() => IAsyncEnumerableConverters.PriorityQueue<object, object>(null)).ThrowExactly<ArgumentNullException>().WithParameterName("conversion");
+    using (new AssertionScope())
+    {
+      AssertionExtensions.Should(() => IAsyncEnumerableConverters.PriorityQueue<object, object>(null)).ThrowExactly<ArgumentNullException>().WithParameterName("conversion");
+    }
 
     throw new NotImplementedException();
   }
@@ -351,8 +423,11 @@ public sealed class IAsyncEnumerableConvertersTest : UnitTest
   [Fact]
   public void PriorityQueueAsync_Method()
   {
-    AssertionExtensions.Should(() => IAsyncEnumerableConverters.PriorityQueueAsync<object, object>(null)).ThrowExactlyAsync<ArgumentNullException>().WithParameterName("conversion").Await();
-    AssertionExtensions.Should(() => IAsyncEnumerableConverters.PriorityQueueAsync<object, object>(null, null, Attributes.CancellationToken())).ThrowExactlyAsync<ArgumentNullException>().WithParameterName("conversion").Await();
+    using (new AssertionScope())
+    {
+      AssertionExtensions.Should(() => IAsyncEnumerableConverters.PriorityQueueAsync<object, object>(null)).ThrowExactlyAsync<ArgumentNullException>().WithParameterName("conversion").Await();
+      AssertionExtensions.Should(() => IAsyncEnumerableConverters.PriorityQueueAsync<object, object>(null, null, Attributes.CancellationToken())).ThrowExactlyAsync<ArgumentNullException>().WithParameterName("conversion").Await();
+    }
 
     throw new NotImplementedException();
   }
@@ -415,7 +490,10 @@ public sealed class IAsyncEnumerableConvertersTest : UnitTest
   [Fact]
   public void ImmutableArray_Method()
   {
-    AssertionExtensions.Should(() => IAsyncEnumerableConverters.ImmutableArray<object>(null)).ThrowExactly<ArgumentNullException>().WithParameterName("conversion");
+    using (new AssertionScope())
+    {
+      AssertionExtensions.Should(() => IAsyncEnumerableConverters.ImmutableArray<object>(null)).ThrowExactly<ArgumentNullException>().WithParameterName("conversion");
+    }
 
     throw new NotImplementedException();
   }
@@ -426,8 +504,11 @@ public sealed class IAsyncEnumerableConvertersTest : UnitTest
   [Fact]
   public void ImmutableArrayAsync_Method()
   {
-    AssertionExtensions.Should(() => IAsyncEnumerableConverters.ImmutableArrayAsync<object>(null)).ThrowExactlyAsync<ArgumentNullException>().WithParameterName("conversion").Await();
-    AssertionExtensions.Should(() => Conversion.ImmutableArrayAsync(Attributes.CancellationToken())).ThrowExactlyAsync<OperationCanceledException>().Await();
+    using (new AssertionScope())
+    {
+      AssertionExtensions.Should(() => IAsyncEnumerableConverters.ImmutableArrayAsync<object>(null)).ThrowExactlyAsync<ArgumentNullException>().WithParameterName("conversion").Await();
+      AssertionExtensions.Should(() => Conversion.ImmutableArrayAsync(Attributes.CancellationToken())).ThrowExactlyAsync<OperationCanceledException>().Await();
+    }
 
     throw new NotImplementedException();
   }
@@ -438,7 +519,10 @@ public sealed class IAsyncEnumerableConvertersTest : UnitTest
   [Fact]
   public void ImmutableList_Method()
   {
-    AssertionExtensions.Should(() => IAsyncEnumerableConverters.ImmutableList<object>(null)).ThrowExactly<ArgumentNullException>().WithParameterName("conversion");
+    using (new AssertionScope())
+    {
+      AssertionExtensions.Should(() => IAsyncEnumerableConverters.ImmutableList<object>(null)).ThrowExactly<ArgumentNullException>().WithParameterName("conversion");
+    }
 
     throw new NotImplementedException();
   }
@@ -449,8 +533,11 @@ public sealed class IAsyncEnumerableConvertersTest : UnitTest
   [Fact]
   public void ImmutableListAsync_Method()
   {
-    AssertionExtensions.Should(() => IAsyncEnumerableConverters.ImmutableListAsync<object>(null)).ThrowExactlyAsync<ArgumentNullException>().WithParameterName("conversion").Await();
-    AssertionExtensions.Should(() => Conversion.ImmutableListAsync(Attributes.CancellationToken())).ThrowExactlyAsync<OperationCanceledException>().Await();
+    using (new AssertionScope())
+    {
+      AssertionExtensions.Should(() => IAsyncEnumerableConverters.ImmutableListAsync<object>(null)).ThrowExactlyAsync<ArgumentNullException>().WithParameterName("conversion").Await();
+      AssertionExtensions.Should(() => Conversion.ImmutableListAsync(Attributes.CancellationToken())).ThrowExactlyAsync<OperationCanceledException>().Await();
+    }
 
     throw new NotImplementedException();
   }
@@ -461,7 +548,10 @@ public sealed class IAsyncEnumerableConvertersTest : UnitTest
   [Fact]
   public void ImmutableHashSet_Method()
   {
-    AssertionExtensions.Should(() => IAsyncEnumerableConverters.ImmutableHashSet<object>(null)).ThrowExactly<ArgumentNullException>().WithParameterName("conversion");
+    using (new AssertionScope())
+    {
+      AssertionExtensions.Should(() => IAsyncEnumerableConverters.ImmutableHashSet<object>(null)).ThrowExactly<ArgumentNullException>().WithParameterName("conversion");
+    }
 
     throw new NotImplementedException();
   }
@@ -472,8 +562,11 @@ public sealed class IAsyncEnumerableConvertersTest : UnitTest
   [Fact]
   public void ImmutableHashSetAsync_Method()
   {
-    AssertionExtensions.Should(() => IAsyncEnumerableConverters.ImmutableHashSetAsync<object>(null)).ThrowExactlyAsync<ArgumentNullException>().WithParameterName("conversion").Await();
-    AssertionExtensions.Should(() => Conversion.ImmutableHashSetAsync(null, Attributes.CancellationToken())).ThrowExactlyAsync<OperationCanceledException>().Await();
+    using (new AssertionScope())
+    {
+      AssertionExtensions.Should(() => IAsyncEnumerableConverters.ImmutableHashSetAsync<object>(null)).ThrowExactlyAsync<ArgumentNullException>().WithParameterName("conversion").Await();
+      AssertionExtensions.Should(() => Conversion.ImmutableHashSetAsync(null, Attributes.CancellationToken())).ThrowExactlyAsync<OperationCanceledException>().Await();
+    }
 
     throw new NotImplementedException();
   }
@@ -484,7 +577,10 @@ public sealed class IAsyncEnumerableConvertersTest : UnitTest
   [Fact]
   public void ImmutableSortedSet_Method()
   {
-    AssertionExtensions.Should(() => IAsyncEnumerableConverters.ImmutableSortedSet<object>(null)).ThrowExactly<ArgumentNullException>().WithParameterName("conversion");
+    using (new AssertionScope())
+    {
+      AssertionExtensions.Should(() => IAsyncEnumerableConverters.ImmutableSortedSet<object>(null)).ThrowExactly<ArgumentNullException>().WithParameterName("conversion");
+    }
 
     throw new NotImplementedException();
   }
@@ -495,8 +591,11 @@ public sealed class IAsyncEnumerableConvertersTest : UnitTest
   [Fact]
   public void ImmutableSortedSetAsync_Method()
   {
-    AssertionExtensions.Should(() => IAsyncEnumerableConverters.ImmutableSortedSetAsync<object>(null)).ThrowExactlyAsync<ArgumentNullException>().WithParameterName("conversion").Await();
-    AssertionExtensions.Should(() => Conversion.ImmutableSortedSetAsync(null, Attributes.CancellationToken())).ThrowExactlyAsync<OperationCanceledException>().Await();
+    using (new AssertionScope())
+    {
+      AssertionExtensions.Should(() => IAsyncEnumerableConverters.ImmutableSortedSetAsync<object>(null)).ThrowExactlyAsync<ArgumentNullException>().WithParameterName("conversion").Await();
+      AssertionExtensions.Should(() => Conversion.ImmutableSortedSetAsync(null, Attributes.CancellationToken())).ThrowExactlyAsync<OperationCanceledException>().Await();
+    }
 
     throw new NotImplementedException();
   }
@@ -507,8 +606,11 @@ public sealed class IAsyncEnumerableConvertersTest : UnitTest
   [Fact]
   public void ImmutableDictionary_Method()
   {
-    AssertionExtensions.Should(() => IAsyncEnumerableConverters.ImmutableDictionary<object, object>(null, key => key)).ThrowExactly<ArgumentNullException>().WithParameterName("conversion");
-    AssertionExtensions.Should(() => Conversion.ImmutableDictionary<object, object>(null)).ThrowExactly<ArgumentNullException>().WithParameterName("key");
+    using (new AssertionScope())
+    {
+      AssertionExtensions.Should(() => IAsyncEnumerableConverters.ImmutableDictionary<object, object>(null, key => key)).ThrowExactly<ArgumentNullException>().WithParameterName("conversion");
+      AssertionExtensions.Should(() => Conversion.ImmutableDictionary<object, object>(null)).ThrowExactly<ArgumentNullException>().WithParameterName("key");
+    }
 
     throw new NotImplementedException();
   }
@@ -519,9 +621,12 @@ public sealed class IAsyncEnumerableConvertersTest : UnitTest
   [Fact]
   public void ImmutableDictionaryAsync_Method()
   {
-    AssertionExtensions.Should(() => IAsyncEnumerableConverters.ImmutableDictionaryAsync<object, object>(null, key => key)).ThrowExactlyAsync<ArgumentNullException>().WithParameterName("conversion").Await();
-    AssertionExtensions.Should(() => Conversion.ImmutableDictionaryAsync<object, object>(null)).ThrowExactlyAsync<ArgumentNullException>().WithParameterName("key").Await();
-    AssertionExtensions.Should(() => Conversion.ImmutableDictionaryAsync(key => key, null, Attributes.CancellationToken())).ThrowExactlyAsync<OperationCanceledException>().Await();
+    using (new AssertionScope())
+    {
+      AssertionExtensions.Should(() => IAsyncEnumerableConverters.ImmutableDictionaryAsync<object, object>(null, key => key)).ThrowExactlyAsync<ArgumentNullException>().WithParameterName("conversion").Await();
+      AssertionExtensions.Should(() => Conversion.ImmutableDictionaryAsync<object, object>(null)).ThrowExactlyAsync<ArgumentNullException>().WithParameterName("key").Await();
+      AssertionExtensions.Should(() => Conversion.ImmutableDictionaryAsync(key => key, null, Attributes.CancellationToken())).ThrowExactlyAsync<OperationCanceledException>().Await();
+    }
 
     throw new NotImplementedException();
   }
@@ -532,8 +637,11 @@ public sealed class IAsyncEnumerableConvertersTest : UnitTest
   [Fact]
   public void ImmutableSortedDictionary_Method()
   {
-    AssertionExtensions.Should(() => IAsyncEnumerableConverters.ImmutableSortedDictionary<object, object>(null, key => key)).ThrowExactly<ArgumentNullException>().WithParameterName("conversion");
-    AssertionExtensions.Should(() => Conversion.ImmutableSortedDictionary<object, object>(null)).ThrowExactly<ArgumentNullException>().WithParameterName("key");
+    using (new AssertionScope())
+    {
+      AssertionExtensions.Should(() => IAsyncEnumerableConverters.ImmutableSortedDictionary<object, object>(null, key => key)).ThrowExactly<ArgumentNullException>().WithParameterName("conversion");
+      AssertionExtensions.Should(() => Conversion.ImmutableSortedDictionary<object, object>(null)).ThrowExactly<ArgumentNullException>().WithParameterName("key");
+    }
 
     throw new NotImplementedException();
   }
@@ -544,9 +652,12 @@ public sealed class IAsyncEnumerableConvertersTest : UnitTest
   [Fact]
   public void ImmutableSortedDictionaryAsync_Method()
   {
-    AssertionExtensions.Should(() => IAsyncEnumerableConverters.ImmutableSortedDictionaryAsync<object, object>(null, key => key)).ThrowExactlyAsync<ArgumentNullException>().WithParameterName("conversion").Await();
-    AssertionExtensions.Should(() => Conversion.ImmutableSortedDictionaryAsync<object, object>(null)).ThrowExactlyAsync<ArgumentNullException>().WithParameterName("key").Await();
-    AssertionExtensions.Should(() => Conversion.ImmutableSortedDictionaryAsync(key => key, null, null, Attributes.CancellationToken())).ThrowExactlyAsync<OperationCanceledException>().Await();
+    using (new AssertionScope())
+    {
+      AssertionExtensions.Should(() => IAsyncEnumerableConverters.ImmutableSortedDictionaryAsync<object, object>(null, key => key)).ThrowExactlyAsync<ArgumentNullException>().WithParameterName("conversion").Await();
+      AssertionExtensions.Should(() => Conversion.ImmutableSortedDictionaryAsync<object, object>(null)).ThrowExactlyAsync<ArgumentNullException>().WithParameterName("key").Await();
+      AssertionExtensions.Should(() => Conversion.ImmutableSortedDictionaryAsync(key => key, null, null, Attributes.CancellationToken())).ThrowExactlyAsync<OperationCanceledException>().Await();
+    }
 
     throw new NotImplementedException();
   }
@@ -557,7 +668,10 @@ public sealed class IAsyncEnumerableConvertersTest : UnitTest
   [Fact]
   public void ImmutableQueue_Method()
   {
-    AssertionExtensions.Should(() => IAsyncEnumerableConverters.ImmutableQueue<object>(null)).ThrowExactly<ArgumentNullException>().WithParameterName("conversion");
+    using (new AssertionScope())
+    {
+      AssertionExtensions.Should(() => IAsyncEnumerableConverters.ImmutableQueue<object>(null)).ThrowExactly<ArgumentNullException>().WithParameterName("conversion");
+    }
 
     throw new NotImplementedException();
   }
@@ -568,8 +682,11 @@ public sealed class IAsyncEnumerableConvertersTest : UnitTest
   [Fact]
   public void ImmutableQueueAsync_Method()
   {
-    AssertionExtensions.Should(() => IAsyncEnumerableConverters.ImmutableQueueAsync<object>(null)).ThrowExactlyAsync<ArgumentNullException>().WithParameterName("conversion").Await();
-    AssertionExtensions.Should(() => Conversion.ImmutableQueueAsync(Attributes.CancellationToken())).ThrowExactlyAsync<OperationCanceledException>().Await();
+    using (new AssertionScope())
+    {
+      AssertionExtensions.Should(() => IAsyncEnumerableConverters.ImmutableQueueAsync<object>(null)).ThrowExactlyAsync<ArgumentNullException>().WithParameterName("conversion").Await();
+      AssertionExtensions.Should(() => Conversion.ImmutableQueueAsync(Attributes.CancellationToken())).ThrowExactlyAsync<OperationCanceledException>().Await();
+    }
 
     throw new NotImplementedException();
   }

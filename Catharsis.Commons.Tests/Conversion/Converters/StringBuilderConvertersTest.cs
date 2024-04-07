@@ -1,5 +1,6 @@
 ﻿using System.Text;
 using FluentAssertions;
+using FluentAssertions.Execution;
 using Xunit;
 
 namespace Catharsis.Commons.Tests;
@@ -15,7 +16,10 @@ public sealed class StringBuilderConvertersTest : UnitTest
   [Fact]
   public void StringWriter_Method()
   {
-    AssertionExtensions.Should(() => StringBuilderConverters.StringWriter(null)).ThrowExactly<ArgumentNullException>().WithParameterName("conversion");
+    using (new AssertionScope())
+    {
+      AssertionExtensions.Should(() => StringBuilderConverters.StringWriter(null)).ThrowExactly<ArgumentNullException>().WithParameterName("conversion");
+    }
     
     throw new NotImplementedException();
   }
@@ -26,7 +30,10 @@ public sealed class StringBuilderConvertersTest : UnitTest
   [Fact]
   public void XmlWriter_Method()
   {
-    AssertionExtensions.Should(() => StringBuilderConverters.XmlWriter(null)).ThrowExactly<ArgumentNullException>().WithParameterName("conversion");
+    using (new AssertionScope())
+    {
+      AssertionExtensions.Should(() => StringBuilderConverters.XmlWriter(null)).ThrowExactly<ArgumentNullException>().WithParameterName("conversion");
+    }
 
     throw new NotImplementedException();
   }

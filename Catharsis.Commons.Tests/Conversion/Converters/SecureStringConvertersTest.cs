@@ -1,6 +1,7 @@
 ﻿using System.Security;
 using System.Text;
 using FluentAssertions;
+using FluentAssertions.Execution;
 using Xunit;
 
 namespace Catharsis.Commons.Tests;
@@ -16,7 +17,10 @@ public sealed class SecureStringConvertersTest : UnitTest
   [Fact]
   public void Bytes_Method()
   {
-    AssertionExtensions.Should(() => SecureStringConverters.Bytes(null)).ThrowExactly<ArgumentNullException>().WithParameterName("conversion");
+    using (new AssertionScope())
+    {
+      AssertionExtensions.Should(() => SecureStringConverters.Bytes(null)).ThrowExactly<ArgumentNullException>().WithParameterName("conversion");
+    }
 
     throw new NotImplementedException();
   }
@@ -27,7 +31,10 @@ public sealed class SecureStringConvertersTest : UnitTest
   [Fact]
   public void Text_Method()
   {
-    AssertionExtensions.Should(() => SecureStringConverters.Text(null)).ThrowExactly<ArgumentNullException>().WithParameterName("conversion");
+    using (new AssertionScope())
+    {
+      AssertionExtensions.Should(() => SecureStringConverters.Text(null)).ThrowExactly<ArgumentNullException>().WithParameterName("conversion");
+    }
 
     throw new NotImplementedException();
   }

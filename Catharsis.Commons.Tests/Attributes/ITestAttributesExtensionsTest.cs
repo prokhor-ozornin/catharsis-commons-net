@@ -1,4 +1,5 @@
 ﻿using FluentAssertions;
+using FluentAssertions.Execution;
 using Xunit;
 
 namespace Catharsis.Commons.Tests;
@@ -14,7 +15,10 @@ public sealed class ITestAttributesExtensionsTest : UnitTest
   [Fact]
   public void Guid_Method()
   {
-    AssertionExtensions.Should(() => ITestAttributesExtensions.Guid(null)).ThrowExactly<ArgumentNullException>().WithParameterName("attributes");
+    using (new AssertionScope())
+    {
+      AssertionExtensions.Should(() => ITestAttributesExtensions.Guid(null)).ThrowExactly<ArgumentNullException>().WithParameterName("attributes");
+    }
 
     throw new NotImplementedException();
   }
@@ -25,7 +29,10 @@ public sealed class ITestAttributesExtensionsTest : UnitTest
   [Fact]
   public void CancellationToken_Method()
   {
-    AssertionExtensions.Should(() => ITestAttributesExtensions.CancellationToken(null)).ThrowExactly<ArgumentNullException>().WithParameterName("attributes");
+    using (new AssertionScope())
+    {
+      AssertionExtensions.Should(() => ITestAttributesExtensions.CancellationToken(null)).ThrowExactly<ArgumentNullException>().WithParameterName("attributes");
+    }
 
     throw new NotImplementedException();
   }
@@ -36,7 +43,10 @@ public sealed class ITestAttributesExtensionsTest : UnitTest
   [Fact]
   public void Random_Method()
   {
-    AssertionExtensions.Should(() => ITestAttributesExtensions.Random(null)).ThrowExactly<ArgumentNullException>().WithParameterName("attributes");
+    using (new AssertionScope())
+    {
+      AssertionExtensions.Should(() => ITestAttributesExtensions.Random(null)).ThrowExactly<ArgumentNullException>().WithParameterName("attributes");
+    }
 
     throw new NotImplementedException();
   }

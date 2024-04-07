@@ -16,7 +16,10 @@ public sealed class TcpClientConvertersTest : UnitTest
   [Fact]
   public void Bytes_Method()
   {
-    AssertionExtensions.Should(() => TcpClientConverters.Bytes(null)).ThrowExactly<ArgumentNullException>().WithParameterName("conversion");
+    using (new AssertionScope())
+    {
+      AssertionExtensions.Should(() => TcpClientConverters.Bytes(null)).ThrowExactly<ArgumentNullException>().WithParameterName("conversion");
+    }
 
     throw new NotImplementedException();
   }
@@ -27,7 +30,10 @@ public sealed class TcpClientConvertersTest : UnitTest
   [Fact]
   public void BytesAsync_Method()
   {
-    AssertionExtensions.Should(() => TcpClientConverters.BytesAsync(null)).ThrowExactly<ArgumentNullException>().WithParameterName("conversion");
+    using (new AssertionScope())
+    {
+      AssertionExtensions.Should(() => TcpClientConverters.BytesAsync(null)).ThrowExactly<ArgumentNullException>().WithParameterName("conversion");
+    }
 
     throw new NotImplementedException();
   }

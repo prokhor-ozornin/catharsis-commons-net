@@ -1,4 +1,5 @@
 ﻿using FluentAssertions;
+using FluentAssertions.Execution;
 using Xunit;
 
 namespace Catharsis.Commons.Tests;
@@ -14,7 +15,10 @@ public sealed class IReadOnlyDictionaryConvertersTest : UnitTest
   [Fact]
   public void ValueTuple_Method()
   {
-    AssertionExtensions.Should(() => IReadOnlyDictionaryConverters.ValueTuple<object, object>(null)).ThrowExactly<ArgumentNullException>().WithParameterName("conversion");
+    using (new AssertionScope())
+    {
+      AssertionExtensions.Should(() => IReadOnlyDictionaryConverters.ValueTuple<object, object>(null)).ThrowExactly<ArgumentNullException>().WithParameterName("conversion");
+    }
 
     throw new NotImplementedException();
   }

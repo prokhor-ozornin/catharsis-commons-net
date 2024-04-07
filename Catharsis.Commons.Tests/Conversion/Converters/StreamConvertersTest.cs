@@ -19,7 +19,10 @@ public sealed class StreamConvertersTest : UnitTest
   [Fact]
   public void Bytes_Method()
   {
-    AssertionExtensions.Should(() => StreamConverters.Bytes(null)).ThrowExactly<ArgumentNullException>().WithParameterName("conversion");
+    using (new AssertionScope())
+    {
+      AssertionExtensions.Should(() => StreamConverters.Bytes(null)).ThrowExactly<ArgumentNullException>().WithParameterName("conversion");
+    }
 
     throw new NotImplementedException();
   }
@@ -30,7 +33,10 @@ public sealed class StreamConvertersTest : UnitTest
   [Fact]
   public void BytesAsync_Method()
   {
-    AssertionExtensions.Should(() => StreamConverters.BytesAsync(null)).ThrowExactly<ArgumentNullException>().WithParameterName("conversion");
+    using (new AssertionScope())
+    {
+      AssertionExtensions.Should(() => StreamConverters.BytesAsync(null)).ThrowExactly<ArgumentNullException>().WithParameterName("conversion");
+    }
 
     throw new NotImplementedException();
   }
@@ -41,7 +47,10 @@ public sealed class StreamConvertersTest : UnitTest
   [Fact]
   public void Text_Method()
   {
-    AssertionExtensions.Should(() => StreamConverters.Text(null)).ThrowExactly<ArgumentNullException>().WithParameterName("conversion");
+    using (new AssertionScope())
+    {
+      AssertionExtensions.Should(() => StreamConverters.Text(null)).ThrowExactly<ArgumentNullException>().WithParameterName("conversion");
+    }
 
     throw new NotImplementedException();
   }
@@ -52,7 +61,10 @@ public sealed class StreamConvertersTest : UnitTest
   [Fact]
   public void TextAsync_Method()
   {
-    AssertionExtensions.Should(() => StreamConverters.TextAsync(null)).ThrowExactlyAsync<ArgumentNullException>().WithParameterName("conversion").Await();
+    using (new AssertionScope())
+    {
+      AssertionExtensions.Should(() => StreamConverters.TextAsync(null)).ThrowExactlyAsync<ArgumentNullException>().WithParameterName("conversion").Await();
+    }
 
     throw new NotImplementedException();
   }
@@ -63,7 +75,10 @@ public sealed class StreamConvertersTest : UnitTest
   [Fact]
   public void XmlDocument_Method()
   {
-    AssertionExtensions.Should(() => StreamConverters.XmlDocument(null)).ThrowExactly<ArgumentNullException>().WithParameterName("conversion");
+    using (new AssertionScope())
+    {
+      AssertionExtensions.Should(() => StreamConverters.XmlDocument(null)).ThrowExactly<ArgumentNullException>().WithParameterName("conversion");
+    }
 
     throw new NotImplementedException();
   }
@@ -74,7 +89,10 @@ public sealed class StreamConvertersTest : UnitTest
   [Fact]
   public void XDocument_Method()
   {
-    AssertionExtensions.Should(() => StreamConverters.XDocument(null)).ThrowExactly<ArgumentNullException>().WithParameterName("conversion");
+    using (new AssertionScope())
+    {
+      AssertionExtensions.Should(() => StreamConverters.XDocument(null)).ThrowExactly<ArgumentNullException>().WithParameterName("conversion");
+    }
 
     throw new NotImplementedException();
   }
@@ -85,8 +103,11 @@ public sealed class StreamConvertersTest : UnitTest
   [Fact]
   public void XDocumentAsync_Method()
   {
-    AssertionExtensions.Should(() => StreamConverters.XDocumentAsync(null)).ThrowExactlyAsync<ArgumentNullException>().WithParameterName("conversion").Await();
-    AssertionExtensions.Should(() => Conversion.XDocumentAsync(Attributes.CancellationToken())).ThrowExactlyAsync<OperationCanceledException>().Await();
+    using (new AssertionScope())
+    {
+      AssertionExtensions.Should(() => StreamConverters.XDocumentAsync(null)).ThrowExactlyAsync<ArgumentNullException>().WithParameterName("conversion").Await();
+      AssertionExtensions.Should(() => Conversion.XDocumentAsync(Attributes.CancellationToken())).ThrowExactlyAsync<OperationCanceledException>().Await();
+    }
 
     throw new NotImplementedException();
   }
@@ -147,7 +168,10 @@ public sealed class StreamConvertersTest : UnitTest
   [Fact]
   public void BufferedStream_Method()
   {
-    AssertionExtensions.Should(() => StreamConverters.BufferedStream(null)).ThrowExactly<ArgumentNullException>().WithParameterName("conversion");
+    using (new AssertionScope())
+    {
+      AssertionExtensions.Should(() => StreamConverters.BufferedStream(null)).ThrowExactly<ArgumentNullException>().WithParameterName("conversion");
+    }
 
     throw new NotImplementedException();
   }
@@ -158,7 +182,10 @@ public sealed class StreamConvertersTest : UnitTest
   [Fact]
   public void BinaryReader_Method()
   {
-    AssertionExtensions.Should(() => StreamConverters.BinaryReader(null)).ThrowExactly<ArgumentNullException>().WithParameterName("conversion");
+    using (new AssertionScope())
+    {
+      AssertionExtensions.Should(() => StreamConverters.BinaryReader(null)).ThrowExactly<ArgumentNullException>().WithParameterName("conversion");
+    }
 
     throw new NotImplementedException();
   }
@@ -169,7 +196,10 @@ public sealed class StreamConvertersTest : UnitTest
   [Fact]
   public void BinaryWriter_Method()
   {
-    AssertionExtensions.Should(() => StreamConverters.BinaryWriter(null)).ThrowExactly<ArgumentNullException>().WithParameterName("conversion");
+    using (new AssertionScope())
+    {
+      AssertionExtensions.Should(() => StreamConverters.BinaryWriter(null)).ThrowExactly<ArgumentNullException>().WithParameterName("conversion");
+    }
 
     throw new NotImplementedException();
   }
@@ -180,7 +210,10 @@ public sealed class StreamConvertersTest : UnitTest
   [Fact]
   public void StreamReader_Method()
   {
-    AssertionExtensions.Should(() => StreamConverters.StreamReader(null)).ThrowExactly<ArgumentNullException>().WithParameterName("conversion");
+    using (new AssertionScope())
+    {
+      AssertionExtensions.Should(() => StreamConverters.StreamReader(null)).ThrowExactly<ArgumentNullException>().WithParameterName("conversion");
+    }
 
     throw new NotImplementedException();
   }
@@ -191,7 +224,10 @@ public sealed class StreamConvertersTest : UnitTest
   [Fact]
   public void StreamWriter_Method()
   {
-    AssertionExtensions.Should(() => StreamConverters.StreamWriter(null)).ThrowExactly<ArgumentNullException>().WithParameterName("conversion");
+    using (new AssertionScope())
+    {
+      AssertionExtensions.Should(() => StreamConverters.StreamWriter(null)).ThrowExactly<ArgumentNullException>().WithParameterName("conversion");
+    }
 
     throw new NotImplementedException();
   }

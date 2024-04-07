@@ -1,5 +1,6 @@
 ﻿using Catharsis.Extensions;
 using FluentAssertions;
+using FluentAssertions.Execution;
 using Xunit;
 
 namespace Catharsis.Commons.Tests;
@@ -15,11 +16,14 @@ public sealed class DateTimeConvertersTest : UnitTest
   [Fact]
   public void DateTimeOffset_Method()
   {
-    AssertionExtensions.Should(() => DateTimeConverters.DateTimeOffset(null)).ThrowExactly<ArgumentNullException>().WithParameterName("conversion");
-
-    foreach (var date in new[] { DateTime.MinValue, DateTime.MaxValue, DateTime.Now, DateTime.UtcNow })
+    using (new AssertionScope())
     {
-      date.ToDateTimeOffset().Should().BeSameDateAs(date.ToDateTimeOffset()).And.BeSameDateAs(new DateTimeOffset(date.ToUniversalTime())).And.BeWithin(TimeSpan.Zero);
+      AssertionExtensions.Should(() => DateTimeConverters.DateTimeOffset(null)).ThrowExactly<ArgumentNullException>().WithParameterName("conversion");
+
+      foreach (var date in new[] { DateTime.MinValue, DateTime.MaxValue, DateTime.Now, DateTime.UtcNow })
+      {
+        date.ToDateTimeOffset().Should().BeSameDateAs(date.ToDateTimeOffset()).And.BeSameDateAs(new DateTimeOffset(date.ToUniversalTime())).And.BeWithin(TimeSpan.Zero);
+      }
     }
   }
 
@@ -29,7 +33,10 @@ public sealed class DateTimeConvertersTest : UnitTest
   [Fact]
   public void DateOnly_Method()
   {
-    AssertionExtensions.Should(() => DateTimeConverters.DateOnly(null)).ThrowExactly<ArgumentNullException>().WithParameterName("conversion");
+    using (new AssertionScope())
+    {
+      AssertionExtensions.Should(() => DateTimeConverters.DateOnly(null)).ThrowExactly<ArgumentNullException>().WithParameterName("conversion");
+    }
 
     throw new NotImplementedException();
   }
@@ -40,7 +47,10 @@ public sealed class DateTimeConvertersTest : UnitTest
   [Fact]
   public void TimeOnly_Method()
   {
-    AssertionExtensions.Should(() => DateTimeConverters.TimeOnly(null)).ThrowExactly<ArgumentNullException>().WithParameterName("conversion");
+    using (new AssertionScope())
+    {
+      AssertionExtensions.Should(() => DateTimeConverters.TimeOnly(null)).ThrowExactly<ArgumentNullException>().WithParameterName("conversion");
+    }
 
     throw new NotImplementedException();
   }

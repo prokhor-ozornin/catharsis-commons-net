@@ -1,6 +1,7 @@
 ﻿using System.Diagnostics;
 using Catharsis.Extensions;
 using FluentAssertions;
+using FluentAssertions.Execution;
 using Xunit;
 
 namespace Catharsis.Commons.Tests;
@@ -16,7 +17,10 @@ public sealed class ProcessConvertersTest : UnitTest
   [Fact]
   public void Bytes_Method()
   {
-    AssertionExtensions.Should(() => ProcessConverters.Bytes(null)).ThrowExactly<ArgumentNullException>().WithParameterName("conversion");
+    using (new AssertionScope())
+    {
+      AssertionExtensions.Should(() => ProcessConverters.Bytes(null)).ThrowExactly<ArgumentNullException>().WithParameterName("conversion");
+    }
 
     throw new NotImplementedException();
   }
@@ -27,7 +31,10 @@ public sealed class ProcessConvertersTest : UnitTest
   [Fact]
   public void BytesAsync_Method()
   {
-    AssertionExtensions.Should(() => ProcessConverters.BytesAsync(null)).ThrowExactly<ArgumentNullException>().WithParameterName("conversion");
+    using (new AssertionScope())
+    {
+      AssertionExtensions.Should(() => ProcessConverters.BytesAsync(null)).ThrowExactly<ArgumentNullException>().WithParameterName("conversion");
+    }
 
     throw new NotImplementedException();
   }
@@ -38,7 +45,10 @@ public sealed class ProcessConvertersTest : UnitTest
   [Fact]
   public void Text_Method()
   {
-    AssertionExtensions.Should(() => ProcessConverters.Text(null)).ThrowExactly<ArgumentNullException>().WithParameterName("conversion");
+    using (new AssertionScope())
+    {
+      AssertionExtensions.Should(() => ProcessConverters.Text(null)).ThrowExactly<ArgumentNullException>().WithParameterName("conversion");
+    }
 
     throw new NotImplementedException();
   }
@@ -49,7 +59,10 @@ public sealed class ProcessConvertersTest : UnitTest
   [Fact]
   public void TextAsync_Method()
   {
-    AssertionExtensions.Should(() => ProcessConverters.TextAsync(null)).ThrowExactlyAsync<ArgumentNullException>().WithParameterName("conversion").Await();
+    using (new AssertionScope())
+    {
+      AssertionExtensions.Should(() => ProcessConverters.TextAsync(null)).ThrowExactlyAsync<ArgumentNullException>().WithParameterName("conversion").Await();
+    }
 
     throw new NotImplementedException();
   }

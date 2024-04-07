@@ -18,7 +18,10 @@ public sealed class IEnumerableConvertersTest : UnitTest
   [Fact]
   public void Array_Method()
   {
-    AssertionExtensions.Should(() => IEnumerableConverters.Array<object>(null)).ThrowExactly<ArgumentNullException>().WithParameterName("conversion");
+    using (new AssertionScope())
+    {
+      AssertionExtensions.Should(() => IEnumerableConverters.Array<object>(null)).ThrowExactly<ArgumentNullException>().WithParameterName("conversion");
+    }
 
     throw new NotImplementedException();
   }
@@ -29,7 +32,10 @@ public sealed class IEnumerableConvertersTest : UnitTest
   [Fact]
   public void AsyncEnumerable_Method()
   {
-    AssertionExtensions.Should(() => IEnumerableConverters.AsyncEnumerable<object>(null)).ThrowExactly<ArgumentNullException>().WithParameterName("conversion");
+    using (new AssertionScope())
+    {
+      AssertionExtensions.Should(() => IEnumerableConverters.AsyncEnumerable<object>(null)).ThrowExactly<ArgumentNullException>().WithParameterName("conversion");
+    }
 
     throw new NotImplementedException();
   }
@@ -40,7 +46,10 @@ public sealed class IEnumerableConvertersTest : UnitTest
   [Fact]
   public void LinkedList_Method()
   {
-    AssertionExtensions.Should(() => IEnumerableConverters.LinkedList<object>(null)).ThrowExactly<ArgumentNullException>().WithParameterName("conversion");
+    using (new AssertionScope())
+    {
+      AssertionExtensions.Should(() => IEnumerableConverters.LinkedList<object>(null)).ThrowExactly<ArgumentNullException>().WithParameterName("conversion");
+    }
 
     throw new NotImplementedException();
   }
@@ -51,7 +60,10 @@ public sealed class IEnumerableConvertersTest : UnitTest
   [Fact]
   public void ReadOnlyList_Method()
   {
-    AssertionExtensions.Should(() => IEnumerableConverters.ReadOnlyList<object>(null)).ThrowExactly<ArgumentNullException>().WithParameterName("conversion");
+    using (new AssertionScope())
+    {
+      AssertionExtensions.Should(() => IEnumerableConverters.ReadOnlyList<object>(null)).ThrowExactly<ArgumentNullException>().WithParameterName("conversion");
+    }
 
     throw new NotImplementedException();
   }
@@ -62,7 +74,10 @@ public sealed class IEnumerableConvertersTest : UnitTest
   [Fact]
   public void SortedSet_Method()
   {
-    AssertionExtensions.Should(() => IEnumerableConverters.SortedSet<object>(null)).ThrowExactly<ArgumentNullException>().WithParameterName("conversion");
+    using (new AssertionScope())
+    {
+      AssertionExtensions.Should(() => IEnumerableConverters.SortedSet<object>(null)).ThrowExactly<ArgumentNullException>().WithParameterName("conversion");
+    }
 
     throw new NotImplementedException();
   }
@@ -73,7 +88,10 @@ public sealed class IEnumerableConvertersTest : UnitTest
   [Fact]
   public void ReadOnlySet_Method()
   {
-    AssertionExtensions.Should(() => IEnumerableConverters.ReadOnlySet<object>(null)).ThrowExactly<ArgumentNullException>().WithParameterName("conversion");
+    using (new AssertionScope())
+    {
+      AssertionExtensions.Should(() => IEnumerableConverters.ReadOnlySet<object>(null)).ThrowExactly<ArgumentNullException>().WithParameterName("conversion");
+    }
 
     throw new NotImplementedException();
   }
@@ -84,7 +102,10 @@ public sealed class IEnumerableConvertersTest : UnitTest
   [Fact]
   public void Stack_Method()
   {
-    AssertionExtensions.Should(() => IEnumerableConverters.Stack<object>(null)).ThrowExactly<ArgumentNullException>().WithParameterName("conversion");
+    using (new AssertionScope())
+    {
+      AssertionExtensions.Should(() => IEnumerableConverters.Stack<object>(null)).ThrowExactly<ArgumentNullException>().WithParameterName("conversion");
+    }
 
     throw new NotImplementedException();
   }
@@ -95,7 +116,10 @@ public sealed class IEnumerableConvertersTest : UnitTest
   [Fact]
   public void Queue_Method()
   {
-    AssertionExtensions.Should(() => IEnumerableConverters.Queue<object>(null)).ThrowExactly<ArgumentNullException>().WithParameterName("conversion");
+    using (new AssertionScope())
+    {
+      AssertionExtensions.Should(() => IEnumerableConverters.Queue<object>(null)).ThrowExactly<ArgumentNullException>().WithParameterName("conversion");
+    }
 
     throw new NotImplementedException();
   }
@@ -106,7 +130,10 @@ public sealed class IEnumerableConvertersTest : UnitTest
   [Fact]
   public void PriorityQueue_Method()
   {
-    AssertionExtensions.Should(() => IEnumerableConverters.PriorityQueue<object, object>(null)).ThrowExactly<ArgumentNullException>().WithParameterName("conversion");
+    using (new AssertionScope())
+    {
+      AssertionExtensions.Should(() => IEnumerableConverters.PriorityQueue<object, object>(null)).ThrowExactly<ArgumentNullException>().WithParameterName("conversion");
+    }
 
     throw new NotImplementedException();
   }
@@ -117,7 +144,10 @@ public sealed class IEnumerableConvertersTest : UnitTest
   [Fact]
   public void ImmutableQueue_Method()
   {
-    AssertionExtensions.Should(() => IEnumerableConverters.ImmutableQueue<object>(null)).ThrowExactly<ArgumentNullException>().WithParameterName("conversion");
+    using (new AssertionScope())
+    {
+      AssertionExtensions.Should(() => IEnumerableConverters.ImmutableQueue<object>(null)).ThrowExactly<ArgumentNullException>().WithParameterName("conversion");
+    }
 
     throw new NotImplementedException();
   }
@@ -128,7 +158,10 @@ public sealed class IEnumerableConvertersTest : UnitTest
   [Fact]
   public void ArraySegment_Method()
   {
-    AssertionExtensions.Should(() => IEnumerableConverters.ArraySegment<object>(null)).ThrowExactly<ArgumentNullException>().WithParameterName("conversion");
+    using (new AssertionScope())
+    {
+      AssertionExtensions.Should(() => IEnumerableConverters.ArraySegment<object>(null)).ThrowExactly<ArgumentNullException>().WithParameterName("conversion");
+    }
 
     throw new NotImplementedException();
   }
@@ -139,7 +172,10 @@ public sealed class IEnumerableConvertersTest : UnitTest
   [Fact]
   public void Memory_Method()
   {
-    AssertionExtensions.Should(() => IEnumerableConverters.Memory<object>(null)).ThrowExactly<ArgumentNullException>().WithParameterName("conversion");
+    using (new AssertionScope())
+    {
+      AssertionExtensions.Should(() => IEnumerableConverters.Memory<object>(null)).ThrowExactly<ArgumentNullException>().WithParameterName("conversion");
+    }
 
     throw new NotImplementedException();
   }
@@ -150,7 +186,10 @@ public sealed class IEnumerableConvertersTest : UnitTest
   [Fact]
   public void ReadOnlyMemory_Method()
   {
-    AssertionExtensions.Should(() => IEnumerableConverters.ReadOnlyMemory<object>(null)).ThrowExactly<ArgumentNullException>().WithParameterName("conversion");
+    using (new AssertionScope())
+    {
+      AssertionExtensions.Should(() => IEnumerableConverters.ReadOnlyMemory<object>(null)).ThrowExactly<ArgumentNullException>().WithParameterName("conversion");
+    }
 
     throw new NotImplementedException();
   }
@@ -161,7 +200,10 @@ public sealed class IEnumerableConvertersTest : UnitTest
   [Fact]
   public void Range_Method()
   {
-    AssertionExtensions.Should(() => IEnumerableConverters.Range(null)).ThrowExactly<ArgumentNullException>().WithParameterName("conversion");
+    using (new AssertionScope())
+    {
+      AssertionExtensions.Should(() => IEnumerableConverters.Range(null)).ThrowExactly<ArgumentNullException>().WithParameterName("conversion");
+    }
 
     throw new NotImplementedException();
   }
@@ -198,7 +240,10 @@ public sealed class IEnumerableConvertersTest : UnitTest
   [Fact]
   public void Dictionary_Method()
   {
-    AssertionExtensions.Should(() => IEnumerableConverters.Dictionary<object, object>(null)).ThrowExactly<ArgumentNullException>().WithParameterName("conversion");
+    using (new AssertionScope())
+    {
+      AssertionExtensions.Should(() => IEnumerableConverters.Dictionary<object, object>(null)).ThrowExactly<ArgumentNullException>().WithParameterName("conversion");
+    }
 
     throw new NotImplementedException();
   }
@@ -209,7 +254,10 @@ public sealed class IEnumerableConvertersTest : UnitTest
   [Fact]
   public void ReadOnlyDictionary_Method()
   {
-    AssertionExtensions.Should(() => IEnumerableConverters.ReadOnlyDictionary<object, object>(null)).ThrowExactly<ArgumentNullException>().WithParameterName("conversion");
+    using (new AssertionScope())
+    {
+      AssertionExtensions.Should(() => IEnumerableConverters.ReadOnlyDictionary<object, object>(null)).ThrowExactly<ArgumentNullException>().WithParameterName("conversion");
+    }
 
     throw new NotImplementedException();
   }

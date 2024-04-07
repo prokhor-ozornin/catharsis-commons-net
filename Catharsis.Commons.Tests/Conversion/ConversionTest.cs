@@ -1,4 +1,5 @@
-﻿using Xunit;
+﻿using FluentAssertions.Execution;
+using Xunit;
 
 namespace Catharsis.Commons.Tests;
 
@@ -22,6 +23,10 @@ public sealed class ConversionTest : UnitTest
   [Fact]
   public void To_Method()
   {
+    using (new AssertionScope())
+    {
+    }
+
     throw new NotImplementedException();
   }
 }

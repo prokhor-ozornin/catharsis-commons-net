@@ -16,7 +16,10 @@ public sealed class ArrayConvertersTest : UnitTest
   [Fact]
   public void Bytes_Method()
   {
-    AssertionExtensions.Should(() => ArrayConverters.Bytes(null)).ThrowExactly<ArgumentNullException>().WithParameterName("converter");
+    using (new AssertionScope())
+    {
+      AssertionExtensions.Should(() => ArrayConverters.Bytes(null)).ThrowExactly<ArgumentNullException>().WithParameterName("converter");
+    }
 
     throw new NotImplementedException();
   }

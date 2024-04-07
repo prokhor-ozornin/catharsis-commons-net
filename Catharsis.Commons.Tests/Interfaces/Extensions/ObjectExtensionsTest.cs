@@ -1,4 +1,5 @@
 ﻿using FluentAssertions;
+using FluentAssertions.Execution;
 using Xunit;
 
 namespace Catharsis.Commons.Tests;
@@ -14,7 +15,10 @@ public sealed class ObjectExtensionsTest : UnitTest
   [Fact]
   public void SerializeAsJson_Method()
   {
-    AssertionExtensions.Should(() => ObjectExtensions.SerializeAsJson(null)).ThrowExactly<ArgumentNullException>().WithParameterName("subject");
+    using (new AssertionScope())
+    {
+      AssertionExtensions.Should(() => ObjectExtensions.SerializeAsJson(null)).ThrowExactly<ArgumentNullException>().WithParameterName("subject");
+    }
 
     throw new NotImplementedException();
   }
@@ -25,7 +29,10 @@ public sealed class ObjectExtensionsTest : UnitTest
   [Fact]
   public void DeserializeAsJson_Method()
   {
-    AssertionExtensions.Should(() => ObjectExtensions.DeserializeAsJson<object>(null)).ThrowExactly<ArgumentNullException>().WithParameterName("value");
+    using (new AssertionScope())
+    {
+      AssertionExtensions.Should(() => ObjectExtensions.DeserializeAsJson<object>(null)).ThrowExactly<ArgumentNullException>().WithParameterName("value");
+    }
 
     throw new NotImplementedException();
   }

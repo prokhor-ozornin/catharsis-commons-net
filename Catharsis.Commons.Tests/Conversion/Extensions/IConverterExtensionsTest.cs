@@ -1124,7 +1124,7 @@ public sealed class IConverterExtensionsTest : UnitTest
       Convert.To.Float(decimal.Zero, format).Should().Be((float) decimal.Zero);
       Convert.To.Float(decimal.One, format).Should().Be((float) decimal.One);
 
-      if (format != null)
+      if (format is not null)
       {
         Convert.To.Float(float.MinValue.ToString(format), format).Should().Be(float.MinValue);
         Convert.To.Float(float.MaxValue.ToString(format), format).Should().Be(float.MaxValue);
@@ -1202,7 +1202,7 @@ public sealed class IConverterExtensionsTest : UnitTest
       Convert.To.Double(decimal.Zero, format).Should().Be((double) decimal.Zero);
       Convert.To.Double(decimal.One, format).Should().Be((double) decimal.One);
 
-      if (format != null)
+      if (format is not null)
       {
         Convert.To.Double(double.MinValue.ToString(format), format).Should().Be(double.MinValue);
         Convert.To.Double(double.MaxValue.ToString(format), format).Should().Be(double.MaxValue);

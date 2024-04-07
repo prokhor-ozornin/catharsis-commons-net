@@ -1,4 +1,5 @@
 ﻿using FluentAssertions;
+using FluentAssertions.Execution;
 using Xunit;
 
 namespace Catharsis.Commons.Tests;
@@ -14,7 +15,10 @@ public sealed class IDictionaryConvertersTest : UnitTest
   [Fact]
   public void SortedList_Method()
   {
-    AssertionExtensions.Should(() => IDictionaryConverters.SortedList<object, object>(null)).ThrowExactly<ArgumentNullException>().WithParameterName("conversion");
+    using (new AssertionScope())
+    {
+      AssertionExtensions.Should(() => IDictionaryConverters.SortedList<object, object>(null)).ThrowExactly<ArgumentNullException>().WithParameterName("conversion");
+    }
 
     throw new NotImplementedException();
   }
@@ -25,7 +29,10 @@ public sealed class IDictionaryConvertersTest : UnitTest
   [Fact]
   public void SortedDictionary_Method()
   {
-    AssertionExtensions.Should(() => IDictionaryConverters.SortedDictionary<object, object>(null)).ThrowExactly<ArgumentNullException>().WithParameterName("conversion");
+    using (new AssertionScope())
+    {
+      AssertionExtensions.Should(() => IDictionaryConverters.SortedDictionary<object, object>(null)).ThrowExactly<ArgumentNullException>().WithParameterName("conversion");
+    }
 
     throw new NotImplementedException();
   }

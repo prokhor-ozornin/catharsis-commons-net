@@ -16,7 +16,10 @@ public sealed class IPAddressConvertersTest : UnitTest
   [Fact]
   public void Bytes_Method()
   {
-    AssertionExtensions.Should(() => IPAddressConverters.Bytes(null)).ThrowExactly<ArgumentNullException>().WithParameterName("conversion");
+    using (new AssertionScope())
+    {
+      AssertionExtensions.Should(() => IPAddressConverters.Bytes(null)).ThrowExactly<ArgumentNullException>().WithParameterName("conversion");
+    }
 
     throw new NotImplementedException();
   }
@@ -49,7 +52,10 @@ public sealed class IPAddressConvertersTest : UnitTest
   [Fact]
   public void IpHost_Method()
   {
-    AssertionExtensions.Should(() => IPAddressConverters.IpHost(null)).ThrowExactly<ArgumentNullException>().WithParameterName("conversion");
+    using (new AssertionScope())
+    {
+      AssertionExtensions.Should(() => IPAddressConverters.IpHost(null)).ThrowExactly<ArgumentNullException>().WithParameterName("conversion");
+    }
 
     throw new NotImplementedException();
   }

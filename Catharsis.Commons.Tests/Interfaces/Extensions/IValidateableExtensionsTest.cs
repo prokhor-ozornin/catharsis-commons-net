@@ -1,4 +1,5 @@
 ﻿using FluentAssertions;
+using FluentAssertions.Execution;
 using Xunit;
 
 namespace Catharsis.Commons.Tests;
@@ -14,7 +15,10 @@ public sealed class IValidateableExtensionsTest : UnitTest
   [Fact]
   public void Validate_Method()
   {
-    AssertionExtensions.Should(() => IValidateableExtensions.Validate<IValidateable>(null)).ThrowExactly<ArgumentNullException>().WithParameterName("validateable");
+    using (new AssertionScope())
+    {
+      AssertionExtensions.Should(() => IValidateableExtensions.Validate<IValidateable>(null)).ThrowExactly<ArgumentNullException>().WithParameterName("validateable");
+    }
 
     throw new NotImplementedException();
   }

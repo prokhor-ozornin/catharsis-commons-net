@@ -1,4 +1,5 @@
 ﻿using FluentAssertions;
+using FluentAssertions.Execution;
 using Xunit;
 
 namespace Catharsis.Commons.Tests;
@@ -14,7 +15,10 @@ public sealed class DateTimeOffsetConvertersTest : UnitTest
   [Fact]
   public void DateTime_Method()
   {
-    AssertionExtensions.Should(() => DateTimeOffsetConverters.DateTime(null)).ThrowExactly<ArgumentNullException>().WithParameterName("conversion");
+    using (new AssertionScope())
+    {
+      AssertionExtensions.Should(() => DateTimeOffsetConverters.DateTime(null)).ThrowExactly<ArgumentNullException>().WithParameterName("conversion");
+    }
 
     throw new NotImplementedException();
   }
@@ -25,7 +29,10 @@ public sealed class DateTimeOffsetConvertersTest : UnitTest
   [Fact]
   public void DateOnly_Method()
   {
-    AssertionExtensions.Should(() => DateTimeOffsetConverters.DateOnly(null)).ThrowExactly<ArgumentNullException>().WithParameterName("conversion");
+    using (new AssertionScope())
+    {
+      AssertionExtensions.Should(() => DateTimeOffsetConverters.DateOnly(null)).ThrowExactly<ArgumentNullException>().WithParameterName("conversion");
+    }
 
     throw new NotImplementedException();
   }
@@ -36,7 +43,10 @@ public sealed class DateTimeOffsetConvertersTest : UnitTest
   [Fact]
   public void TimeOnly_Method()
   {
-    AssertionExtensions.Should(() => DateTimeOffsetConverters.TimeOnly(null)).ThrowExactly<ArgumentNullException>().WithParameterName("conversion");
+    using (new AssertionScope())
+    {
+      AssertionExtensions.Should(() => DateTimeOffsetConverters.TimeOnly(null)).ThrowExactly<ArgumentNullException>().WithParameterName("conversion");
+    }
 
     throw new NotImplementedException();
   }

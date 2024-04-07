@@ -1,4 +1,5 @@
 ﻿using FluentAssertions;
+using FluentAssertions.Execution;
 using Xunit;
 
 namespace Catharsis.Commons.Tests;
@@ -14,7 +15,10 @@ public sealed class ConvertersExtensionsTest : UnitTest
   [Fact]
   public void Convert_Method()
   {
-    AssertionExtensions.Should(() => ObjectExtensions.Convert<object>(null)).ThrowExactly<ArgumentNullException>().WithParameterName("source");
+    using (new AssertionScope())
+    {
+      AssertionExtensions.Should(() => ObjectExtensions.Convert<object>(null)).ThrowExactly<ArgumentNullException>().WithParameterName("source");
+    }
 
     throw new NotImplementedException();
   }

@@ -1,5 +1,6 @@
 ﻿using System.Collections.Specialized;
 using FluentAssertions;
+using FluentAssertions.Execution;
 using Xunit;
 
 namespace Catharsis.Commons.Tests;
@@ -15,7 +16,10 @@ public sealed class NameValueCollectionConvertersTest : UnitTest
   [Fact]
   public void Dictionary_Method()
   {
-    AssertionExtensions.Should(() => NameValueCollectionConverters.Dictionary(null)).ThrowExactly<ArgumentNullException>().WithParameterName("conversion");
+    using (new AssertionScope())
+    {
+      AssertionExtensions.Should(() => NameValueCollectionConverters.Dictionary(null)).ThrowExactly<ArgumentNullException>().WithParameterName("conversion");
+    }
 
     throw new NotImplementedException();
   }
@@ -26,7 +30,10 @@ public sealed class NameValueCollectionConvertersTest : UnitTest
   [Fact]
   public void ValueTuple_Method()
   {
-    AssertionExtensions.Should(() => NameValueCollectionConverters.ValueTuple(null)).ThrowExactly<ArgumentNullException>().WithParameterName("conversion");
+    using (new AssertionScope())
+    {
+      AssertionExtensions.Should(() => NameValueCollectionConverters.ValueTuple(null)).ThrowExactly<ArgumentNullException>().WithParameterName("conversion");
+    }
 
     throw new NotImplementedException();
   }

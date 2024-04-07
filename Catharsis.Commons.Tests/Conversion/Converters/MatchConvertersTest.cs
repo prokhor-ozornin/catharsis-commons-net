@@ -1,5 +1,6 @@
 ﻿using System.Text.RegularExpressions;
 using FluentAssertions;
+using FluentAssertions.Execution;
 using Xunit;
 
 namespace Catharsis.Commons.Tests;
@@ -15,7 +16,10 @@ public sealed class MatchConvertersTest : UnitTest
   [Fact]
   public void Enumerable_Method()
   {
-    AssertionExtensions.Should(() => MatchConverters.Enumerable(null)).ThrowExactly<ArgumentNullException>().WithParameterName("conversion");
+    using (new AssertionScope())
+    {
+      AssertionExtensions.Should(() => MatchConverters.Enumerable(null)).ThrowExactly<ArgumentNullException>().WithParameterName("conversion");
+    }
 
     throw new NotImplementedException();
   }

@@ -1,4 +1,5 @@
-﻿using Xunit;
+﻿using FluentAssertions.Execution;
+using Xunit;
 
 namespace Catharsis.Commons.Tests;
 
@@ -23,6 +24,10 @@ public sealed class PluginManagerTest : UnitTest
   [Fact]
   public void Load_Method()
   {
+    using (new AssertionScope())
+    {
+    }
+
     throw new NotImplementedException();
   }
 
@@ -32,6 +37,10 @@ public sealed class PluginManagerTest : UnitTest
   [Fact]
   public void Unload_Method()
   {
+    using (new AssertionScope())
+    {
+    }
+
     throw new NotImplementedException();
   }
 }

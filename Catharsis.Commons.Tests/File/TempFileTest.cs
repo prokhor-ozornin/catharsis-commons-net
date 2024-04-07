@@ -1,4 +1,5 @@
-﻿using Xunit;
+﻿using FluentAssertions.Execution;
+using Xunit;
 
 namespace Catharsis.Commons.Tests;
 
@@ -35,6 +36,10 @@ public sealed class TempFileTest : ClassTest<TempFile>
   [Fact]
   public void Dispose_Method()
   {
+    using (new AssertionScope())
+    {
+    }
+
     throw new NotImplementedException();
   }
 }

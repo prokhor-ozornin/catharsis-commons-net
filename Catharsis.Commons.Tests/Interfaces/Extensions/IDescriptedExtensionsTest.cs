@@ -1,4 +1,5 @@
 ﻿using FluentAssertions;
+using FluentAssertions.Execution;
 using Xunit;
 
 namespace Catharsis.Commons.Tests;
@@ -14,8 +15,11 @@ public sealed class IDescriptedExtensionsTest : UnitTest
   [Fact]
   public void WithDescription_Method()
   {
-    AssertionExtensions.Should(() => IDescriptedExtensions.WithDescription<IDescripted>(null, string.Empty)).ThrowExactly<ArgumentNullException>().WithParameterName("sequence");
-    AssertionExtensions.Should(() => Enumerable.Empty<IDescripted>().WithDescription(null)).ThrowExactly<ArgumentNullException>().WithParameterName("description");
+    using (new AssertionScope())
+    {
+      AssertionExtensions.Should(() => IDescriptedExtensions.WithDescription<IDescripted>(null, string.Empty)).ThrowExactly<ArgumentNullException>().WithParameterName("sequence");
+      AssertionExtensions.Should(() => Enumerable.Empty<IDescripted>().WithDescription(null)).ThrowExactly<ArgumentNullException>().WithParameterName("description");
+    }
 
     throw new NotImplementedException();
   }

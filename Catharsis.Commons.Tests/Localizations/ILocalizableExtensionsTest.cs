@@ -1,4 +1,5 @@
 ﻿using System.Globalization;
+using FluentAssertions.Execution;
 using Xunit;
 
 namespace Catharsis.Commons.Tests;
@@ -14,6 +15,10 @@ public sealed class ILocalizableExtensionsTest : UnitTest
   [Fact]
   public void Localization_Method()
   {
+    using (new AssertionScope())
+    {
+    }
+
     throw new NotImplementedException();
   }
 }

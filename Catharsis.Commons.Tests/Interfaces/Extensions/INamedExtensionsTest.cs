@@ -1,4 +1,5 @@
 ﻿using FluentAssertions;
+using FluentAssertions.Execution;
 using Xunit;
 
 namespace Catharsis.Commons.Tests;
@@ -14,8 +15,11 @@ public sealed class INamedExtensionsTest : UnitTest
   [Fact]
   public void WithName_Method()
   {
-    AssertionExtensions.Should(() => INamedExtensions.WithName<INameable>(null, string.Empty)).ThrowExactly<ArgumentNullException>().WithParameterName("sequence");
-    AssertionExtensions.Should(() => Enumerable.Empty<INameable>().WithName(null)).ThrowExactly<ArgumentNullException>().WithParameterName("name");
+    using (new AssertionScope())
+    {
+      AssertionExtensions.Should(() => INamedExtensions.WithName<INameable>(null, string.Empty)).ThrowExactly<ArgumentNullException>().WithParameterName("sequence");
+      AssertionExtensions.Should(() => Enumerable.Empty<INameable>().WithName(null)).ThrowExactly<ArgumentNullException>().WithParameterName("name");
+    }
 
     throw new NotImplementedException();
   }
