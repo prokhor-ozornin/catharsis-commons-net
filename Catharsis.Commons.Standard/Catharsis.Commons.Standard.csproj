@@ -51,7 +51,6 @@
     <Compile Include="..\Catharsis.Commons\Conversion\Converters\TaskConverters.cs" Link="Conversion\Converters\TaskConverters.cs" />
     <Compile Include="..\Catharsis.Commons\Conversion\Converters\TcpClientConverters.cs" Link="Conversion\Converters\TcpClientConverters.cs" />
     <Compile Include="..\Catharsis.Commons\Conversion\Converters\TextReaderConverters.cs" Link="Conversion\Converters\TextReaderConverters.cs" />
-    <Compile Include="..\Catharsis.Commons\Conversion\Converters\TimeOnlyConverters.cs" Link="Conversion\Converters\TimeOnlyConverters.cs" />
     <Compile Include="..\Catharsis.Commons\Conversion\Converters\UdpClientConverters.cs" Link="Conversion\Converters\UdpClientConverters.cs" />
     <Compile Include="..\Catharsis.Commons\Conversion\Converters\UriConverters.cs" Link="Conversion\Converters\UriConverters.cs" />
     <Compile Include="..\Catharsis.Commons\Conversion\Converters\XDocumentConverters.cs" Link="Conversion\Converters\XDocumentConverters.cs" />

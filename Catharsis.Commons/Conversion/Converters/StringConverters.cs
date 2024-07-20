@@ -350,7 +350,7 @@ public static class StringConverters
   /// <seealso cref="StringExtensions.ToXDocumentAsync(string, CancellationToken)"/>
   public static Task<XDocument> XDocumentAsync(this IConversion<string> conversion, CancellationToken cancellation = default, string error = null) => conversion.To(text => text.ToXDocumentAsync(cancellation), error);
 
-#if NET7_0_OR_GREATER
+#if NET8_0_OR_GREATER
   /// <summary>
   ///   <para>Converts given <see cref="string"/> instance to the instance of <see cref="System.DateOnly"/> type.</para>
   /// </summary>

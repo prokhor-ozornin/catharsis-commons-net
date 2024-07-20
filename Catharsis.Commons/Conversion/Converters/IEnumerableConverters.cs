@@ -2,7 +2,7 @@
 
 using Extensions;
 
-#if NET7_0_OR_GREATER
+#if NET8_0_OR_GREATER
 using System.Collections.Immutable;
 #endif
 
@@ -250,7 +250,7 @@ public static class IEnumerableConverters
   /// <seealso cref="IEnumerableExtensions.ToMemoryStreamAsync(IEnumerable{byte[]}, CancellationToken)"/>
   public static Task<MemoryStream> MemoryStreamAsync(this IConversion<IEnumerable<byte[]>> conversion, CancellationToken cancellation = default, string error = null) => conversion.To(sequence => sequence.ToMemoryStreamAsync(cancellation), error);
 
-#if NET7_0_OR_GREATER
+#if NET8_0_OR_GREATER
   /// <summary>
   ///   <para>Converts given <see cref="IEnumerable{T}"/> instance to the instance of <see cref="IReadOnlySet{T}"/> type.</para>
   /// </summary>

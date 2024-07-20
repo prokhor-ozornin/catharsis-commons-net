@@ -649,9 +649,8 @@ public static class IConverterExtensions
       DateTime dateTime => dateTime,
       DateTimeOffset dateTimeOffset => dateTimeOffset.ToDateTime(),
       
-      #if NET7_0_OR_GREATER
+      #if NET8_0_OR_GREATER
       DateOnly dateOnly => dateOnly.ToDateTime(),
-      TimeOnly timeOnly => timeOnly.ToDateTime(),
       #endif
       
       _ => instance.ToFormattedString(format).ToDateTime(out var result, format) ? result : null
@@ -688,9 +687,8 @@ public static class IConverterExtensions
       DateTime dateTime => dateTime.ToDateTimeOffset(),
       DateTimeOffset dateTimeOffset => dateTimeOffset,
 
-      #if NET7_0_OR_GREATER
+      #if NET8_0_OR_GREATER
       DateOnly dateOnly => dateOnly.ToDateTimeOffset(),
-      TimeOnly timeOnly => timeOnly.ToDateTimeOffset(),
       #endif
       
       _ => instance.ToFormattedString(format).ToDateTimeOffset(out var result, format) ? result : null
@@ -1006,7 +1004,7 @@ public static class IConverterExtensions
     };
   }
 
-#if NET7_0_OR_GREATER
+#if NET8_0_OR_GREATER
   /// <summary>
   ///   <para></para>
   /// </summary>

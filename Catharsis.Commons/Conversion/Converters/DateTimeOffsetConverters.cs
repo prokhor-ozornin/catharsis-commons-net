@@ -19,7 +19,7 @@ public static class DateTimeOffsetConverters
   /// <seealso cref="DateTimeOffsetExtensions.ToDateTime(DateTimeOffset)"/>
   public static DateTime DateTime(this IConversion<DateTimeOffset> conversion, string error = null) => conversion.To(date => date.ToDateTime(), error);
 
-#if NET7_0_OR_GREATER
+#if NET8_0_OR_GREATER
 /// <summary>
 ///   <para>Converts given <see cref="DateTimeOffset"/> instance to the instance of <see cref="System.DateOnly"/> type.</para>
 /// </summary>

@@ -1327,8 +1327,8 @@ public sealed class IConverterExtensionsTest : UnitTest
 
         Convert.To.DateTime(date, format).Should().Be(date);
         Convert.To.DateTime(date.ToDateTimeOffset(), format).Should().Be(utcDate);
-        Convert.To.DateTime(date.ToDateOnly(), format).Should().Be(date.TruncateToDayStart());
-        Convert.To.DateTime(date.ToTimeOnly(), format).Should().Be(DateTime.UtcNow.TruncateToDayStart().Add(date.ToTimeOnly().ToTimeSpan()));
+        Convert.To.DateTime(date.ToDateOnly(), format).Should().Be(date.AtStartOfDay());
+        Convert.To.DateTime(date.ToTimeOnly(), format).Should().Be(DateTime.UtcNow.AtStartOfDay().Add(date.ToTimeOnly().ToTimeSpan()));
       }
     }
   }
@@ -1366,8 +1366,8 @@ public sealed class IConverterExtensionsTest : UnitTest
 
         Convert.To.DateTimeOffset(date, format).Should().Be(utcDate);
         Convert.To.DateTimeOffset(date.ToDateTimeOffset(), format).Should().Be(utcDate);
-        Convert.To.DateTimeOffset(date.ToDateOnly(), format).Should().Be(date.ToDateTimeOffset().TruncateToDayStart());
-        Convert.To.DateTimeOffset(date.ToTimeOnly(), format).Should().Be(DateTime.UtcNow.TruncateToDayStart().Add(date.ToTimeOnly().ToTimeSpan()));
+        Convert.To.DateTimeOffset(date.ToDateOnly(), format).Should().Be(date.ToDateTimeOffset().AtStartOfDay());
+        Convert.To.DateTimeOffset(date.ToTimeOnly(), format).Should().Be(DateTime.UtcNow.AtStartOfDay().Add(date.ToTimeOnly().ToTimeSpan()));
       }
     }
   }
@@ -1441,8 +1441,8 @@ public sealed class IConverterExtensionsTest : UnitTest
         Convert.To.TimeOnly(null, format).Should().BeNull();
         Convert.To.TimeOnly(string.Empty, format).Should().BeNull();
         Convert.To.TimeOnly(new object(), format).Should().BeNull();
-        Convert.To.TimeOnly($" {timeOnly.ToShortTimeString()} ").Should().Be(timeOnly.StartOfMinute());
-        Convert.To.TimeOnly($" {timeOnly.ToLongTimeString()} ").Should().Be(timeOnly.StartOfSecond());
+        Convert.To.TimeOnly($" {timeOnly.ToShortTimeString()} ").Should().Be(timeOnly.AtStartOfMinute());
+        Convert.To.TimeOnly($" {timeOnly.ToLongTimeString()} ").Should().Be(timeOnly.AtStartOfSecond());
 
         Convert.To.TimeOnly(utcDate, format).Should().Be(timeOnly);
         Convert.To.TimeOnly(utcDate.ToDateTimeOffset(), format).Should().Be(timeOnly);
