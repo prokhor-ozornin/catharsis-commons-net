@@ -1,7 +1,7 @@
 ﻿namespace Catharsis.Commons;
 
 /// <summary>
-///   <para>Set of extension methods for <see cref="IConversion{TSource}"/> interface.</para>
+///   <para>A set of extension methods for the <see cref="IConversion{TSource}"/> interface.</para>
 /// </summary>
 /// <seealso cref="IConversion{TSource}"/>
 public static class IConversionExtensions

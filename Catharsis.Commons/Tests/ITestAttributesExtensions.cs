@@ -3,7 +3,7 @@
 namespace Catharsis.Commons;
 
 /// <summary>
-///   <para></para>
+///   <para>A set of extension methods for the <see cref="ITestAttributes"/> interface.</para>
 /// </summary>
 public static class ITestAttributesExtensions
 {

@@ -13,7 +13,7 @@ using Catharsis.Extensions;
 namespace Catharsis.Commons;
 
 /// <summary>
-///   <para>Extension methods for types converter.</para>
+///   <para>A set of extension methods for the <see cref="IConverter"/> interface.</para>
 /// </summary>
 /// <seealso cref="IConverter"/>
 public static class IConverterExtensions

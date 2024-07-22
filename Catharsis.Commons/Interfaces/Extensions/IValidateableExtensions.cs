@@ -1,7 +1,7 @@
 ﻿namespace Catharsis.Commons;
 
 /// <summary>
-///   <para></para>
+///   <para>A set of extension methods for the <see cref="IValidateable"/> interface.</para>
 /// </summary>
 public static class IValidateableExtensions
 {

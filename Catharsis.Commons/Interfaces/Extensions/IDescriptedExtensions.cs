@@ -3,7 +3,7 @@
 namespace Catharsis.Commons;
 
 /// <summary>
-///   <para></para>
+///   <para>A set of extension methods for the <see cref="IEnumerable{T}"/> interface.</para>
 /// </summary>
 public static class IDescriptedExtensions
 {
@@ -12,6 +12,7 @@ public static class IDescriptedExtensions
   /// </summary>
   /// <typeparam name="T"></typeparam>
   /// <param name="sequence"></param>
+  /// <param name="description"></param>
   /// <returns></returns>
   public static IEnumerable<T> WithDescription<T>(this IEnumerable<T> sequence, string description) where T : IDescripted
   {

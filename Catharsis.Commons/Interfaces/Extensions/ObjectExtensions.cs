@@ -3,7 +3,7 @@
 namespace Catharsis.Commons;
 
 /// <summary>
-///   <para></para>
+///   <para>A set of extension methods for the <see cref="object"/> type.</para>
 /// </summary>
 public static partial class ObjectExtensions
 {
