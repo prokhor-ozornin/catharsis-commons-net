@@ -1,7 +1,7 @@
 ﻿namespace Catharsis.Commons;
 
 /// <summary>
-///   <para></para>
+///   <para>Атрибуты.</para>
 /// </summary>
 public interface IAttributes : IDictionary<string, object>
 {

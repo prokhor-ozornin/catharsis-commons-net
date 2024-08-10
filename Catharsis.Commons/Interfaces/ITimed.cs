@@ -6,12 +6,12 @@
 public interface ITimed
 {
   /// <summary>
-  ///   <para></para>
+  ///   <para>Дата/время создания.</para>
   /// </summary>
   DateTimeOffset CreatedOn { get; }
 
   /// <summary>
-  ///   <para></para>
+  ///   <para>Дата/время последнего изменения.</para>
   /// </summary>
   DateTimeOffset UpdatedOn { get; }
 }
