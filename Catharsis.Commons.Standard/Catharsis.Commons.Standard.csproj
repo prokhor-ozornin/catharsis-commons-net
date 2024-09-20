@@ -12,6 +12,20 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Attributes\.gitignore" />
+    <None Remove="Conversion\.gitignore" />
+    <None Remove="Conversion\Converters\.gitignore" />
+    <None Remove="Conversion\Extensions\.gitignore" />
+    <None Remove="File\.gitignore" />
+    <None Remove="Interfaces\.gitignore" />
+    <None Remove="Interfaces\Extensions\.gitignore" />
+    <None Remove="Localizations\.gitignore" />
+    <None Remove="Plugin\.gitignore" />
+    <None Remove="Table\.gitignore" />
+    <None Remove="Tests\.gitignore" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Compile Include="..\Catharsis.Commons\Attributes\Attributes.cs" Link="Attributes\Attributes.cs" />
     <Compile Include="..\Catharsis.Commons\Attributes\IAttributable.cs" Link="Attributes\IAttributable.cs" />
     <Compile Include="..\Catharsis.Commons\Attributes\IAttributes.cs" Link="Attributes\IAttributes.cs" />
@@ -110,6 +124,7 @@
     <Folder Include="File\" />
     <Folder Include="Interfaces\Extensions\" />
     <Folder Include="Localizations\" />
+    <Folder Include="Table\" />
     <Folder Include="Plugin\" />
     <Folder Include="Tests\" />
   </ItemGroup>

@@ -29,7 +29,6 @@ public sealed class TempDirectoryTest : ClassTest<TempDirectory>
     throw new NotImplementedException();
   }
 
-
   /// <summary>
   ///   <para>Performs testing of <see cref="TempDirectory.Dispose()"/> method.</para>
   /// </summary>

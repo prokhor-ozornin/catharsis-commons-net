@@ -13,6 +13,20 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Attributes\.gitignore" />
+    <None Remove="Conversion\.gitignore" />
+    <None Remove="Conversion\Converters\.gitignore" />
+    <None Remove="Conversion\Extensions\.gitignore" />
+    <None Remove="File\.gitignore" />
+    <None Remove="Interfaces\.gitignore" />
+    <None Remove="Interfaces\Extensions\.gitignore" />
+    <None Remove="Localizations\.gitignore" />
+    <None Remove="Plugin\.gitignore" />
+    <None Remove="Table\.gitignore" />
+    <None Remove="Tests\.gitignore" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Compile Include="..\Catharsis.Commons\Attributes\Attributes.cs" Link="Attributes\Attributes.cs" />
     <Compile Include="..\Catharsis.Commons\Attributes\IAttributable.cs" Link="Attributes\IAttributable.cs" />
     <Compile Include="..\Catharsis.Commons\Attributes\IAttributes.cs" Link="Attributes\IAttributes.cs" />
@@ -87,6 +101,13 @@
     <Compile Include="..\Catharsis.Commons\Plugin\IPluginManager.cs" Link="Plugin\IPluginManager.cs" />
     <Compile Include="..\Catharsis.Commons\Plugin\IPluginManagerExtensions.cs" Link="Plugin\IPluginManagerExtensions.cs" />
     <Compile Include="..\Catharsis.Commons\Plugin\PluginManager.cs" Link="Plugin\PluginManager.cs" />
+    <Compile Include="..\Catharsis.Commons\Table\ITable.cs" Link="Table\ITable.cs" />
+    <Compile Include="..\Catharsis.Commons\Table\ITableCell.cs" Link="Table\ITableCell.cs" />
+    <Compile Include="..\Catharsis.Commons\Table\ITableExtensions.cs" Link="Table\ITableExtensions.cs" />
+    <Compile Include="..\Catharsis.Commons\Table\ITableRow.cs" Link="Table\ITableRow.cs" />
+    <Compile Include="..\Catharsis.Commons\Table\Table.cs" Link="Table\Table.cs" />
+    <Compile Include="..\Catharsis.Commons\Table\TableCell.cs" Link="Table\TableCell.cs" />
+    <Compile Include="..\Catharsis.Commons\Table\TableRow.cs" Link="Table\TableRow.cs" />
     <Compile Include="..\Catharsis.Commons\Tests\ClassTest.cs" Link="Tests\ClassTest.cs" />
     <Compile Include="..\Catharsis.Commons\Tests\ITestable.cs" Link="Tests\ITestable.cs" />
     <Compile Include="..\Catharsis.Commons\Tests\ITestAttributes.cs" Link="Tests\ITestAttributes.cs" />
@@ -107,10 +128,19 @@
   <ItemGroup>
     <Folder Include="Conversion\Converters\" />
     <Folder Include="Conversion\Extensions\" />
+    <Folder Include="Conversion\Converters\" />
+    <Folder Include="Conversion\Extensions\" />
     <Folder Include="Interfaces\Extensions\" />
     <Folder Include="Attributes\" />
     <Folder Include="File\" />
+    <Folder Include="Interfaces\Extensions\" />
     <Folder Include="Localizations\" />
+    <Folder Include="Attributes\" />
+    <Folder Include="File\" />
+    <Folder Include="Localizations\" />
+    <Folder Include="Table\" />
+    <Folder Include="Tests\" />
+    <Folder Include="Plugin\" />
     <Folder Include="Plugin\" />
     <Folder Include="Tests\" />
   </ItemGroup>
