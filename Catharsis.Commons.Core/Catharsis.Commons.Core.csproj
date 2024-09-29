@@ -14,6 +14,7 @@
 
   <ItemGroup>
     <None Remove="Attributes\.gitignore" />
+    <None Remove="Collection\.gitignore" />
     <None Remove="Conversion\.gitignore" />
     <None Remove="Conversion\Converters\.gitignore" />
     <None Remove="Conversion\Extensions\.gitignore" />
@@ -33,6 +34,10 @@
     <Compile Include="..\Catharsis.Commons\Attributes\IAttributesExtensions.cs" Link="Attributes\IAttributesExtensions.cs" />
     <Compile Include="..\Catharsis.Commons\Attributes\IReadOnlyAttributes.cs" Link="Attributes\IReadOnlyAttributes.cs" />
     <Compile Include="..\Catharsis.Commons\Attributes\IReadOnlyAttributesExtensions.cs" Link="Attributes\IReadOnlyAttributesExtensions.cs" />
+    <Compile Include="..\Catharsis.Commons\Collection\ILogicalCollection.cs" Link="Collection\ILogicalCollection.cs" />
+    <Compile Include="..\Catharsis.Commons\Collection\ILogicalCollectionExtensions.cs" Link="Collection\ILogicalCollectionExtensions.cs" />
+    <Compile Include="..\Catharsis.Commons\Collection\LogicalCollection.cs" Link="Collection\LogicalCollection.cs" />
+    <Compile Include="..\Catharsis.Commons\Collection\LogicalOperation.cs" Link="Collection\LogicalOperation.cs" />
     <Compile Include="..\Catharsis.Commons\Conversion\Conversion.cs" Link="Conversion\Conversion.cs" />
     <Compile Include="..\Catharsis.Commons\Conversion\Convert.cs" Link="Conversion\Convert.cs" />
     <Compile Include="..\Catharsis.Commons\Conversion\Converter.cs" Link="Conversion\Converter.cs" />
@@ -86,6 +91,7 @@
     <Compile Include="..\Catharsis.Commons\Interfaces\IBuilder.cs" Link="Interfaces\IBuilder.cs" />
     <Compile Include="..\Catharsis.Commons\Interfaces\IDescriptable.cs" Link="Interfaces\IDescriptable.cs" />
     <Compile Include="..\Catharsis.Commons\Interfaces\IDescripted.cs" Link="Interfaces\IDescripted.cs" />
+    <Compile Include="..\Catharsis.Commons\Interfaces\ILogical.cs" Link="Interfaces\ILogical.cs" />
     <Compile Include="..\Catharsis.Commons\Interfaces\INameable.cs" Link="Interfaces\INameable.cs" />
     <Compile Include="..\Catharsis.Commons\Interfaces\INamed.cs" Link="Interfaces\INamed.cs" />
     <Compile Include="..\Catharsis.Commons\Interfaces\ITimeable.cs" Link="Interfaces\ITimeable.cs" />
@@ -126,6 +132,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Collection\" />
     <Folder Include="Conversion\Converters\" />
     <Folder Include="Conversion\Extensions\" />
     <Folder Include="Conversion\Converters\" />
